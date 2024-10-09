@@ -1,7 +1,6 @@
 # Шаблоны Zabbix
 
-## zbx_continent3_templates.xml 
-## шаблон Zabbix 5 для криптошлюзов Континент 3.9.3
+## zbx_continent3_templates.xml - шаблон Zabbix 5 для криптошлюзов Континент 3.9.3
 
 автозаполнение полей инвентаризации
 
