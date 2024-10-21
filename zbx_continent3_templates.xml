@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-10-09T11:03:49Z</date>
+    <date>2024-10-21T05:26:36Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -397,7 +397,7 @@
                     </applications>
                 </item>
                 <item>
-                    <name>Средняя загрузка (за 1 мин)</name>
+                    <name>Средняя нагрузка (за 1 мин)</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.2021.10.1.3[&quot;index&quot;,&quot;1.3.6.1.4.1.2021.10.1.2&quot;, &quot;Load-1&quot;]</snmp_oid>
                     <key>system.cpu.load.avg1[laLoad.1]</key>
@@ -413,7 +413,7 @@
                     </applications>
                 </item>
                 <item>
-                    <name>Средняя загрузка (за 5 мин)</name>
+                    <name>Средняя нагрузка (за 5 мин)</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.2021.10.1.3[&quot;index&quot;,&quot;1.3.6.1.4.1.2021.10.1.2&quot;, &quot;Load-5&quot;]</snmp_oid>
                     <key>system.cpu.load.avg5[laLoad.2]</key>
@@ -430,7 +430,7 @@
                     </applications>
                 </item>
                 <item>
-                    <name>Средняя загрузка (за 15 мин)</name>
+                    <name>Средняя нагрузка (за 15 мин)</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.2021.10.1.3[&quot;index&quot;,&quot;1.3.6.1.4.1.2021.10.1.2&quot;, &quot;Load-15&quot;]</snmp_oid>
                     <key>system.cpu.load.avg15[laLoad.3]</key>
@@ -499,6 +499,45 @@
                             <name>CPU</name>
                         </application>
                     </applications>
+                </item>
+                <item>
+                    <name>ЦП % загрузки</name>
+                    <type>DEPENDENT</type>
+                    <key>system.cpu.RawTime[ssCpuRaw.0]</key>
+                    <delay>0</delay>
+                    <history>2w</history>
+                    <trends>742d</trends>
+                    <units>%</units>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>return (100 - value)</params>
+                        </step>
+                        <step>
+                            <type>IN_RANGE</type>
+                            <params>0
+100</params>
+                            <error_handler>CUSTOM_VALUE</error_handler>
+                            <error_handler_params>100</error_handler_params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>system.cpu.IdleTime[ssCpuIdle.0]</key>
+                    </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{last(5m)}&gt;{$CPU.UTIL.CRIT}</expression>
+                            <name>Высокая загрузка ЦП (более {$CPU.UTIL.CRIT}% за 5 мин)</name>
+                            <opdata>Текущая загрузка: {ITEM.LASTVALUE1}</opdata>
+                            <priority>WARNING</priority>
+                            <description>CPU utilization is too high. The system might be slow to respond.</description>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <name>Памяти выгруженной</name>
@@ -614,7 +653,7 @@
 //to get utilization in %, divide by N, where N is number of cores.</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Время простоя ЦП</name>
+                            <name>Время ЦП в режиме ожидания</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.2021.11.53.0</snmp_oid>
                             <key>system.cpu.idle[ssCpuRawIdle.{#SNMPINDEX}]</key>
@@ -622,9 +661,8 @@
                             <history>2w</history>
                             <trends>732d</trends>
                             <value_type>FLOAT</value_type>
-                            <units>%</units>
                             <description>MIB: UCD-SNMP-MIB&#13;
-Время, в течение которого процессор ничего не делал.</description>
+Время, в течение которого ЦП находится в режиме ожидания.</description>
                             <applications>
                                 <application>
                                     <name>CPU</name>
@@ -634,17 +672,6 @@
                                 <step>
                                     <type>CHANGE_PER_SECOND</type>
                                     <params/>
-                                </step>
-                                <step>
-                                    <type>JAVASCRIPT</type>
-                                    <params>return value/{#CPU.COUNT}</params>
-                                </step>
-                                <step>
-                                    <type>IN_RANGE</type>
-                                    <params>0
-100</params>
-                                    <error_handler>CUSTOM_VALUE</error_handler>
-                                    <error_handler_params>100</error_handler_params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -657,10 +684,8 @@
                             <history>2w</history>
                             <trends>732d</trends>
                             <value_type>FLOAT</value_type>
-                            <units>%</units>
                             <description>MIB: UCD-SNMP-MIB&#13;
-Время, в течение которого ЦП обслуживает аппаратные прерывания.&#13;
-//to get utilization in %, divide by N, where N is number of cores.</description>
+Время, в течение которого ЦП обслуживает аппаратные прерывания.</description>
                             <applications>
                                 <application>
                                     <name>CPU</name>
@@ -670,10 +695,6 @@
                                 <step>
                                     <type>CHANGE_PER_SECOND</type>
                                     <params/>
-                                </step>
-                                <step>
-                                    <type>JAVASCRIPT</type>
-                                    <params>return value/{#CPU.COUNT}</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -686,7 +707,6 @@
                             <history>2w</history>
                             <trends>732d</trends>
                             <value_type>FLOAT</value_type>
-                            <units>%</units>
                             <description>MIB: UCD-SNMP-MIB&#13;
 Время, в течение которого ЦП ожидает завершения ввода-вывода.&#13;
 //to get utilization in %, divide by N, where N is number of cores.</description>
@@ -700,10 +720,6 @@
                                     <type>CHANGE_PER_SECOND</type>
                                     <params/>
                                 </step>
-                                <step>
-                                    <type>JAVASCRIPT</type>
-                                    <params>return value/{#CPU.COUNT}</params>
-                                </step>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
@@ -715,10 +731,8 @@
                             <history>2w</history>
                             <trends>732d</trends>
                             <value_type>FLOAT</value_type>
-                            <units>%</units>
                             <description>MIB: UCD-SNMP-MIB&#13;
-Время, затраченное процессором на работу ядра и его процессов.&#13;
-//to get utilization in %, divide by N, where N is number of cores.</description>
+Время, затраченное процессором на работу ядра и его процессов.</description>
                             <applications>
                                 <application>
                                     <name>CPU</name>
@@ -728,10 +742,6 @@
                                 <step>
                                     <type>CHANGE_PER_SECOND</type>
                                     <params/>
-                                </step>
-                                <step>
-                                    <type>JAVASCRIPT</type>
-                                    <params>return value/{#CPU.COUNT}</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -744,10 +754,8 @@
                             <history>2w</history>
                             <trends>732d</trends>
                             <value_type>FLOAT</value_type>
-                            <units>%</units>
                             <description>MIB: UCD-SNMP-MIB&#13;
-Время, затраченное процессором на выполнение улучшенных пользовательских процессов.&#13;
-//to get utilization in %, divide by N, where N is number of cores.</description>
+Время, затраченное процессором на выполнение улучшенных пользовательских процессов.</description>
                             <applications>
                                 <application>
                                     <name>CPU</name>
@@ -757,10 +765,6 @@
                                 <step>
                                     <type>CHANGE_PER_SECOND</type>
                                     <params/>
-                                </step>
-                                <step>
-                                    <type>JAVASCRIPT</type>
-                                    <params>return value/{#CPU.COUNT}</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -773,10 +777,8 @@
                             <history>2w</history>
                             <trends>732d</trends>
                             <value_type>FLOAT</value_type>
-                            <units>%</units>
                             <description>MIB: UCD-SNMP-MIB&#13;
-Время, затраченное процессором на кода системного уровня.&#13;
-//to get utilization in %, divide by N, where N is number of cores.</description>
+Время, затраченное процессором на на обработку кода системного уровня.</description>
                             <applications>
                                 <application>
                                     <name>CPU</name>
@@ -786,10 +788,6 @@
                                 <step>
                                     <type>CHANGE_PER_SECOND</type>
                                     <params/>
-                                </step>
-                                <step>
-                                    <type>JAVASCRIPT</type>
-                                    <params>return value/{#CPU.COUNT}</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -802,10 +800,8 @@
                             <history>2w</history>
                             <trends>732d</trends>
                             <value_type>FLOAT</value_type>
-                            <units>%</units>
                             <description>MIB: UCD-SNMP-MIB&#13;
-Время, затраченное процессором на выполнение пользовательских процессов, которые не являются улучшенными.&#13;
-//to get utilization in %, divide by N, where N is number of cores.</description>
+Время, затраченное процессором на выполнение пользовательских процессов, которые не являются улучшенными.</description>
                             <applications>
                                 <application>
                                     <name>CPU</name>
@@ -816,69 +812,14 @@
                                     <type>CHANGE_PER_SECOND</type>
                                     <params/>
                                 </step>
-                                <step>
-                                    <type>JAVASCRIPT</type>
-                                    <params>return value/{#CPU.COUNT}</params>
-                                </step>
                             </preprocessing>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Загрузка ЦП</name>
-                            <type>DEPENDENT</type>
-                            <key>system.cpu.util[snmp,{#SNMPINDEX}]</key>
-                            <delay>0</delay>
-                            <history>2w</history>
-                            <trends>732d</trends>
-                            <value_type>FLOAT</value_type>
-                            <units>%</units>
-                            <description>Загрузка ЦП в %.</description>
-                            <applications>
-                                <application>
-                                    <name>CPU</name>
-                                </application>
-                            </applications>
-                            <preprocessing>
-                                <step>
-                                    <type>JAVASCRIPT</type>
-                                    <params>return (100 - value)</params>
-                                </step>
-                            </preprocessing>
-                            <master_item>
-                                <key>system.cpu.idle[ssCpuRawIdle.{#SNMPINDEX}]</key>
-                            </master_item>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{min(5m)}&gt;{$CPU.UTIL.CRIT}</expression>
-                                    <name>Высокая загрузка ЦП (более {$CPU.UTIL.CRIT}% за 5 мин)</name>
-                                    <opdata>Текущая загрузка: {ITEM.LASTVALUE1}</opdata>
-                                    <priority>WARNING</priority>
-                                    <description>CPU utilization is too high. The system might be slow to respond.</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                     </item_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>Загрузка ЦП {#SINGLETON}</name>
-                            <ymin_type_1>FIXED</ymin_type_1>
-                            <ymax_type_1>FIXED</ymax_type_1>
-                            <graph_items>
-                                <graph_item>
-                                    <sortorder>1</sortorder>
-                                    <drawtype>GRADIENT_LINE</drawtype>
-                                    <color>1A7C11</color>
-                                    <item>
-                                        <host>Continent 3.9 Module CPU SNMP</host>
-                                        <key>system.cpu.util[snmp,{#SNMPINDEX}]</key>
-                                    </item>
-                                </graph_item>
-                            </graph_items>
-                        </graph_prototype>
-                        <graph_prototype>
                             <name>Использование ЦП {#SINGLETON}</name>
                             <type>STACKED</type>
                             <ymin_type_1>FIXED</ymin_type_1>
-                            <ymax_type_1>FIXED</ymax_type_1>
                             <graph_items>
                                 <graph_item>
                                     <sortorder>1</sortorder>
@@ -3061,6 +3002,21 @@ and {Continent 3.9 Module CPU SNMP:system.cpu.load.avg15[laLoad.3].last()}&gt;0<
         </trigger>
     </triggers>
     <graphs>
+        <graph>
+            <name>Загрузка ЦП</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <ymax_type_1>FIXED</ymax_type_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Continent 3.9 Module CPU SNMP</host>
+                        <key>system.cpu.RawTime[ssCpuRaw.0]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
         <graph>
             <name>Загрузка системы</name>
             <ymin_type_1>FIXED</ymin_type_1>
