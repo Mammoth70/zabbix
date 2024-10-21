@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-10-21T05:26:36Z</date>
+    <date>2024-10-21T06:41:17Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -2559,6 +2559,14 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}=0</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 5 не активен</name>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал стандартного приоритета не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода некорректного пакета по VPN-каналу приоритета 5</name>
