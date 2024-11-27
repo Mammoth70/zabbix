@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-11-27T05:23:17Z</date>
+    <date>2024-11-27T10:40:46Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -343,7 +343,7 @@
                 <macro>
                     <macro>{$VFS.DEV.DEVNAME.NOT_MATCHES}</macro>
                     <value>^(loop[0-9]*|sd[a-z][0-9]+|nbd[0-9]+|sr[0-9]+|fd[0-9]+|dm-[0-9]+|ram[0-9]+|ploop[a-z0-9]+|md[0-9]*|hcp[0-9]*|zram[0-9]*)</value>
-                    <description>Этот макрос-regexp используется для исключени обнаружения блочных устройств по именам.</description>
+                    <description>Этот макрос-regexp используется для исключения обнаружения блочных устройств по именам.</description>
                 </macro>
             </macros>
         </template>
@@ -2544,8 +2544,8 @@ and {Continent 3.9 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPIN
                             </application_prototypes>
                             <trigger_prototypes>
                                 <trigger_prototype>
-                                    <expression>{last()}&lt; ({$KEY.LINK_TO_EXPIRE_DAYS.WARN}*86400)</expression>
-                                    <name>Связь с {#SNMPINDEX}: Истекает срок действия ключей (менее {$KEY.LINK_TO_EXPIRE_DAYS.WARN} дней)</name>
+                                    <expression>{last()}&lt; ({$KEY.LINK_TO_EXPIRE.WARN})</expression>
+                                    <name>Связь с {#SNMPINDEX}: Истекает срок действия ключей (менее {$KEY.LINK_TO_EXPIRE.WARN})</name>
                                     <priority>WARNING</priority>
                                     <description>Мало времени до истечения смены ключей парной связи</description>
                                 </trigger_prototype>
@@ -5149,8 +5149,8 @@ and&#13;
             </discovery_rules>
             <macros>
                 <macro>
-                    <macro>{$KEY.LINK_TO_EXPIRE_DAYS.WARN}</macro>
-                    <value>1</value>
+                    <macro>{$KEY.LINK_TO_EXPIRE.WARN}</macro>
+                    <value>1d</value>
                     <description>Порог предупреждения об истечении срока действия ключей парной связи.</description>
                 </macro>
                 <macro>
