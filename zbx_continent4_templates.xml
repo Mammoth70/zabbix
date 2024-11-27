@@ -1,0 +1,3863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2024-11-27T05:24:02Z</date>
+    <groups>
+        <group>
+            <name>Templates/Modules</name>
+        </group>
+        <group>
+            <name>Templates/Network devices</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Continent 4 Module AccessServer SNMP</template>
+            <name>Continent 4 Module AccessServer SNMP</name>
+            <groups>
+                <group>
+                    <name>Templates/Modules</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Сервер доступа</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Статус СД</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.1.0</snmp_oid>
+                    <key>continent4.aservState</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <description>Статус СД&#13;
+неизвестно -2&#13;
+не настроен -1&#13;
+выключен  0&#13;
+запущен 1</description>
+                    <applications>
+                        <application>
+                            <name>Сервер доступа</name>
+                        </application>
+                    </applications>
+                </item>
+            </items>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>AS</name>
+                    <type>DEPENDENT</type>
+                    <key>as.discovery[singleton]</key>
+                    <delay>0</delay>
+                    <description>Сервер доступа обнаруживается по наличию подстроки &quot;AS&quot; &#13;
+в типе конфигурации OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Количество подключенных АП</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.2.0</snmp_oid>
+                            <key>continent4.as.aservConnCount</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество клиентских подключений к СД</description>
+                            <applications>
+                                <application>
+                                    <name>Сервер доступа</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Битов считано</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.6.0</snmp_oid>
+                            <key>continent4.as.aservReadBytesCount</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <units>bps</units>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество байтов, считанных СД</description>
+                            <applications>
+                                <application>
+                                    <name>Сервер доступа</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>8</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Пакетов считано</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.14.0</snmp_oid>
+                            <key>continent4.as.aservReadPacketsCount</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <units>pps</units>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество пакетов, считанных СД</description>
+                            <applications>
+                                <application>
+                                    <name>Сервер доступа</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Битов записано</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.10.0</snmp_oid>
+                            <key>continent4.as.aservWriteBytesCount</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <units>bps</units>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество байтов, записанных СД</description>
+                            <applications>
+                                <application>
+                                    <name>Сервер доступа</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>8</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Пакетов записано</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.18.0</snmp_oid>
+                            <key>continent4.as.aservWritePacketsCount</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <units>pps</units>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество пакетов, записанных СД</description>
+                            <applications>
+                                <application>
+                                    <name>Сервер доступа</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Статус</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.1.0</snmp_oid>
+                            <key>continent4.as.contAservState</key>
+                            <delay>1h</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Статус СД (неизвестно — -2/&#13;
+не настроен — -1/выключен — 0/&#13;
+запущен — 1)</description>
+                            <applications>
+                                <application>
+                                    <name>Сервер доступа</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Количество свободных лицензий</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.23.0</snmp_oid>
+                            <key>continent4.as.contLicensesBalance</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество текущих свободных соединений (лицензий)</description>
+                            <applications>
+                                <application>
+                                    <name>Сервер доступа</name>
+                                </application>
+                            </applications>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&lt;{$AS_LICENSE_WARN}</expression>
+                                    <name>Недостаточно лицензий сервера доступа{#SINGLETON}</name>
+                                    <priority>WARNING</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Количество лицензий</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.22.0</snmp_oid>
+                            <key>continent4.as.contLicensesTotalCount</key>
+                            <delay>1h</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Общее количество возможных соединений (лицензий)</description>
+                            <applications>
+                                <application>
+                                    <name>Сервер доступа</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>Сервер доступа: Подключения{#SINGLETON}</name>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>GRADIENT_LINE</drawtype>
+                                    <color>6A1B9A</color>
+                                    <item>
+                                        <host>Continent 4 Module AccessServer SNMP</host>
+                                        <key>continent4.as.aservConnCount</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <drawtype>DASHED_LINE</drawtype>
+                                    <color>FF8000</color>
+                                    <item>
+                                        <host>Continent 4 Module AccessServer SNMP</host>
+                                        <key>continent4.as.contLicensesTotalCount</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <name>Сервер доступа: Сетевой график{#SINGLETON}</name>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>GRADIENT_LINE</drawtype>
+                                    <color>1A7C11</color>
+                                    <item>
+                                        <host>Continent 4 Module AccessServer SNMP</host>
+                                        <key>continent4.as.aservReadBytesCount</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <drawtype>BOLD_LINE</drawtype>
+                                    <color>2774A4</color>
+                                    <item>
+                                        <host>Continent 4 Module AccessServer SNMP</host>
+                                        <key>continent4.as.aservWriteBytesCount</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>3</sortorder>
+                                    <color>000000</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Continent 4 Module AccessServer SNMP</host>
+                                        <key>continent4.as.aservReadPacketsCount</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>4</sortorder>
+                                    <color>1A237E</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Continent 4 Module AccessServer SNMP</host>
+                                        <key>continent4.as.aservWritePacketsCount</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <master_item>
+                        <key>continent4.aservState</key>
+                    </master_item>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>return JSON.stringify(value.includes('1') ? [{'{#SINGLETON}': ''}] : []);</params>
+                        </step>
+                    </preprocessing>
+                </discovery_rule>
+            </discovery_rules>
+            <macros>
+                <macro>
+                    <macro>{$AS_LICENSE_WARN}</macro>
+                    <value>10</value>
+                    <description>Порог предупреждения о минимуме свободных лицензий.</description>
+                </macro>
+            </macros>
+        </template>
+        <template>
+            <template>Continent 4 Module CPU SNMP</template>
+            <name>Continent 4 Module CPU SNMP</name>
+            <groups>
+                <group>
+                    <name>Templates/Modules</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>CPU</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Простой ЦП</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.5]</snmp_oid>
+                    <key>system.cpu.idle[ssCpuRawIdle]</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Использование ядра за последнюю минуту, в течение которого процессор ничего не делал.</description>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var dict = JSON.parse(value);
+var i = 0;
+
+for (key in dict) {
+  i += +dict[key][&quot;{#SNMPVALUE}&quot;];
+}
+
+return (i/dict.length/100);</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Загрузка ЦП на прерывания</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.20]</snmp_oid>
+                    <key>system.cpu.interrupt[ssCpuRawInterrupt]</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Использование ядра на обслуживание аппаратных прерываний за последнюю минуту</description>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var dict = JSON.parse(value);
+var i = 0;
+
+for (key in dict) {
+  i += +dict[key][&quot;{#SNMPVALUE}&quot;];
+}
+
+return (i/dict.length/100);</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Загрузка ЦП на ожидание ввода/вывода</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.17]</snmp_oid>
+                    <key>system.cpu.iowait[ssCpuRawWait]</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Использование ядра на ожидание завершения ввода-вывода за последнюю минуту.</description>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var dict = JSON.parse(value);
+var i = 0;
+
+for (key in dict) {
+  i += +dict[key][&quot;{#SNMPVALUE}&quot;];
+}
+
+return (i/dict.length/100);</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Средняя загрузка (за 1 мин)</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.2.1.1.1.0</snmp_oid>
+                    <key>system.cpu.load.avg1[laLoad.1]</key>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Средняя загрузка ЦП за последнюю минуту</description>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Средняя загрузка (за 5 мин)</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.2.1.1.2.0</snmp_oid>
+                    <key>system.cpu.load.avg5[laLoad.2]</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Средняя загрузка ЦП за последние 5 минут</description>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Средняя загрузка (за 15 мин)</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.2.1.1.3.0</snmp_oid>
+                    <key>system.cpu.load.avg15[laLoad.3]</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Средняя загрузка ЦП за последние 15 минут</description>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Загрузка ЦП кодом низкого приоритета</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.8]</snmp_oid>
+                    <key>system.cpu.nice[ssCpuRawNice]</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Использование ядра на выполнение улучшенных пользовательских процессов за последнюю минуту.</description>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var dict = JSON.parse(value);
+var i = 0;
+
+for (key in dict) {
+  i += +dict[key][&quot;{#SNMPVALUE}&quot;];
+}
+
+return (i/dict.length/100);</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Количество ЦП</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.1]</snmp_oid>
+                    <key>system.cpu.num[snmp]</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Определение количества ядер ЦП, через подсчет количества ядер, обнаруженных в hrProcessorTable, с помощью LLD.</description>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>return JSON.parse(value).length;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Загрузка ЦП кодом системного уровня</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.14]</snmp_oid>
+                    <key>system.cpu.system[ssCpuRawSystem]</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Использование ядра на работу ядра и его процессов за последнюю минуту.</description>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var dict = JSON.parse(value);
+var i = 0;
+
+for (key in dict) {
+  i += +dict[key][&quot;{#SNMPVALUE}&quot;];
+}
+
+return (i/dict.length/100);</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Загрузка ЦП кодом уровня пользователя</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.11]</snmp_oid>
+                    <key>system.cpu.user[ssCpuRawUser]</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Использование ядра на выполнение пользовательских процессов, которые не являются улучшенными за последнюю минуту.</description>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var dict = JSON.parse(value);
+var i = 0;
+
+for (key in dict) {
+  i += +dict[key][&quot;{#SNMPVALUE}&quot;];
+}
+
+return (i/dict.length/100);</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Загрузка ЦП</name>
+                    <type>DEPENDENT</type>
+                    <key>system.cpu.util[snmp]</key>
+                    <delay>0</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Загрузка процессора в %.</description>
+                    <applications>
+                        <application>
+                            <name>CPU</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>return (100 - value)</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>system.cpu.idle[ssCpuRawIdle]</key>
+                    </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{min(5m)}&gt;{$CPU.UTIL.CRIT}</expression>
+                            <name>Высокая загрузка ЦП (более {$CPU.UTIL.CRIT}% за 5 мин)</name>
+                            <opdata>Текущая загрузка: {ITEM.LASTVALUE2}</opdata>
+                            <priority>WARNING</priority>
+                            <description>Средняя загрузка ЦП слишком высока. Ваша система может медленно &#13;
+реагировать.</description>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+            <macros>
+                <macro>
+                    <macro>{$CPU.UTIL.CRIT}</macro>
+                    <value>90</value>
+                    <description>Критический порог утилизации процессора.</description>
+                </macro>
+                <macro>
+                    <macro>{$LOAD_AVG_PER_CPU.MAX.WARN}</macro>
+                    <value>75</value>
+                    <description>Порог предупреждения нагрузки на процессор.</description>
+                </macro>
+            </macros>
+        </template>
+        <template>
+            <template>Continent 4 Module FileSystems SNMP</template>
+            <name>Continent 4 Module FileSystems SNMP</name>
+            <groups>
+                <group>
+                    <name>Templates/Modules</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Filesystems</name>
+                </application>
+            </applications>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>Разделы</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#FSNAME},1.3.6.1.4.1.34849.1.1.2.4.1.1.2]</snmp_oid>
+                    <key>vfs.fs.discovery</key>
+                    <delay>1h</delay>
+                    <filter>
+                        <evaltype>AND</evaltype>
+                        <conditions>
+                            <condition>
+                                <macro>{#FSNAME}</macro>
+                                <value>{$VFS.FS.FSNAME.MATCHES}</value>
+                                <formulaid>A</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#FSNAME}</macro>
+                                <value>{$VFS.FS.FSNAME.NOT_MATCHES}</value>
+                                <operator>NOT_MATCHES_REGEX</operator>
+                                <formulaid>B</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
+                    <description>Discovery of file systems of different types.</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>{#FSNAME}: Объем свободного места</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.2.4.1.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>vfs.fs.dskAvailable[{#FSNAME}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <units>B</units>
+                            <description>MIB: CONTINENT-SNMP-MIB&#13;
+Количество свободных байтов файловой системы.</description>
+                            <applications>
+                                <application>
+                                    <name>Filesystems</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Filesystem {#FSNAME}</name>
+                                </application_prototype>
+                            </application_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#FSNAME}: Занято места %</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.2.4.1.1.4.{#SNMPINDEX}</snmp_oid>
+                            <key>vfs.fs.dskPercent[{#FSNAME}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <value_type>FLOAT</value_type>
+                            <units>%</units>
+                            <description>MIB: CONTINENT-SNMP-MIB&#13;
+Использовано байтов в файловой системе {#FSNAME} (в процентах).</description>
+                            <applications>
+                                <application>
+                                    <name>Filesystems</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Filesystem {#FSNAME}</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>0.01</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#FSNAME}: Общий объем</name>
+                            <type>CALCULATED</type>
+                            <key>vfs.fs.dskTotal[{#FSNAME}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <units>B</units>
+                            <params>last(vfs.fs.dskUsed[{#FSNAME}]) + last(vfs.fs.dskAvailable[{#FSNAME}])</params>
+                            <applications>
+                                <application>
+                                    <name>Filesystems</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Filesystem {#FSNAME}</name>
+                                </application_prototype>
+                            </application_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#FSNAME}: Объем используемого места</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.2.4.1.1.3.{#SNMPINDEX}</snmp_oid>
+                            <key>vfs.fs.dskUsed[{#FSNAME}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <units>B</units>
+                            <description>MIB: CONTINENT-SNMP-MIB&#13;
+Количество использованных байтов файловой системы.</description>
+                            <applications>
+                                <application>
+                                    <name>Filesystems</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Filesystem {#FSNAME}</name>
+                                </application_prototype>
+                            </application_prototypes>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Continent 4 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].last()}&gt;{$VFS.FS.PUSED.MAX.CRIT:&quot;{#FSNAME}&quot;} and&#13;
+({Continent 4 Module FileSystems SNMP:vfs.fs.dskAvailable[{#FSNAME}].last()}&lt;{$VFS.FS.FREE.MIN.CRIT:&quot;{#FSNAME}&quot;} or {Continent 4 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].timeleft(1h,,100)}&lt;1d)</expression>
+                            <name>{#FSNAME}: На диске критически мало места (used &gt; {$VFS.FS.PUSED.MAX.CRIT:&quot;{#FSNAME}&quot;}%)</name>
+                            <opdata>Использовано: {ITEM.LASTVALUE3} из {ITEM.LASTVALUE2} ({ITEM.LASTVALUE1})</opdata>
+                            <priority>AVERAGE</priority>
+                            <description>Должны совпадать два условия: во-первых, использование диска должно быть более {$VFS.FS.PUSED.MAX.CRIT:&quot;{#FSNAME}&quot;}.&#13;
+  Второе условие должно быть одним из следующих:&#13;
+  - Свободное место на диске меньше 5G.&#13;
+  - Диск будет заполнен менее чем за 24 часа.</description>
+                            <manual_close>YES</manual_close>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Continent 4 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].last()}&gt;{$VFS.FS.PUSED.MAX.WARN:&quot;{#FSNAME}&quot;} and&#13;
+({Continent 4 Module FileSystems SNMP:vfs.fs.dskAvailable[{#FSNAME}].last()}&lt;{$VFS.FS.FREE.MIN.WARN:&quot;{#FSNAME}&quot;} or {Continent 4 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].timeleft(1h,,100)}&lt;1d)</expression>
+                            <name>{#FSNAME}: На диске мало места (used &gt; {$VFS.FS.PUSED.MAX.WARN:&quot;{#FSNAME}&quot;}%)</name>
+                            <opdata>Использовано: {ITEM.LASTVALUE3} из {ITEM.LASTVALUE2} ({ITEM.LASTVALUE1})</opdata>
+                            <priority>WARNING</priority>
+                            <description>Должны совпадать два условия: во-первых, использование диска должно быть более {$VFS.FS.PUSED.MAX.WARN:&quot;{#FSNAME}&quot;}.&#13;
+  Второе условие должно быть одним из следующих:&#13;
+  - Свободное место на диске меньше 10G.&#13;
+  - Диск будет заполнен менее чем за 24 часа.</description>
+                            <manual_close>YES</manual_close>
+                            <dependencies>
+                                <dependency>
+                                    <name>{#FSNAME}: На диске критически мало места (used &gt; {$VFS.FS.PUSED.MAX.CRIT:&quot;{#FSNAME}&quot;}%)</name>
+                                    <expression>{Continent 4 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].last()}&gt;{$VFS.FS.PUSED.MAX.CRIT:&quot;{#FSNAME}&quot;} and&#13;
+({Continent 4 Module FileSystems SNMP:vfs.fs.dskAvailable[{#FSNAME}].last()}&lt;{$VFS.FS.FREE.MIN.CRIT:&quot;{#FSNAME}&quot;} or {Continent 4 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].timeleft(1h,,100)}&lt;1d)</expression>
+                                </dependency>
+                            </dependencies>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>{#FSNAME}: Использование дискового пространства</name>
+                            <ymin_type_1>FIXED</ymin_type_1>
+                            <ymax_type_1>ITEM</ymax_type_1>
+                            <ymax_item_1>
+                                <host>Continent 4 Module FileSystems SNMP</host>
+                                <key>vfs.fs.dskTotal[{#FSNAME}]</key>
+                            </ymax_item_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>GRADIENT_LINE</drawtype>
+                                    <color>607D8B</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <calc_fnc>ALL</calc_fnc>
+                                    <item>
+                                        <host>Continent 4 Module FileSystems SNMP</host>
+                                        <key>vfs.fs.dskUsed[{#FSNAME}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                </discovery_rule>
+            </discovery_rules>
+            <macros>
+                <macro>
+                    <macro>{$VFS.FS.FREE.MIN.CRIT}</macro>
+                    <value>10M</value>
+                    <description>Критический порог свободного места файловой системы.</description>
+                </macro>
+                <macro>
+                    <macro>{$VFS.FS.FREE.MIN.WARN}</macro>
+                    <value>20M</value>
+                    <description>Порог предупреждения свободного места файловой системы.</description>
+                </macro>
+                <macro>
+                    <macro>{$VFS.FS.FSNAME.MATCHES}</macro>
+                    <value>.+</value>
+                    <description>Этот макрос-regexp используется для обнаружения файловых систем по именам.</description>
+                </macro>
+                <macro>
+                    <macro>{$VFS.FS.FSNAME.NOT_MATCHES}</macro>
+                    <value>^(/dev|/sys|/run|/proc|.+/shm$)</value>
+                    <description>Этот макрос-regexp используется для исключения обнаружения файловых систем по именам.</description>
+                </macro>
+                <macro>
+                    <macro>{$VFS.FS.PUSED.MAX.CRIT}</macro>
+                    <value>90</value>
+                    <description>Критический порог % минимума свободного места.</description>
+                </macro>
+                <macro>
+                    <macro>{$VFS.FS.PUSED.MAX.WARN}</macro>
+                    <value>80</value>
+                    <description>Порог предупреждения % минимума свободного места.</description>
+                </macro>
+            </macros>
+        </template>
+        <template>
+            <template>Continent 4 Module Generic SNMP</template>
+            <name>Continent 4 Module Generic SNMP</name>
+            <groups>
+                <group>
+                    <name>Templates/Modules</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Датчики</name>
+                </application>
+                <application>
+                    <name>Конфигурация</name>
+                </application>
+                <application>
+                    <name>Общее</name>
+                </application>
+                <application>
+                    <name>Состояние</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Версия ОС</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.1.0</snmp_oid>
+                    <key>continent4.continentVersion</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Версия ОС</description>
+                    <inventory_link>SOFTWARE</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Общее</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Версия GeoIP</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.7.0</snmp_oid>
+                    <key>continent4.GeoIPVersion</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Версия GeoIP</description>
+                    <applications>
+                        <application>
+                            <name>Конфигурация</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Дата и время на хосте</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.12.0</snmp_oid>
+                    <key>continent4.hrSystemDate</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <units>unixtime</units>
+                    <description>MIB: HOST-RESOURSE-MIB&#13;
+Дата и время на хосте</description>
+                    <applications>
+                        <application>
+                            <name>Состояние</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var date = new Date(value);
+return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
+                        </step>
+                    </preprocessing>
+                    <triggers>
+                        <trigger>
+                            <expression>{fuzzytime({$SYSTEM.FUZZYTIME.MAX})}=0</expression>
+                            <name>Системное время не синхронизировано (разница с сервером Zabbix &gt; {$SYSTEM.FUZZYTIME.MAX}с)</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Версия базы решающих правил</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.3.0</snmp_oid>
+                    <key>continent4.IPSVersion</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Версия базы решающих правил (только для ЦУС)</description>
+                    <applications>
+                        <application>
+                            <name>Конфигурация</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Версия фидов Kaspersky</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.4.0</snmp_oid>
+                    <key>continent4.KasperskyFeedsVersion</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Версия фидов Kaspersky</description>
+                    <applications>
+                        <application>
+                            <name>Конфигурация</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Версия хэшей Kaspersky</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.5.0</snmp_oid>
+                    <key>continent4.KasperskyHashVersion</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Версия хэшей Kaspersky</description>
+                    <applications>
+                        <application>
+                            <name>Конфигурация</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Время работы узла безопасности</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.2.0</snmp_oid>
+                    <key>continent4.nodeUpTime</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <units>uptime</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Время работы узла безопасности (в секундах)</description>
+                    <applications>
+                        <application>
+                            <name>Состояние</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
+                        </step>
+                    </preprocessing>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&lt;10m</expression>
+                            <name>Узел безопасности был перезапущен (время работы менее 10 мин)</name>
+                            <priority>INFO</priority>
+                            <description>Время работы узла безопасности менее 10 мин.</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Версия SkyDNS</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.8.0</snmp_oid>
+                    <key>continent4.SkyDNSVersion</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Версия SkyDNS</description>
+                    <applications>
+                        <application>
+                            <name>Конфигурация</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Контакты ответственного лица</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.2.1.1.4.0</snmp_oid>
+                    <key>continent4.system.contact[sysContact]</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: SNMPv2-MIB&#13;
+Текстовая идентификация контактного лица для этого управляемого узла вместе с информацией о том, как связаться с этим человеком. Если контактная информация неизвестна, значением является строка нулевой длины.</description>
+                    <inventory_link>CONTACT</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Общее</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Описание узла</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.2.1.1.1.0</snmp_oid>
+                    <key>continent4.system.descr[sysDescr]</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: SNMPv2-MIB&#13;
+Текстовое описание узла. Это значение должно включать полное имя и идентификацию версии типа аппаратного обеспечения, операционной системы и сетевого программного обеспечения.</description>
+                    <inventory_link>OS</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Общее</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Местоположение узла</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.2.1.1.6.0</snmp_oid>
+                    <key>continent4.system.location[sysLocation]</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: SNMPv2-MIB&#13;
+Физическое местоположение этого узла (например, &quot;телефонный шкаф, 3-й этаж&quot;). Если местоположение неизвестно, значением является строка нулевой длины.</description>
+                    <inventory_link>LOCATION</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Общее</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1h</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Идентификация поставщика</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.2.1.1.2.0</snmp_oid>
+                    <key>continent4.system.objectid[sysObjectID]</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: SNMPv2-MIB&#13;
+Авторитетная идентификация поставщика подсистемы управления сетью, содержащейся в объекте. Это значение распределяется в поддереве предприятий SMI (1.3.6.1.4.1) и предоставляет простое и однозначное средство для определения того, «какой тип устройства» управляется. Например, если вендору `Flintstones, Inc. ' было присвоено поддерево 1.3.6.1.4.1.4242, то он мог назначить идентификатор 1.3.6.1.4.1.4242.1.1 своему «Fred-router».</description>
+                    <applications>
+                        <application>
+                            <name>Общее</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1h</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Время работы</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.2.1.1.3.0</snmp_oid>
+                    <key>continent4.system.uptime[sysUpTime]</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <units>uptime</units>
+                    <description>MIB: SNMPv2-MIB&#13;
+Время (в сотых долях секунды) с момента последней инициализации сетевой подсистемы.</description>
+                    <applications>
+                        <application>
+                            <name>Состояние</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&lt;10m</expression>
+                            <name>{HOST.NAME} был перезапущен (время работы менее 10 мин)</name>
+                            <priority>WARNING</priority>
+                            <description>Время работы менее 10 мин.</description>
+                            <manual_close>YES</manual_close>
+                            <dependencies>
+                                <dependency>
+                                    <name>Нет сбора данных SNMP</name>
+                                    <expression>{Continent 4 Module Generic SNMP:zabbix[host,snmp,available].max({$SNMP.TIMEOUT})}=0</expression>
+                                </dependency>
+                            </dependencies>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>CPU: Температура</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.2.6.1.0</snmp_oid>
+                    <key>continent4.tempCPU</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>°C</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Текущая температура ЦП</description>
+                    <applications>
+                        <application>
+                            <name>Датчики</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <triggers>
+                        <trigger>
+                            <expression>{avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
+                            <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                            <recovery_expression>{avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
+                            <name>CPU: Температура выше критического порога: &gt;{$TEMP_CRIT:CPU}</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                        <trigger>
+                            <expression>{avg(5m)}&gt;{$TEMP_WARN:CPU}</expression>
+                            <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                            <recovery_expression>{avg(5m)}&lt;{$TEMP_WARN:CPU}-3</recovery_expression>
+                            <name>CPU: Температура выше порога предупреждения: &gt;{$TEMP_WARN:CPU}</name>
+                            <priority>AVERAGE</priority>
+                            <dependencies>
+                                <dependency>
+                                    <name>CPU: Температура выше критического порога: &gt;{$TEMP_CRIT:CPU}</name>
+                                    <expression>{Continent 4 Module Generic SNMP:continent4.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
+                                    <recovery_expression>{Continent 4 Module Generic SNMP:continent4.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
+                                </dependency>
+                            </dependencies>
+                        </trigger>
+                        <trigger>
+                            <expression>{avg(5m)}&lt; {$TEMP_CRIT_LOW}</expression>
+                            <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                            <recovery_expression>{avg(5m)}&lt;{$TEMP_CRIT_LOW}+3</recovery_expression>
+                            <name>CPU: Температура слишком низкая: &lt;{$TEMP_CRIT_LOW}</name>
+                            <priority>AVERAGE</priority>
+                            <dependencies>
+                                <dependency>
+                                    <name>CPU: Температура выше критического порога: &gt;{$TEMP_CRIT:CPU}</name>
+                                    <expression>{Continent 4 Module Generic SNMP:continent4.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
+                                    <recovery_expression>{Continent 4 Module Generic SNMP:continent4.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
+                                </dependency>
+                            </dependencies>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>HDD: Температура</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.2.6.5.0</snmp_oid>
+                    <key>continent4.tempHDD</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>°C</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Текущая температура накопителя</description>
+                    <applications>
+                        <application>
+                            <name>Датчики</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <triggers>
+                        <trigger>
+                            <expression>{avg(5m)}&gt;{$TEMP_CRIT:HDD}</expression>
+                            <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                            <recovery_expression>{avg(5m)}&lt;{$TEMP_CRIT:HDD}-3</recovery_expression>
+                            <name>HDD: Температура выше критического порога: &gt;{$TEMP_CRIT:HDD}</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                        <trigger>
+                            <expression>{avg(5m)}&gt;{$TEMP_WARN:HDD}</expression>
+                            <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                            <recovery_expression>{avg(5m)}&lt;{$TEMP_WARN:HDD}-3</recovery_expression>
+                            <name>HDD: Температура выше порога предупреждения: &gt;{$TEMP_WARN:HDD}</name>
+                            <priority>AVERAGE</priority>
+                            <dependencies>
+                                <dependency>
+                                    <name>HDD: Температура выше критического порога: &gt;{$TEMP_CRIT:HDD}</name>
+                                    <expression>{Continent 4 Module Generic SNMP:continent4.tempHDD.avg(5m)}&gt;{$TEMP_CRIT:HDD}</expression>
+                                    <recovery_expression>{Continent 4 Module Generic SNMP:continent4.tempHDD.avg(5m)}&lt;{$TEMP_CRIT:HDD}-3</recovery_expression>
+                                </dependency>
+                            </dependencies>
+                        </trigger>
+                        <trigger>
+                            <expression>{avg(5m)}&lt; {$TEMP_CRIT_LOW}</expression>
+                            <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                            <recovery_expression>{avg(5m)}&lt;{$TEMP_CRIT_LOW}+3</recovery_expression>
+                            <name>HDD: Температура слишком низкая: &lt;{$TEMP_CRIT_LOW}</name>
+                            <priority>AVERAGE</priority>
+                            <dependencies>
+                                <dependency>
+                                    <name>CPU: Температура выше критического порога: &gt;{$TEMP_CRIT:CPU}</name>
+                                    <expression>{Continent 4 Module Generic SNMP:continent4.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
+                                    <recovery_expression>{Continent 4 Module Generic SNMP:continent4.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
+                                </dependency>
+                            </dependencies>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Версия пользовательских хэшей</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.6.0</snmp_oid>
+                    <key>continent4.UserHashVersion</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Версия пользовательских хэшей</description>
+                    <applications>
+                        <application>
+                            <name>Конфигурация</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Доступность SNMP-агента</name>
+                    <type>INTERNAL</type>
+                    <key>zabbix[host,snmp,available]</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <applications>
+                        <application>
+                            <name>Состояние</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>zabbix.host.available</name>
+                    </valuemap>
+                    <triggers>
+                        <trigger>
+                            <expression>{max({$SNMP.TIMEOUT})}=0</expression>
+                            <name>Нет сбора данных SNMP</name>
+                            <opdata>Current state: {ITEM.LASTVALUE1}</opdata>
+                            <priority>WARNING</priority>
+                            <description>SNMP не доступен для опроса. Пожалуйста, проверьте подключение устройства и настройки SNMP.</description>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+            <macros>
+                <macro>
+                    <macro>{$SNMP.TIMEOUT}</macro>
+                    <value>5m</value>
+                    <description>Порог таймаута опроса SNMP.</description>
+                </macro>
+                <macro>
+                    <macro>{$SYSTEM.FUZZYTIME.MAX}</macro>
+                    <value>60s</value>
+                    <description>Порог расхождения времени узла с эталонным.</description>
+                </macro>
+                <macro>
+                    <macro>{$TEMP_CRIT:&quot;CPU&quot;}</macro>
+                    <value>75</value>
+                    <description>Критический порог верхней температуры CPU.</description>
+                </macro>
+                <macro>
+                    <macro>{$TEMP_CRIT:&quot;HDD&quot;}</macro>
+                    <value>85</value>
+                    <description>Критический порог верхней температуры HDD.</description>
+                </macro>
+                <macro>
+                    <macro>{$TEMP_CRIT_LOW}</macro>
+                    <value>5</value>
+                    <description>Критический порог нижней температуры CPU.</description>
+                </macro>
+                <macro>
+                    <macro>{$TEMP_WARN:&quot;CPU&quot;}</macro>
+                    <value>60</value>
+                    <description>Порог предупреждения верхней температуры CPU.</description>
+                </macro>
+                <macro>
+                    <macro>{$TEMP_WARN:&quot;HDD&quot;}</macro>
+                    <value>70</value>
+                    <description>Порог предупреждения верхней температуры HDD.</description>
+                </macro>
+            </macros>
+        </template>
+        <template>
+            <template>Continent 4 Module Interfaces SNMP</template>
+            <name>Continent 4 Module Interfaces SNMP</name>
+            <groups>
+                <group>
+                    <name>Templates/Modules</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Сеть</name>
+                </application>
+            </applications>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>Сеть</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#IFOPERSTATUS},1.3.6.1.2.1.2.2.1.8,{#IFADMINSTATUS},1.3.6.1.2.1.2.2.1.7,{#IFDESCR},1.3.6.1.2.1.2.2.1.2,{#IFTYPE},1.3.6.1.2.1.2.2.1.3,{#IFNUMBER},1.3.6.1.2.1.2.2.1.1]</snmp_oid>
+                    <key>net.if.discovery</key>
+                    <delay>1h</delay>
+                    <filter>
+                        <evaltype>AND</evaltype>
+                        <conditions>
+                            <condition>
+                                <macro>{#IFADMINSTATUS}</macro>
+                                <value>{$NET.IF.IFADMINSTATUS.MATCHES}</value>
+                                <formulaid>A</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#IFADMINSTATUS}</macro>
+                                <value>{$NET.IF.IFADMINSTATUS.NOT_MATCHES}</value>
+                                <operator>NOT_MATCHES_REGEX</operator>
+                                <formulaid>B</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#IFOPERSTATUS}</macro>
+                                <value>{$NET.IF.IFOPERSTATUS.MATCHES}</value>
+                                <formulaid>E</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#IFOPERSTATUS}</macro>
+                                <value>{$NET.IF.IFOPERSTATUS.NOT_MATCHES}</value>
+                                <operator>NOT_MATCHES_REGEX</operator>
+                                <formulaid>F</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#IFDESCR}</macro>
+                                <value>{$NET.IF.IFDESCR.MATCHES}</value>
+                                <formulaid>C</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#IFDESCR}</macro>
+                                <value>{$NET.IF.IFDESCR.NOT_MATCHES}</value>
+                                <operator>NOT_MATCHES_REGEX</operator>
+                                <formulaid>D</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#IFTYPE}</macro>
+                                <value>{$NET.IF.IFTYPE.MATCHES}</value>
+                                <formulaid>G</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#IFTYPE}</macro>
+                                <value>{$NET.IF.IFTYPE.NOT_MATCHES}</value>
+                                <operator>NOT_MATCHES_REGEX</operator>
+                                <formulaid>H</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
+                    <description>Discovering interfaces from IF-MIB.</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Интерфейс {#IFNUMBER}: Входящих пакетов отброшено</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.13.{#SNMPINDEX}</snmp_oid>
+                            <key>net.if.in.discards[ifInDiscards.{#SNMPINDEX}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <description>MIB: IF-MIB&#13;
+Количество входящих пакетов, которые были выбраны для отбрасывания&#13;
+даже при том, что не было обнаружено никаких ошибок, чтобы предотвратить их доставку в протокол более высокого уровня.&#13;
+Одной из возможных причин отказа от такого пакета может быть освобождение буферного пространства.&#13;
+Разрыв в значении этого счетчика может возникнуть при повторной инициализации системы управления,&#13;
+и в другое время, как указано значением ifCounterDiscontinuityTime.</description>
+                            <applications>
+                                <application>
+                                    <name>Сеть</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Interface {{#IFNUMBER}</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Интерфейс {#IFNUMBER}: Входящих пакетов с ошибками</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.14.{#SNMPINDEX}</snmp_oid>
+                            <key>net.if.in.errors[ifInErrors.{#SNMPINDEX}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <description>MIB: IF-MIB&#13;
+Для пакетно-ориентированных интерфейсов - количество входящих пакетов, содержащих ошибки, препятствующие их доставке в протокол более высокого уровня. Для символьно-ориентированных интерфейсов или интерфейсов фиксированной длины - количество входящих блоков передачи, которые содержали ошибки, препятствующие их доставке в протокол более высокого уровня. Разрывы в значении этого счетчика могут возникать при повторной инициализации системы управления и в другое время, как указано значением ifCounterDiscontinuityTime.</description>
+                            <applications>
+                                <application>
+                                    <name>Сеть</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Interface {{#IFNUMBER}</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Интерфейс {#IFNUMBER}: Битов получено</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.10.{#SNMPINDEX}</snmp_oid>
+                            <key>net.if.in[ifHCInOctets.{#SNMPINDEX}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <units>bps</units>
+                            <description>MIB: IF-MIB&#13;
+Общее количество октетов, полученных на интерфейсе, включая символы кадрирования. Этот объект является 64-битной версией ifInOctets. Разрывы в значении этого счетчика могут возникать при повторной инициализации системы управления и в другое время, как указано значением ifCounterDiscontinuityTime.</description>
+                            <applications>
+                                <application>
+                                    <name>Сеть</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Interface {{#IFNUMBER}</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>8</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Интерфейс {#IFNUMBER}: Исходящих пакетов отброшено</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.19.{#SNMPINDEX}</snmp_oid>
+                            <key>net.if.out.discards[ifOutDiscards.{#SNMPINDEX}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <description>MIB: IF-MIB&#13;
+Количество исходящих пакетов, которые были выбраны для отбрасывания&#13;
+даже при том, что не было обнаружено никаких ошибок, чтобы предотвратить их доставку в протокол более высокого уровня.&#13;
+Одной из возможных причин отказа от такого пакета может быть освобождение буферного пространства.&#13;
+Разрыв в значении этого счетчика может возникнуть при повторной инициализации системы управления,&#13;
+и в другое время, как указано значением ifCounterDiscontinuityTime.</description>
+                            <applications>
+                                <application>
+                                    <name>Сеть</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Interface {{#IFNUMBER}</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Интерфейс {#IFNUMBER}: Исходящих пакетов с ошибками</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.20.{#SNMPINDEX}</snmp_oid>
+                            <key>net.if.out.errors[ifOutErrors.{#SNMPINDEX}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <description>MIB: IF-MIB&#13;
+Для пакетно-ориентированных интерфейсов - количество исходящих пакетов, содержащих ошибки, препятствующие их доставке в протокол более высокого уровня. Для символьно-ориентированных интерфейсов или интерфейсов фиксированной длины - количество блоков исходящей передачи, которые содержали ошибки, препятствующие их доставке в протокол более высокого уровня. Разрывы в значении этого счетчика могут возникать при повторной инициализации системы управления и в другое время, как указано значением ifCounterDiscontinuityTime.</description>
+                            <applications>
+                                <application>
+                                    <name>Сеть</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Interface {{#IFNUMBER}</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Интерфейс {#IFNUMBER}: Битов отправлено</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.16.{#SNMPINDEX}</snmp_oid>
+                            <key>net.if.out[ifHCOutOctets.{#SNMPINDEX}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <units>bps</units>
+                            <description>MIB: IF-MIB&#13;
+Общее количество октетов, переданных из интерфейса, включая символы кадрирования. Этот объект является 64-разрядной версией ifOutOctets. Несоответствия в значении этого счетчика могут возникать при повторной инициализации системы управления, а в другое время, как указано значением ifCounterDiscontinuityTime.</description>
+                            <applications>
+                                <application>
+                                    <name>Сеть</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Interface {{#IFNUMBER}</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>8</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Интерфейс {#IFNUMBER}: Скорость</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>net.if.speed[ifHighSpeed.{#SNMPINDEX}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <units>bps</units>
+                            <description>MIB: IF-MIB&#13;
+Оценка текущей пропускной способности интерфейса в единицах 1 000 000 бит в секунду. Если этот объект сообщает значение «n», то скорость интерфейса находится где-то в диапазоне от «n-500 000» до «n + 499 999». Для интерфейсов, которые не различаются по ширине полосы пропускания, или для интерфейсов, в которых невозможно сделать точную оценку, этот объект должен содержать номинальную ширину полосы пропускания. Для подуровня, который не имеет понятия пропускной способности, этот объект должен быть нулевым.</description>
+                            <applications>
+                                <application>
+                                    <name>Сеть</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Interface {{#IFNUMBER}</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>1000000</params>
+                                </step>
+                                <step>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1h</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Интерфейс {#IFNUMBER}: Операционный статус</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.8.{#SNMPINDEX}</snmp_oid>
+                            <key>net.if.status[ifOperStatus.{#SNMPINDEX}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <description>MIB: IF-MIB&#13;
+Текущее рабочее состояние интерфейса.&#13;
+- Состояние тестирования (3) указывает на то, что операционное сканирование пакетов не прошло&#13;
+- Если ifAdminStatus выключен (2), тогда ifOperStatus должен быть выключен (2)&#13;
+- Если ifAdminStatus изменено на up (1), то ifOperStatus должно измениться на up (1), если интерфейс готов передавать и принимать сетевой трафик&#13;
+- Он должен изменить todormant (5), если интерфейс ожидает внешних действий (таких как последовательная линия, ожидающая входящее соединение)&#13;
+- Он должен оставаться в состоянии down (2) тогда и только тогда, когда имеется неисправность, которая не позволяет ему перейти в состояние up (1)&#13;
+- Он должен оставаться в состоянии notPresent (6), если в интерфейсе отсутствуют (как правило, аппаратные) компоненты.</description>
+                            <applications>
+                                <application>
+                                    <name>Сеть</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Interface {{#IFNUMBER}</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <valuemap>
+                                <name>IF-MIB::ifOperStatus</name>
+                            </valuemap>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{$IFCONTROL:&quot;{#IFNAME}&quot;}=1 and ({last()}=2 and {diff()}=1)</expression>
+                                    <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                                    <recovery_expression>{last()}&lt;&gt;2</recovery_expression>
+                                    <name>Интерфейс {#IFNUMBER}: Упал линк</name>
+                                    <opdata>Текущее состояние: {ITEM.LASTVALUE1}</opdata>
+                                    <priority>AVERAGE</priority>
+                                    <description>Это триггерное выражение работает следующим образом:&#13;
+1. Может быть запущен, если статус операции не работает.&#13;
+2. {$ IFCONTROL: &quot;{# IFNAME}&quot;} = 1 - пользователь может переопределить макрос контекста до значения - 0. Это помечает этот интерфейс как не важный. Никакой новый триггер не будет запущен, если этот интерфейс не работает.&#13;
+3. {TEMPLATE_NAME: METRIC.diff ()} = 1) - срабатывает только в том случае, если рабочее состояние было (1) некоторое время назад. (Таким образом, не запускайте интерфейсы «ethernal off».)&#13;
+ВНИМАНИЕ: если закрыто вручную - не будет срабатывать при следующем опросе из-за .diff.</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Интерфейс {#IFNUMBER}: Тип интерфейса</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.3.{#SNMPINDEX}</snmp_oid>
+                            <key>net.if.type[ifType.{#SNMPINDEX}]</key>
+                            <delay>1h</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <description>MIB: IF-MIB&#13;
+Тип интерфейса.&#13;
+Дополнительные значения для ifType назначаются интернет-администратором назначенных номеров (IANA),&#13;
+путем обновления синтаксиса текстового соглашения IANAifType.</description>
+                            <applications>
+                                <application>
+                                    <name>Сеть</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Interface {{#IFNUMBER}</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <valuemap>
+                                <name>IF-MIB::ifType</name>
+                            </valuemap>
+                            <preprocessing>
+                                <step>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].change()}&lt;0 and {Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()}&gt;0&#13;
+and (&#13;
+{Continent 4 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=6 or&#13;
+{Continent 4 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=7 or&#13;
+{Continent 4 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=11 or&#13;
+{Continent 4 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=62 or&#13;
+{Continent 4 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=69 or&#13;
+{Continent 4 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=117&#13;
+)&#13;
+and&#13;
+({Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}&lt;&gt;2)</expression>
+                            <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                            <recovery_expression>({Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].change()}&gt;0 and {Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].prev()}&gt;0) or&#13;
+({Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2)</recovery_expression>
+                            <name>Интерфейс {#IFNUMBER}: Ethernet снизил скорость</name>
+                            <opdata>Текущая заявленная скорость: {ITEM.LASTVALUE1}</opdata>
+                            <priority>INFO</priority>
+                            <description>Это соединение Ethernet снизило скорость по сравнению с максимальной. Это может быть признаком проблем с автосогласованием. Можно закрыть, если кто надо в курсе.</description>
+                            <manual_close>YES</manual_close>
+                            <dependencies>
+                                <dependency>
+                                    <name>Интерфейс {#IFNUMBER}: Упал линк</name>
+                                    <expression>{$IFCONTROL:&quot;{#IFNAME}&quot;}=1 and ({Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2 and {Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].diff()}=1)</expression>
+                                    <recovery_expression>{Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}&lt;&gt;2</recovery_expression>
+                                </dependency>
+                            </dependencies>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Continent 4 Module Interfaces SNMP:net.if.in.errors[ifInErrors.{#SNMPINDEX}].min(5m)}&gt;{$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;}&#13;
+or {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].min(5m)}&gt;{$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;}</expression>
+                            <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                            <recovery_expression>{Continent 4 Module Interfaces SNMP:net.if.in.errors[ifInErrors.{#SNMPINDEX}].max(5m)}&lt;{$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;}*0.8&#13;
+and {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;{$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;}*0.8</recovery_expression>
+                            <name>Интерфейс {#IFNUMBER}: Высокая доля ошибок ( более {$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;} за 5 мин)</name>
+                            <opdata>ошибок входящих: {ITEM.LASTVALUE1}, ошибок исходящих: {ITEM.LASTVALUE2}</opdata>
+                            <priority>WARNING</priority>
+                            <description>Восстанавливается, когда значение порога {$ IF.ERRORS.WARN: &quot;{# IFNAME}&quot;} ниже 80%</description>
+                            <dependencies>
+                                <dependency>
+                                    <name>Интерфейс {#IFNUMBER}: Упал линк</name>
+                                    <expression>{$IFCONTROL:&quot;{#IFNAME}&quot;}=1 and ({Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2 and {Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].diff()}=1)</expression>
+                                    <recovery_expression>{Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}&lt;&gt;2</recovery_expression>
+                                </dependency>
+                            </dependencies>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>({Continent 4 Module Interfaces SNMP:net.if.in[ifHCInOctets.{#SNMPINDEX}].avg(15m)}&gt;({$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}/100)*{Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()} or&#13;
+{Continent 4 Module Interfaces SNMP:net.if.out[ifHCOutOctets.{#SNMPINDEX}].avg(15m)}&gt;({$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}/100)*{Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()}) and&#13;
+{Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()}&gt;0</expression>
+                            <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                            <recovery_expression>{Continent 4 Module Interfaces SNMP:net.if.in[ifHCInOctets.{#SNMPINDEX}].avg(15m)}&lt;(({$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}-3)/100)*{Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()} and&#13;
+{Continent 4 Module Interfaces SNMP:net.if.out[ifHCOutOctets.{#SNMPINDEX}].avg(15m)}&lt;(({$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}-3)/100)*{Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()}</recovery_expression>
+                            <name>Интерфейс {#IFNUMBER}: Занята большая полоса пропускания ( более {$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}% )</name>
+                            <opdata>входящий: {ITEM.LASTVALUE1}, исходящий: {ITEM.LASTVALUE3}, скорость: {ITEM.LASTVALUE2}</opdata>
+                            <priority>WARNING</priority>
+                            <dependencies>
+                                <dependency>
+                                    <name>Интерфейс {#IFNUMBER}: Упал линк</name>
+                                    <expression>{$IFCONTROL:&quot;{#IFNAME}&quot;}=1 and ({Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2 and {Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].diff()}=1)</expression>
+                                    <recovery_expression>{Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}&lt;&gt;2</recovery_expression>
+                                </dependency>
+                            </dependencies>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>Интерфейс {#IFNUMBER}: Сетевой трафик</name>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>GRADIENT_LINE</drawtype>
+                                    <color>1A7C11</color>
+                                    <item>
+                                        <host>Continent 4 Module Interfaces SNMP</host>
+                                        <key>net.if.in[ifHCInOctets.{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <drawtype>BOLD_LINE</drawtype>
+                                    <color>2774A4</color>
+                                    <item>
+                                        <host>Continent 4 Module Interfaces SNMP</host>
+                                        <key>net.if.out[ifHCOutOctets.{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>3</sortorder>
+                                    <color>F63100</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Continent 4 Module Interfaces SNMP</host>
+                                        <key>net.if.out.errors[ifOutErrors.{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>4</sortorder>
+                                    <color>A54F10</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Continent 4 Module Interfaces SNMP</host>
+                                        <key>net.if.in.errors[ifInErrors.{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>5</sortorder>
+                                    <color>FC6EA3</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Continent 4 Module Interfaces SNMP</host>
+                                        <key>net.if.out.discards[ifOutDiscards.{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>6</sortorder>
+                                    <color>6C59DC</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Continent 4 Module Interfaces SNMP</host>
+                                        <key>net.if.in.discards[ifInDiscards.{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                </discovery_rule>
+            </discovery_rules>
+            <macros>
+                <macro>
+                    <macro>{$IF.ERRORS.WARN}</macro>
+                    <value>2</value>
+                    <description>Порог предупреждения об количестве ошибок.</description>
+                </macro>
+                <macro>
+                    <macro>{$IF.UTIL.MAX}</macro>
+                    <value>90</value>
+                    <description>Порог предупреждения об % утилизации полосы пропускания.</description>
+                </macro>
+                <macro>
+                    <macro>{$IFCONTROL}</macro>
+                    <value>1</value>
+                    <description>Макрос используется для отключения триггера падения интерфейса. См. описание триггера.</description>
+                </macro>
+                <macro>
+                    <macro>{$NET.IF.IFADMINSTATUS.MATCHES}</macro>
+                    <value>^.*</value>
+                    <description>Этот макрос-regexp используется для обнаружения интерфейсов по административным статусам.</description>
+                </macro>
+                <macro>
+                    <macro>{$NET.IF.IFADMINSTATUS.NOT_MATCHES}</macro>
+                    <value>^2$</value>
+                    <description>Этот макрос-regexp используется для исключения обнаружения интерфейсов по административным статусам.</description>
+                </macro>
+                <macro>
+                    <macro>{$NET.IF.IFALIAS.MATCHES}</macro>
+                    <value>.*</value>
+                    <description>Этот макрос-regexp используется для обнаружения интерфейсов по описаниям.</description>
+                </macro>
+                <macro>
+                    <macro>{$NET.IF.IFALIAS.NOT_MATCHES}</macro>
+                    <value>CHANGE_IF_NEEDED</value>
+                    <description>Этот макрос-regexp используется для исключения обнаружения интерфейсов по описаниям.</description>
+                </macro>
+                <macro>
+                    <macro>{$NET.IF.IFDESCR.MATCHES}</macro>
+                    <value>.*</value>
+                    <description>Этот макрос-regexp используется для обнаружения интерфейсов по именам.</description>
+                </macro>
+                <macro>
+                    <macro>{$NET.IF.IFDESCR.NOT_MATCHES}</macro>
+                    <value>(^[Ll]o[0-9.]*$|^pflog.*$|^ng_dpi.*$)</value>
+                    <description>Этот макрос-regexp используется для исключения обнаружения интерфейсов по именам.</description>
+                </macro>
+                <macro>
+                    <macro>{$NET.IF.IFOPERSTATUS.MATCHES}</macro>
+                    <value>^.*$</value>
+                    <description>Этот макрос-regexp используется для обнаружения интерфейсов по операционным статусам.</description>
+                </macro>
+                <macro>
+                    <macro>{$NET.IF.IFOPERSTATUS.NOT_MATCHES}</macro>
+                    <value>^6$</value>
+                    <description>Этот макрос-regexp используется для исключения обнаружения интерфейсов по операционным статусам.</description>
+                </macro>
+                <macro>
+                    <macro>{$NET.IF.IFTYPE.MATCHES}</macro>
+                    <value>.*</value>
+                    <description>Этот макрос-regexp используется для обнаружения интерфейсов по типам.</description>
+                </macro>
+                <macro>
+                    <macro>{$NET.IF.IFTYPE.NOT_MATCHES}</macro>
+                    <value>^1$</value>
+                    <description>Этот макрос-regexp используется для исключения обнаружения интерфейсов по типам.</description>
+                </macro>
+            </macros>
+            <screens>
+                <screen>
+                    <name>Сетевые интерфейсы</name>
+                    <hsize>1</hsize>
+                    <vsize>1</vsize>
+                    <screen_items>
+                        <screen_item>
+                            <resourcetype>20</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>Интерфейс {#IFNUMBER}: Сетевой трафик</name>
+                                <host>Continent 4 Module Interfaces SNMP</host>
+                            </resource>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>0</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <url/>
+                            <application/>
+                            <max_columns>3</max_columns>
+                        </screen_item>
+                    </screen_items>
+                </screen>
+            </screens>
+        </template>
+        <template>
+            <template>Continent 4 Module Memory SNMP</template>
+            <name>Continent 4 Module Memory SNMP</name>
+            <groups>
+                <group>
+                    <name>Templates/Modules</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Memory</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Объем файла подкачки</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.2.3.1.0</snmp_oid>
+                    <key>system.swap.total[memTotalSwap.0]</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <units>B</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Общий объем swap в системе (байт).</description>
+                    <applications>
+                        <application>
+                            <name>Memory</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>1</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Объем доступной памяти</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.2.2.4.0</snmp_oid>
+                    <key>vm.memory.available[snmp]</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <units>B</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Объем свободной оперативной памяти (в байтах).</description>
+                    <applications>
+                        <application>
+                            <name>Memory</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Объем свободной памяти</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.2.2.8.0</snmp_oid>
+                    <key>vm.memory.free[memAvailReal.0]</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <units>B</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Объем фактически свободной оперативной памяти (в байтах).</description>
+                    <applications>
+                        <application>
+                            <name>Memory</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Объем физической памяти</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.2.2.1.0</snmp_oid>
+                    <key>vm.memory.total[memTotalReal.0]</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <units>B</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Общий объем оперативной памяти в системе (в байтах).</description>
+                    <applications>
+                        <application>
+                            <name>Memory</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Объем используемой памяти в %</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.2.2.7.0</snmp_oid>
+                    <key>vm.memory.util[snmp]</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Объем фактически используемой оперативной памяти (в процентах).</description>
+                    <applications>
+                        <application>
+                            <name>Memory</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{min(5m)}&gt;{$MEMORY.UTIL.MAX}</expression>
+                            <name>Большой объем используемой памяти (&gt;{$MEMORY.UTIL.MAX}% за 5 мин)</name>
+                            <priority>AVERAGE</priority>
+                            <description>В системе заканчивается свободная память.</description>
+                            <dependencies>
+                                <dependency>
+                                    <name>Недостаточно доступной памяти (&lt;{$MEMORY.AVAILABLE.MIN} of {ITEM.VALUE2})</name>
+                                    <expression>{Continent 4 Module Memory SNMP:vm.memory.available[snmp].max(5m)}&lt;{$MEMORY.AVAILABLE.MIN} and {Continent 4 Module Memory SNMP:vm.memory.total[memTotalReal.0].last()}&gt;0</expression>
+                                </dependency>
+                            </dependencies>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>SWAP</name>
+                    <type>DEPENDENT</type>
+                    <key>swap.discovery[snmp]</key>
+                    <delay>0</delay>
+                    <description>Элементы данных &quot;Доступный объем файла подкачки&quot; и &quot;Доступный объем файла подкачки в %&quot;, а также график объема файла подкачки и триггер свободного места файла подкачки становятся доступными только при значении больше нуля поля &quot;Объем файла подкачки&quot;.</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Доступный объем файла подкачки</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.2.3.4.0</snmp_oid>
+                            <key>system.swap.free[memAvailSwap.0{#SINGLETON}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <units>B</units>
+                            <description>MIB: UCD-SNMP-MIB&#13;
+Объем пространства подкачки, которое в настоящее время не используется или доступно.</description>
+                            <applications>
+                                <application>
+                                    <name>Memory</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Доступный объем файла подкачки в %</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.2.3.5.0</snmp_oid>
+                            <key>system.swap.pfree[snmp{#SINGLETON}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <value_type>FLOAT</value_type>
+                            <units>%</units>
+                            <description>MIB: UCD-SNMP-MIB&#13;
+Объем пространства подкачки, которое в настоящее время не используется или доступно.</description>
+                            <applications>
+                                <application>
+                                    <name>Memory</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>0.01</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Continent 4 Module Memory SNMP:system.swap.pfree[snmp{#SINGLETON}].max(5m)}&lt;{$SWAP.PFREE.MIN.WARN} and {Continent 4 Module Memory SNMP:system.swap.total[memTotalSwap.0].last()}&gt;0</expression>
+                            <name>Большой объем занятого места на файле подкачки (свободно менее {$SWAP.PFREE.MIN.WARN}%){#SINGLETON}</name>
+                            <opdata>Свободно: {ITEM.LASTVALUE1}, всего: {ITEM.LASTVALUE2}</opdata>
+                            <priority>WARNING</priority>
+                            <description>Триггер срабатывает, если в течении 5-ти мин. процент свободного места на swap-диске ниже заданного значения {$SWAP.PFREE.MIN.WARN}.&#13;
+&#13;
+Этот триггер игнорируется, если swap не настроен.</description>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>Объем файла подкачки{#SINGLETON}</name>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>1A7C11</color>
+                                    <item>
+                                        <host>Continent 4 Module Memory SNMP</host>
+                                        <key>system.swap.total[memTotalSwap.0]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>2774A4</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Continent 4 Module Memory SNMP</host>
+                                        <key>system.swap.pfree[snmp{#SINGLETON}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <master_item>
+                        <key>system.swap.total[memTotalSwap.0]</key>
+                    </master_item>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>return JSON.stringify(value == 0 ? [] : [{'{#SINGLETON}': ''}]);</params>
+                        </step>
+                    </preprocessing>
+                </discovery_rule>
+            </discovery_rules>
+            <macros>
+                <macro>
+                    <macro>{$MEMORY.AVAILABLE.MIN}</macro>
+                    <value>20M</value>
+                    <description>Порог срабатывания предупреждения о нехватке свободной памяти.</description>
+                </macro>
+                <macro>
+                    <macro>{$MEMORY.UTIL.MAX}</macro>
+                    <value>90</value>
+                    <description>Порог срабатывания предупреждения об утилизации памяти в %.</description>
+                </macro>
+                <macro>
+                    <macro>{$SWAP.PFREE.MIN.WARN}</macro>
+                    <value>50</value>
+                    <description>Порог срабатывания предупреждения об нехватке места на файле подкачки в %</description>
+                </macro>
+            </macros>
+        </template>
+        <template>
+            <template>Continent 4 Module VPN SNMP</template>
+            <name>Continent 4 Module VPN SNMP</name>
+            <groups>
+                <group>
+                    <name>Templates/Modules</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>VPN</name>
+                </application>
+            </applications>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>VPN</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#VPNNAME},1.3.6.1.4.1.34849.1.1.2.5.1.1.2,{#VPNSTATUS},1.3.6.1.4.1.34849.1.1.2.5.1.1.9]</snmp_oid>
+                    <key>vpn.links.discovery</key>
+                    <delay>1h</delay>
+                    <filter>
+                        <evaltype>AND</evaltype>
+                    </filter>
+                    <description>Discovering links from SECURITYCODE-CONTINENT-MIB.</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>VPN {#VPNNAME}: Активность</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.2.5.1.1.9.{#SNMPINDEX}</snmp_oid>
+                            <key>continent4.vpnActive[{#SNMPINDEX}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <units>bps</units>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Статус активности VPN-&#13;
+туннеля&#13;
+(1 — активен/0 —&#13;
+неактивен)</description>
+                            <applications>
+                                <application>
+                                    <name>VPN</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>VPN (#SNMPINDEX)</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>8</params>
+                                </step>
+                            </preprocessing>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}=0</expression>
+                                    <name>VPN {#VPNNAME}: Канал не активен</name>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>VPN {#VPNNAME}: Время прихода некорректного пакета</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.2.5.1.1.8.{#SNMPINDEX}</snmp_oid>
+                            <key>continent4.vpnChannelBadLastIn[{#SNMPINDEX}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <applications>
+                                <application>
+                                    <name>VPN</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>VPN (#SNMPINDEX)</name>
+                                </application_prototype>
+                            </application_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>VPN {#VPNNAME}: Время прихода корректного пакета</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.2.5.1.1.7.{#SNMPINDEX}</snmp_oid>
+                            <key>continent4.vpnChannelLastIn[{#SNMPINDEX}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <applications>
+                                <application>
+                                    <name>VPN</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>VPN (#SNMPINDEX)</name>
+                                </application_prototype>
+                            </application_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>VPN {#VPNNAME}: Битов получено</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.2.5.1.1.3.{#SNMPINDEX}</snmp_oid>
+                            <key>continent4.vpnInBytes[{#SNMPINDEX}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <units>bps</units>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество входящих байтов из VPN</description>
+                            <applications>
+                                <application>
+                                    <name>VPN</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>VPN (#SNMPINDEX)</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>8</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>VPN {#VPNNAME}: Битов отправлено</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.2.5.1.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>continent4.vpnOutBytes[{#SNMPINDEX}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <units>bps</units>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество исходящих байтов в VPN</description>
+                            <applications>
+                                <application>
+                                    <name>VPN</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>VPN (#SNMPINDEX)</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>8</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>VPN {#VPNNAME}: Сетевой трафик</name>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>GRADIENT_LINE</drawtype>
+                                    <color>1A7C11</color>
+                                    <item>
+                                        <host>Continent 4 Module VPN SNMP</host>
+                                        <key>continent4.vpnInBytes[{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <drawtype>BOLD_LINE</drawtype>
+                                    <color>2774A4</color>
+                                    <item>
+                                        <host>Continent 4 Module VPN SNMP</host>
+                                        <key>continent4.vpnOutBytes[{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                </discovery_rule>
+            </discovery_rules>
+        </template>
+        <template>
+            <template>Continent 4 SNMP</template>
+            <name>Continent 4 SNMP</name>
+            <templates>
+                <template>
+                    <name>Continent 4 Module AccessServer SNMP</name>
+                </template>
+                <template>
+                    <name>Continent 4 Module CPU SNMP</name>
+                </template>
+                <template>
+                    <name>Continent 4 Module FileSystems SNMP</name>
+                </template>
+                <template>
+                    <name>Continent 4 Module Generic SNMP</name>
+                </template>
+                <template>
+                    <name>Continent 4 Module Interfaces SNMP</name>
+                </template>
+                <template>
+                    <name>Continent 4 Module Memory SNMP</name>
+                </template>
+                <template>
+                    <name>Continent 4 Module VPN SNMP</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>Templates/Network devices</name>
+                </group>
+            </groups>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{Continent 4 Module CPU SNMP:system.cpu.load.avg1[laLoad.1].min(5m)}/{Continent 4 Module CPU SNMP:system.cpu.num[snmp].last()}&gt;{$LOAD_AVG_PER_CPU.MAX.WARN}&#13;
+and {Continent 4 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0&#13;
+and {Continent 4 Module CPU SNMP:system.cpu.load.avg15[laLoad.3].last()}&gt;0</expression>
+            <name>Высокая средняя загрузка (загрузка каждого ЦП больше {$LOAD_AVG_PER_CPU.MAX.WARN} за 5мин.)</name>
+            <opdata>Текущая загрузка (1 мин 5 мин 15 мин): ({ITEM.LASTVALUE1} {ITEM.LASTVALUE3} {ITEM.LASTVALUE4}), # на ЦП: {ITEM.LASTVALUE2}</opdata>
+            <priority>AVERAGE</priority>
+            <description>Средняя загрузка ЦП слишком высока. Ваша система может медленно &#13;
+реагировать.</description>
+        </trigger>
+        <trigger>
+            <expression>{Continent 4 Module Memory SNMP:vm.memory.available[snmp].max(5m)}&lt;{$MEMORY.AVAILABLE.MIN} and {Continent 4 Module Memory SNMP:vm.memory.total[memTotalReal.0].last()}&gt;0</expression>
+            <name>Недостаточно доступной памяти (&lt;{$MEMORY.AVAILABLE.MIN} of {ITEM.VALUE2})</name>
+            <opdata>Доступно: {ITEM.LASTVALUE1}, всего: {ITEM.LASTVALUE2}</opdata>
+            <priority>AVERAGE</priority>
+        </trigger>
+    </triggers>
+    <graphs>
+        <graph>
+            <name>Загрузка ЦП</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <ymax_type_1>FIXED</ymax_type_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Continent 4 Module CPU SNMP</host>
+                        <key>system.cpu.util[snmp]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Загрузка системы</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Continent 4 Module CPU SNMP</host>
+                        <key>system.cpu.load.avg1[laLoad.1]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>Continent 4 Module CPU SNMP</host>
+                        <key>system.cpu.load.avg5[laLoad.2]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>Continent 4 Module CPU SNMP</host>
+                        <key>system.cpu.load.avg15[laLoad.3]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>A54F10</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Continent 4 Module CPU SNMP</host>
+                        <key>system.cpu.num[snmp]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Использование ЦП</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Continent 4 Module CPU SNMP</host>
+                        <key>system.cpu.system[ssCpuRawSystem]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>Continent 4 Module CPU SNMP</host>
+                        <key>system.cpu.user[ssCpuRawUser]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>Continent 4 Module CPU SNMP</host>
+                        <key>system.cpu.nice[ssCpuRawNice]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>A54F10</color>
+                    <item>
+                        <host>Continent 4 Module CPU SNMP</host>
+                        <key>system.cpu.iowait[ssCpuRawWait]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>5</sortorder>
+                    <color>6C59DC</color>
+                    <item>
+                        <host>Continent 4 Module CPU SNMP</host>
+                        <key>system.cpu.interrupt[ssCpuRawInterrupt]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Использование памяти</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <ymax_type_1>FIXED</ymax_type_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Continent 4 Module Memory SNMP</host>
+                        <key>vm.memory.util[snmp]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Объем памяти</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>BOLD_LINE</drawtype>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Continent 4 Module Memory SNMP</host>
+                        <key>vm.memory.total[memTotalReal.0]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>2774A4</color>
+                    <item>
+                        <host>Continent 4 Module Memory SNMP</host>
+                        <key>vm.memory.available[snmp]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
+    <value_maps>
+        <value_map>
+            <name>IF-MIB::ifOperStatus</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>up</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>down</newvalue>
+                </mapping>
+                <mapping>
+                    <value>4</value>
+                    <newvalue>unknown</newvalue>
+                </mapping>
+                <mapping>
+                    <value>5</value>
+                    <newvalue>dormant</newvalue>
+                </mapping>
+                <mapping>
+                    <value>6</value>
+                    <newvalue>notPresent</newvalue>
+                </mapping>
+                <mapping>
+                    <value>7</value>
+                    <newvalue>lowerLayerDown</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+        <value_map>
+            <name>IF-MIB::ifType</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>other</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>regular1822</newvalue>
+                </mapping>
+                <mapping>
+                    <value>3</value>
+                    <newvalue>hdh1822</newvalue>
+                </mapping>
+                <mapping>
+                    <value>4</value>
+                    <newvalue>ddnX25</newvalue>
+                </mapping>
+                <mapping>
+                    <value>5</value>
+                    <newvalue>rfc877x25</newvalue>
+                </mapping>
+                <mapping>
+                    <value>6</value>
+                    <newvalue>ethernetCsmacd</newvalue>
+                </mapping>
+                <mapping>
+                    <value>7</value>
+                    <newvalue>iso88023Csmacd</newvalue>
+                </mapping>
+                <mapping>
+                    <value>8</value>
+                    <newvalue>iso88024TokenBus</newvalue>
+                </mapping>
+                <mapping>
+                    <value>9</value>
+                    <newvalue>iso88025TokenRing</newvalue>
+                </mapping>
+                <mapping>
+                    <value>10</value>
+                    <newvalue>iso88026Man</newvalue>
+                </mapping>
+                <mapping>
+                    <value>11</value>
+                    <newvalue>starLan</newvalue>
+                </mapping>
+                <mapping>
+                    <value>12</value>
+                    <newvalue>proteon10Mbit</newvalue>
+                </mapping>
+                <mapping>
+                    <value>13</value>
+                    <newvalue>proteon80Mbit</newvalue>
+                </mapping>
+                <mapping>
+                    <value>14</value>
+                    <newvalue>hyperchannel</newvalue>
+                </mapping>
+                <mapping>
+                    <value>15</value>
+                    <newvalue>fddi</newvalue>
+                </mapping>
+                <mapping>
+                    <value>16</value>
+                    <newvalue>lapb</newvalue>
+                </mapping>
+                <mapping>
+                    <value>17</value>
+                    <newvalue>sdlc</newvalue>
+                </mapping>
+                <mapping>
+                    <value>18</value>
+                    <newvalue>ds1</newvalue>
+                </mapping>
+                <mapping>
+                    <value>19</value>
+                    <newvalue>e1</newvalue>
+                </mapping>
+                <mapping>
+                    <value>20</value>
+                    <newvalue>basicISDN</newvalue>
+                </mapping>
+                <mapping>
+                    <value>21</value>
+                    <newvalue>primaryISDN</newvalue>
+                </mapping>
+                <mapping>
+                    <value>22</value>
+                    <newvalue>propPointToPointSerial</newvalue>
+                </mapping>
+                <mapping>
+                    <value>23</value>
+                    <newvalue>ppp</newvalue>
+                </mapping>
+                <mapping>
+                    <value>24</value>
+                    <newvalue>softwareLoopback</newvalue>
+                </mapping>
+                <mapping>
+                    <value>25</value>
+                    <newvalue>eon</newvalue>
+                </mapping>
+                <mapping>
+                    <value>26</value>
+                    <newvalue>ethernet3Mbit</newvalue>
+                </mapping>
+                <mapping>
+                    <value>27</value>
+                    <newvalue>nsip</newvalue>
+                </mapping>
+                <mapping>
+                    <value>28</value>
+                    <newvalue>slip</newvalue>
+                </mapping>
+                <mapping>
+                    <value>29</value>
+                    <newvalue>ultra</newvalue>
+                </mapping>
+                <mapping>
+                    <value>30</value>
+                    <newvalue>ds3</newvalue>
+                </mapping>
+                <mapping>
+                    <value>31</value>
+                    <newvalue>sip</newvalue>
+                </mapping>
+                <mapping>
+                    <value>32</value>
+                    <newvalue>frameRelay</newvalue>
+                </mapping>
+                <mapping>
+                    <value>33</value>
+                    <newvalue>rs232</newvalue>
+                </mapping>
+                <mapping>
+                    <value>34</value>
+                    <newvalue>para</newvalue>
+                </mapping>
+                <mapping>
+                    <value>35</value>
+                    <newvalue>arcnet</newvalue>
+                </mapping>
+                <mapping>
+                    <value>36</value>
+                    <newvalue>arcnetPlus</newvalue>
+                </mapping>
+                <mapping>
+                    <value>37</value>
+                    <newvalue>atm</newvalue>
+                </mapping>
+                <mapping>
+                    <value>38</value>
+                    <newvalue>miox25</newvalue>
+                </mapping>
+                <mapping>
+                    <value>39</value>
+                    <newvalue>sonet</newvalue>
+                </mapping>
+                <mapping>
+                    <value>40</value>
+                    <newvalue>x25ple</newvalue>
+                </mapping>
+                <mapping>
+                    <value>41</value>
+                    <newvalue>iso88022llc</newvalue>
+                </mapping>
+                <mapping>
+                    <value>42</value>
+                    <newvalue>localTalk</newvalue>
+                </mapping>
+                <mapping>
+                    <value>43</value>
+                    <newvalue>smdsDxi</newvalue>
+                </mapping>
+                <mapping>
+                    <value>44</value>
+                    <newvalue>frameRelayService</newvalue>
+                </mapping>
+                <mapping>
+                    <value>45</value>
+                    <newvalue>v35</newvalue>
+                </mapping>
+                <mapping>
+                    <value>46</value>
+                    <newvalue>hssi</newvalue>
+                </mapping>
+                <mapping>
+                    <value>47</value>
+                    <newvalue>hippi</newvalue>
+                </mapping>
+                <mapping>
+                    <value>48</value>
+                    <newvalue>modem</newvalue>
+                </mapping>
+                <mapping>
+                    <value>49</value>
+                    <newvalue>aal5</newvalue>
+                </mapping>
+                <mapping>
+                    <value>50</value>
+                    <newvalue>sonetPath</newvalue>
+                </mapping>
+                <mapping>
+                    <value>51</value>
+                    <newvalue>sonetVT</newvalue>
+                </mapping>
+                <mapping>
+                    <value>52</value>
+                    <newvalue>smdsIcip</newvalue>
+                </mapping>
+                <mapping>
+                    <value>53</value>
+                    <newvalue>propVirtual</newvalue>
+                </mapping>
+                <mapping>
+                    <value>54</value>
+                    <newvalue>propMultiplexor</newvalue>
+                </mapping>
+                <mapping>
+                    <value>55</value>
+                    <newvalue>ieee80212</newvalue>
+                </mapping>
+                <mapping>
+                    <value>56</value>
+                    <newvalue>fibreChannel</newvalue>
+                </mapping>
+                <mapping>
+                    <value>57</value>
+                    <newvalue>hippiInterface</newvalue>
+                </mapping>
+                <mapping>
+                    <value>58</value>
+                    <newvalue>frameRelayInterconnect</newvalue>
+                </mapping>
+                <mapping>
+                    <value>59</value>
+                    <newvalue>aflane8023</newvalue>
+                </mapping>
+                <mapping>
+                    <value>60</value>
+                    <newvalue>aflane8025</newvalue>
+                </mapping>
+                <mapping>
+                    <value>61</value>
+                    <newvalue>cctEmul</newvalue>
+                </mapping>
+                <mapping>
+                    <value>62</value>
+                    <newvalue>fastEther</newvalue>
+                </mapping>
+                <mapping>
+                    <value>63</value>
+                    <newvalue>isdn</newvalue>
+                </mapping>
+                <mapping>
+                    <value>64</value>
+                    <newvalue>v11</newvalue>
+                </mapping>
+                <mapping>
+                    <value>65</value>
+                    <newvalue>v36</newvalue>
+                </mapping>
+                <mapping>
+                    <value>66</value>
+                    <newvalue>g703at64k</newvalue>
+                </mapping>
+                <mapping>
+                    <value>67</value>
+                    <newvalue>g703at2mb</newvalue>
+                </mapping>
+                <mapping>
+                    <value>68</value>
+                    <newvalue>qllc</newvalue>
+                </mapping>
+                <mapping>
+                    <value>69</value>
+                    <newvalue>fastEtherFX</newvalue>
+                </mapping>
+                <mapping>
+                    <value>70</value>
+                    <newvalue>channel</newvalue>
+                </mapping>
+                <mapping>
+                    <value>71</value>
+                    <newvalue>ieee80211</newvalue>
+                </mapping>
+                <mapping>
+                    <value>72</value>
+                    <newvalue>ibm370parChan</newvalue>
+                </mapping>
+                <mapping>
+                    <value>73</value>
+                    <newvalue>escon</newvalue>
+                </mapping>
+                <mapping>
+                    <value>74</value>
+                    <newvalue>dlsw</newvalue>
+                </mapping>
+                <mapping>
+                    <value>75</value>
+                    <newvalue>isdns</newvalue>
+                </mapping>
+                <mapping>
+                    <value>76</value>
+                    <newvalue>isdnu</newvalue>
+                </mapping>
+                <mapping>
+                    <value>77</value>
+                    <newvalue>lapd</newvalue>
+                </mapping>
+                <mapping>
+                    <value>78</value>
+                    <newvalue>ipSwitch</newvalue>
+                </mapping>
+                <mapping>
+                    <value>79</value>
+                    <newvalue>rsrb</newvalue>
+                </mapping>
+                <mapping>
+                    <value>80</value>
+                    <newvalue>atmLogical</newvalue>
+                </mapping>
+                <mapping>
+                    <value>81</value>
+                    <newvalue>ds0</newvalue>
+                </mapping>
+                <mapping>
+                    <value>82</value>
+                    <newvalue>ds0Bundle</newvalue>
+                </mapping>
+                <mapping>
+                    <value>83</value>
+                    <newvalue>bsc</newvalue>
+                </mapping>
+                <mapping>
+                    <value>84</value>
+                    <newvalue>async</newvalue>
+                </mapping>
+                <mapping>
+                    <value>85</value>
+                    <newvalue>cnr</newvalue>
+                </mapping>
+                <mapping>
+                    <value>86</value>
+                    <newvalue>iso88025Dtr</newvalue>
+                </mapping>
+                <mapping>
+                    <value>87</value>
+                    <newvalue>eplrs</newvalue>
+                </mapping>
+                <mapping>
+                    <value>88</value>
+                    <newvalue>arap</newvalue>
+                </mapping>
+                <mapping>
+                    <value>89</value>
+                    <newvalue>propCnls</newvalue>
+                </mapping>
+                <mapping>
+                    <value>90</value>
+                    <newvalue>hostPad</newvalue>
+                </mapping>
+                <mapping>
+                    <value>91</value>
+                    <newvalue>termPad</newvalue>
+                </mapping>
+                <mapping>
+                    <value>92</value>
+                    <newvalue>frameRelayMPI</newvalue>
+                </mapping>
+                <mapping>
+                    <value>93</value>
+                    <newvalue>x213</newvalue>
+                </mapping>
+                <mapping>
+                    <value>94</value>
+                    <newvalue>adsl</newvalue>
+                </mapping>
+                <mapping>
+                    <value>95</value>
+                    <newvalue>radsl</newvalue>
+                </mapping>
+                <mapping>
+                    <value>96</value>
+                    <newvalue>sdsl</newvalue>
+                </mapping>
+                <mapping>
+                    <value>97</value>
+                    <newvalue>vdsl</newvalue>
+                </mapping>
+                <mapping>
+                    <value>98</value>
+                    <newvalue>iso88025CRFPInt</newvalue>
+                </mapping>
+                <mapping>
+                    <value>99</value>
+                    <newvalue>myrinet</newvalue>
+                </mapping>
+                <mapping>
+                    <value>100</value>
+                    <newvalue>voiceEM</newvalue>
+                </mapping>
+                <mapping>
+                    <value>101</value>
+                    <newvalue>voiceFXO</newvalue>
+                </mapping>
+                <mapping>
+                    <value>102</value>
+                    <newvalue>voiceFXS</newvalue>
+                </mapping>
+                <mapping>
+                    <value>103</value>
+                    <newvalue>voiceEncap</newvalue>
+                </mapping>
+                <mapping>
+                    <value>104</value>
+                    <newvalue>voiceOverIp</newvalue>
+                </mapping>
+                <mapping>
+                    <value>105</value>
+                    <newvalue>atmDxi</newvalue>
+                </mapping>
+                <mapping>
+                    <value>106</value>
+                    <newvalue>atmFuni</newvalue>
+                </mapping>
+                <mapping>
+                    <value>107</value>
+                    <newvalue>atmIma</newvalue>
+                </mapping>
+                <mapping>
+                    <value>108</value>
+                    <newvalue>pppMultilinkBundle</newvalue>
+                </mapping>
+                <mapping>
+                    <value>109</value>
+                    <newvalue>ipOverCdlc</newvalue>
+                </mapping>
+                <mapping>
+                    <value>110</value>
+                    <newvalue>ipOverClaw</newvalue>
+                </mapping>
+                <mapping>
+                    <value>111</value>
+                    <newvalue>stackToStack</newvalue>
+                </mapping>
+                <mapping>
+                    <value>112</value>
+                    <newvalue>virtualIpAddress</newvalue>
+                </mapping>
+                <mapping>
+                    <value>113</value>
+                    <newvalue>mpc</newvalue>
+                </mapping>
+                <mapping>
+                    <value>114</value>
+                    <newvalue>ipOverAtm</newvalue>
+                </mapping>
+                <mapping>
+                    <value>115</value>
+                    <newvalue>iso88025Fiber</newvalue>
+                </mapping>
+                <mapping>
+                    <value>116</value>
+                    <newvalue>tdlc</newvalue>
+                </mapping>
+                <mapping>
+                    <value>117</value>
+                    <newvalue>gigabitEthernet</newvalue>
+                </mapping>
+                <mapping>
+                    <value>118</value>
+                    <newvalue>hdlc</newvalue>
+                </mapping>
+                <mapping>
+                    <value>119</value>
+                    <newvalue>lapf</newvalue>
+                </mapping>
+                <mapping>
+                    <value>120</value>
+                    <newvalue>v37</newvalue>
+                </mapping>
+                <mapping>
+                    <value>121</value>
+                    <newvalue>x25mlp</newvalue>
+                </mapping>
+                <mapping>
+                    <value>122</value>
+                    <newvalue>x25huntGroup</newvalue>
+                </mapping>
+                <mapping>
+                    <value>123</value>
+                    <newvalue>trasnpHdlc</newvalue>
+                </mapping>
+                <mapping>
+                    <value>124</value>
+                    <newvalue>interleave</newvalue>
+                </mapping>
+                <mapping>
+                    <value>125</value>
+                    <newvalue>fast</newvalue>
+                </mapping>
+                <mapping>
+                    <value>126</value>
+                    <newvalue>ip</newvalue>
+                </mapping>
+                <mapping>
+                    <value>127</value>
+                    <newvalue>docsCableMaclayer</newvalue>
+                </mapping>
+                <mapping>
+                    <value>128</value>
+                    <newvalue>docsCableDownstream</newvalue>
+                </mapping>
+                <mapping>
+                    <value>129</value>
+                    <newvalue>docsCableUpstream</newvalue>
+                </mapping>
+                <mapping>
+                    <value>130</value>
+                    <newvalue>a12MppSwitch</newvalue>
+                </mapping>
+                <mapping>
+                    <value>131</value>
+                    <newvalue>tunnel</newvalue>
+                </mapping>
+                <mapping>
+                    <value>132</value>
+                    <newvalue>coffee</newvalue>
+                </mapping>
+                <mapping>
+                    <value>133</value>
+                    <newvalue>ces</newvalue>
+                </mapping>
+                <mapping>
+                    <value>134</value>
+                    <newvalue>atmSubInterface</newvalue>
+                </mapping>
+                <mapping>
+                    <value>135</value>
+                    <newvalue>l2vlan</newvalue>
+                </mapping>
+                <mapping>
+                    <value>136</value>
+                    <newvalue>l3ipvlan</newvalue>
+                </mapping>
+                <mapping>
+                    <value>137</value>
+                    <newvalue>l3ipxvlan</newvalue>
+                </mapping>
+                <mapping>
+                    <value>138</value>
+                    <newvalue>digitalPowerline</newvalue>
+                </mapping>
+                <mapping>
+                    <value>139</value>
+                    <newvalue>mediaMailOverIp</newvalue>
+                </mapping>
+                <mapping>
+                    <value>140</value>
+                    <newvalue>dtm</newvalue>
+                </mapping>
+                <mapping>
+                    <value>141</value>
+                    <newvalue>dcn</newvalue>
+                </mapping>
+                <mapping>
+                    <value>142</value>
+                    <newvalue>ipForward</newvalue>
+                </mapping>
+                <mapping>
+                    <value>143</value>
+                    <newvalue>msdsl</newvalue>
+                </mapping>
+                <mapping>
+                    <value>144</value>
+                    <newvalue>ieee1394</newvalue>
+                </mapping>
+                <mapping>
+                    <value>145</value>
+                    <newvalue>if-gsn</newvalue>
+                </mapping>
+                <mapping>
+                    <value>146</value>
+                    <newvalue>dvbRccMacLayer</newvalue>
+                </mapping>
+                <mapping>
+                    <value>147</value>
+                    <newvalue>dvbRccDownstream</newvalue>
+                </mapping>
+                <mapping>
+                    <value>148</value>
+                    <newvalue>dvbRccUpstream</newvalue>
+                </mapping>
+                <mapping>
+                    <value>149</value>
+                    <newvalue>atmVirtual</newvalue>
+                </mapping>
+                <mapping>
+                    <value>150</value>
+                    <newvalue>mplsTunnel</newvalue>
+                </mapping>
+                <mapping>
+                    <value>151</value>
+                    <newvalue>srp</newvalue>
+                </mapping>
+                <mapping>
+                    <value>152</value>
+                    <newvalue>voiceOverAtm</newvalue>
+                </mapping>
+                <mapping>
+                    <value>153</value>
+                    <newvalue>voiceOverFrameRelay</newvalue>
+                </mapping>
+                <mapping>
+                    <value>154</value>
+                    <newvalue>idsl</newvalue>
+                </mapping>
+                <mapping>
+                    <value>155</value>
+                    <newvalue>compositeLink</newvalue>
+                </mapping>
+                <mapping>
+                    <value>156</value>
+                    <newvalue>ss7SigLink</newvalue>
+                </mapping>
+                <mapping>
+                    <value>157</value>
+                    <newvalue>propWirelessP2P</newvalue>
+                </mapping>
+                <mapping>
+                    <value>158</value>
+                    <newvalue>frForward</newvalue>
+                </mapping>
+                <mapping>
+                    <value>159</value>
+                    <newvalue>rfc1483</newvalue>
+                </mapping>
+                <mapping>
+                    <value>160</value>
+                    <newvalue>usb</newvalue>
+                </mapping>
+                <mapping>
+                    <value>161</value>
+                    <newvalue>ieee8023adLag</newvalue>
+                </mapping>
+                <mapping>
+                    <value>162</value>
+                    <newvalue>bgppolicyaccounting</newvalue>
+                </mapping>
+                <mapping>
+                    <value>163</value>
+                    <newvalue>frf16MfrBundle</newvalue>
+                </mapping>
+                <mapping>
+                    <value>164</value>
+                    <newvalue>h323Gatekeeper</newvalue>
+                </mapping>
+                <mapping>
+                    <value>165</value>
+                    <newvalue>h323Proxy</newvalue>
+                </mapping>
+                <mapping>
+                    <value>166</value>
+                    <newvalue>mpls</newvalue>
+                </mapping>
+                <mapping>
+                    <value>167</value>
+                    <newvalue>mfSigLink</newvalue>
+                </mapping>
+                <mapping>
+                    <value>168</value>
+                    <newvalue>hdsl2</newvalue>
+                </mapping>
+                <mapping>
+                    <value>169</value>
+                    <newvalue>shdsl</newvalue>
+                </mapping>
+                <mapping>
+                    <value>170</value>
+                    <newvalue>ds1FDL</newvalue>
+                </mapping>
+                <mapping>
+                    <value>171</value>
+                    <newvalue>pos</newvalue>
+                </mapping>
+                <mapping>
+                    <value>172</value>
+                    <newvalue>dvbAsiIn</newvalue>
+                </mapping>
+                <mapping>
+                    <value>173</value>
+                    <newvalue>dvbAsiOut</newvalue>
+                </mapping>
+                <mapping>
+                    <value>174</value>
+                    <newvalue>plc</newvalue>
+                </mapping>
+                <mapping>
+                    <value>175</value>
+                    <newvalue>nfas</newvalue>
+                </mapping>
+                <mapping>
+                    <value>176</value>
+                    <newvalue>tr008</newvalue>
+                </mapping>
+                <mapping>
+                    <value>177</value>
+                    <newvalue>gr303RDT</newvalue>
+                </mapping>
+                <mapping>
+                    <value>178</value>
+                    <newvalue>gr303IDT</newvalue>
+                </mapping>
+                <mapping>
+                    <value>179</value>
+                    <newvalue>isup</newvalue>
+                </mapping>
+                <mapping>
+                    <value>180</value>
+                    <newvalue>propDocsWirelessMaclayer</newvalue>
+                </mapping>
+                <mapping>
+                    <value>181</value>
+                    <newvalue>propDocsWirelessDownstream</newvalue>
+                </mapping>
+                <mapping>
+                    <value>182</value>
+                    <newvalue>propDocsWirelessUpstream</newvalue>
+                </mapping>
+                <mapping>
+                    <value>183</value>
+                    <newvalue>hiperlan2</newvalue>
+                </mapping>
+                <mapping>
+                    <value>184</value>
+                    <newvalue>propBWAp2Mp</newvalue>
+                </mapping>
+                <mapping>
+                    <value>185</value>
+                    <newvalue>sonetOverheadChannel</newvalue>
+                </mapping>
+                <mapping>
+                    <value>186</value>
+                    <newvalue>digitalWrapperOverheadChannel</newvalue>
+                </mapping>
+                <mapping>
+                    <value>187</value>
+                    <newvalue>aal2</newvalue>
+                </mapping>
+                <mapping>
+                    <value>188</value>
+                    <newvalue>radioMAC</newvalue>
+                </mapping>
+                <mapping>
+                    <value>189</value>
+                    <newvalue>atmRadio</newvalue>
+                </mapping>
+                <mapping>
+                    <value>190</value>
+                    <newvalue>imt</newvalue>
+                </mapping>
+                <mapping>
+                    <value>191</value>
+                    <newvalue>mvl</newvalue>
+                </mapping>
+                <mapping>
+                    <value>192</value>
+                    <newvalue>reachDSL</newvalue>
+                </mapping>
+                <mapping>
+                    <value>193</value>
+                    <newvalue>frDlciEndPt</newvalue>
+                </mapping>
+                <mapping>
+                    <value>194</value>
+                    <newvalue>atmVciEndPt</newvalue>
+                </mapping>
+                <mapping>
+                    <value>195</value>
+                    <newvalue>opticalChannel</newvalue>
+                </mapping>
+                <mapping>
+                    <value>196</value>
+                    <newvalue>opticalTransport</newvalue>
+                </mapping>
+                <mapping>
+                    <value>197</value>
+                    <newvalue>propAtm</newvalue>
+                </mapping>
+                <mapping>
+                    <value>198</value>
+                    <newvalue>voiceOverCable</newvalue>
+                </mapping>
+                <mapping>
+                    <value>199</value>
+                    <newvalue>infiniband</newvalue>
+                </mapping>
+                <mapping>
+                    <value>200</value>
+                    <newvalue>teLink</newvalue>
+                </mapping>
+                <mapping>
+                    <value>201</value>
+                    <newvalue>q2931</newvalue>
+                </mapping>
+                <mapping>
+                    <value>202</value>
+                    <newvalue>virtualTg</newvalue>
+                </mapping>
+                <mapping>
+                    <value>203</value>
+                    <newvalue>sipTg</newvalue>
+                </mapping>
+                <mapping>
+                    <value>204</value>
+                    <newvalue>sipSig</newvalue>
+                </mapping>
+                <mapping>
+                    <value>205</value>
+                    <newvalue>docsCableUpstreamChannel</newvalue>
+                </mapping>
+                <mapping>
+                    <value>206</value>
+                    <newvalue>econet</newvalue>
+                </mapping>
+                <mapping>
+                    <value>207</value>
+                    <newvalue>pon155</newvalue>
+                </mapping>
+                <mapping>
+                    <value>208</value>
+                    <newvalue>pon622</newvalue>
+                </mapping>
+                <mapping>
+                    <value>209</value>
+                    <newvalue>bridge</newvalue>
+                </mapping>
+                <mapping>
+                    <value>210</value>
+                    <newvalue>linegroup</newvalue>
+                </mapping>
+                <mapping>
+                    <value>211</value>
+                    <newvalue>voiceEMFGD</newvalue>
+                </mapping>
+                <mapping>
+                    <value>212</value>
+                    <newvalue>voiceFGDEANA</newvalue>
+                </mapping>
+                <mapping>
+                    <value>213</value>
+                    <newvalue>voiceDID</newvalue>
+                </mapping>
+                <mapping>
+                    <value>214</value>
+                    <newvalue>mpegTransport</newvalue>
+                </mapping>
+                <mapping>
+                    <value>215</value>
+                    <newvalue>sixToFour</newvalue>
+                </mapping>
+                <mapping>
+                    <value>216</value>
+                    <newvalue>gtp</newvalue>
+                </mapping>
+                <mapping>
+                    <value>217</value>
+                    <newvalue>pdnEtherLoop1</newvalue>
+                </mapping>
+                <mapping>
+                    <value>218</value>
+                    <newvalue>pdnEtherLoop2</newvalue>
+                </mapping>
+                <mapping>
+                    <value>219</value>
+                    <newvalue>opticalChannelGroup</newvalue>
+                </mapping>
+                <mapping>
+                    <value>220</value>
+                    <newvalue>homepna</newvalue>
+                </mapping>
+                <mapping>
+                    <value>221</value>
+                    <newvalue>gfp</newvalue>
+                </mapping>
+                <mapping>
+                    <value>222</value>
+                    <newvalue>ciscoISLvlan</newvalue>
+                </mapping>
+                <mapping>
+                    <value>223</value>
+                    <newvalue>actelisMetaLOOP</newvalue>
+                </mapping>
+                <mapping>
+                    <value>224</value>
+                    <newvalue>fcipLink</newvalue>
+                </mapping>
+                <mapping>
+                    <value>225</value>
+                    <newvalue>rpr</newvalue>
+                </mapping>
+                <mapping>
+                    <value>226</value>
+                    <newvalue>qam</newvalue>
+                </mapping>
+                <mapping>
+                    <value>227</value>
+                    <newvalue>lmp</newvalue>
+                </mapping>
+                <mapping>
+                    <value>228</value>
+                    <newvalue>cblVectaStar</newvalue>
+                </mapping>
+                <mapping>
+                    <value>229</value>
+                    <newvalue>docsCableMCmtsDownstream</newvalue>
+                </mapping>
+                <mapping>
+                    <value>230</value>
+                    <newvalue>adsl2</newvalue>
+                </mapping>
+                <mapping>
+                    <value>231</value>
+                    <newvalue>macSecControlledIF</newvalue>
+                </mapping>
+                <mapping>
+                    <value>232</value>
+                    <newvalue>macSecUncontrolledIF</newvalue>
+                </mapping>
+                <mapping>
+                    <value>233</value>
+                    <newvalue>aviciOpticalEther</newvalue>
+                </mapping>
+                <mapping>
+                    <value>234</value>
+                    <newvalue>atmbond</newvalue>
+                </mapping>
+                <mapping>
+                    <value>235</value>
+                    <newvalue>voiceFGDOS</newvalue>
+                </mapping>
+                <mapping>
+                    <value>236</value>
+                    <newvalue>mocaVersion1</newvalue>
+                </mapping>
+                <mapping>
+                    <value>237</value>
+                    <newvalue>ieee80216WMAN</newvalue>
+                </mapping>
+                <mapping>
+                    <value>238</value>
+                    <newvalue>adsl2plus</newvalue>
+                </mapping>
+                <mapping>
+                    <value>239</value>
+                    <newvalue>dvbRcsMacLayer</newvalue>
+                </mapping>
+                <mapping>
+                    <value>240</value>
+                    <newvalue>dvbTdm</newvalue>
+                </mapping>
+                <mapping>
+                    <value>241</value>
+                    <newvalue>dvbRcsTdma</newvalue>
+                </mapping>
+                <mapping>
+                    <value>242</value>
+                    <newvalue>x86Laps</newvalue>
+                </mapping>
+                <mapping>
+                    <value>243</value>
+                    <newvalue>wwanPP</newvalue>
+                </mapping>
+                <mapping>
+                    <value>244</value>
+                    <newvalue>wwanPP2</newvalue>
+                </mapping>
+                <mapping>
+                    <value>245</value>
+                    <newvalue>voiceEBS</newvalue>
+                </mapping>
+                <mapping>
+                    <value>246</value>
+                    <newvalue>ifPwType</newvalue>
+                </mapping>
+                <mapping>
+                    <value>247</value>
+                    <newvalue>ilan</newvalue>
+                </mapping>
+                <mapping>
+                    <value>248</value>
+                    <newvalue>pip</newvalue>
+                </mapping>
+                <mapping>
+                    <value>249</value>
+                    <newvalue>aluELP</newvalue>
+                </mapping>
+                <mapping>
+                    <value>250</value>
+                    <newvalue>gpon</newvalue>
+                </mapping>
+                <mapping>
+                    <value>251</value>
+                    <newvalue>vdsl2</newvalue>
+                </mapping>
+                <mapping>
+                    <value>252</value>
+                    <newvalue>capwapDot11Profile</newvalue>
+                </mapping>
+                <mapping>
+                    <value>253</value>
+                    <newvalue>capwapDot11Bss</newvalue>
+                </mapping>
+                <mapping>
+                    <value>254</value>
+                    <newvalue>capwapWtpVirtualRadio</newvalue>
+                </mapping>
+                <mapping>
+                    <value>255</value>
+                    <newvalue>bits</newvalue>
+                </mapping>
+                <mapping>
+                    <value>256</value>
+                    <newvalue>docsCableUpstreamRfPort</newvalue>
+                </mapping>
+                <mapping>
+                    <value>257</value>
+                    <newvalue>cableDownstreamRfPort</newvalue>
+                </mapping>
+                <mapping>
+                    <value>258</value>
+                    <newvalue>vmwareVirtualNic</newvalue>
+                </mapping>
+                <mapping>
+                    <value>259</value>
+                    <newvalue>ieee802154</newvalue>
+                </mapping>
+                <mapping>
+                    <value>260</value>
+                    <newvalue>otnOdu</newvalue>
+                </mapping>
+                <mapping>
+                    <value>261</value>
+                    <newvalue>otnOtu</newvalue>
+                </mapping>
+                <mapping>
+                    <value>262</value>
+                    <newvalue>ifVfiType</newvalue>
+                </mapping>
+                <mapping>
+                    <value>263</value>
+                    <newvalue>g9981</newvalue>
+                </mapping>
+                <mapping>
+                    <value>264</value>
+                    <newvalue>g9982</newvalue>
+                </mapping>
+                <mapping>
+                    <value>265</value>
+                    <newvalue>g9983</newvalue>
+                </mapping>
+                <mapping>
+                    <value>266</value>
+                    <newvalue>aluEpon</newvalue>
+                </mapping>
+                <mapping>
+                    <value>267</value>
+                    <newvalue>aluEponOnu</newvalue>
+                </mapping>
+                <mapping>
+                    <value>268</value>
+                    <newvalue>aluEponPhysicalUni</newvalue>
+                </mapping>
+                <mapping>
+                    <value>269</value>
+                    <newvalue>aluEponLogicalLink</newvalue>
+                </mapping>
+                <mapping>
+                    <value>270</value>
+                    <newvalue>aluGponOnu</newvalue>
+                </mapping>
+                <mapping>
+                    <value>271</value>
+                    <newvalue>aluGponPhysicalUni</newvalue>
+                </mapping>
+                <mapping>
+                    <value>272</value>
+                    <newvalue>vmwareNicTeam</newvalue>
+                </mapping>
+                <mapping>
+                    <value>277</value>
+                    <newvalue>docsOfdmDownstream</newvalue>
+                </mapping>
+                <mapping>
+                    <value>278</value>
+                    <newvalue>docsOfdmaUpstream</newvalue>
+                </mapping>
+                <mapping>
+                    <value>279</value>
+                    <newvalue>gfast</newvalue>
+                </mapping>
+                <mapping>
+                    <value>280</value>
+                    <newvalue>sdci</newvalue>
+                </mapping>
+                <mapping>
+                    <value>281</value>
+                    <newvalue>xboxWireless</newvalue>
+                </mapping>
+                <mapping>
+                    <value>282</value>
+                    <newvalue>fastdsl</newvalue>
+                </mapping>
+                <mapping>
+                    <value>283</value>
+                    <newvalue>docsCableScte55d1FwdOob</newvalue>
+                </mapping>
+                <mapping>
+                    <value>284</value>
+                    <newvalue>docsCableScte55d1RetOob</newvalue>
+                </mapping>
+                <mapping>
+                    <value>285</value>
+                    <newvalue>docsCableScte55d2DsOob</newvalue>
+                </mapping>
+                <mapping>
+                    <value>286</value>
+                    <newvalue>docsCableScte55d2UsOob</newvalue>
+                </mapping>
+                <mapping>
+                    <value>287</value>
+                    <newvalue>docsCableNdf</newvalue>
+                </mapping>
+                <mapping>
+                    <value>288</value>
+                    <newvalue>docsCableNdr</newvalue>
+                </mapping>
+                <mapping>
+                    <value>289</value>
+                    <newvalue>ptm</newvalue>
+                </mapping>
+                <mapping>
+                    <value>290</value>
+                    <newvalue>ghn</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+        <value_map>
+            <name>zabbix.host.available</name>
+            <mappings>
+                <mapping>
+                    <value>0</value>
+                    <newvalue>not available</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>available</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>unknown</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>
