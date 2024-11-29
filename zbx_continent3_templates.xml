@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-11-27T10:40:46Z</date>
+    <date>2024-11-29T06:20:44Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -2579,7 +2579,7 @@ and {Continent 3.9 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPIN
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 0</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 0-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.0</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.0]</key>
@@ -2589,7 +2589,7 @@ and {Continent 3.9 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPIN
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -2600,19 +2600,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 0 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 0 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 1</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 1-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.1</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.1]</key>
@@ -2622,7 +2612,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -2633,19 +2623,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 1 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 1 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 2</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 2-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.2</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.2]</key>
@@ -2655,7 +2635,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -2666,19 +2646,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 2 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 2 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 3</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 3-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.3</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.3]</key>
@@ -2688,7 +2658,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -2699,19 +2669,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 3 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 3 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 4</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 4-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.4</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.4]</key>
@@ -2721,7 +2681,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -2732,19 +2692,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 4 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 4 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 5</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 5-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.5</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.5]</key>
@@ -2752,7 +2702,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <history>2w</history>
                             <trends>732d</trends>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -2763,17 +2713,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 5 не активен</name>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал стандартного приоритета не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 6</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 6-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.6</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.6]</key>
@@ -2783,7 +2725,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -2794,19 +2736,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 6 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 6 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 7</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 7-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.7</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.7]</key>
@@ -2816,7 +2748,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -2827,19 +2759,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 7 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 7 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 8</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 8-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.8</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.8]</key>
@@ -2849,7 +2771,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -2860,19 +2782,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 8 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 8 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 9</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 9-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.9</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.9]</key>
@@ -2882,7 +2794,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -2893,19 +2805,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 9 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 9 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 10</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 10-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.10</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.10]</key>
@@ -2915,7 +2817,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -2926,19 +2828,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 10 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 10 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 11</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 11-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.11</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.11]</key>
@@ -2948,7 +2840,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -2959,19 +2851,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 11 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 11 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 12</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 12-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.12</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.12]</key>
@@ -2981,7 +2863,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -2992,19 +2874,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 12 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 12 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 13</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 13-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.13</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.13]</key>
@@ -3014,7 +2886,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3025,19 +2897,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 13 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 13 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 14</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 14-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.14</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.14]</key>
@@ -3047,7 +2909,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3058,19 +2920,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 14 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 14 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 15</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 15-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.15</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.15]</key>
@@ -3080,7 +2932,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3091,19 +2943,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 15 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 15 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 16</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 16-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.16</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.16]</key>
@@ -3113,7 +2955,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3124,19 +2966,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 16 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 16 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 17</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 17-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.17</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.17]</key>
@@ -3146,7 +2978,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3157,19 +2989,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 17 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 17 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 18</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 18-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.18</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.18]</key>
@@ -3179,7 +3001,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3190,19 +3012,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 18 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 18 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 19</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 19-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.19</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.19]</key>
@@ -3212,7 +3024,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3223,19 +3035,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 19 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 19 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 20</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 20-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.20</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.20]</key>
@@ -3245,7 +3047,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3256,19 +3058,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 20 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 20 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 21</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 21-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.21</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.21]</key>
@@ -3278,7 +3070,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3289,19 +3081,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 21 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 21 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 22</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 22-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.22</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.22]</key>
@@ -3311,7 +3093,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3322,19 +3104,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 22 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 22 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 23</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 23-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.23</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.23]</key>
@@ -3344,7 +3116,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3355,19 +3127,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 23 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 23 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 24</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 24-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.24</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.24]</key>
@@ -3377,7 +3139,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3388,19 +3150,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 24 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 24 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 25</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 25-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.25</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.25]</key>
@@ -3410,7 +3162,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3421,19 +3173,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 25 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 25 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 26</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 26-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.26</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.26]</key>
@@ -3443,7 +3185,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3454,19 +3196,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 26 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 26 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 27</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 27-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.27</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.27]</key>
@@ -3476,7 +3208,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3487,19 +3219,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 27 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 27 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 28</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 28-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.28</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.28]</key>
@@ -3509,7 +3231,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3520,19 +3242,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 28 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 28 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 29</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 29-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.29</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.29]</key>
@@ -3542,7 +3254,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3553,19 +3265,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 29 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 29 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 30</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 30-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.30</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.30]</key>
@@ -3575,7 +3277,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3586,19 +3288,9 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 30 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 30 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Парная связь с {#SNMPINDEX}: активность VPN-канала приоритета 31</name>
+                            <name>Парная связь с {#SNMPINDEX}: активность 31-го класса трафика</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.31</snmp_oid>
                             <key>continent39.link.vpn.cryptorActive[{#SNMPINDEX}.31]</key>
@@ -3608,7 +3300,7 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                             <status>DISABLED</status>
                             <discover>NO_DISCOVER</discover>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Cтатус активности VPN-канала (1 — активен/0 — неактивен)</description>
+Cтатус активности класса трафика (1 — активен/0 — неактивен)</description>
                             <applications>
                                 <application>
                                     <name>VPN</name>
@@ -3619,16 +3311,6 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 31 не активен</name>
-                                    <status>DISABLED</status>
-                                    <discover>NO_DISCOVER</discover>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал приоритета 31 не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода некорректного пакета по VPN-каналу приоритета 0</name>
@@ -4386,6 +4068,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 0 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 0 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 1</name>
@@ -4409,6 +4101,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 1 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 1 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 2</name>
@@ -4432,6 +4134,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 2 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 2 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 3</name>
@@ -4455,6 +4167,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 3 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 3 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 4</name>
@@ -4478,6 +4200,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 4 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 4 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 5</name>
@@ -4499,6 +4231,14 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 5 не активен</name>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал стандартного приоритета не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 6</name>
@@ -4522,6 +4262,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 6 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 6 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 7</name>
@@ -4545,6 +4295,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 7 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 7 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 8</name>
@@ -4568,6 +4328,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 8 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 8 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 9</name>
@@ -4591,6 +4361,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 9 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 9 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 10</name>
@@ -4614,6 +4394,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 10 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 10 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 11</name>
@@ -4637,6 +4427,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 11 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 11 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 12</name>
@@ -4660,6 +4460,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 12 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 12 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 13</name>
@@ -4683,6 +4493,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 13 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 13 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 14</name>
@@ -4706,6 +4526,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 14 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 14 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 15</name>
@@ -4729,6 +4559,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 15 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 15 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 16</name>
@@ -4752,6 +4592,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 16 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 16 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 17</name>
@@ -4775,6 +4625,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 17 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 17 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 18</name>
@@ -4798,6 +4658,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 18 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 18 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 19</name>
@@ -4821,6 +4691,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 19 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 19 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 20</name>
@@ -4844,6 +4724,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 20 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 20 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 21</name>
@@ -4867,6 +4757,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 21 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 21 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 22</name>
@@ -4890,6 +4790,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 22 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 22 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 23</name>
@@ -4913,6 +4823,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 23 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 23 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 24</name>
@@ -4936,6 +4856,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 24 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 24 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 25</name>
@@ -4959,6 +4889,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 25 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 25 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 26</name>
@@ -4982,6 +4922,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 26 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 26 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 27</name>
@@ -5005,6 +4955,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 27 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 27 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 28</name>
@@ -5028,6 +4988,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 28 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 28 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 29</name>
@@ -5051,6 +5021,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 29 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 29 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 30</name>
@@ -5074,6 +5054,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 30 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 30 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: время прихода корректного пакета по VPN-каналу приоритета 31</name>
@@ -5097,6 +5087,16 @@ Cтатус активности VPN-канала (1 — активен/0 — н
                                     <name>Link {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>Связь с {#SNMPINDEX}: VPN-канал приоритета 31 не активен</name>
+                                    <status>DISABLED</status>
+                                    <discover>NO_DISCOVER</discover>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал приоритета 31 не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Парная связь с {#SNMPINDEX}: Количество нарушений целостности пакетов</name>
