@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-11-27T05:24:02Z</date>
+    <date>2024-11-29T12:59:41Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -51,14 +51,14 @@
                     <type>DEPENDENT</type>
                     <key>as.discovery[singleton]</key>
                     <delay>0</delay>
-                    <description>Сервер доступа обнаруживается по наличию подстроки &quot;AS&quot; &#13;
-в типе конфигурации OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
+                    <description>Сервер доступа обнаруживается по значению 1 в поле Статус СД&#13;
+OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                     <item_prototypes>
                         <item_prototype>
                             <name>Количество подключенных АП</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.2.0</snmp_oid>
-                            <key>continent4.as.aservConnCount</key>
+                            <key>continent4.as.aservConnCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -74,7 +74,7 @@
                             <name>Битов считано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.6.0</snmp_oid>
-                            <key>continent4.as.aservReadBytesCount</key>
+                            <key>continent4.as.aservReadBytesCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -101,7 +101,7 @@
                             <name>Пакетов считано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.14.0</snmp_oid>
-                            <key>continent4.as.aservReadPacketsCount</key>
+                            <key>continent4.as.aservReadPacketsCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -124,7 +124,7 @@
                             <name>Битов записано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.10.0</snmp_oid>
-                            <key>continent4.as.aservWriteBytesCount</key>
+                            <key>continent4.as.aservWriteBytesCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -151,7 +151,7 @@
                             <name>Пакетов записано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.18.0</snmp_oid>
-                            <key>continent4.as.aservWritePacketsCount</key>
+                            <key>continent4.as.aservWritePacketsCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -174,7 +174,7 @@
                             <name>Статус</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.1.0</snmp_oid>
-                            <key>continent4.as.contAservState</key>
+                            <key>continent4.as.contAservState[0{#SINGLETON}]</key>
                             <delay>1h</delay>
                             <history>2w</history>
                             <trends>0</trends>
@@ -192,7 +192,7 @@
                             <name>Количество свободных лицензий</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.23.0</snmp_oid>
-                            <key>continent4.as.contLicensesBalance</key>
+                            <key>continent4.as.contLicensesBalance[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -215,7 +215,7 @@
                             <name>Количество лицензий</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.22.0</snmp_oid>
-                            <key>continent4.as.contLicensesTotalCount</key>
+                            <key>continent4.as.contLicensesTotalCount[0{#SINGLETON}]</key>
                             <delay>1h</delay>
                             <history>2w</history>
                             <trends>0</trends>
@@ -238,7 +238,7 @@
                                     <color>6A1B9A</color>
                                     <item>
                                         <host>Continent 4 Module AccessServer SNMP</host>
-                                        <key>continent4.as.aservConnCount</key>
+                                        <key>continent4.as.aservConnCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -247,7 +247,7 @@
                                     <color>FF8000</color>
                                     <item>
                                         <host>Continent 4 Module AccessServer SNMP</host>
-                                        <key>continent4.as.contLicensesTotalCount</key>
+                                        <key>continent4.as.contLicensesTotalCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -261,7 +261,7 @@
                                     <color>1A7C11</color>
                                     <item>
                                         <host>Continent 4 Module AccessServer SNMP</host>
-                                        <key>continent4.as.aservReadBytesCount</key>
+                                        <key>continent4.as.aservReadBytesCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -270,7 +270,7 @@
                                     <color>2774A4</color>
                                     <item>
                                         <host>Continent 4 Module AccessServer SNMP</host>
-                                        <key>continent4.as.aservWriteBytesCount</key>
+                                        <key>continent4.as.aservWriteBytesCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -279,7 +279,7 @@
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
                                         <host>Continent 4 Module AccessServer SNMP</host>
-                                        <key>continent4.as.aservReadPacketsCount</key>
+                                        <key>continent4.as.aservReadPacketsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -288,7 +288,7 @@
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
                                         <host>Continent 4 Module AccessServer SNMP</host>
-                                        <key>continent4.as.aservWritePacketsCount</key>
+                                        <key>continent4.as.aservWritePacketsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -2037,6 +2037,269 @@ and {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDE
             </screens>
         </template>
         <template>
+            <template>Continent 4 Module IPS SNMP</template>
+            <name>Continent 4 Module IPS SNMP</name>
+            <groups>
+                <group>
+                    <name>Templates/Modules</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Система обнаружения вторжений</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Состояние IPS</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.2.0</snmp_oid>
+                    <key>continent4.ipsComponentState</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <description>Состояние IPS (1 — запущена/&#13;
+0 — выключена)</description>
+                    <applications>
+                        <application>
+                            <name>Система обнаружения вторжений</name>
+                        </application>
+                    </applications>
+                </item>
+            </items>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>IPS</name>
+                    <type>DEPENDENT</type>
+                    <key>ips.discovery[singleton]</key>
+                    <delay>0</delay>
+                    <description>Сервер доступа обнаруживается по значению 1 в поле Статус IPS&#13;
+OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Пакетов отброшено</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.7.0</snmp_oid>
+                            <key>continent4.ipsDropsCount[0{#SINGLETON}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>742d</trends>
+                            <units>pps</units>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество пакетов, отброшенных IPS</description>
+                            <applications>
+                                <application>
+                                    <name>Система обнаружения вторжений</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Оповещений о событии 0 уровня</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.11.0</snmp_oid>
+                            <key>continent4.ipsEventLvl0Alerts[0{#SINGLETON}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>742d</trends>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество оповещений о событии 0 уровня</description>
+                            <applications>
+                                <application>
+                                    <name>Система обнаружения вторжений</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Оповещений о событии 1 уровня</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.15.0</snmp_oid>
+                            <key>continent4.ipsEventLvl1Alerts[0{#SINGLETON}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>742d</trends>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество оповещений о событии 1 уровня</description>
+                            <applications>
+                                <application>
+                                    <name>Система обнаружения вторжений</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Оповещений о событии 2 уровня</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.19.0</snmp_oid>
+                            <key>continent4.ipsEventLvl2Alerts[0{#SINGLETON}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>742d</trends>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество оповещений о событии 2 уровня</description>
+                            <applications>
+                                <application>
+                                    <name>Система обнаружения вторжений</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Оповещений о событии 3 уровня</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.23.0</snmp_oid>
+                            <key>continent4.ipsEventLvl3Alerts[0{#SINGLETON}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>742d</trends>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество оповещений о событии 3 уровня</description>
+                            <applications>
+                                <application>
+                                    <name>Система обнаружения вторжений</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Пакетов пропущено</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.3.0</snmp_oid>
+                            <key>continent4.ipsPcktsCount[0{#SINGLETON}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>742d</trends>
+                            <units>pps</units>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество пакетов, пропущенных IPS</description>
+                            <applications>
+                                <application>
+                                    <name>Система обнаружения вторжений</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Сигнатур загружено</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.27.0</snmp_oid>
+                            <key>continent4.ipsSingatureCount[0{#SINGLETON}]</key>
+                            <delay>1h</delay>
+                            <history>0</history>
+                            <trends>742d</trends>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество загруженных сигнатур IPS</description>
+                            <applications>
+                                <application>
+                                    <name>Система обнаружения вторжений</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>Система обнаружения вторжений : Оповещения{#SINGLETON}</name>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>E53935</color>
+                                    <item>
+                                        <host>Continent 4 Module IPS SNMP</host>
+                                        <key>continent4.ipsEventLvl0Alerts[0{#SINGLETON}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>FFA726</color>
+                                    <item>
+                                        <host>Continent 4 Module IPS SNMP</host>
+                                        <key>continent4.ipsEventLvl1Alerts[0{#SINGLETON}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>3</sortorder>
+                                    <color>FDD835</color>
+                                    <item>
+                                        <host>Continent 4 Module IPS SNMP</host>
+                                        <key>continent4.ipsEventLvl2Alerts[0{#SINGLETON}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>4</sortorder>
+                                    <color>2E7D32</color>
+                                    <item>
+                                        <host>Continent 4 Module IPS SNMP</host>
+                                        <key>continent4.ipsEventLvl3Alerts[0{#SINGLETON}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <name>Система обнаружения вторжений : Сетевой график{#SINGLETON}</name>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>000000</color>
+                                    <item>
+                                        <host>Continent 4 Module IPS SNMP</host>
+                                        <key>continent4.ipsPcktsCount[0{#SINGLETON}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>B71C1C</color>
+                                    <item>
+                                        <host>Continent 4 Module IPS SNMP</host>
+                                        <key>continent4.ipsDropsCount[0{#SINGLETON}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <master_item>
+                        <key>continent4.ipsComponentState</key>
+                    </master_item>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>return JSON.stringify(value.includes('1') ? [{'{#SINGLETON}': ''}] : []);</params>
+                        </step>
+                    </preprocessing>
+                </discovery_rule>
+            </discovery_rules>
+        </template>
+        <template>
             <template>Continent 4 Module Memory SNMP</template>
             <name>Continent 4 Module Memory SNMP</name>
             <groups>
@@ -2488,6 +2751,9 @@ and {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDE
                 </template>
                 <template>
                     <name>Continent 4 Module Interfaces SNMP</name>
+                </template>
+                <template>
+                    <name>Continent 4 Module IPS SNMP</name>
                 </template>
                 <template>
                     <name>Continent 4 Module Memory SNMP</name>
