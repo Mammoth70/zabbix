@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-11-29T06:20:44Z</date>
+    <date>2024-12-05T09:25:05Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -2017,6 +2017,33 @@ return (date/1000|0);</params>
                                 <step>
                                     <type>MULTIPLIER</type>
                                     <params>8</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Интерфейс {#IFDESCR}: Размер MTU</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.4.{#SNMPINDEX}</snmp_oid>
+                            <key>net.if.mtu[ifMTU.{#SNMPINDEX}]</key>
+                            <delay>1h</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <description>MIB: IF-MIB&#13;
+Размер MTU интерфейса.</description>
+                            <applications>
+                                <application>
+                                    <name>Сеть</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Interface {#IFDESCR}</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -5545,7 +5572,6 @@ and {Continent 3.9 Module CPU SNMP:system.cpu.load.avg15[laLoad.3].last()}&gt;0<
                 <graph_item>
                     <sortorder>4</sortorder>
                     <color>A54F10</color>
-                    <yaxisside>RIGHT</yaxisside>
                     <item>
                         <host>Continent 3.9 Module CPU SNMP</host>
                         <key>system.cpu.num[snmp]</key>
