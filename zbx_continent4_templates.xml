@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-12-05T08:21:39Z</date>
+    <date>2024-12-05T11:27:01Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -855,6 +855,166 @@ return (i/dict.length/100);</params>
                     <description>Порог предупреждения % минимума свободного места.</description>
                 </macro>
             </macros>
+        </template>
+        <template>
+            <template>Continent 4 Module FireWall SNMP</template>
+            <name>Continent 4 Module FireWall SNMP</name>
+            <groups>
+                <group>
+                    <name>Templates/Modules</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Межсетевой экран</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Статус МСЭ</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.2.1.0</snmp_oid>
+                    <key>continent4.fwState</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <description>Статус МСЭ (1 — запущен/&#13;
+0 — выключен)</description>
+                    <applications>
+                        <application>
+                            <name>Межсетевой экран</name>
+                        </application>
+                    </applications>
+                </item>
+            </items>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>FW</name>
+                    <type>DEPENDENT</type>
+                    <key>fw.discovery[singleton]</key>
+                    <delay>0</delay>
+                    <description>Межсетевой экран обнаруживается по значению 1 в поле Статус МСЭ&#13;
+OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Установлено отслеживаемых соединений</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.2.2.0</snmp_oid>
+                            <key>continent4.fwConnCount[0{#SINGLETON}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>742d</trends>
+                            <value_type>FLOAT</value_type>
+                            <units>в час</units>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество отслеживаемых соединений</description>
+                            <applications>
+                                <application>
+                                    <name>Межсетевой экран</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>3600</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Входящих пакетов отфильтровано</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.2.10.0</snmp_oid>
+                            <key>continent4.fwInputPacketsCount[0{#SINGLETON}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>742d</trends>
+                            <value_type>FLOAT</value_type>
+                            <units>pps</units>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество входящих пакетов, отфильтрованных МСЭ</description>
+                            <applications>
+                                <application>
+                                    <name>Межсетевой экран</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Исходящих пакетов отфильтровано</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.2.14.0</snmp_oid>
+                            <key>continent4.fwOutputPacketsCount[0{#SINGLETON}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>742d</trends>
+                            <units>pps</units>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество исходящих пакетов, отфильтрованных МСЭ</description>
+                            <applications>
+                                <application>
+                                    <name>Межсетевой экран</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>Межсетевой экран : Сетевой график{#SINGLETON}</name>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>FF0000</color>
+                                    <item>
+                                        <host>Continent 4 Module FireWall SNMP</host>
+                                        <key>continent4.fwOutputPacketsCount[0{#SINGLETON}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>B71C1C</color>
+                                    <item>
+                                        <host>Continent 4 Module FireWall SNMP</host>
+                                        <key>continent4.fwInputPacketsCount[0{#SINGLETON}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>3</sortorder>
+                                    <color>000000</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Continent 4 Module FireWall SNMP</host>
+                                        <key>continent4.fwConnCount[0{#SINGLETON}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <master_item>
+                        <key>continent4.fwState</key>
+                    </master_item>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>return JSON.stringify(value.includes('1') ? [{'{#SINGLETON}': ''}] : []);</params>
+                        </step>
+                    </preprocessing>
+                </discovery_rule>
+            </discovery_rules>
         </template>
         <template>
             <template>Continent 4 Module Generic SNMP</template>
@@ -2088,14 +2248,14 @@ and {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDE
             </applications>
             <items>
                 <item>
-                    <name>Состояние IPS</name>
+                    <name>Статус IPS</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.2.0</snmp_oid>
                     <key>continent4.ipsComponentState</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
-                    <description>Состояние IPS (1 — запущена/&#13;
+                    <description>Статус IPS (1 — запущена/&#13;
 0 — выключена)</description>
                     <applications>
                         <application>
@@ -2806,6 +2966,9 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                 </template>
                 <template>
                     <name>Continent 4 Module FileSystems SNMP</name>
+                </template>
+                <template>
+                    <name>Continent 4 Module FireWall SNMP</name>
                 </template>
                 <template>
                     <name>Continent 4 Module Generic SNMP</name>
