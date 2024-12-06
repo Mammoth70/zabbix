@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-12-05T11:27:01Z</date>
+    <date>2024-12-06T06:32:00Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -12,8 +12,8 @@
     </groups>
     <templates>
         <template>
-            <template>Continent 4 Module AccessServer SNMP</template>
-            <name>Continent 4 Module AccessServer SNMP</name>
+            <template>Continent 4.1 Module AccessServer SNMP</template>
+            <name>Continent 4.1 Module AccessServer SNMP</name>
             <groups>
                 <group>
                     <name>Templates/Modules</name>
@@ -237,7 +237,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <drawtype>GRADIENT_LINE</drawtype>
                                     <color>6A1B9A</color>
                                     <item>
-                                        <host>Continent 4 Module AccessServer SNMP</host>
+                                        <host>Continent 4.1 Module AccessServer SNMP</host>
                                         <key>continent4.as.aservConnCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -246,7 +246,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <drawtype>DASHED_LINE</drawtype>
                                     <color>FF8000</color>
                                     <item>
-                                        <host>Continent 4 Module AccessServer SNMP</host>
+                                        <host>Continent 4.1 Module AccessServer SNMP</host>
                                         <key>continent4.as.contLicensesTotalCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -260,7 +260,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <drawtype>GRADIENT_LINE</drawtype>
                                     <color>1A7C11</color>
                                     <item>
-                                        <host>Continent 4 Module AccessServer SNMP</host>
+                                        <host>Continent 4.1 Module AccessServer SNMP</host>
                                         <key>continent4.as.aservReadBytesCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -269,7 +269,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <drawtype>BOLD_LINE</drawtype>
                                     <color>2774A4</color>
                                     <item>
-                                        <host>Continent 4 Module AccessServer SNMP</host>
+                                        <host>Continent 4.1 Module AccessServer SNMP</host>
                                         <key>continent4.as.aservWriteBytesCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -278,7 +278,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <color>000000</color>
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
-                                        <host>Continent 4 Module AccessServer SNMP</host>
+                                        <host>Continent 4.1 Module AccessServer SNMP</host>
                                         <key>continent4.as.aservReadPacketsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -287,7 +287,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <color>1A237E</color>
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
-                                        <host>Continent 4 Module AccessServer SNMP</host>
+                                        <host>Continent 4.1 Module AccessServer SNMP</host>
                                         <key>continent4.as.aservWritePacketsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -314,8 +314,8 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
             </macros>
         </template>
         <template>
-            <template>Continent 4 Module CPU SNMP</template>
-            <name>Continent 4 Module CPU SNMP</name>
+            <template>Continent 4.1 Module CPU SNMP</template>
+            <name>Continent 4.1 Module CPU SNMP</name>
             <groups>
                 <group>
                     <name>Templates/Modules</name>
@@ -633,8 +633,8 @@ return (i/dict.length/100);</params>
             </macros>
         </template>
         <template>
-            <template>Continent 4 Module FileSystems SNMP</template>
-            <name>Continent 4 Module FileSystems SNMP</name>
+            <template>Continent 4.1 Module FileSystems SNMP</template>
+            <name>Continent 4.1 Module FileSystems SNMP</name>
             <groups>
                 <group>
                     <name>Templates/Modules</name>
@@ -766,8 +766,8 @@ return (i/dict.length/100);</params>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Continent 4 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].last()}&gt;{$VFS.FS.PUSED.MAX.CRIT:&quot;{#FSNAME}&quot;} and&#13;
-({Continent 4 Module FileSystems SNMP:vfs.fs.dskAvailable[{#FSNAME}].last()}&lt;{$VFS.FS.FREE.MIN.CRIT:&quot;{#FSNAME}&quot;} or {Continent 4 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].timeleft(1h,,100)}&lt;1d)</expression>
+                            <expression>{Continent 4.1 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].last()}&gt;{$VFS.FS.PUSED.MAX.CRIT:&quot;{#FSNAME}&quot;} and&#13;
+({Continent 4.1 Module FileSystems SNMP:vfs.fs.dskAvailable[{#FSNAME}].last()}&lt;{$VFS.FS.FREE.MIN.CRIT:&quot;{#FSNAME}&quot;} or {Continent 4.1 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].timeleft(1h,,100)}&lt;1d)</expression>
                             <name>{#FSNAME}: На диске критически мало места (used &gt; {$VFS.FS.PUSED.MAX.CRIT:&quot;{#FSNAME}&quot;}%)</name>
                             <opdata>Использовано: {ITEM.LASTVALUE3} из {ITEM.LASTVALUE2} ({ITEM.LASTVALUE1})</opdata>
                             <priority>AVERAGE</priority>
@@ -778,8 +778,8 @@ return (i/dict.length/100);</params>
                             <manual_close>YES</manual_close>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Continent 4 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].last()}&gt;{$VFS.FS.PUSED.MAX.WARN:&quot;{#FSNAME}&quot;} and&#13;
-({Continent 4 Module FileSystems SNMP:vfs.fs.dskAvailable[{#FSNAME}].last()}&lt;{$VFS.FS.FREE.MIN.WARN:&quot;{#FSNAME}&quot;} or {Continent 4 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].timeleft(1h,,100)}&lt;1d)</expression>
+                            <expression>{Continent 4.1 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].last()}&gt;{$VFS.FS.PUSED.MAX.WARN:&quot;{#FSNAME}&quot;} and&#13;
+({Continent 4.1 Module FileSystems SNMP:vfs.fs.dskAvailable[{#FSNAME}].last()}&lt;{$VFS.FS.FREE.MIN.WARN:&quot;{#FSNAME}&quot;} or {Continent 4.1 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].timeleft(1h,,100)}&lt;1d)</expression>
                             <name>{#FSNAME}: На диске мало места (used &gt; {$VFS.FS.PUSED.MAX.WARN:&quot;{#FSNAME}&quot;}%)</name>
                             <opdata>Использовано: {ITEM.LASTVALUE3} из {ITEM.LASTVALUE2} ({ITEM.LASTVALUE1})</opdata>
                             <priority>WARNING</priority>
@@ -791,8 +791,8 @@ return (i/dict.length/100);</params>
                             <dependencies>
                                 <dependency>
                                     <name>{#FSNAME}: На диске критически мало места (used &gt; {$VFS.FS.PUSED.MAX.CRIT:&quot;{#FSNAME}&quot;}%)</name>
-                                    <expression>{Continent 4 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].last()}&gt;{$VFS.FS.PUSED.MAX.CRIT:&quot;{#FSNAME}&quot;} and&#13;
-({Continent 4 Module FileSystems SNMP:vfs.fs.dskAvailable[{#FSNAME}].last()}&lt;{$VFS.FS.FREE.MIN.CRIT:&quot;{#FSNAME}&quot;} or {Continent 4 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].timeleft(1h,,100)}&lt;1d)</expression>
+                                    <expression>{Continent 4.1 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].last()}&gt;{$VFS.FS.PUSED.MAX.CRIT:&quot;{#FSNAME}&quot;} and&#13;
+({Continent 4.1 Module FileSystems SNMP:vfs.fs.dskAvailable[{#FSNAME}].last()}&lt;{$VFS.FS.FREE.MIN.CRIT:&quot;{#FSNAME}&quot;} or {Continent 4.1 Module FileSystems SNMP:vfs.fs.dskPercent[{#FSNAME}].timeleft(1h,,100)}&lt;1d)</expression>
                                 </dependency>
                             </dependencies>
                         </trigger_prototype>
@@ -803,7 +803,7 @@ return (i/dict.length/100);</params>
                             <ymin_type_1>FIXED</ymin_type_1>
                             <ymax_type_1>ITEM</ymax_type_1>
                             <ymax_item_1>
-                                <host>Continent 4 Module FileSystems SNMP</host>
+                                <host>Continent 4.1 Module FileSystems SNMP</host>
                                 <key>vfs.fs.dskTotal[{#FSNAME}]</key>
                             </ymax_item_1>
                             <graph_items>
@@ -814,7 +814,7 @@ return (i/dict.length/100);</params>
                                     <yaxisside>RIGHT</yaxisside>
                                     <calc_fnc>ALL</calc_fnc>
                                     <item>
-                                        <host>Continent 4 Module FileSystems SNMP</host>
+                                        <host>Continent 4.1 Module FileSystems SNMP</host>
                                         <key>vfs.fs.dskUsed[{#FSNAME}]</key>
                                     </item>
                                 </graph_item>
@@ -857,8 +857,8 @@ return (i/dict.length/100);</params>
             </macros>
         </template>
         <template>
-            <template>Continent 4 Module FireWall SNMP</template>
-            <name>Continent 4 Module FireWall SNMP</name>
+            <template>Continent 4.1 Module FireWall SNMP</template>
+            <name>Continent 4.1 Module FireWall SNMP</name>
             <groups>
                 <group>
                     <name>Templates/Modules</name>
@@ -980,7 +980,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                                     <sortorder>1</sortorder>
                                     <color>FF0000</color>
                                     <item>
-                                        <host>Continent 4 Module FireWall SNMP</host>
+                                        <host>Continent 4.1 Module FireWall SNMP</host>
                                         <key>continent4.fwOutputPacketsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -988,7 +988,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                                     <sortorder>2</sortorder>
                                     <color>B71C1C</color>
                                     <item>
-                                        <host>Continent 4 Module FireWall SNMP</host>
+                                        <host>Continent 4.1 Module FireWall SNMP</host>
                                         <key>continent4.fwInputPacketsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -997,7 +997,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                                     <color>000000</color>
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
-                                        <host>Continent 4 Module FireWall SNMP</host>
+                                        <host>Continent 4.1 Module FireWall SNMP</host>
                                         <key>continent4.fwConnCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -1017,8 +1017,8 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
             </discovery_rules>
         </template>
         <template>
-            <template>Continent 4 Module Generic SNMP</template>
-            <name>Continent 4 Module Generic SNMP</name>
+            <template>Continent 4.1 Module Generic SNMP</template>
+            <name>Continent 4.1 Module Generic SNMP</name>
             <groups>
                 <group>
                     <name>Templates/Modules</name>
@@ -1402,7 +1402,7 @@ and &#13;
                             <dependencies>
                                 <dependency>
                                     <name>Нет сбора данных SNMP</name>
-                                    <expression>{Continent 4 Module Generic SNMP:zabbix[host,snmp,available].max({$SNMP.TIMEOUT})}=0</expression>
+                                    <expression>{Continent 4.1 Module Generic SNMP:zabbix[host,snmp,available].max({$SNMP.TIMEOUT})}=0</expression>
                                 </dependency>
                             </dependencies>
                         </trigger>
@@ -1448,8 +1448,8 @@ and &#13;
                             <dependencies>
                                 <dependency>
                                     <name>CPU: Температура выше критического порога: &gt;{$TEMP_CRIT:CPU}</name>
-                                    <expression>{Continent 4 Module Generic SNMP:continent4.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
-                                    <recovery_expression>{Continent 4 Module Generic SNMP:continent4.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
+                                    <expression>{Continent 4.1 Module Generic SNMP:continent4.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
+                                    <recovery_expression>{Continent 4.1 Module Generic SNMP:continent4.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
                                 </dependency>
                             </dependencies>
                         </trigger>
@@ -1462,8 +1462,8 @@ and &#13;
                             <dependencies>
                                 <dependency>
                                     <name>CPU: Температура выше критического порога: &gt;{$TEMP_CRIT:CPU}</name>
-                                    <expression>{Continent 4 Module Generic SNMP:continent4.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
-                                    <recovery_expression>{Continent 4 Module Generic SNMP:continent4.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
+                                    <expression>{Continent 4.1 Module Generic SNMP:continent4.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
+                                    <recovery_expression>{Continent 4.1 Module Generic SNMP:continent4.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
                                 </dependency>
                             </dependencies>
                         </trigger>
@@ -1509,8 +1509,8 @@ and &#13;
                             <dependencies>
                                 <dependency>
                                     <name>HDD: Температура выше критического порога: &gt;{$TEMP_CRIT:HDD}</name>
-                                    <expression>{Continent 4 Module Generic SNMP:continent4.tempHDD.avg(5m)}&gt;{$TEMP_CRIT:HDD}</expression>
-                                    <recovery_expression>{Continent 4 Module Generic SNMP:continent4.tempHDD.avg(5m)}&lt;{$TEMP_CRIT:HDD}-3</recovery_expression>
+                                    <expression>{Continent 4.1 Module Generic SNMP:continent4.tempHDD.avg(5m)}&gt;{$TEMP_CRIT:HDD}</expression>
+                                    <recovery_expression>{Continent 4.1 Module Generic SNMP:continent4.tempHDD.avg(5m)}&lt;{$TEMP_CRIT:HDD}-3</recovery_expression>
                                 </dependency>
                             </dependencies>
                         </trigger>
@@ -1523,8 +1523,8 @@ and &#13;
                             <dependencies>
                                 <dependency>
                                     <name>CPU: Температура выше критического порога: &gt;{$TEMP_CRIT:CPU}</name>
-                                    <expression>{Continent 4 Module Generic SNMP:continent4.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
-                                    <recovery_expression>{Continent 4 Module Generic SNMP:continent4.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
+                                    <expression>{Continent 4.1 Module Generic SNMP:continent4.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
+                                    <recovery_expression>{Continent 4.1 Module Generic SNMP:continent4.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
                                 </dependency>
                             </dependencies>
                         </trigger>
@@ -1618,8 +1618,8 @@ and &#13;
             </macros>
         </template>
         <template>
-            <template>Continent 4 Module Interfaces SNMP</template>
-            <name>Continent 4 Module Interfaces SNMP</name>
+            <template>Continent 4.1 Module Interfaces SNMP</template>
+            <name>Continent 4.1 Module Interfaces SNMP</name>
             <groups>
                 <group>
                     <name>Templates/Modules</name>
@@ -2007,20 +2007,20 @@ and &#13;
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].change()}&lt;0 and {Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()}&gt;0&#13;
+                            <expression>{Continent 4.1 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].change()}&lt;0 and {Continent 4.1 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()}&gt;0&#13;
 and (&#13;
-{Continent 4 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=6 or&#13;
-{Continent 4 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=7 or&#13;
-{Continent 4 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=11 or&#13;
-{Continent 4 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=62 or&#13;
-{Continent 4 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=69 or&#13;
-{Continent 4 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=117&#13;
+{Continent 4.1 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=6 or&#13;
+{Continent 4.1 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=7 or&#13;
+{Continent 4.1 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=11 or&#13;
+{Continent 4.1 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=62 or&#13;
+{Continent 4.1 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=69 or&#13;
+{Continent 4.1 Module Interfaces SNMP:net.if.type[ifType.{#SNMPINDEX}].last()}=117&#13;
 )&#13;
 and&#13;
-({Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}&lt;&gt;2)</expression>
+({Continent 4.1 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}&lt;&gt;2)</expression>
                             <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
-                            <recovery_expression>({Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].change()}&gt;0 and {Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].prev()}&gt;0) or&#13;
-({Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2)</recovery_expression>
+                            <recovery_expression>({Continent 4.1 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].change()}&gt;0 and {Continent 4.1 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].prev()}&gt;0) or&#13;
+({Continent 4.1 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2)</recovery_expression>
                             <name>Интерфейс {#IFNUMBER}: Ethernet снизил скорость</name>
                             <opdata>Текущая заявленная скорость: {ITEM.LASTVALUE1}</opdata>
                             <priority>INFO</priority>
@@ -2029,17 +2029,17 @@ and&#13;
                             <dependencies>
                                 <dependency>
                                     <name>Интерфейс {#IFNUMBER}: Упал линк</name>
-                                    <expression>{$IFCONTROL:&quot;{#IFNAME}&quot;}=1 and ({Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2 and {Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].diff()}=1)</expression>
-                                    <recovery_expression>{Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}&lt;&gt;2</recovery_expression>
+                                    <expression>{$IFCONTROL:&quot;{#IFNAME}&quot;}=1 and ({Continent 4.1 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2 and {Continent 4.1 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].diff()}=1)</expression>
+                                    <recovery_expression>{Continent 4.1 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}&lt;&gt;2</recovery_expression>
                                 </dependency>
                             </dependencies>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Continent 4 Module Interfaces SNMP:net.if.in.errors[ifInErrors.{#SNMPINDEX}].min(5m)}&gt;{$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;}&#13;
-or {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].min(5m)}&gt;{$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;}</expression>
+                            <expression>{Continent 4.1 Module Interfaces SNMP:net.if.in.errors[ifInErrors.{#SNMPINDEX}].min(5m)}&gt;{$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;}&#13;
+or {Continent 4.1 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].min(5m)}&gt;{$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;}</expression>
                             <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
-                            <recovery_expression>{Continent 4 Module Interfaces SNMP:net.if.in.errors[ifInErrors.{#SNMPINDEX}].max(5m)}&lt;{$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;}*0.8&#13;
-and {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;{$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;}*0.8</recovery_expression>
+                            <recovery_expression>{Continent 4.1 Module Interfaces SNMP:net.if.in.errors[ifInErrors.{#SNMPINDEX}].max(5m)}&lt;{$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;}*0.8&#13;
+and {Continent 4.1 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;{$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;}*0.8</recovery_expression>
                             <name>Интерфейс {#IFNUMBER}: Высокая доля ошибок ( более {$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;} за 5 мин)</name>
                             <opdata>ошибок входящих: {ITEM.LASTVALUE1}, ошибок исходящих: {ITEM.LASTVALUE2}</opdata>
                             <priority>WARNING</priority>
@@ -2047,26 +2047,26 @@ and {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDE
                             <dependencies>
                                 <dependency>
                                     <name>Интерфейс {#IFNUMBER}: Упал линк</name>
-                                    <expression>{$IFCONTROL:&quot;{#IFNAME}&quot;}=1 and ({Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2 and {Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].diff()}=1)</expression>
-                                    <recovery_expression>{Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}&lt;&gt;2</recovery_expression>
+                                    <expression>{$IFCONTROL:&quot;{#IFNAME}&quot;}=1 and ({Continent 4.1 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2 and {Continent 4.1 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].diff()}=1)</expression>
+                                    <recovery_expression>{Continent 4.1 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}&lt;&gt;2</recovery_expression>
                                 </dependency>
                             </dependencies>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>({Continent 4 Module Interfaces SNMP:net.if.in[ifHCInOctets.{#SNMPINDEX}].avg(15m)}&gt;({$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}/100)*{Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()} or&#13;
-{Continent 4 Module Interfaces SNMP:net.if.out[ifHCOutOctets.{#SNMPINDEX}].avg(15m)}&gt;({$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}/100)*{Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()}) and&#13;
-{Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()}&gt;0</expression>
+                            <expression>({Continent 4.1 Module Interfaces SNMP:net.if.in[ifHCInOctets.{#SNMPINDEX}].avg(15m)}&gt;({$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}/100)*{Continent 4.1 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()} or&#13;
+{Continent 4.1 Module Interfaces SNMP:net.if.out[ifHCOutOctets.{#SNMPINDEX}].avg(15m)}&gt;({$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}/100)*{Continent 4.1 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()}) and&#13;
+{Continent 4.1 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()}&gt;0</expression>
                             <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
-                            <recovery_expression>{Continent 4 Module Interfaces SNMP:net.if.in[ifHCInOctets.{#SNMPINDEX}].avg(15m)}&lt;(({$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}-3)/100)*{Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()} and&#13;
-{Continent 4 Module Interfaces SNMP:net.if.out[ifHCOutOctets.{#SNMPINDEX}].avg(15m)}&lt;(({$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}-3)/100)*{Continent 4 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()}</recovery_expression>
+                            <recovery_expression>{Continent 4.1 Module Interfaces SNMP:net.if.in[ifHCInOctets.{#SNMPINDEX}].avg(15m)}&lt;(({$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}-3)/100)*{Continent 4.1 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()} and&#13;
+{Continent 4.1 Module Interfaces SNMP:net.if.out[ifHCOutOctets.{#SNMPINDEX}].avg(15m)}&lt;(({$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}-3)/100)*{Continent 4.1 Module Interfaces SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()}</recovery_expression>
                             <name>Интерфейс {#IFNUMBER}: Занята большая полоса пропускания ( более {$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}% )</name>
                             <opdata>входящий: {ITEM.LASTVALUE1}, исходящий: {ITEM.LASTVALUE3}, скорость: {ITEM.LASTVALUE2}</opdata>
                             <priority>WARNING</priority>
                             <dependencies>
                                 <dependency>
                                     <name>Интерфейс {#IFNUMBER}: Упал линк</name>
-                                    <expression>{$IFCONTROL:&quot;{#IFNAME}&quot;}=1 and ({Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2 and {Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].diff()}=1)</expression>
-                                    <recovery_expression>{Continent 4 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}&lt;&gt;2</recovery_expression>
+                                    <expression>{$IFCONTROL:&quot;{#IFNAME}&quot;}=1 and ({Continent 4.1 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2 and {Continent 4.1 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].diff()}=1)</expression>
+                                    <recovery_expression>{Continent 4.1 Module Interfaces SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}&lt;&gt;2</recovery_expression>
                                 </dependency>
                             </dependencies>
                         </trigger_prototype>
@@ -2080,7 +2080,7 @@ and {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDE
                                     <drawtype>GRADIENT_LINE</drawtype>
                                     <color>1A7C11</color>
                                     <item>
-                                        <host>Continent 4 Module Interfaces SNMP</host>
+                                        <host>Continent 4.1 Module Interfaces SNMP</host>
                                         <key>net.if.in[ifHCInOctets.{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -2089,7 +2089,7 @@ and {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDE
                                     <drawtype>BOLD_LINE</drawtype>
                                     <color>2774A4</color>
                                     <item>
-                                        <host>Continent 4 Module Interfaces SNMP</host>
+                                        <host>Continent 4.1 Module Interfaces SNMP</host>
                                         <key>net.if.out[ifHCOutOctets.{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -2098,7 +2098,7 @@ and {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDE
                                     <color>F63100</color>
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
-                                        <host>Continent 4 Module Interfaces SNMP</host>
+                                        <host>Continent 4.1 Module Interfaces SNMP</host>
                                         <key>net.if.out.errors[ifOutErrors.{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -2107,7 +2107,7 @@ and {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDE
                                     <color>A54F10</color>
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
-                                        <host>Continent 4 Module Interfaces SNMP</host>
+                                        <host>Continent 4.1 Module Interfaces SNMP</host>
                                         <key>net.if.in.errors[ifInErrors.{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -2116,7 +2116,7 @@ and {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDE
                                     <color>FC6EA3</color>
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
-                                        <host>Continent 4 Module Interfaces SNMP</host>
+                                        <host>Continent 4.1 Module Interfaces SNMP</host>
                                         <key>net.if.out.discards[ifOutDiscards.{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -2125,7 +2125,7 @@ and {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDE
                                     <color>6C59DC</color>
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
-                                        <host>Continent 4 Module Interfaces SNMP</host>
+                                        <host>Continent 4.1 Module Interfaces SNMP</host>
                                         <key>net.if.in.discards[ifInDiscards.{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -2212,7 +2212,7 @@ and {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDE
                             <style>0</style>
                             <resource>
                                 <name>Интерфейс {#IFNUMBER}: Сетевой трафик</name>
-                                <host>Continent 4 Module Interfaces SNMP</host>
+                                <host>Continent 4.1 Module Interfaces SNMP</host>
                             </resource>
                             <width>500</width>
                             <height>100</height>
@@ -2234,8 +2234,8 @@ and {Continent 4 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDE
             </screens>
         </template>
         <template>
-            <template>Continent 4 Module IPS SNMP</template>
-            <name>Continent 4 Module IPS SNMP</name>
+            <template>Continent 4.1 Module IPS SNMP</template>
+            <name>Continent 4.1 Module IPS SNMP</name>
             <groups>
                 <group>
                     <name>Templates/Modules</name>
@@ -2456,7 +2456,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <sortorder>1</sortorder>
                                     <color>B71C1C</color>
                                     <item>
-                                        <host>Continent 4 Module IPS SNMP</host>
+                                        <host>Continent 4.1 Module IPS SNMP</host>
                                         <key>continent4.ipsEventLvl0Alerts[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -2464,7 +2464,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <sortorder>2</sortorder>
                                     <color>FF0000</color>
                                     <item>
-                                        <host>Continent 4 Module IPS SNMP</host>
+                                        <host>Continent 4.1 Module IPS SNMP</host>
                                         <key>continent4.ipsEventLvl1Alerts[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -2472,7 +2472,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <sortorder>3</sortorder>
                                     <color>FF8000</color>
                                     <item>
-                                        <host>Continent 4 Module IPS SNMP</host>
+                                        <host>Continent 4.1 Module IPS SNMP</host>
                                         <key>continent4.ipsEventLvl2Alerts[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -2480,7 +2480,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <sortorder>4</sortorder>
                                     <color>2E7D32</color>
                                     <item>
-                                        <host>Continent 4 Module IPS SNMP</host>
+                                        <host>Continent 4.1 Module IPS SNMP</host>
                                         <key>continent4.ipsEventLvl3Alerts[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -2493,7 +2493,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <sortorder>1</sortorder>
                                     <color>000000</color>
                                     <item>
-                                        <host>Continent 4 Module IPS SNMP</host>
+                                        <host>Continent 4.1 Module IPS SNMP</host>
                                         <key>continent4.ipsPcktsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -2501,7 +2501,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <sortorder>2</sortorder>
                                     <color>B71C1C</color>
                                     <item>
-                                        <host>Continent 4 Module IPS SNMP</host>
+                                        <host>Continent 4.1 Module IPS SNMP</host>
                                         <key>continent4.ipsDropsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -2521,8 +2521,8 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
             </discovery_rules>
         </template>
         <template>
-            <template>Continent 4 Module Memory SNMP</template>
-            <name>Continent 4 Module Memory SNMP</name>
+            <template>Continent 4.1 Module Memory SNMP</template>
+            <name>Continent 4.1 Module Memory SNMP</name>
             <groups>
                 <group>
                     <name>Templates/Modules</name>
@@ -2634,7 +2634,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <dependencies>
                                 <dependency>
                                     <name>Недостаточно доступной памяти (&lt;{$MEMORY.AVAILABLE.MIN} of {ITEM.VALUE2})</name>
-                                    <expression>{Continent 4 Module Memory SNMP:vm.memory.available[snmp].max(5m)}&lt;{$MEMORY.AVAILABLE.MIN} and {Continent 4 Module Memory SNMP:vm.memory.total[memTotalReal.0].last()}&gt;0</expression>
+                                    <expression>{Continent 4.1 Module Memory SNMP:vm.memory.available[snmp].max(5m)}&lt;{$MEMORY.AVAILABLE.MIN} and {Continent 4.1 Module Memory SNMP:vm.memory.total[memTotalReal.0].last()}&gt;0</expression>
                                 </dependency>
                             </dependencies>
                         </trigger>
@@ -2693,7 +2693,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Continent 4 Module Memory SNMP:system.swap.pfree[snmp{#SINGLETON}].max(5m)}&lt;{$SWAP.PFREE.MIN.WARN} and {Continent 4 Module Memory SNMP:system.swap.total[memTotalSwap.0].last()}&gt;0</expression>
+                            <expression>{Continent 4.1 Module Memory SNMP:system.swap.pfree[snmp{#SINGLETON}].max(5m)}&lt;{$SWAP.PFREE.MIN.WARN} and {Continent 4.1 Module Memory SNMP:system.swap.total[memTotalSwap.0].last()}&gt;0</expression>
                             <name>Большой объем занятого места на файле подкачки (свободно менее {$SWAP.PFREE.MIN.WARN}%){#SINGLETON}</name>
                             <opdata>Свободно: {ITEM.LASTVALUE1}, всего: {ITEM.LASTVALUE2}</opdata>
                             <priority>WARNING</priority>
@@ -2710,7 +2710,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <sortorder>1</sortorder>
                                     <color>1A7C11</color>
                                     <item>
-                                        <host>Continent 4 Module Memory SNMP</host>
+                                        <host>Continent 4.1 Module Memory SNMP</host>
                                         <key>system.swap.total[memTotalSwap.0]</key>
                                     </item>
                                 </graph_item>
@@ -2719,7 +2719,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <color>2774A4</color>
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
-                                        <host>Continent 4 Module Memory SNMP</host>
+                                        <host>Continent 4.1 Module Memory SNMP</host>
                                         <key>system.swap.pfree[snmp{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
@@ -2756,8 +2756,8 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
             </macros>
         </template>
         <template>
-            <template>Continent 4 Module VPN SNMP</template>
-            <name>Continent 4 Module VPN SNMP</name>
+            <template>Continent 4.1 Module VPN SNMP</template>
+            <name>Continent 4.1 Module VPN SNMP</name>
             <groups>
                 <group>
                     <name>Templates/Modules</name>
@@ -2778,7 +2778,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                     <filter>
                         <evaltype>AND</evaltype>
                     </filter>
-                    <description>Discovering links from SECURITYCODE-CONTINENT-MIB.</description>
+                    <description>Обнаружение VPN-туннелей из SECURITYCODE-CONTINENT-MIB.</description>
                     <item_prototypes>
                         <item_prototype>
                             <name>VPN {#VPNNAME}: Активность</name>
@@ -2788,7 +2788,6 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
-                            <units>bps</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Статус активности VPN-&#13;
 туннеля&#13;
@@ -2809,19 +2808,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <type>CHANGE_PER_SECOND</type>
                                     <params/>
                                 </step>
-                                <step>
-                                    <type>MULTIPLIER</type>
-                                    <params>8</params>
-                                </step>
                             </preprocessing>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}=0</expression>
-                                    <name>VPN {#VPNNAME}: Канал не активен</name>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>VPN {#VPNNAME}: Время прихода некорректного пакета</name>
@@ -2860,6 +2847,14 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <name>VPN (#SNMPINDEX)</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;10</expression>
+                                    <name>VPN {#VPNNAME}: Канал не активен</name>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>VPN {#VPNNAME}: Битов получено</name>
@@ -2935,7 +2930,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <drawtype>GRADIENT_LINE</drawtype>
                                     <color>1A7C11</color>
                                     <item>
-                                        <host>Continent 4 Module VPN SNMP</host>
+                                        <host>Continent 4.1 Module VPN SNMP</host>
                                         <key>continent4.vpnInBytes[{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -2944,7 +2939,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <drawtype>BOLD_LINE</drawtype>
                                     <color>2774A4</color>
                                     <item>
-                                        <host>Continent 4 Module VPN SNMP</host>
+                                        <host>Continent 4.1 Module VPN SNMP</host>
                                         <key>continent4.vpnOutBytes[{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
@@ -2955,35 +2950,35 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
             </discovery_rules>
         </template>
         <template>
-            <template>Continent 4 SNMP</template>
-            <name>Continent 4 SNMP</name>
+            <template>Continent 4.1 SNMP</template>
+            <name>Continent 4.1 SNMP</name>
             <templates>
                 <template>
-                    <name>Continent 4 Module AccessServer SNMP</name>
+                    <name>Continent 4.1 Module AccessServer SNMP</name>
                 </template>
                 <template>
-                    <name>Continent 4 Module CPU SNMP</name>
+                    <name>Continent 4.1 Module CPU SNMP</name>
                 </template>
                 <template>
-                    <name>Continent 4 Module FileSystems SNMP</name>
+                    <name>Continent 4.1 Module FileSystems SNMP</name>
                 </template>
                 <template>
-                    <name>Continent 4 Module FireWall SNMP</name>
+                    <name>Continent 4.1 Module FireWall SNMP</name>
                 </template>
                 <template>
-                    <name>Continent 4 Module Generic SNMP</name>
+                    <name>Continent 4.1 Module Generic SNMP</name>
                 </template>
                 <template>
-                    <name>Continent 4 Module Interfaces SNMP</name>
+                    <name>Continent 4.1 Module Interfaces SNMP</name>
                 </template>
                 <template>
-                    <name>Continent 4 Module IPS SNMP</name>
+                    <name>Continent 4.1 Module IPS SNMP</name>
                 </template>
                 <template>
-                    <name>Continent 4 Module Memory SNMP</name>
+                    <name>Continent 4.1 Module Memory SNMP</name>
                 </template>
                 <template>
-                    <name>Continent 4 Module VPN SNMP</name>
+                    <name>Continent 4.1 Module VPN SNMP</name>
                 </template>
             </templates>
             <groups>
@@ -2995,8 +2990,8 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
     </templates>
     <triggers>
         <trigger>
-            <expression>{Continent 4 Module CPU SNMP:system.cpu.load.avg1[laLoad.1].min(5m)}/{Continent 4 Module CPU SNMP:system.cpu.num[snmp].last()}&gt;{$LOAD_AVG_PER_CPU.MAX.WARN}&#13;
-and {Continent 4 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0</expression>
+            <expression>{Continent 4.1 Module CPU SNMP:system.cpu.load.avg1[laLoad.1].min(5m)}/{Continent 4.1 Module CPU SNMP:system.cpu.num[snmp].last()}&gt;{$LOAD_AVG_PER_CPU.MAX.WARN}&#13;
+and {Continent 4.1 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0</expression>
             <name>Высокая средняя загрузка (загрузка каждого ЦП больше {$LOAD_AVG_PER_CPU.MAX.WARN} за 5мин.)</name>
             <opdata>Текущая загрузка (1 мин 5 мин): ({ITEM.LASTVALUE1} {ITEM.LASTVALUE3}), # на ЦП: {ITEM.LASTVALUE2}</opdata>
             <priority>AVERAGE</priority>
@@ -3004,7 +2999,7 @@ and {Continent 4 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0</ex
 реагировать.</description>
         </trigger>
         <trigger>
-            <expression>{Continent 4 Module Memory SNMP:vm.memory.available[snmp].max(5m)}&lt;{$MEMORY.AVAILABLE.MIN} and {Continent 4 Module Memory SNMP:vm.memory.total[memTotalReal.0].last()}&gt;0</expression>
+            <expression>{Continent 4.1 Module Memory SNMP:vm.memory.available[snmp].max(5m)}&lt;{$MEMORY.AVAILABLE.MIN} and {Continent 4.1 Module Memory SNMP:vm.memory.total[memTotalReal.0].last()}&gt;0</expression>
             <name>Недостаточно доступной памяти (&lt;{$MEMORY.AVAILABLE.MIN} of {ITEM.VALUE2})</name>
             <opdata>Доступно: {ITEM.LASTVALUE1}, всего: {ITEM.LASTVALUE2}</opdata>
             <priority>AVERAGE</priority>
@@ -3021,7 +3016,7 @@ and {Continent 4 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0</ex
                     <drawtype>GRADIENT_LINE</drawtype>
                     <color>1A7C11</color>
                     <item>
-                        <host>Continent 4 Module CPU SNMP</host>
+                        <host>Continent 4.1 Module CPU SNMP</host>
                         <key>system.cpu.util[snmp]</key>
                     </item>
                 </graph_item>
@@ -3035,7 +3030,7 @@ and {Continent 4 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0</ex
                     <sortorder>1</sortorder>
                     <color>1A7C11</color>
                     <item>
-                        <host>Continent 4 Module CPU SNMP</host>
+                        <host>Continent 4.1 Module CPU SNMP</host>
                         <key>system.cpu.load.avg1[laLoad.1]</key>
                     </item>
                 </graph_item>
@@ -3043,7 +3038,7 @@ and {Continent 4 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0</ex
                     <sortorder>2</sortorder>
                     <color>2774A4</color>
                     <item>
-                        <host>Continent 4 Module CPU SNMP</host>
+                        <host>Continent 4.1 Module CPU SNMP</host>
                         <key>system.cpu.load.avg5[laLoad.2]</key>
                     </item>
                 </graph_item>
@@ -3052,7 +3047,7 @@ and {Continent 4 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0</ex
                     <color>A54F10</color>
                     <yaxisside>RIGHT</yaxisside>
                     <item>
-                        <host>Continent 4 Module CPU SNMP</host>
+                        <host>Continent 4.1 Module CPU SNMP</host>
                         <key>system.cpu.num[snmp]</key>
                     </item>
                 </graph_item>
@@ -3065,7 +3060,7 @@ and {Continent 4 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0</ex
                     <sortorder>1</sortorder>
                     <color>1A7C11</color>
                     <item>
-                        <host>Continent 4 Module CPU SNMP</host>
+                        <host>Continent 4.1 Module CPU SNMP</host>
                         <key>system.cpu.system[ssCpuRawSystem]</key>
                     </item>
                 </graph_item>
@@ -3073,7 +3068,7 @@ and {Continent 4 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0</ex
                     <sortorder>2</sortorder>
                     <color>2774A4</color>
                     <item>
-                        <host>Continent 4 Module CPU SNMP</host>
+                        <host>Continent 4.1 Module CPU SNMP</host>
                         <key>system.cpu.user[ssCpuRawUser]</key>
                     </item>
                 </graph_item>
@@ -3081,7 +3076,7 @@ and {Continent 4 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0</ex
                     <sortorder>3</sortorder>
                     <color>F63100</color>
                     <item>
-                        <host>Continent 4 Module CPU SNMP</host>
+                        <host>Continent 4.1 Module CPU SNMP</host>
                         <key>system.cpu.nice[ssCpuRawNice]</key>
                     </item>
                 </graph_item>
@@ -3089,7 +3084,7 @@ and {Continent 4 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0</ex
                     <sortorder>4</sortorder>
                     <color>A54F10</color>
                     <item>
-                        <host>Continent 4 Module CPU SNMP</host>
+                        <host>Continent 4.1 Module CPU SNMP</host>
                         <key>system.cpu.iowait[ssCpuRawWait]</key>
                     </item>
                 </graph_item>
@@ -3097,7 +3092,7 @@ and {Continent 4 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0</ex
                     <sortorder>5</sortorder>
                     <color>6C59DC</color>
                     <item>
-                        <host>Continent 4 Module CPU SNMP</host>
+                        <host>Continent 4.1 Module CPU SNMP</host>
                         <key>system.cpu.interrupt[ssCpuRawInterrupt]</key>
                     </item>
                 </graph_item>
@@ -3113,7 +3108,7 @@ and {Continent 4 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0</ex
                     <drawtype>GRADIENT_LINE</drawtype>
                     <color>1A7C11</color>
                     <item>
-                        <host>Continent 4 Module Memory SNMP</host>
+                        <host>Continent 4.1 Module Memory SNMP</host>
                         <key>vm.memory.util[snmp]</key>
                     </item>
                 </graph_item>
@@ -3128,7 +3123,7 @@ and {Continent 4 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0</ex
                     <drawtype>BOLD_LINE</drawtype>
                     <color>1A7C11</color>
                     <item>
-                        <host>Continent 4 Module Memory SNMP</host>
+                        <host>Continent 4.1 Module Memory SNMP</host>
                         <key>vm.memory.total[memTotalReal.0]</key>
                     </item>
                 </graph_item>
@@ -3137,7 +3132,7 @@ and {Continent 4 Module CPU SNMP:system.cpu.load.avg5[laLoad.2].last()}&gt;0</ex
                     <drawtype>GRADIENT_LINE</drawtype>
                     <color>2774A4</color>
                     <item>
-                        <host>Continent 4 Module Memory SNMP</host>
+                        <host>Continent 4.1 Module Memory SNMP</host>
                         <key>vm.memory.available[snmp]</key>
                     </item>
                 </graph_item>
