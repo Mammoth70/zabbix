@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-12-06T06:46:15Z</date>
+    <date>2024-12-06T07:00:54Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -2847,14 +2847,6 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <name>VPN (#SNMPINDEX)</name>
                                 </application_prototype>
                             </application_prototypes>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}&gt;10</expression>
-                                    <name>VPN {#VPNNAME}: Канал не активен</name>
-                                    <priority>WARNING</priority>
-                                    <description>VPN-канал не активен</description>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>VPN {#VPNNAME}: Битов получено</name>
@@ -2921,6 +2913,16 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </preprocessing>
                         </item_prototype>
                     </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Continent 4.1 Module VPN SNMP:continent41.vpnActive[{#SNMPINDEX}].last()}=0&#13;
+or&#13;
+{Continent 4.1 Module VPN SNMP:continent41.vpnChannelLastIn[{#SNMPINDEX}].last()}&gt;10</expression>
+                            <name>VPN {#VPNNAME}: Канал не активен</name>
+                            <priority>WARNING</priority>
+                            <description>VPN-канал не активен</description>
+                        </trigger_prototype>
+                    </trigger_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
                             <name>VPN {#VPNNAME}: Сетевой трафик</name>
