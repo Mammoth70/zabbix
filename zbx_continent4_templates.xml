@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-12-06T06:32:00Z</date>
+    <date>2024-12-06T06:46:15Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -29,7 +29,7 @@
                     <name>Статус СД</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.1.0</snmp_oid>
-                    <key>continent4.aservState</key>
+                    <key>continent41.aservState</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -58,7 +58,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                             <name>Количество подключенных АП</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.2.0</snmp_oid>
-                            <key>continent4.as.aservConnCount[0{#SINGLETON}]</key>
+                            <key>continent41.as.aservConnCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -74,7 +74,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                             <name>Битов считано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.6.0</snmp_oid>
-                            <key>continent4.as.aservReadBytesCount[0{#SINGLETON}]</key>
+                            <key>continent41.as.aservReadBytesCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -101,7 +101,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                             <name>Пакетов считано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.14.0</snmp_oid>
-                            <key>continent4.as.aservReadPacketsCount[0{#SINGLETON}]</key>
+                            <key>continent41.as.aservReadPacketsCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -124,7 +124,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                             <name>Битов записано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.10.0</snmp_oid>
-                            <key>continent4.as.aservWriteBytesCount[0{#SINGLETON}]</key>
+                            <key>continent41.as.aservWriteBytesCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -151,7 +151,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                             <name>Пакетов записано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.18.0</snmp_oid>
-                            <key>continent4.as.aservWritePacketsCount[0{#SINGLETON}]</key>
+                            <key>continent41.as.aservWritePacketsCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -174,7 +174,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                             <name>Статус</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.1.0</snmp_oid>
-                            <key>continent4.as.contAservState[0{#SINGLETON}]</key>
+                            <key>continent41.as.contAservState[0{#SINGLETON}]</key>
                             <delay>1h</delay>
                             <history>2w</history>
                             <trends>0</trends>
@@ -192,7 +192,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                             <name>Количество свободных лицензий</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.23.0</snmp_oid>
-                            <key>continent4.as.contLicensesBalance[0{#SINGLETON}]</key>
+                            <key>continent41.as.contLicensesBalance[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -215,7 +215,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                             <name>Количество лицензий</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.22.0</snmp_oid>
-                            <key>continent4.as.contLicensesTotalCount[0{#SINGLETON}]</key>
+                            <key>continent41.as.contLicensesTotalCount[0{#SINGLETON}]</key>
                             <delay>1h</delay>
                             <history>2w</history>
                             <trends>0</trends>
@@ -238,7 +238,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <color>6A1B9A</color>
                                     <item>
                                         <host>Continent 4.1 Module AccessServer SNMP</host>
-                                        <key>continent4.as.aservConnCount[0{#SINGLETON}]</key>
+                                        <key>continent41.as.aservConnCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -247,7 +247,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <color>FF8000</color>
                                     <item>
                                         <host>Continent 4.1 Module AccessServer SNMP</host>
-                                        <key>continent4.as.contLicensesTotalCount[0{#SINGLETON}]</key>
+                                        <key>continent41.as.contLicensesTotalCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -261,7 +261,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <color>1A7C11</color>
                                     <item>
                                         <host>Continent 4.1 Module AccessServer SNMP</host>
-                                        <key>continent4.as.aservReadBytesCount[0{#SINGLETON}]</key>
+                                        <key>continent41.as.aservReadBytesCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -270,7 +270,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <color>2774A4</color>
                                     <item>
                                         <host>Continent 4.1 Module AccessServer SNMP</host>
-                                        <key>continent4.as.aservWriteBytesCount[0{#SINGLETON}]</key>
+                                        <key>continent41.as.aservWriteBytesCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -279,7 +279,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
                                         <host>Continent 4.1 Module AccessServer SNMP</host>
-                                        <key>continent4.as.aservReadPacketsCount[0{#SINGLETON}]</key>
+                                        <key>continent41.as.aservReadPacketsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -288,14 +288,14 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
                                         <host>Continent 4.1 Module AccessServer SNMP</host>
-                                        <key>continent4.as.aservWritePacketsCount[0{#SINGLETON}]</key>
+                                        <key>continent41.as.aservWritePacketsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
                         </graph_prototype>
                     </graph_prototypes>
                     <master_item>
-                        <key>continent4.aservState</key>
+                        <key>continent41.aservState</key>
                     </master_item>
                     <preprocessing>
                         <step>
@@ -874,7 +874,7 @@ return (i/dict.length/100);</params>
                     <name>Статус МСЭ</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.2.1.0</snmp_oid>
-                    <key>continent4.fwState</key>
+                    <key>continent41.fwState</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -900,7 +900,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                             <name>Установлено отслеживаемых соединений</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.2.2.0</snmp_oid>
-                            <key>continent4.fwConnCount[0{#SINGLETON}]</key>
+                            <key>continent41.fwConnCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -928,7 +928,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                             <name>Входящих пакетов отфильтровано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.2.10.0</snmp_oid>
-                            <key>continent4.fwInputPacketsCount[0{#SINGLETON}]</key>
+                            <key>continent41.fwInputPacketsCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -952,7 +952,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                             <name>Исходящих пакетов отфильтровано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.2.14.0</snmp_oid>
-                            <key>continent4.fwOutputPacketsCount[0{#SINGLETON}]</key>
+                            <key>continent41.fwOutputPacketsCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -981,7 +981,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                                     <color>FF0000</color>
                                     <item>
                                         <host>Continent 4.1 Module FireWall SNMP</host>
-                                        <key>continent4.fwOutputPacketsCount[0{#SINGLETON}]</key>
+                                        <key>continent41.fwOutputPacketsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -989,7 +989,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                                     <color>B71C1C</color>
                                     <item>
                                         <host>Continent 4.1 Module FireWall SNMP</host>
-                                        <key>continent4.fwInputPacketsCount[0{#SINGLETON}]</key>
+                                        <key>continent41.fwInputPacketsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -998,14 +998,14 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
                                         <host>Continent 4.1 Module FireWall SNMP</host>
-                                        <key>continent4.fwConnCount[0{#SINGLETON}]</key>
+                                        <key>continent41.fwConnCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
                         </graph_prototype>
                     </graph_prototypes>
                     <master_item>
-                        <key>continent4.fwState</key>
+                        <key>continent41.fwState</key>
                     </master_item>
                     <preprocessing>
                         <step>
@@ -1043,7 +1043,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                     <name>Версия ОС</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.1.0</snmp_oid>
-                    <key>continent4.continentVersion</key>
+                    <key>continent41.continentVersion</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -1067,7 +1067,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                     <name>Версия GeoIP</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.7.0</snmp_oid>
-                    <key>continent4.GeoIPVersion</key>
+                    <key>continent41.GeoIPVersion</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -1090,7 +1090,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                     <name>Дата и время на хосте</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.12.0</snmp_oid>
-                    <key>continent4.hrSystemDate</key>
+                    <key>continent41.hrSystemDate</key>
                     <delay>3m</delay>
                     <history>2w</history>
                     <trends>732d</trends>
@@ -1121,7 +1121,7 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <name>Версия базы решающих правил</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.3.0</snmp_oid>
-                    <key>continent4.IPSVersion</key>
+                    <key>continent41.IPSVersion</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -1144,7 +1144,7 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <name>Версия фидов Kaspersky</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.4.0</snmp_oid>
-                    <key>continent4.KasperskyFeedsVersion</key>
+                    <key>continent41.KasperskyFeedsVersion</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -1167,7 +1167,7 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <name>Версия хэшей Kaspersky</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.5.0</snmp_oid>
-                    <key>continent4.KasperskyHashVersion</key>
+                    <key>continent41.KasperskyHashVersion</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -1190,7 +1190,7 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <name>Время работы узла безопасности</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.2.0</snmp_oid>
-                    <key>continent4.nodeUpTime</key>
+                    <key>continent41.nodeUpTime</key>
                     <delay>3m</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -1222,7 +1222,7 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <name>Версия SkyDNS</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.8.0</snmp_oid>
-                    <key>continent4.SkyDNSVersion</key>
+                    <key>continent41.SkyDNSVersion</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -1245,7 +1245,7 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <name>Контакты ответственного лица</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.4.0</snmp_oid>
-                    <key>continent4.system.contact[sysContact]</key>
+                    <key>continent41.system.contact[sysContact]</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -1269,7 +1269,7 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <name>Описание узла</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.1.0</snmp_oid>
-                    <key>continent4.system.descr[sysDescr]</key>
+                    <key>continent41.system.descr[sysDescr]</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -1293,7 +1293,7 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <name>Местоположение узла</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.6.0</snmp_oid>
-                    <key>continent4.system.location[sysLocation]</key>
+                    <key>continent41.system.location[sysLocation]</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -1317,7 +1317,7 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <name>Имя узла</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.5.0</snmp_oid>
-                    <key>continent4.system.name</key>
+                    <key>continent41.system.name</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -1351,7 +1351,7 @@ and &#13;
                     <name>Идентификация поставщика</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.2.0</snmp_oid>
-                    <key>continent4.system.objectid[sysObjectID]</key>
+                    <key>continent41.system.objectid[sysObjectID]</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -1374,7 +1374,7 @@ and &#13;
                     <name>Время работы</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.3.0</snmp_oid>
-                    <key>continent4.system.uptime[sysUpTime]</key>
+                    <key>continent41.system.uptime[sysUpTime]</key>
                     <delay>3m</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -1412,7 +1412,7 @@ and &#13;
                     <name>CPU: Температура</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.2.6.1.0</snmp_oid>
-                    <key>continent4.tempCPU</key>
+                    <key>continent41.tempCPU</key>
                     <delay>3m</delay>
                     <history>2w</history>
                     <trends>732d</trends>
@@ -1448,8 +1448,8 @@ and &#13;
                             <dependencies>
                                 <dependency>
                                     <name>CPU: Температура выше критического порога: &gt;{$TEMP_CRIT:CPU}</name>
-                                    <expression>{Continent 4.1 Module Generic SNMP:continent4.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
-                                    <recovery_expression>{Continent 4.1 Module Generic SNMP:continent4.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
+                                    <expression>{Continent 4.1 Module Generic SNMP:continent41.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
+                                    <recovery_expression>{Continent 4.1 Module Generic SNMP:continent41.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
                                 </dependency>
                             </dependencies>
                         </trigger>
@@ -1462,8 +1462,8 @@ and &#13;
                             <dependencies>
                                 <dependency>
                                     <name>CPU: Температура выше критического порога: &gt;{$TEMP_CRIT:CPU}</name>
-                                    <expression>{Continent 4.1 Module Generic SNMP:continent4.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
-                                    <recovery_expression>{Continent 4.1 Module Generic SNMP:continent4.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
+                                    <expression>{Continent 4.1 Module Generic SNMP:continent41.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
+                                    <recovery_expression>{Continent 4.1 Module Generic SNMP:continent41.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
                                 </dependency>
                             </dependencies>
                         </trigger>
@@ -1473,7 +1473,7 @@ and &#13;
                     <name>HDD: Температура</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.2.6.5.0</snmp_oid>
-                    <key>continent4.tempHDD</key>
+                    <key>continent41.tempHDD</key>
                     <delay>3m</delay>
                     <history>2w</history>
                     <trends>732d</trends>
@@ -1509,8 +1509,8 @@ and &#13;
                             <dependencies>
                                 <dependency>
                                     <name>HDD: Температура выше критического порога: &gt;{$TEMP_CRIT:HDD}</name>
-                                    <expression>{Continent 4.1 Module Generic SNMP:continent4.tempHDD.avg(5m)}&gt;{$TEMP_CRIT:HDD}</expression>
-                                    <recovery_expression>{Continent 4.1 Module Generic SNMP:continent4.tempHDD.avg(5m)}&lt;{$TEMP_CRIT:HDD}-3</recovery_expression>
+                                    <expression>{Continent 4.1 Module Generic SNMP:continent41.tempHDD.avg(5m)}&gt;{$TEMP_CRIT:HDD}</expression>
+                                    <recovery_expression>{Continent 4.1 Module Generic SNMP:continent41.tempHDD.avg(5m)}&lt;{$TEMP_CRIT:HDD}-3</recovery_expression>
                                 </dependency>
                             </dependencies>
                         </trigger>
@@ -1523,8 +1523,8 @@ and &#13;
                             <dependencies>
                                 <dependency>
                                     <name>CPU: Температура выше критического порога: &gt;{$TEMP_CRIT:CPU}</name>
-                                    <expression>{Continent 4.1 Module Generic SNMP:continent4.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
-                                    <recovery_expression>{Continent 4.1 Module Generic SNMP:continent4.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
+                                    <expression>{Continent 4.1 Module Generic SNMP:continent41.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
+                                    <recovery_expression>{Continent 4.1 Module Generic SNMP:continent41.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
                                 </dependency>
                             </dependencies>
                         </trigger>
@@ -1534,7 +1534,7 @@ and &#13;
                     <name>Версия пользовательских хэшей</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.6.0</snmp_oid>
-                    <key>continent4.UserHashVersion</key>
+                    <key>continent41.UserHashVersion</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -2251,7 +2251,7 @@ and {Continent 4.1 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPIN
                     <name>Статус IPS</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.2.0</snmp_oid>
-                    <key>continent4.ipsComponentState</key>
+                    <key>continent41.ipsComponentState</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -2277,7 +2277,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>Пакетов отброшено</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.7.0</snmp_oid>
-                            <key>continent4.ipsDropsCount[0{#SINGLETON}]</key>
+                            <key>continent41.ipsDropsCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -2301,7 +2301,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>Оповещений о событии 0 уровня</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.11.0</snmp_oid>
-                            <key>continent4.ipsEventLvl0Alerts[0{#SINGLETON}]</key>
+                            <key>continent41.ipsEventLvl0Alerts[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -2329,7 +2329,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>Оповещений о событии 1 уровня</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.15.0</snmp_oid>
-                            <key>continent4.ipsEventLvl1Alerts[0{#SINGLETON}]</key>
+                            <key>continent41.ipsEventLvl1Alerts[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -2357,7 +2357,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>Оповещений о событии 2 уровня</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.19.0</snmp_oid>
-                            <key>continent4.ipsEventLvl2Alerts[0{#SINGLETON}]</key>
+                            <key>continent41.ipsEventLvl2Alerts[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -2385,7 +2385,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>Оповещений о событии 3 уровня</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.23.0</snmp_oid>
-                            <key>continent4.ipsEventLvl3Alerts[0{#SINGLETON}]</key>
+                            <key>continent41.ipsEventLvl3Alerts[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -2412,7 +2412,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>Пакетов пропущено</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.3.0</snmp_oid>
-                            <key>continent4.ipsPcktsCount[0{#SINGLETON}]</key>
+                            <key>continent41.ipsPcktsCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -2435,7 +2435,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>Сигнатур загружено</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.27.0</snmp_oid>
-                            <key>continent4.ipsSingatureCount[0{#SINGLETON}]</key>
+                            <key>continent41.ipsSingatureCount[0{#SINGLETON}]</key>
                             <delay>1h</delay>
                             <history>0</history>
                             <trends>742d</trends>
@@ -2457,7 +2457,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <color>B71C1C</color>
                                     <item>
                                         <host>Continent 4.1 Module IPS SNMP</host>
-                                        <key>continent4.ipsEventLvl0Alerts[0{#SINGLETON}]</key>
+                                        <key>continent41.ipsEventLvl0Alerts[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -2465,7 +2465,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <color>FF0000</color>
                                     <item>
                                         <host>Continent 4.1 Module IPS SNMP</host>
-                                        <key>continent4.ipsEventLvl1Alerts[0{#SINGLETON}]</key>
+                                        <key>continent41.ipsEventLvl1Alerts[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -2473,7 +2473,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <color>FF8000</color>
                                     <item>
                                         <host>Continent 4.1 Module IPS SNMP</host>
-                                        <key>continent4.ipsEventLvl2Alerts[0{#SINGLETON}]</key>
+                                        <key>continent41.ipsEventLvl2Alerts[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -2481,7 +2481,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <color>2E7D32</color>
                                     <item>
                                         <host>Continent 4.1 Module IPS SNMP</host>
-                                        <key>continent4.ipsEventLvl3Alerts[0{#SINGLETON}]</key>
+                                        <key>continent41.ipsEventLvl3Alerts[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -2494,7 +2494,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <color>000000</color>
                                     <item>
                                         <host>Continent 4.1 Module IPS SNMP</host>
-                                        <key>continent4.ipsPcktsCount[0{#SINGLETON}]</key>
+                                        <key>continent41.ipsPcktsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -2502,14 +2502,14 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <color>B71C1C</color>
                                     <item>
                                         <host>Continent 4.1 Module IPS SNMP</host>
-                                        <key>continent4.ipsDropsCount[0{#SINGLETON}]</key>
+                                        <key>continent41.ipsDropsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
                         </graph_prototype>
                     </graph_prototypes>
                     <master_item>
-                        <key>continent4.ipsComponentState</key>
+                        <key>continent41.ipsComponentState</key>
                     </master_item>
                     <preprocessing>
                         <step>
@@ -2784,7 +2784,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>VPN {#VPNNAME}: Активность</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.2.5.1.1.9.{#SNMPINDEX}</snmp_oid>
-                            <key>continent4.vpnActive[{#SNMPINDEX}]</key>
+                            <key>continent41.vpnActive[{#SNMPINDEX}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -2814,7 +2814,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>VPN {#VPNNAME}: Время прихода некорректного пакета</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.2.5.1.1.8.{#SNMPINDEX}</snmp_oid>
-                            <key>continent4.vpnChannelBadLastIn[{#SNMPINDEX}]</key>
+                            <key>continent41.vpnChannelBadLastIn[{#SNMPINDEX}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -2833,7 +2833,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>VPN {#VPNNAME}: Время прихода корректного пакета</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.2.5.1.1.7.{#SNMPINDEX}</snmp_oid>
-                            <key>continent4.vpnChannelLastIn[{#SNMPINDEX}]</key>
+                            <key>continent41.vpnChannelLastIn[{#SNMPINDEX}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -2860,7 +2860,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>VPN {#VPNNAME}: Битов получено</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.2.5.1.1.3.{#SNMPINDEX}</snmp_oid>
-                            <key>continent4.vpnInBytes[{#SNMPINDEX}]</key>
+                            <key>continent41.vpnInBytes[{#SNMPINDEX}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -2892,7 +2892,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>VPN {#VPNNAME}: Битов отправлено</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.2.5.1.1.5.{#SNMPINDEX}</snmp_oid>
-                            <key>continent4.vpnOutBytes[{#SNMPINDEX}]</key>
+                            <key>continent41.vpnOutBytes[{#SNMPINDEX}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -2931,7 +2931,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <color>1A7C11</color>
                                     <item>
                                         <host>Continent 4.1 Module VPN SNMP</host>
-                                        <key>continent4.vpnInBytes[{#SNMPINDEX}]</key>
+                                        <key>continent41.vpnInBytes[{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -2940,7 +2940,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <color>2774A4</color>
                                     <item>
                                         <host>Continent 4.1 Module VPN SNMP</host>
-                                        <key>continent4.vpnOutBytes[{#SNMPINDEX}]</key>
+                                        <key>continent41.vpnOutBytes[{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
