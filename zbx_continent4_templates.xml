@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-12-06T07:00:54Z</date>
+    <date>2024-12-10T05:23:13Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -2809,6 +2809,14 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <params/>
                                 </step>
                             </preprocessing>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}=0</expression>
+                                    <name>VPN {#VPNNAME}: Канал не активен</name>
+                                    <priority>WARNING</priority>
+                                    <description>VPN-канал не активен</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>VPN {#VPNNAME}: Время прихода некорректного пакета</name>
@@ -2915,12 +2923,12 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Continent 4.1 Module VPN SNMP:continent41.vpnActive[{#SNMPINDEX}].last()}=0&#13;
-or&#13;
-{Continent 4.1 Module VPN SNMP:continent41.vpnChannelLastIn[{#SNMPINDEX}].last()}&gt;10</expression>
-                            <name>VPN {#VPNNAME}: Канал не активен</name>
+                            <expression>{Continent 4.1 Module VPN SNMP:continent41.vpnChannelLastIn[{#SNMPINDEX}].last()}&gt;10&#13;
+and&#13;
+{Continent 4.1 Module VPN SNMP:continent41.vpnActive[{#SNMPINDEX}].last()}=1</expression>
+                            <name>VPN {#VPNNAME}: Канал не работает</name>
                             <priority>WARNING</priority>
-                            <description>VPN-канал не активен</description>
+                            <description>VPN-канал не работает</description>
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes>
