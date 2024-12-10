@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-12-10T05:25:08Z</date>
+    <date>2024-12-10T08:30:42Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -79,9 +79,9 @@
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.8.0</snmp_oid>
                             <key>continent39.AS.aservCertValidFrom[0{#SINGLETON}]</key>
-                            <delay>3m</delay>
+                            <delay>1h</delay>
                             <history>2w</history>
-                            <trends>732d</trends>
+                            <trends>0</trends>
                             <units>unixtime</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Дата начала действия сертификата СД</description>
@@ -92,16 +92,16 @@
                             </application_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Дата окончания действия сертификата СД</name>
+                            <name>Срок действия сертификата</name>
                             <type>SNMP_AGENT</type>
-                            <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.9.0</snmp_oid>
-                            <key>continent39.AS.aservCertValidTo[0{#SINGLETON}]</key>
-                            <delay>3m</delay>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.10.0</snmp_oid>
+                            <key>continent39.AS.aservCertValidTime[0{#SINGLETON}]</key>
+                            <delay>1h</delay>
                             <history>2w</history>
-                            <trends>732d</trends>
-                            <units>unixtime</units>
+                            <trends>0</trends>
+                            <units>s</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Дата окончания действия сертификата СД</description>
+Срок действия сертификата</description>
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
@@ -120,11 +120,28 @@
                                     <dependencies>
                                         <dependency>
                                             <name>Истекает срок действия сертификата сервера доступа (менее {$AS_CERT.TO_EXPIRE.CRIT})</name>
-                                            <expression>{Continent 3.9 Module AccessServer SNMP:continent39.AS.aservCertValidTo[0{#SINGLETON}].last()}&lt;{$AS_CERT.TO_EXPIRE.CRIT}</expression>
+                                            <expression>{Continent 3.9 Module AccessServer SNMP:continent39.AS.aservCertValidTime[0{#SINGLETON}].last()}&lt;{$AS_CERT.TO_EXPIRE.CRIT}</expression>
                                         </dependency>
                                     </dependencies>
                                 </trigger_prototype>
                             </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Дата окончания действия сертификата СД</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.9.0</snmp_oid>
+                            <key>continent39.AS.aservCertValidTo[0{#SINGLETON}]</key>
+                            <delay>1h</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <units>unixtime</units>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Дата окончания действия сертификата СД</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Серийный номер корневого сертификата</name>
@@ -148,9 +165,9 @@
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.8.0</snmp_oid>
                             <key>continent39.AS.aservRootCertValidFrom[0{#SINGLETON}]</key>
-                            <delay>3m</delay>
+                            <delay>1h</delay>
                             <history>2w</history>
-                            <trends>732d</trends>
+                            <trends>0</trends>
                             <units>unixtime</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Дата начала действия корневого сертификата</description>
@@ -161,16 +178,16 @@
                             </application_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Дата окончания действия корневого сертификата</name>
+                            <name>Срок действия корневого сертификата</name>
                             <type>SNMP_AGENT</type>
-                            <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.9.0</snmp_oid>
-                            <key>continent39.AS.aservRootCertValidTo[0{#SINGLETON}]</key>
-                            <delay>3m</delay>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.10.0</snmp_oid>
+                            <key>continent39.AS.aservRootCertValidTime[0{#SINGLETON}]</key>
+                            <delay>1h</delay>
                             <history>2w</history>
-                            <trends>732d</trends>
-                            <units>unixtime</units>
+                            <trends>0</trends>
+                            <units>s</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Дата окончания действия корневого сертификата</description>
+Срок действия корневого сертификата</description>
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
@@ -189,11 +206,28 @@
                                     <dependencies>
                                         <dependency>
                                             <name>Истекает срок действия корневого сертификата сервера доступа (менее {$AS_ROOT_CERT.TO_EXPIRE.CRIT})</name>
-                                            <expression>{Continent 3.9 Module AccessServer SNMP:continent39.AS.aservRootCertValidTo[0{#SINGLETON}].last()}&lt;{$AS_ROOT_CERT.TO_EXPIRE.CRIT}</expression>
+                                            <expression>{Continent 3.9 Module AccessServer SNMP:continent39.AS.aservRootCertValidTime[0{#SINGLETON}].last()}&lt;{$AS_ROOT_CERT.TO_EXPIRE.CRIT}</expression>
                                         </dependency>
                                     </dependencies>
                                 </trigger_prototype>
                             </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Дата окончания действия корневого сертификата</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.9.0</snmp_oid>
+                            <key>continent39.AS.aservRootCertValidTo[0{#SINGLETON}]</key>
+                            <delay>1h</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <units>unixtime</units>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Дата окончания действия корневого сертификата</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Количество подключенных АП</name>
@@ -415,9 +449,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.8.{#SNMPINDEX}</snmp_oid>
                             <key>continent39.AS.aservClientCert[ValidFrom.{#SNMPINDEX}]</key>
-                            <delay>3m</delay>
+                            <delay>1h</delay>
                             <history>2w</history>
-                            <trends>732d</trends>
+                            <trends>0</trends>
                             <units>unixtime</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Дата начала действия сертификата пользователя СД</description>
@@ -428,16 +462,16 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             </application_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Дата окончания действия сертификата {#CLIENT_CERT_CN}</name>
+                            <name>Срок действия сертификата {#CLIENT_CERT_CN}</name>
                             <type>SNMP_AGENT</type>
-                            <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.9.{#SNMPINDEX}</snmp_oid>
-                            <key>continent39.AS.aservClientCert[ValidTo.{#SNMPINDEX}]</key>
-                            <delay>3m</delay>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.10.{#SNMPINDEX}</snmp_oid>
+                            <key>continent39.AS.aservClientCert[ValidTime.{#SNMPINDEX}]</key>
+                            <delay>1h</delay>
                             <history>2w</history>
-                            <trends>732d</trends>
-                            <units>unixtime</units>
+                            <trends>0</trends>
+                            <units>s</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Дата окончания действия сертификата пользователя СД</description>
+Срок действия сертификата пользователя СД</description>
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
@@ -456,11 +490,28 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <dependencies>
                                         <dependency>
                                             <name>Истекает срок действия сертификата {#CLIENT_CERT_CN} (менее {$AS_USER_CERT.TO_EXPIRE.CRIT})</name>
-                                            <expression>{Continent 3.9 Module AccessServer Users SNMP:continent39.AS.aservClientCert[ValidTo.{#SNMPINDEX}].last()}&lt;{$AS_USER_CERT.TO_EXPIRE.CRIT}</expression>
+                                            <expression>{Continent 3.9 Module AccessServer Users SNMP:continent39.AS.aservClientCert[ValidTime.{#SNMPINDEX}].last()}&lt;{$AS_USER_CERT.TO_EXPIRE.CRIT}</expression>
                                         </dependency>
                                     </dependencies>
                                 </trigger_prototype>
                             </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Дата окончания действия сертификата {#CLIENT_CERT_CN}</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.9.{#SNMPINDEX}</snmp_oid>
+                            <key>continent39.AS.aservClientCert[ValidTo.{#SNMPINDEX}]</key>
+                            <delay>1h</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <units>unixtime</units>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Дата окончания действия сертификата пользователя СД</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Имя сертификата {#CLIENT_CERT_CN}</name>
@@ -2860,7 +2911,7 @@ and {Continent 3.9 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPIN
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.2.2.1.1.8.{#SNMPINDEX}</snmp_oid>
                             <key>continent39.link.linkKeySecondsToExpireTime[{#SNMPINDEX}]</key>
-                            <delay>3m</delay>
+                            <delay>1h</delay>
                             <history>2w</history>
                             <trends>0</trends>
                             <units>s</units>
