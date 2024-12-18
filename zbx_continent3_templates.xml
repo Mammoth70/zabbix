@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-12-10T08:30:42Z</date>
+    <date>2024-12-18T13:22:37Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -1526,7 +1526,6 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <sortorder>1</sortorder>
                                     <drawtype>GRADIENT_LINE</drawtype>
                                     <color>607D8B</color>
-                                    <yaxisside>RIGHT</yaxisside>
                                     <calc_fnc>ALL</calc_fnc>
                                     <item>
                                         <host>Continent 3.9 Module FileSystems SNMP</host>
