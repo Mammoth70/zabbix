@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-12-10T05:23:13Z</date>
+    <date>2024-12-18T13:23:51Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -811,7 +811,6 @@ return (i/dict.length/100);</params>
                                     <sortorder>1</sortorder>
                                     <drawtype>GRADIENT_LINE</drawtype>
                                     <color>607D8B</color>
-                                    <yaxisside>RIGHT</yaxisside>
                                     <calc_fnc>ALL</calc_fnc>
                                     <item>
                                         <host>Continent 4.1 Module FileSystems SNMP</host>
@@ -1709,7 +1708,7 @@ and &#13;
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {{#IFNUMBER}</name>
+                                    <name>Interface {#IFNUMBER}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1736,7 +1735,7 @@ and &#13;
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {{#IFNUMBER}</name>
+                                    <name>Interface {#IFNUMBER}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1764,7 +1763,7 @@ and &#13;
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {{#IFNUMBER}</name>
+                                    <name>Interface {#IFNUMBER}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1795,7 +1794,7 @@ and &#13;
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {{#IFNUMBER}</name>
+                                    <name>Interface {#IFNUMBER}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1826,7 +1825,7 @@ and &#13;
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {{#IFNUMBER}</name>
+                                    <name>Interface {#IFNUMBER}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1853,7 +1852,7 @@ and &#13;
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {{#IFNUMBER}</name>
+                                    <name>Interface {#IFNUMBER}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1881,7 +1880,7 @@ and &#13;
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {{#IFNUMBER}</name>
+                                    <name>Interface {#IFNUMBER}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1913,7 +1912,7 @@ and &#13;
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {{#IFNUMBER}</name>
+                                    <name>Interface {#IFNUMBER}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1950,7 +1949,7 @@ and &#13;
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {{#IFNUMBER}</name>
+                                    <name>Interface {#IFNUMBER}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <valuemap>
@@ -1991,7 +1990,7 @@ and &#13;
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {{#IFNUMBER}</name>
+                                    <name>Interface {#IFNUMBER}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <valuemap>
