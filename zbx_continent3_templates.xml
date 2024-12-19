@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-12-19T06:15:06Z</date>
+    <date>2024-12-19T11:59:28Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -46,7 +46,7 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.3.0</snmp_oid>
                             <key>continent39.AS.aservCertCN[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -54,6 +54,9 @@
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат СД</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -69,7 +72,7 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.7.0</snmp_oid>
                             <key>continent39.AS.aservCertDescr[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -77,6 +80,9 @@
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат СД</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -92,7 +98,7 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.6.0</snmp_oid>
                             <key>continent39.AS.aservCertL[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -100,6 +106,9 @@
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат СД</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -115,7 +124,7 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.5.0</snmp_oid>
                             <key>continent39.AS.aservCertOU[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -123,6 +132,9 @@
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат СД</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -138,7 +150,7 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.4.0</snmp_oid>
                             <key>continent39.AS.aservCertO[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -146,6 +158,9 @@
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат СД</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -161,7 +176,7 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.2.0</snmp_oid>
                             <key>continent39.AS.aservCertSerial[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -169,6 +184,9 @@
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат СД</name>
                                 </application_prototype>
                             </application_prototypes>
                         </item_prototype>
@@ -178,7 +196,7 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.8.0</snmp_oid>
                             <key>continent39.AS.aservCertValidFrom[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <units>unixtime</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -186,6 +204,9 @@
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат СД</name>
                                 </application_prototype>
                             </application_prototypes>
                         </item_prototype>
@@ -203,6 +224,9 @@
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат СД</name>
                                 </application_prototype>
                             </application_prototypes>
                             <trigger_prototypes>
@@ -230,7 +254,7 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.9.0</snmp_oid>
                             <key>continent39.AS.aservCertValidTo[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <units>unixtime</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -238,6 +262,9 @@
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат СД</name>
                                 </application_prototype>
                             </application_prototypes>
                         </item_prototype>
@@ -247,12 +274,15 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.3.0</snmp_oid>
                             <key>continent39.AS.aservRootCertCN[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Имя корневого сертификата</description>
                             <application_prototypes>
+                                <application_prototype>
+                                    <name>Корневой сертификат</name>
+                                </application_prototype>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
                                 </application_prototype>
@@ -270,12 +300,15 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.7.0</snmp_oid>
                             <key>continent39.AS.aservRootCertDescr[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Описание корневого сертификата</description>
                             <application_prototypes>
+                                <application_prototype>
+                                    <name>Корневой сертификат</name>
+                                </application_prototype>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
                                 </application_prototype>
@@ -293,12 +326,15 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.6.0</snmp_oid>
                             <key>continent39.AS.aservRootCertL[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Сведения об местонахождении корневого сертификата</description>
                             <application_prototypes>
+                                <application_prototype>
+                                    <name>Корневой сертификат</name>
+                                </application_prototype>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
                                 </application_prototype>
@@ -316,12 +352,15 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.5.0</snmp_oid>
                             <key>continent39.AS.aservRootCertOU[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Сведения об подразделении корневого сертификата</description>
                             <application_prototypes>
+                                <application_prototype>
+                                    <name>Корневой сертификат</name>
+                                </application_prototype>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
                                 </application_prototype>
@@ -339,12 +378,15 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.4.0</snmp_oid>
                             <key>continent39.AS.aservRootCertO[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Сведения об организации корневого сертификата</description>
                             <application_prototypes>
+                                <application_prototype>
+                                    <name>Корневой сертификат</name>
+                                </application_prototype>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
                                 </application_prototype>
@@ -362,12 +404,15 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.2.0</snmp_oid>
                             <key>continent39.AS.aservRootCertSerial[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Серийный номер корневого сертификата</description>
                             <application_prototypes>
+                                <application_prototype>
+                                    <name>Корневой сертификат</name>
+                                </application_prototype>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
                                 </application_prototype>
@@ -379,12 +424,15 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.8.0</snmp_oid>
                             <key>continent39.AS.aservRootCertValidFrom[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <units>unixtime</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Дата начала действия корневого сертификата</description>
                             <application_prototypes>
+                                <application_prototype>
+                                    <name>Корневой сертификат</name>
+                                </application_prototype>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
                                 </application_prototype>
@@ -402,6 +450,9 @@
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Срок действия корневого сертификата</description>
                             <application_prototypes>
+                                <application_prototype>
+                                    <name>Корневой сертификат</name>
+                                </application_prototype>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
                                 </application_prototype>
@@ -431,12 +482,15 @@
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.9.0</snmp_oid>
                             <key>continent39.AS.aservRootCertValidTo[0{#SINGLETON}]</key>
                             <delay>1d</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <units>unixtime</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Дата окончания действия корневого сертификата</description>
                             <application_prototypes>
+                                <application_prototype>
+                                    <name>Корневой сертификат</name>
+                                </application_prototype>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
                                 </application_prototype>
@@ -646,7 +700,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.2.{#SNMPINDEX}</snmp_oid>
                             <key>continent39.AS.aservClientCert[Serial.{#SNMPINDEX}]</key>
                             <delay>1h</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -654,6 +708,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат {#CLIENT_CERT_CN}</name>
                                 </application_prototype>
                             </application_prototypes>
                         </item_prototype>
@@ -663,7 +720,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.8.{#SNMPINDEX}</snmp_oid>
                             <key>continent39.AS.aservClientCert[ValidFrom.{#SNMPINDEX}]</key>
                             <delay>1h</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <units>unixtime</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -671,6 +728,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат {#CLIENT_CERT_CN}</name>
                                 </application_prototype>
                             </application_prototypes>
                         </item_prototype>
@@ -688,6 +748,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат {#CLIENT_CERT_CN}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <trigger_prototypes>
@@ -715,7 +778,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.9.{#SNMPINDEX}</snmp_oid>
                             <key>continent39.AS.aservClientCert[ValidTo.{#SNMPINDEX}]</key>
                             <delay>1h</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <units>unixtime</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -723,6 +786,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат {#CLIENT_CERT_CN}</name>
                                 </application_prototype>
                             </application_prototypes>
                         </item_prototype>
@@ -732,7 +798,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.3.{#SNMPINDEX}</snmp_oid>
                             <key>continent39.AS.aservClientCN[Serial.{#SNMPINDEX}]</key>
                             <delay>1h</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -740,6 +806,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат {#CLIENT_CERT_CN}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -755,7 +824,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.7.{#SNMPINDEX}</snmp_oid>
                             <key>continent39.AS.aservClientDescr[Serial.{#SNMPINDEX}]</key>
                             <delay>1h</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -763,6 +832,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат {#CLIENT_CERT_CN}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -778,7 +850,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.6.{#SNMPINDEX}</snmp_oid>
                             <key>continent39.AS.aservClientL[Serial.{#SNMPINDEX}]</key>
                             <delay>1h</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -786,6 +858,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат {#CLIENT_CERT_CN}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -801,7 +876,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.5.{#SNMPINDEX}</snmp_oid>
                             <key>continent39.AS.aservClientOU[Serial.{#SNMPINDEX}]</key>
                             <delay>1h</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -809,6 +884,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат {#CLIENT_CERT_CN}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -824,7 +902,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.4.{#SNMPINDEX}</snmp_oid>
                             <key>continent39.AS.aservClientO[Serial.{#SNMPINDEX}]</key>
                             <delay>1h</delay>
-                            <history>2w</history>
+                            <history>0</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -832,6 +910,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификат {#CLIENT_CERT_CN}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1971,7 +2052,7 @@ and&#13;
                     <snmp_oid>1.3.6.1.4.1.34849.10.2.1.8.0</snmp_oid>
                     <key>continent39.contConfigurationType</key>
                     <delay>1h</delay>
-                    <history>2w</history>
+                    <history>0</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -2019,6 +2100,7 @@ and&#13;
                     <key>continent39.contGateConfGeneration</key>
                     <delay>1h</delay>
                     <history>2w</history>
+                    <trends>732d</trends>
                     <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Номер версии конфигурации</description>
                     <applications>
@@ -2137,8 +2219,8 @@ and&#13;
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.10.2.1.4.0</snmp_oid>
                     <key>continent39.contNodeId</key>
-                    <delay>1h</delay>
-                    <history>2w</history>
+                    <delay>1d</delay>
+                    <history>0</history>
                     <trends>0</trends>
                     <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Идентификационный номер узла</description>
@@ -2183,8 +2265,8 @@ and&#13;
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.10.2.1.7.0</snmp_oid>
                     <key>continent39.contPlatformName</key>
-                    <delay>1h</delay>
-                    <history>2w</history>
+                    <delay>1d</delay>
+                    <history>0</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -2345,8 +2427,8 @@ return (date/1000|0);</params>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.4.0</snmp_oid>
                     <key>continent39.sysContact</key>
-                    <delay>1h</delay>
-                    <history>2w</history>
+                    <delay>1d</delay>
+                    <history>0</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SNMPv2-MIB&#13;
@@ -2370,7 +2452,7 @@ return (date/1000|0);</params>
                     <snmp_oid>1.3.6.1.2.1.1.1.0</snmp_oid>
                     <key>continent39.sysDescr</key>
                     <delay>1h</delay>
-                    <history>2w</history>
+                    <history>0</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SNMPv2-MIB&#13;
@@ -2393,8 +2475,8 @@ return (date/1000|0);</params>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.6.0</snmp_oid>
                     <key>continent39.sysLocation</key>
-                    <delay>1h</delay>
-                    <history>2w</history>
+                    <delay>1d</delay>
+                    <history>0</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SNMPv2-MIB&#13;
@@ -2417,8 +2499,8 @@ return (date/1000|0);</params>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.2.0</snmp_oid>
                     <key>continent39.sysObjectID</key>
-                    <delay>1h</delay>
-                    <history>2w</history>
+                    <delay>1d</delay>
+                    <history>0</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SNMPv2-MIB&#13;

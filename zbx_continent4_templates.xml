@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-12-18T13:23:51Z</date>
+    <date>2024-12-19T11:58:49Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -169,24 +169,6 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <params/>
                                 </step>
                             </preprocessing>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Статус</name>
-                            <type>SNMP_AGENT</type>
-                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.1.0</snmp_oid>
-                            <key>continent41.as.contAservState[0{#SINGLETON}]</key>
-                            <delay>1h</delay>
-                            <history>2w</history>
-                            <trends>0</trends>
-                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Статус СД (неизвестно — -2/&#13;
-не настроен — -1/выключен — 0/&#13;
-запущен — 1)</description>
-                            <applications>
-                                <application>
-                                    <name>Сервер доступа</name>
-                                </application>
-                            </applications>
                         </item_prototype>
                         <item_prototype>
                             <name>Количество свободных лицензий</name>
@@ -1245,8 +1227,8 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.4.0</snmp_oid>
                     <key>continent41.system.contact[sysContact]</key>
-                    <delay>1h</delay>
-                    <history>2w</history>
+                    <delay>1d</delay>
+                    <history>0</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SNMPv2-MIB&#13;
@@ -1269,8 +1251,8 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.1.0</snmp_oid>
                     <key>continent41.system.descr[sysDescr]</key>
-                    <delay>1h</delay>
-                    <history>2w</history>
+                    <delay>1d</delay>
+                    <history>0</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SNMPv2-MIB&#13;
@@ -1293,8 +1275,8 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.6.0</snmp_oid>
                     <key>continent41.system.location[sysLocation]</key>
-                    <delay>1h</delay>
-                    <history>2w</history>
+                    <delay>1d</delay>
+                    <history>0</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SNMPv2-MIB&#13;
@@ -1351,8 +1333,8 @@ and &#13;
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.2.0</snmp_oid>
                     <key>continent41.system.objectid[sysObjectID]</key>
-                    <delay>1h</delay>
-                    <history>2w</history>
+                    <delay>1d</delay>
+                    <history>0</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SNMPv2-MIB&#13;
