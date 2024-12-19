@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-12-18T13:22:37Z</date>
+    <date>2024-12-19T06:15:06Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -45,24 +45,122 @@
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.3.0</snmp_oid>
                             <key>continent39.AS.aservCertCN[0{#SINGLETON}]</key>
-                            <delay>1h</delay>
+                            <delay>1d</delay>
                             <history>2w</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Серийный номер сертификата сервера доступа</description>
+Имя сертификата сервера доступа</description>
                             <application_prototypes>
                                 <application_prototype>
                                     <name>Сервер доступа</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>JAVASCRIPT</type>
+                                    <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Описание сертификата СД</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.7.0</snmp_oid>
+                            <key>continent39.AS.aservCertDescr[0{#SINGLETON}]</key>
+                            <delay>1d</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Описание сертификата СД</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>JAVASCRIPT</type>
+                                    <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Сведения об местонахождении сертификата СД</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.6.0</snmp_oid>
+                            <key>continent39.AS.aservCertL[0{#SINGLETON}]</key>
+                            <delay>1d</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Сведения об местонахождении сертификата СД</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>JAVASCRIPT</type>
+                                    <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Сведения об подразделении сертификата СД</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.5.0</snmp_oid>
+                            <key>continent39.AS.aservCertOU[0{#SINGLETON}]</key>
+                            <delay>1d</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Сведения об подразделении сертификата СД</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>JAVASCRIPT</type>
+                                    <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Сведения об организации сертификата СД</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.4.0</snmp_oid>
+                            <key>continent39.AS.aservCertO[0{#SINGLETON}]</key>
+                            <delay>1d</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Сведения об организации сертификата СД</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>JAVASCRIPT</type>
+                                    <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                            </preprocessing>
                         </item_prototype>
                         <item_prototype>
                             <name>Серийный номер сертификата СД</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.2.0</snmp_oid>
                             <key>continent39.AS.aservCertSerial[0{#SINGLETON}]</key>
-                            <delay>1h</delay>
+                            <delay>1d</delay>
                             <history>2w</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
@@ -79,7 +177,7 @@
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.8.0</snmp_oid>
                             <key>continent39.AS.aservCertValidFrom[0{#SINGLETON}]</key>
-                            <delay>1h</delay>
+                            <delay>1d</delay>
                             <history>2w</history>
                             <trends>0</trends>
                             <units>unixtime</units>
@@ -92,7 +190,7 @@
                             </application_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Срок действия сертификата</name>
+                            <name>Срок действия сертификата СД</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.10.0</snmp_oid>
                             <key>continent39.AS.aservCertValidTime[0{#SINGLETON}]</key>
@@ -131,7 +229,7 @@
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.9.0</snmp_oid>
                             <key>continent39.AS.aservCertValidTo[0{#SINGLETON}]</key>
-                            <delay>1h</delay>
+                            <delay>1d</delay>
                             <history>2w</history>
                             <trends>0</trends>
                             <units>unixtime</units>
@@ -144,11 +242,126 @@
                             </application_prototypes>
                         </item_prototype>
                         <item_prototype>
+                            <name>Имя корневого сертификата</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.3.0</snmp_oid>
+                            <key>continent39.AS.aservRootCertCN[0{#SINGLETON}]</key>
+                            <delay>1d</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Имя корневого сертификата</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>JAVASCRIPT</type>
+                                    <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Описание корневого сертификата</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.7.0</snmp_oid>
+                            <key>continent39.AS.aservRootCertDescr[0{#SINGLETON}]</key>
+                            <delay>1d</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Описание корневого сертификата</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>JAVASCRIPT</type>
+                                    <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Сведения об местонахождении корневого сертификата</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.6.0</snmp_oid>
+                            <key>continent39.AS.aservRootCertL[0{#SINGLETON}]</key>
+                            <delay>1d</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Сведения об местонахождении корневого сертификата</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>JAVASCRIPT</type>
+                                    <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Сведения об подразделении корневого сертификата</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.5.0</snmp_oid>
+                            <key>continent39.AS.aservRootCertOU[0{#SINGLETON}]</key>
+                            <delay>1d</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Сведения об подразделении корневого сертификата</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>JAVASCRIPT</type>
+                                    <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Сведения об организации корневого сертификата</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.4.0</snmp_oid>
+                            <key>continent39.AS.aservRootCertO[0{#SINGLETON}]</key>
+                            <delay>1d</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Сведения об организации корневого сертификата</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>JAVASCRIPT</type>
+                                    <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
                             <name>Серийный номер корневого сертификата</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.2.0</snmp_oid>
                             <key>continent39.AS.aservRootCertSerial[0{#SINGLETON}]</key>
-                            <delay>1h</delay>
+                            <delay>1d</delay>
                             <history>2w</history>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
@@ -165,7 +378,7 @@
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.8.0</snmp_oid>
                             <key>continent39.AS.aservRootCertValidFrom[0{#SINGLETON}]</key>
-                            <delay>1h</delay>
+                            <delay>1d</delay>
                             <history>2w</history>
                             <trends>0</trends>
                             <units>unixtime</units>
@@ -217,7 +430,7 @@
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.9.0</snmp_oid>
                             <key>continent39.AS.aservRootCertValidTo[0{#SINGLETON}]</key>
-                            <delay>1h</delay>
+                            <delay>1d</delay>
                             <history>2w</history>
                             <trends>0</trends>
                             <units>unixtime</units>
@@ -529,6 +742,104 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <name>Сервер доступа</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>JAVASCRIPT</type>
+                                    <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Описание сертификата {#CLIENT_CERT_CN}</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.7.{#SNMPINDEX}</snmp_oid>
+                            <key>continent39.AS.aservClientDescr[Serial.{#SNMPINDEX}]</key>
+                            <delay>1h</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Описание сертификата пользователя сервера доступа</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>JAVASCRIPT</type>
+                                    <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Сведения об местонахождении сертификата {#CLIENT_CERT_CN}</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.6.{#SNMPINDEX}</snmp_oid>
+                            <key>continent39.AS.aservClientL[Serial.{#SNMPINDEX}]</key>
+                            <delay>1h</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Сведения об местонахождении сертификата пользователя сервера доступа</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>JAVASCRIPT</type>
+                                    <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Сведения об подразделении сертификата {#CLIENT_CERT_CN}</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>continent39.AS.aservClientOU[Serial.{#SNMPINDEX}]</key>
+                            <delay>1h</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Сведения об подразделении сертификата пользователя сервера доступа</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>JAVASCRIPT</type>
+                                    <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Сведения об организации сертификата {#CLIENT_CERT_CN}</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.10.4.1.1.4.{#SNMPINDEX}</snmp_oid>
+                            <key>continent39.AS.aservClientO[Serial.{#SNMPINDEX}]</key>
+                            <delay>1h</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Сведения об организации сертификата пользователя сервера доступа</description>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>Сервер доступа</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>JAVASCRIPT</type>
+                                    <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                            </preprocessing>
                         </item_prototype>
                     </item_prototypes>
                 </discovery_rule>
