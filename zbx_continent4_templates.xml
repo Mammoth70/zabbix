@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-12-19T11:58:49Z</date>
+    <date>2025-01-10T09:42:15Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -2158,7 +2158,7 @@ and {Continent 4.1 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPIN
                 </macro>
                 <macro>
                     <macro>{$NET.IF.IFDESCR.NOT_MATCHES}</macro>
-                    <value>(^[Ll]o[0-9.]*$|^pflog.*$|^ng_dpi.*$)</value>
+                    <value>(^[Ll]o[0-9.]*$|^tun.*$|^pflog.*$|^pfsync.*$|^ng_dpi.*$)</value>
                     <description>Этот макрос-regexp используется для исключения обнаружения интерфейсов по именам.</description>
                 </macro>
                 <macro>
