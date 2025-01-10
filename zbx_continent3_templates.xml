@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2024-12-24T12:47:47Z</date>
+    <date>2025-01-10T09:40:48Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -48,6 +48,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Имя сертификата сервера доступа</description>
@@ -74,6 +75,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Описание сертификата СД</description>
@@ -100,6 +102,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Сведения об местонахождении сертификата СД</description>
@@ -126,6 +129,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Сведения об подразделении сертификата СД</description>
@@ -152,6 +156,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Сведения об организации сертификата СД</description>
@@ -178,6 +183,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Серийный номер сертификата сервера доступа</description>
@@ -198,6 +204,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <units>unixtime</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Дата начала действия сертификата СД</description>
@@ -256,6 +263,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <units>unixtime</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Дата окончания действия сертификата СД</description>
@@ -276,6 +284,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Имя корневого сертификата</description>
@@ -302,6 +311,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Описание корневого сертификата</description>
@@ -328,6 +338,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Сведения об местонахождении корневого сертификата</description>
@@ -354,6 +365,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Сведения об подразделении корневого сертификата</description>
@@ -380,6 +392,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Сведения об организации корневого сертификата</description>
@@ -406,6 +419,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Серийный номер корневого сертификата</description>
@@ -426,6 +440,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <units>unixtime</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Дата начала действия корневого сертификата</description>
@@ -484,6 +499,7 @@
                             <delay>1d</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <units>unixtime</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Дата окончания действия корневого сертификата</description>
@@ -702,6 +718,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Серийный номер сертификата пользователя сервера доступа</description>
@@ -722,6 +739,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <units>unixtime</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Дата начала действия сертификата пользователя СД</description>
@@ -780,6 +798,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <units>unixtime</units>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Дата окончания действия сертификата пользователя СД</description>
@@ -800,6 +819,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Имя сертификата пользователя сервера доступа</description>
@@ -826,6 +846,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Описание сертификата пользователя сервера доступа</description>
@@ -852,6 +873,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Сведения об местонахождении сертификата пользователя сервера доступа</description>
@@ -878,6 +900,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Сведения об подразделении сертификата пользователя сервера доступа</description>
@@ -904,6 +927,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
+                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Сведения об организации сертификата пользователя сервера доступа</description>
@@ -3165,7 +3189,7 @@ and {Continent 3.9 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPIN
                 </macro>
                 <macro>
                     <macro>{$NET.IF.IFDESCR.NOT_MATCHES}</macro>
-                    <value>(^[Ll]o[0-9.]*$|^pflog.*$|^ng_dpi.*$)</value>
+                    <value>(^[Ll]o[0-9.]*$|^tun.*$|^pflog.*$|^pfsync.*$|^ng_dpi.*$)</value>
                     <description>Этот макрос-regexp используется для исключения обнаружения интерфейсов по описаниям.</description>
                 </macro>
                 <macro>
@@ -3190,7 +3214,7 @@ and {Continent 3.9 Module Interfaces SNMP:net.if.out.errors[ifOutErrors.{#SNMPIN
                 </macro>
                 <macro>
                     <macro>{$NET.IF.IFTYPE.MATCHES}</macro>
-                    <value>^6$</value>
+                    <value>.*</value>
                     <description>Этот макрос-regexp используется для обнаружения интерфейсов по типам.</description>
                 </macro>
                 <macro>
