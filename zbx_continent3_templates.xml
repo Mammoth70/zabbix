@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-01-10T09:40:48Z</date>
+    <date>2025-01-10T10:13:13Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -603,6 +603,12 @@
                     <graph_prototypes>
                         <graph_prototype>
                             <name>Сервер доступа: Подключения{#SINGLETON}</name>
+                            <ymin_type_1>FIXED</ymin_type_1>
+                            <ymax_type_1>ITEM</ymax_type_1>
+                            <ymax_item_1>
+                                <host>Continent 3.9 Module AccessServer SNMP</host>
+                                <key>continent39.AS.LicensesTotalCount[0{#SINGLETON}]</key>
+                            </ymax_item_1>
                             <graph_items>
                                 <graph_item>
                                     <sortorder>1</sortorder>
