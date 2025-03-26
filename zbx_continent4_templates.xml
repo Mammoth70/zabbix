@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-03-25T09:54:21Z</date>
+    <date>2025-03-26T08:43:18Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -156,7 +156,7 @@
                     <preprocessing>
                         <step>
                             <type>JAVASCRIPT</type>
-                            <params>var date = new Date(value);
+                            <params>const date = new Date(value);
 return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                         </step>
                     </preprocessing>
