@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-03-25T08:24:15Z</date>
+    <date>2025-03-26T08:47:54Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -393,19 +393,21 @@ and&#13;
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>STR_REPLACE</type>
-                            <params>,+
-+</params>
-                        </step>
-                        <step>
-                            <type>STR_REPLACE</type>
-                            <params>,
- </params>
-                        </step>
-                        <step>
                             <type>JAVASCRIPT</type>
-                            <params>var date = new Date(value);
-return (date/1000|0);</params>
+                            <params>value = value.trim();
+if (value.indexOf(' ') == 2) {
+	const bytes = value.split(' ').map(function(oktet){return parseInt(oktet,16)});
+	const date = Date.UTC(bytes[0] &lt;&lt; 8 | bytes[1], bytes[2] - 1, bytes[3], bytes[4], bytes[5], bytes[6], bytes[7] * 100)/1000|0;
+    if (bytes.length &gt; 10) {
+    	utc_direct = String.fromCharCode(bytes[8]) == '+' ? 1 : -1;	
+    	return date - utc_direct*(bytes[9]*3600 + bytes[10]*60);
+    } else {
+        return date;
+    };
+} else {
+	const date = new Date(value.replace(',+','+').replace(',',' '))/1000|0;
+	return date;
+};</params>
                         </step>
                     </preprocessing>
                     <triggers>
