@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-03-27T10:43:14Z</date>
+    <date>2025-03-27T10:47:01Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -453,6 +453,94 @@ if (value.indexOf(' ') == 2) {
                                 <dependency>
                                     <name>Нет сбора данных SNMP</name>
                                     <expression>{Continent 3.9 SNMP:zabbix[host,snmp,available].max({$SNMP.TIMEOUT})}=0</expression>
+                                </dependency>
+                            </dependencies>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>ICMP пинг</name>
+                    <type>SIMPLE</type>
+                    <key>icmpping</key>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <status>DISABLED</status>
+                    <applications>
+                        <application>
+                            <name>Состояние</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{max(#3)}=0</expression>
+                            <name>Нет ICMP-ответа</name>
+                            <status>DISABLED</status>
+                            <priority>HIGH</priority>
+                            <description>Последние три попытки вернули тайм-аут. Пожалуйста, проверьте подключение устройства.</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>ICMP потери</name>
+                    <type>SIMPLE</type>
+                    <key>icmppingloss</key>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <status>DISABLED</status>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <applications>
+                        <application>
+                            <name>Состояние</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{min(5m)}&gt;{$ICMP_LOSS_WARN} and {min(5m)}&lt;100</expression>
+                            <name>Высокие потери ICMP</name>
+                            <opdata>Потеряно: {ITEM.LASTVALUE1}</opdata>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <description>Потеряно слишком много ICMP пакетов.</description>
+                            <dependencies>
+                                <dependency>
+                                    <name>Нет ICMP-ответа</name>
+                                    <expression>{Continent 3.9 SNMP:icmpping.max(#3)}=0</expression>
+                                </dependency>
+                            </dependencies>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>ICMP время ответа</name>
+                    <type>SIMPLE</type>
+                    <key>icmppingsec</key>
+                    <history>2w</history>
+                    <trends>732d</trends>
+                    <status>DISABLED</status>
+                    <value_type>FLOAT</value_type>
+                    <units>s</units>
+                    <applications>
+                        <application>
+                            <name>Состояние</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{avg(5m)}&gt;{$ICMP_RESPONSE_TIME_WARN}</expression>
+                            <name>Большое время ICMP-ответа</name>
+                            <opdata>Последнее значение: {ITEM.LASTVALUE1}</opdata>
+                            <status>DISABLED</status>
+                            <priority>WARNING</priority>
+                            <description>Слишком большое среднее время ответа ICMP.</description>
+                            <dependencies>
+                                <dependency>
+                                    <name>Высокие потери ICMP</name>
+                                    <expression>{Continent 3.9 SNMP:icmppingloss.min(5m)}&gt;{$ICMP_LOSS_WARN} and {Continent 3.9 SNMP:icmppingloss.min(5m)}&lt;100</expression>
+                                </dependency>
+                                <dependency>
+                                    <name>Нет ICMP-ответа</name>
+                                    <expression>{Continent 3.9 SNMP:icmpping.max(#3)}=0</expression>
                                 </dependency>
                             </dependencies>
                         </trigger>
