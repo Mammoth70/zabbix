@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-03-27T10:47:01Z</date>
+    <date>2025-03-27T11:18:47Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -5535,7 +5535,7 @@ and {Continent 3.9 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                             <name>Доступный объем файла подкачки</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.2021.4.4.0</snmp_oid>
-                            <key>system.swap.free.memAvailSwap[0{#SINGLETON}]</key>
+                            <key>system.swap.free[memAvailSwap.0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -5551,7 +5551,7 @@ and {Continent 3.9 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                         <item_prototype>
                             <name>Доступный объем файла подкачки в %</name>
                             <type>CALCULATED</type>
-                            <key>system.swap.pfree[0{#SINGLETON}]</key>
+                            <key>system.swap.pfree[snmp{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -5568,7 +5568,7 @@ and {Continent 3.9 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Continent 3.9 SNMP:system.swap.pfree[0{#SINGLETON}].max(5m)}&lt;{$SWAP.PFREE.MIN.WARN} and {Continent 3.9 SNMP:system.swap.total[memTotalSwap.0].last()}&gt;0</expression>
+                            <expression>{Continent 3.9 SNMP:system.swap.pfree[snmp{#SINGLETON}].max(5m)}&lt;{$SWAP.PFREE.MIN.WARN} and {Continent 3.9 SNMP:system.swap.total[memTotalSwap.0].last()}&gt;0</expression>
                             <name>Большой объем занятого места на файле подкачки (свободно менее {$SWAP.PFREE.MIN.WARN}%){#SINGLETON}</name>
                             <opdata>Свободно: {ITEM.LASTVALUE1}, всего: {ITEM.LASTVALUE2}</opdata>
                             <priority>WARNING</priority>
@@ -5595,7 +5595,7 @@ and {Continent 3.9 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
                                         <host>Continent 3.9 SNMP</host>
-                                        <key>system.swap.free.memAvailSwap[0{#SINGLETON}]</key>
+                                        <key>system.swap.free[memAvailSwap.0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
