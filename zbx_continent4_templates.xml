@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-03-26T08:43:18Z</date>
+    <date>2025-03-27T11:22:04Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -59,7 +59,7 @@
                     <name>Статус СД</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.1.0</snmp_oid>
-                    <key>continent41.aservState</key>
+                    <key>cont.aservState</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -75,34 +75,10 @@
                     </applications>
                 </item>
                 <item>
-                    <name>Версия ОС</name>
-                    <type>SNMP_AGENT</type>
-                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.1.0</snmp_oid>
-                    <key>continent41.continentVersion</key>
-                    <delay>1h</delay>
-                    <history>2w</history>
-                    <trends>0</trends>
-                    <value_type>CHAR</value_type>
-                    <description>MIB: CONTINENT-SNMP-MIB&#13;
-Версия ОС</description>
-                    <inventory_link>SOFTWARE</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Общее</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
-                        </step>
-                    </preprocessing>
-                </item>
-                <item>
                     <name>Статус МСЭ</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.2.1.0</snmp_oid>
-                    <key>continent41.fwState</key>
+                    <key>cont.fwState</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -118,7 +94,7 @@
                     <name>Версия GeoIP</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.7.0</snmp_oid>
-                    <key>continent41.GeoIPVersion</key>
+                    <key>cont.GeoIPVersion</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -138,41 +114,10 @@
                     </preprocessing>
                 </item>
                 <item>
-                    <name>Дата и время на хосте</name>
-                    <type>SNMP_AGENT</type>
-                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.12.0</snmp_oid>
-                    <key>continent41.hrSystemDate</key>
-                    <delay>3m</delay>
-                    <history>2w</history>
-                    <trends>732d</trends>
-                    <units>unixtime</units>
-                    <description>MIB: HOST-RESOURSE-MIB&#13;
-Дата и время на хосте</description>
-                    <applications>
-                        <application>
-                            <name>Состояние</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>JAVASCRIPT</type>
-                            <params>const date = new Date(value);
-return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
-                        </step>
-                    </preprocessing>
-                    <triggers>
-                        <trigger>
-                            <expression>{fuzzytime({$SYSTEM.FUZZYTIME.MAX})}=0</expression>
-                            <name>Системное время не синхронизировано (разница с сервером Zabbix &gt; {$SYSTEM.FUZZYTIME.MAX}с)</name>
-                            <priority>WARNING</priority>
-                        </trigger>
-                    </triggers>
-                </item>
-                <item>
                     <name>Статус IPS</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.2.0</snmp_oid>
-                    <key>continent41.ipsComponentState</key>
+                    <key>cont.ipsComponentState</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -188,7 +133,7 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <name>Версия базы решающих правил</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.3.0</snmp_oid>
-                    <key>continent41.IPSVersion</key>
+                    <key>cont.IPSVersion</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -211,7 +156,7 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <name>Версия фидов Kaspersky</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.4.0</snmp_oid>
-                    <key>continent41.KasperskyFeedsVersion</key>
+                    <key>cont.KasperskyFeedsVersion</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -234,7 +179,7 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <name>Версия хэшей Kaspersky</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.5.0</snmp_oid>
-                    <key>continent41.KasperskyHashVersion</key>
+                    <key>cont.KasperskyHashVersion</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -254,42 +199,10 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     </preprocessing>
                 </item>
                 <item>
-                    <name>Время работы узла безопасности</name>
-                    <type>SNMP_AGENT</type>
-                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.2.0</snmp_oid>
-                    <key>continent41.nodeUpTime</key>
-                    <delay>3m</delay>
-                    <history>2w</history>
-                    <trends>0</trends>
-                    <units>uptime</units>
-                    <description>MIB: CONTINENT-SNMP-MIB&#13;
-Время работы узла безопасности (в секундах)</description>
-                    <applications>
-                        <application>
-                            <name>Состояние</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
-                        </step>
-                    </preprocessing>
-                    <triggers>
-                        <trigger>
-                            <expression>{last()}&lt;10m</expression>
-                            <name>Узел безопасности был перезапущен (время работы менее 10 мин)</name>
-                            <priority>INFO</priority>
-                            <description>Время работы узла безопасности менее 10 мин.</description>
-                            <manual_close>YES</manual_close>
-                        </trigger>
-                    </triggers>
-                </item>
-                <item>
                     <name>Версия SkyDNS</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.8.0</snmp_oid>
-                    <key>continent41.SkyDNSVersion</key>
+                    <key>cont.SkyDNSVersion</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
@@ -309,88 +222,40 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     </preprocessing>
                 </item>
                 <item>
-                    <name>Контакты ответственного лица</name>
+                    <name>Версия пользовательских хэшей</name>
                     <type>SNMP_AGENT</type>
-                    <snmp_oid>1.3.6.1.2.1.1.4.0</snmp_oid>
-                    <key>continent41.system.contact[sysContact]</key>
-                    <delay>1d</delay>
-                    <history>0</history>
-                    <trends>0</trends>
-                    <value_type>CHAR</value_type>
-                    <description>MIB: SNMPv2-MIB&#13;
-Текстовая идентификация контактного лица для этого управляемого узла вместе с информацией о том, как связаться с этим человеком. Если контактная информация неизвестна, значением является строка нулевой длины.</description>
-                    <inventory_link>CONTACT</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Общее</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
-                        </step>
-                    </preprocessing>
-                </item>
-                <item>
-                    <name>Описание узла</name>
-                    <type>SNMP_AGENT</type>
-                    <snmp_oid>1.3.6.1.2.1.1.1.0</snmp_oid>
-                    <key>continent41.system.descr[sysDescr]</key>
-                    <delay>1d</delay>
-                    <history>0</history>
-                    <trends>0</trends>
-                    <value_type>CHAR</value_type>
-                    <description>MIB: SNMPv2-MIB&#13;
-Текстовое описание узла. Это значение должно включать полное имя и идентификацию версии типа аппаратного обеспечения, операционной системы и сетевого программного обеспечения.</description>
-                    <inventory_link>OS</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Общее</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
-                        </step>
-                    </preprocessing>
-                </item>
-                <item>
-                    <name>Местоположение узла</name>
-                    <type>SNMP_AGENT</type>
-                    <snmp_oid>1.3.6.1.2.1.1.6.0</snmp_oid>
-                    <key>continent41.system.location[sysLocation]</key>
-                    <delay>1d</delay>
-                    <history>0</history>
-                    <trends>0</trends>
-                    <value_type>CHAR</value_type>
-                    <description>MIB: SNMPv2-MIB&#13;
-Физическое местоположение этого узла (например, &quot;телефонный шкаф, 3-й этаж&quot;). Если местоположение неизвестно, значением является строка нулевой длины.</description>
-                    <inventory_link>LOCATION</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Общее</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1h</params>
-                        </step>
-                    </preprocessing>
-                </item>
-                <item>
-                    <name>Имя узла</name>
-                    <type>SNMP_AGENT</type>
-                    <snmp_oid>1.3.6.1.2.1.1.5.0</snmp_oid>
-                    <key>continent41.system.name</key>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.6.0</snmp_oid>
+                    <key>cont.UserHashVersion</key>
                     <delay>1h</delay>
                     <history>2w</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
-                    <description>MIB: SNMPv2-MIB&#13;
-Административно назначенное имя для этого узла. По соглашению, это полное доменное имя узла. Если имя неизвестно, значением является строка нулевой длины.</description>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Версия пользовательских хэшей</description>
+                    <applications>
+                        <application>
+                            <name>Конфигурация</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Версия ОС</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.1.0</snmp_oid>
+                    <key>cont.Version</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Версия ОС</description>
+                    <inventory_link>SOFTWARE</inventory_link>
                     <applications>
                         <application>
                             <name>Общее</name>
@@ -402,84 +267,12 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                             <params>1d</params>
                         </step>
                     </preprocessing>
-                    <triggers>
-                        <trigger>
-                            <expression>{diff()}=1&#13;
-and &#13;
-{strlen()}&gt;0</expression>
-                            <name>Имя узла сменилось на {ITEM.VALUE}</name>
-                            <priority>INFO</priority>
-                            <description>Сменилось системное имя. Можно закрыть, если кто надо в курсе.</description>
-                            <manual_close>YES</manual_close>
-                        </trigger>
-                    </triggers>
-                </item>
-                <item>
-                    <name>Идентификация поставщика</name>
-                    <type>SNMP_AGENT</type>
-                    <snmp_oid>1.3.6.1.2.1.1.2.0</snmp_oid>
-                    <key>continent41.system.objectid[sysObjectID]</key>
-                    <delay>1d</delay>
-                    <history>0</history>
-                    <trends>0</trends>
-                    <value_type>CHAR</value_type>
-                    <description>MIB: SNMPv2-MIB&#13;
-Авторитетная идентификация поставщика подсистемы управления сетью, содержащейся в объекте. Это значение распределяется в поддереве предприятий SMI (1.3.6.1.4.1) и предоставляет простое и однозначное средство для определения того, «какой тип устройства» управляется. Например, если вендору `Flintstones, Inc. ' было присвоено поддерево 1.3.6.1.4.1.4242, то он мог назначить идентификатор 1.3.6.1.4.1.4242.1.1 своему «Fred-router».</description>
-                    <applications>
-                        <application>
-                            <name>Общее</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1h</params>
-                        </step>
-                    </preprocessing>
-                </item>
-                <item>
-                    <name>Время работы</name>
-                    <type>SNMP_AGENT</type>
-                    <snmp_oid>1.3.6.1.2.1.1.3.0</snmp_oid>
-                    <key>continent41.system.uptime[sysUpTime]</key>
-                    <delay>3m</delay>
-                    <history>2w</history>
-                    <trends>0</trends>
-                    <units>uptime</units>
-                    <description>MIB: SNMPv2-MIB&#13;
-Время (в сотых долях секунды) с момента последней инициализации сетевой подсистемы.</description>
-                    <applications>
-                        <application>
-                            <name>Состояние</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>MULTIPLIER</type>
-                            <params>0.01</params>
-                        </step>
-                    </preprocessing>
-                    <triggers>
-                        <trigger>
-                            <expression>{last()}&lt;10m</expression>
-                            <name>{HOST.NAME} был перезапущен (время работы менее 10 мин)</name>
-                            <priority>WARNING</priority>
-                            <description>Время работы менее 10 мин.</description>
-                            <manual_close>YES</manual_close>
-                            <dependencies>
-                                <dependency>
-                                    <name>Нет сбора данных SNMP</name>
-                                    <expression>{Continent 4.1 SNMP:zabbix[host,snmp,available].max({$SNMP.TIMEOUT})}=0</expression>
-                                </dependency>
-                            </dependencies>
-                        </trigger>
-                    </triggers>
                 </item>
                 <item>
                     <name>CPU: Температура</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.2.6.1.0</snmp_oid>
-                    <key>continent41.tempCPU</key>
+                    <key>cpu.temp</key>
                     <delay>3m</delay>
                     <history>2w</history>
                     <trends>732d</trends>
@@ -515,8 +308,8 @@ and &#13;
                             <dependencies>
                                 <dependency>
                                     <name>CPU: Температура выше критического порога: &gt;{$TEMP_CRIT:CPU}</name>
-                                    <expression>{Continent 4.1 SNMP:continent41.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
-                                    <recovery_expression>{Continent 4.1 SNMP:continent41.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
+                                    <expression>{Continent 4.1 SNMP:cpu.temp.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
+                                    <recovery_expression>{Continent 4.1 SNMP:cpu.temp.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
                                 </dependency>
                             </dependencies>
                         </trigger>
@@ -529,8 +322,8 @@ and &#13;
                             <dependencies>
                                 <dependency>
                                     <name>CPU: Температура выше критического порога: &gt;{$TEMP_CRIT:CPU}</name>
-                                    <expression>{Continent 4.1 SNMP:continent41.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
-                                    <recovery_expression>{Continent 4.1 SNMP:continent41.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
+                                    <expression>{Continent 4.1 SNMP:cpu.temp.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
+                                    <recovery_expression>{Continent 4.1 SNMP:cpu.temp.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
                                 </dependency>
                             </dependencies>
                         </trigger>
@@ -540,7 +333,7 @@ and &#13;
                     <name>HDD: Температура</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.2.6.5.0</snmp_oid>
-                    <key>continent41.tempHDD</key>
+                    <key>hdd.temp</key>
                     <delay>3m</delay>
                     <history>2w</history>
                     <trends>732d</trends>
@@ -576,8 +369,8 @@ and &#13;
                             <dependencies>
                                 <dependency>
                                     <name>HDD: Температура выше критического порога: &gt;{$TEMP_CRIT:HDD}</name>
-                                    <expression>{Continent 4.1 SNMP:continent41.tempHDD.avg(5m)}&gt;{$TEMP_CRIT:HDD}</expression>
-                                    <recovery_expression>{Continent 4.1 SNMP:continent41.tempHDD.avg(5m)}&lt;{$TEMP_CRIT:HDD}-3</recovery_expression>
+                                    <expression>{Continent 4.1 SNMP:hdd.temp.avg(5m)}&gt;{$TEMP_CRIT:HDD}</expression>
+                                    <recovery_expression>{Continent 4.1 SNMP:hdd.temp.avg(5m)}&lt;{$TEMP_CRIT:HDD}-3</recovery_expression>
                                 </dependency>
                             </dependencies>
                         </trigger>
@@ -590,27 +383,91 @@ and &#13;
                             <dependencies>
                                 <dependency>
                                     <name>CPU: Температура выше критического порога: &gt;{$TEMP_CRIT:CPU}</name>
-                                    <expression>{Continent 4.1 SNMP:continent41.tempCPU.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
-                                    <recovery_expression>{Continent 4.1 SNMP:continent41.tempCPU.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
+                                    <expression>{Continent 4.1 SNMP:cpu.temp.avg(5m)}&gt;{$TEMP_CRIT:CPU}</expression>
+                                    <recovery_expression>{Continent 4.1 SNMP:cpu.temp.avg(5m)}&lt;{$TEMP_CRIT:CPU}-3</recovery_expression>
                                 </dependency>
                             </dependencies>
                         </trigger>
                     </triggers>
                 </item>
                 <item>
-                    <name>Версия пользовательских хэшей</name>
+                    <name>Дата и время на хосте</name>
                     <type>SNMP_AGENT</type>
-                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.6.0</snmp_oid>
-                    <key>continent41.UserHashVersion</key>
-                    <delay>1h</delay>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.12.0</snmp_oid>
+                    <key>hrSystemDate</key>
+                    <delay>3m</delay>
                     <history>2w</history>
-                    <trends>0</trends>
-                    <value_type>CHAR</value_type>
-                    <description>MIB: CONTINENT-SNMP-MIB&#13;
-Версия пользовательских хэшей</description>
+                    <trends>732d</trends>
+                    <units>unixtime</units>
+                    <description>MIB: HOST-RESOURSE-MIB&#13;
+Дата и время на хосте</description>
                     <applications>
                         <application>
-                            <name>Конфигурация</name>
+                            <name>Состояние</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>const date = new Date(value);
+return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
+                        </step>
+                    </preprocessing>
+                    <triggers>
+                        <trigger>
+                            <expression>{fuzzytime({$SYSTEM.FUZZYTIME.MAX})}=0</expression>
+                            <name>Системное время не синхронизировано (разница с сервером Zabbix &gt; {$SYSTEM.FUZZYTIME.MAX}с)</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Время работы узла безопасности</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.34849.1.1.1.3.2.0</snmp_oid>
+                    <key>nodeUpTime</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <units>uptime</units>
+                    <description>MIB: CONTINENT-SNMP-MIB&#13;
+Время работы узла безопасности (в секундах)</description>
+                    <applications>
+                        <application>
+                            <name>Состояние</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
+                        </step>
+                    </preprocessing>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&lt;10m</expression>
+                            <name>Узел безопасности был перезапущен (время работы менее 10 мин)</name>
+                            <priority>INFO</priority>
+                            <description>Время работы узла безопасности менее 10 мин.</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Контакты ответственного лица</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.2.1.1.4.0</snmp_oid>
+                    <key>system.contact[sysContact]</key>
+                    <delay>1d</delay>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: SNMPv2-MIB&#13;
+Текстовая идентификация контактного лица для этого управляемого узла вместе с информацией о том, как связаться с этим человеком. Если контактная информация неизвестна, значением является строка нулевой длины.</description>
+                    <inventory_link>CONTACT</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Общее</name>
                         </application>
                     </applications>
                     <preprocessing>
@@ -912,6 +769,111 @@ return (i/dict.length/100);</params>
                     </triggers>
                 </item>
                 <item>
+                    <name>Описание узла</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.2.1.1.1.0</snmp_oid>
+                    <key>system.descr[sysDescr]</key>
+                    <delay>1d</delay>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: SNMPv2-MIB&#13;
+Текстовое описание узла. Это значение должно включать полное имя и идентификацию версии типа аппаратного обеспечения, операционной системы и сетевого программного обеспечения.</description>
+                    <inventory_link>OS</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Общее</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Местоположение узла</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.2.1.1.6.0</snmp_oid>
+                    <key>system.location[sysLocation]</key>
+                    <delay>1d</delay>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: SNMPv2-MIB&#13;
+Физическое местоположение этого узла (например, &quot;телефонный шкаф, 3-й этаж&quot;). Если местоположение неизвестно, значением является строка нулевой длины.</description>
+                    <inventory_link>LOCATION</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Общее</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1h</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Имя узла</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.2.1.1.5.0</snmp_oid>
+                    <key>system.name</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: SNMPv2-MIB&#13;
+Административно назначенное имя для этого узла. По соглашению, это полное доменное имя узла. Если имя неизвестно, значением является строка нулевой длины.</description>
+                    <applications>
+                        <application>
+                            <name>Общее</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
+                        </step>
+                    </preprocessing>
+                    <triggers>
+                        <trigger>
+                            <expression>{diff()}=1&#13;
+and &#13;
+{strlen()}&gt;0</expression>
+                            <name>Имя узла сменилось на {ITEM.VALUE}</name>
+                            <priority>INFO</priority>
+                            <description>Сменилось системное имя. Можно закрыть, если кто надо в курсе.</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Идентификация поставщика</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.2.1.1.2.0</snmp_oid>
+                    <key>system.objectid[sysObjectID]</key>
+                    <delay>1d</delay>
+                    <history>0</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: SNMPv2-MIB&#13;
+Авторитетная идентификация поставщика подсистемы управления сетью, содержащейся в объекте. Это значение распределяется в поддереве предприятий SMI (1.3.6.1.4.1) и предоставляет простое и однозначное средство для определения того, «какой тип устройства» управляется. Например, если вендору `Flintstones, Inc. ' было присвоено поддерево 1.3.6.1.4.1.4242, то он мог назначить идентификатор 1.3.6.1.4.1.4242.1.1 своему «Fred-router».</description>
+                    <applications>
+                        <application>
+                            <name>Общее</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1h</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
                     <name>Объем файла подкачки</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.34849.1.1.2.3.1.0</snmp_oid>
@@ -933,6 +895,44 @@ return (i/dict.length/100);</params>
                             <params>1</params>
                         </step>
                     </preprocessing>
+                </item>
+                <item>
+                    <name>Время работы</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.2.1.1.3.0</snmp_oid>
+                    <key>system.uptime[sysUpTime]</key>
+                    <delay>3m</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <units>uptime</units>
+                    <description>MIB: SNMPv2-MIB&#13;
+Время (в сотых долях секунды) с момента последней инициализации сетевой подсистемы.</description>
+                    <applications>
+                        <application>
+                            <name>Состояние</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&lt;10m</expression>
+                            <name>{HOST.NAME} был перезапущен (время работы менее 10 мин)</name>
+                            <priority>WARNING</priority>
+                            <description>Время работы менее 10 мин.</description>
+                            <manual_close>YES</manual_close>
+                            <dependencies>
+                                <dependency>
+                                    <name>Нет сбора данных SNMP</name>
+                                    <expression>{Continent 4.1 SNMP:zabbix[host,snmp,available].max({$SNMP.TIMEOUT})}=0</expression>
+                                </dependency>
+                            </dependencies>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <name>Объем доступной памяти</name>
@@ -1047,7 +1047,7 @@ return (i/dict.length/100);</params>
                 <discovery_rule>
                     <name>AS</name>
                     <type>DEPENDENT</type>
-                    <key>as.discovery[singleton]</key>
+                    <key>aserv.discovery</key>
                     <delay>0</delay>
                     <description>Сервер доступа обнаруживается по значению 1 в поле Статус СД&#13;
 OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
@@ -1056,7 +1056,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                             <name>Количество подключенных АП</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.2.0</snmp_oid>
-                            <key>continent41.as.aservConnCount[0{#SINGLETON}]</key>
+                            <key>aserv.ConnCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -1069,10 +1069,49 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                             </applications>
                         </item_prototype>
                         <item_prototype>
+                            <name>Количество свободных лицензий</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.23.0</snmp_oid>
+                            <key>aserv.LicensesBalance[0{#SINGLETON}]</key>
+                            <delay>3m</delay>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Количество текущих свободных соединений (лицензий)</description>
+                            <applications>
+                                <application>
+                                    <name>Сервер доступа</name>
+                                </application>
+                            </applications>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&lt;{$AS_LICENSE_WARN}</expression>
+                                    <name>Недостаточно лицензий сервера доступа{#SINGLETON}</name>
+                                    <priority>WARNING</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Количество лицензий</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.22.0</snmp_oid>
+                            <key>aserv.LicensesTotalCount[0{#SINGLETON}]</key>
+                            <delay>1h</delay>
+                            <history>2w</history>
+                            <trends>0</trends>
+                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
+Общее количество возможных соединений (лицензий)</description>
+                            <applications>
+                                <application>
+                                    <name>Сервер доступа</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
                             <name>Битов считано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.6.0</snmp_oid>
-                            <key>continent41.as.aservReadBytesCount[0{#SINGLETON}]</key>
+                            <key>aserv.ReadBytesCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -1099,7 +1138,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                             <name>Пакетов считано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.14.0</snmp_oid>
-                            <key>continent41.as.aservReadPacketsCount[0{#SINGLETON}]</key>
+                            <key>aserv.ReadPacketsCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -1122,7 +1161,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                             <name>Битов записано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.10.0</snmp_oid>
-                            <key>continent41.as.aservWriteBytesCount[0{#SINGLETON}]</key>
+                            <key>aserv.WriteBytesCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -1149,7 +1188,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                             <name>Пакетов записано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.18.0</snmp_oid>
-                            <key>continent41.as.aservWritePacketsCount[0{#SINGLETON}]</key>
+                            <key>aserv.WritePacketsCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -1168,45 +1207,6 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                 </step>
                             </preprocessing>
                         </item_prototype>
-                        <item_prototype>
-                            <name>Количество свободных лицензий</name>
-                            <type>SNMP_AGENT</type>
-                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.23.0</snmp_oid>
-                            <key>continent41.as.contLicensesBalance[0{#SINGLETON}]</key>
-                            <delay>3m</delay>
-                            <history>2w</history>
-                            <trends>732d</trends>
-                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Количество текущих свободных соединений (лицензий)</description>
-                            <applications>
-                                <application>
-                                    <name>Сервер доступа</name>
-                                </application>
-                            </applications>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{last()}&lt;{$AS_LICENSE_WARN}</expression>
-                                    <name>Недостаточно лицензий сервера доступа{#SINGLETON}</name>
-                                    <priority>WARNING</priority>
-                                </trigger_prototype>
-                            </trigger_prototypes>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Количество лицензий</name>
-                            <type>SNMP_AGENT</type>
-                            <snmp_oid>1.3.6.1.4.1.34849.1.1.1.4.22.0</snmp_oid>
-                            <key>continent41.as.contLicensesTotalCount[0{#SINGLETON}]</key>
-                            <delay>1h</delay>
-                            <history>2w</history>
-                            <trends>0</trends>
-                            <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
-Общее количество возможных соединений (лицензий)</description>
-                            <applications>
-                                <application>
-                                    <name>Сервер доступа</name>
-                                </application>
-                            </applications>
-                        </item_prototype>
                     </item_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
@@ -1215,7 +1215,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                             <ymax_type_1>ITEM</ymax_type_1>
                             <ymax_item_1>
                                 <host>Continent 4.1 SNMP</host>
-                                <key>continent41.as.contLicensesTotalCount[0{#SINGLETON}]</key>
+                                <key>aserv.LicensesTotalCount[0{#SINGLETON}]</key>
                             </ymax_item_1>
                             <graph_items>
                                 <graph_item>
@@ -1224,7 +1224,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <color>6A1B9A</color>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.as.aservConnCount[0{#SINGLETON}]</key>
+                                        <key>aserv.ConnCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -1233,7 +1233,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <color>FF8000</color>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.as.contLicensesTotalCount[0{#SINGLETON}]</key>
+                                        <key>aserv.LicensesTotalCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -1247,7 +1247,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <color>1A7C11</color>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.as.aservReadBytesCount[0{#SINGLETON}]</key>
+                                        <key>aserv.ReadBytesCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -1256,7 +1256,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <color>2774A4</color>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.as.aservWriteBytesCount[0{#SINGLETON}]</key>
+                                        <key>aserv.WriteBytesCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -1265,7 +1265,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.as.aservReadPacketsCount[0{#SINGLETON}]</key>
+                                        <key>aserv.ReadPacketsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -1274,14 +1274,14 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.as.aservWritePacketsCount[0{#SINGLETON}]</key>
+                                        <key>aserv.WritePacketsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
                         </graph_prototype>
                     </graph_prototypes>
                     <master_item>
-                        <key>continent41.aservState</key>
+                        <key>cont.aservState</key>
                     </master_item>
                     <preprocessing>
                         <step>
@@ -1293,7 +1293,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                 <discovery_rule>
                     <name>FW</name>
                     <type>DEPENDENT</type>
-                    <key>fw.discovery[singleton]</key>
+                    <key>fw.discovery</key>
                     <delay>0</delay>
                     <description>Межсетевой экран обнаруживается по значению 1 в поле Статус МСЭ&#13;
 OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
@@ -1302,7 +1302,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                             <name>Установлено отслеживаемых соединений</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.2.2.0</snmp_oid>
-                            <key>continent41.fwConnCount[0{#SINGLETON}]</key>
+                            <key>fw.ConnCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -1330,7 +1330,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                             <name>Входящих пакетов отфильтровано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.2.10.0</snmp_oid>
-                            <key>continent41.fwInputPacketsCount[0{#SINGLETON}]</key>
+                            <key>fw.InputPacketsCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -1354,7 +1354,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                             <name>Исходящих пакетов отфильтровано</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.2.14.0</snmp_oid>
-                            <key>continent41.fwOutputPacketsCount[0{#SINGLETON}]</key>
+                            <key>fw.OutputPacketsCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -1383,7 +1383,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                                     <color>FF0000</color>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.fwOutputPacketsCount[0{#SINGLETON}]</key>
+                                        <key>fw.OutputPacketsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -1391,7 +1391,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                                     <color>B71C1C</color>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.fwInputPacketsCount[0{#SINGLETON}]</key>
+                                        <key>fw.InputPacketsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -1400,14 +1400,14 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                                     <yaxisside>RIGHT</yaxisside>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.fwConnCount[0{#SINGLETON}]</key>
+                                        <key>fw.ConnCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
                         </graph_prototype>
                     </graph_prototypes>
                     <master_item>
-                        <key>continent41.fwState</key>
+                        <key>cont.fwState</key>
                     </master_item>
                     <preprocessing>
                         <step>
@@ -1419,7 +1419,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                 <discovery_rule>
                     <name>IPS</name>
                     <type>DEPENDENT</type>
-                    <key>ips.discovery[singleton]</key>
+                    <key>ips.discovery</key>
                     <delay>0</delay>
                     <description>Сервер доступа обнаруживается по значению 1 в поле Статус IPS&#13;
 OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
@@ -1428,7 +1428,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>Пакетов отброшено</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.7.0</snmp_oid>
-                            <key>continent41.ipsDropsCount[0{#SINGLETON}]</key>
+                            <key>ips.DropsCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -1452,7 +1452,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>Оповещений о событии 0 уровня</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.11.0</snmp_oid>
-                            <key>continent41.ipsEventLvl0Alerts[0{#SINGLETON}]</key>
+                            <key>ips.EventLvl0Alerts[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -1480,7 +1480,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>Оповещений о событии 1 уровня</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.15.0</snmp_oid>
-                            <key>continent41.ipsEventLvl1Alerts[0{#SINGLETON}]</key>
+                            <key>ips.EventLvl1Alerts[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -1508,7 +1508,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>Оповещений о событии 2 уровня</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.19.0</snmp_oid>
-                            <key>continent41.ipsEventLvl2Alerts[0{#SINGLETON}]</key>
+                            <key>ips.EventLvl2Alerts[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -1536,7 +1536,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>Оповещений о событии 3 уровня</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.23.0</snmp_oid>
-                            <key>continent41.ipsEventLvl3Alerts[0{#SINGLETON}]</key>
+                            <key>ips.EventLvl3Alerts[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -1563,7 +1563,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>Пакетов пропущено</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.3.0</snmp_oid>
-                            <key>continent41.ipsPcktsCount[0{#SINGLETON}]</key>
+                            <key>ips.PcktsCount[0{#SINGLETON}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>742d</trends>
@@ -1586,7 +1586,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <name>Сигнатур загружено</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.1.1.27.0</snmp_oid>
-                            <key>continent41.ipsSingatureCount[0{#SINGLETON}]</key>
+                            <key>ips.SingatureCount[0{#SINGLETON}]</key>
                             <delay>1h</delay>
                             <history>0</history>
                             <trends>742d</trends>
@@ -1608,7 +1608,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <color>B71C1C</color>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.ipsEventLvl0Alerts[0{#SINGLETON}]</key>
+                                        <key>ips.EventLvl0Alerts[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -1616,7 +1616,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <color>FF0000</color>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.ipsEventLvl1Alerts[0{#SINGLETON}]</key>
+                                        <key>ips.EventLvl1Alerts[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -1624,7 +1624,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <color>FF8000</color>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.ipsEventLvl2Alerts[0{#SINGLETON}]</key>
+                                        <key>ips.EventLvl2Alerts[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -1632,7 +1632,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <color>2E7D32</color>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.ipsEventLvl3Alerts[0{#SINGLETON}]</key>
+                                        <key>ips.EventLvl3Alerts[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -1645,7 +1645,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <color>000000</color>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.ipsPcktsCount[0{#SINGLETON}]</key>
+                                        <key>ips.PcktsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -1653,14 +1653,14 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <color>B71C1C</color>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.ipsDropsCount[0{#SINGLETON}]</key>
+                                        <key>ips.DropsCount[0{#SINGLETON}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
                         </graph_prototype>
                     </graph_prototypes>
                     <master_item>
-                        <key>continent41.ipsComponentState</key>
+                        <key>cont.ipsComponentState</key>
                     </master_item>
                     <preprocessing>
                         <step>
@@ -2174,7 +2174,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                 <discovery_rule>
                     <name>SWAP</name>
                     <type>DEPENDENT</type>
-                    <key>swap.discovery[snmp]</key>
+                    <key>swap.discovery</key>
                     <delay>0</delay>
                     <description>Элементы данных &quot;Доступный объем файла подкачки&quot; и &quot;Доступный объем файла подкачки в %&quot;, а также график объема файла подкачки и триггер свободного места файла подкачки становятся доступными только при значении больше нуля поля &quot;Объем файла подкачки&quot;.</description>
                     <item_prototypes>
@@ -2455,7 +2455,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                             <name>VPN {#VPNNAME}: Активность</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.2.5.1.1.9.{#SNMPINDEX}</snmp_oid>
-                            <key>continent41.vpnActive[{#SNMPINDEX}]</key>
+                            <key>vpn.Active[{#SNMPINDEX}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -2487,7 +2487,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                             <name>VPN {#VPNNAME}: Время прихода некорректного пакета</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.2.5.1.1.8.{#SNMPINDEX}</snmp_oid>
-                            <key>continent41.vpnChannelBadLastIn[{#SNMPINDEX}]</key>
+                            <key>vpn.ChannelBadLastIn[{#SNMPINDEX}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -2507,7 +2507,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                             <name>VPN {#VPNNAME}: Время прихода корректного пакета</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.2.5.1.1.7.{#SNMPINDEX}</snmp_oid>
-                            <key>continent41.vpnChannelLastIn[{#SNMPINDEX}]</key>
+                            <key>vpn.ChannelLastIn[{#SNMPINDEX}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -2527,7 +2527,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                             <name>VPN {#VPNNAME}: Битов получено</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.2.5.1.1.3.{#SNMPINDEX}</snmp_oid>
-                            <key>continent41.vpnInBytes[{#SNMPINDEX}]</key>
+                            <key>vpn.InBytes[{#SNMPINDEX}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -2559,7 +2559,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                             <name>VPN {#VPNNAME}: Битов отправлено</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.1.1.2.5.1.1.5.{#SNMPINDEX}</snmp_oid>
-                            <key>continent41.vpnOutBytes[{#SNMPINDEX}]</key>
+                            <key>vpn.OutBytes[{#SNMPINDEX}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -2590,9 +2590,9 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Continent 4.1 SNMP:continent41.vpnChannelLastIn[{#SNMPINDEX}].last()}&gt;10&#13;
+                            <expression>{Continent 4.1 SNMP:vpn.ChannelLastIn[{#SNMPINDEX}].last()}&gt;10&#13;
 and&#13;
-{Continent 4.1 SNMP:continent41.vpnActive[{#SNMPINDEX}].last()}=1</expression>
+{Continent 4.1 SNMP:vpn.Active[{#SNMPINDEX}].last()}=1</expression>
                             <name>VPN {#VPNNAME}: Канал не работает</name>
                             <priority>WARNING</priority>
                             <description>VPN-канал не работает</description>
@@ -2608,7 +2608,7 @@ and&#13;
                                     <color>1A7C11</color>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.vpnInBytes[{#SNMPINDEX}]</key>
+                                        <key>vpn.InBytes[{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -2617,7 +2617,7 @@ and&#13;
                                     <color>2774A4</color>
                                     <item>
                                         <host>Continent 4.1 SNMP</host>
-                                        <key>continent41.vpnOutBytes[{#SNMPINDEX}]</key>
+                                        <key>vpn.OutBytes[{#SNMPINDEX}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
