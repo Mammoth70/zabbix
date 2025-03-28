@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-03-27T11:43:34Z</date>
+    <date>2025-03-28T06:56:49Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -543,7 +543,7 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.4.0</snmp_oid>
                     <key>system.contact[sysContact]</key>
-                    <delay>1d</delay>
+                    <delay>1h</delay>
                     <history>0</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
@@ -753,6 +753,10 @@ return (i/dict.length/100);</params>
                             <type>JAVASCRIPT</type>
                             <params>return JSON.parse(value).length;</params>
                         </step>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
+                        </step>
                     </preprocessing>
                 </item>
                 <item>
@@ -858,7 +862,7 @@ return (i/dict.length/100);</params>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.1.0</snmp_oid>
                     <key>system.descr[sysDescr]</key>
-                    <delay>1d</delay>
+                    <delay>1h</delay>
                     <history>0</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
@@ -882,7 +886,7 @@ return (i/dict.length/100);</params>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.6.0</snmp_oid>
                     <key>system.location[sysLocation]</key>
-                    <delay>1d</delay>
+                    <delay>1h</delay>
                     <history>0</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
@@ -897,7 +901,7 @@ return (i/dict.length/100);</params>
                     <preprocessing>
                         <step>
                             <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1h</params>
+                            <params>1d</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -940,7 +944,7 @@ and &#13;
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.2.1.1.2.0</snmp_oid>
                     <key>system.objectid[sysObjectID]</key>
-                    <delay>1d</delay>
+                    <delay>1h</delay>
                     <history>0</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
@@ -954,7 +958,7 @@ and &#13;
                     <preprocessing>
                         <step>
                             <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1h</params>
+                            <params>1d</params>
                         </step>
                     </preprocessing>
                 </item>
