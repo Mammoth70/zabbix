@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-03-31T08:01:15Z</date>
+    <date>2025-03-31T12:00:47Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -27,7 +27,7 @@ CISCO-EIGRP-MIB</description>
             </applications>
             <discovery_rules>
                 <discovery_rule>
-                    <name>EIGRP</name>
+                    <name>EIGRP Discovery</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#NEIGHBOR_IP},1.3.6.1.4.1.9.9.449.1.4.1.1.3,{#NEIGHBOR_HEX_IP},1.3.6.1.4.1.9.9.449.1.4.1.1.3]</snmp_oid>
                     <key>eigrp.neighbors.discovery</key>
