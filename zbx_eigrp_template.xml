@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-03-31T12:00:47Z</date>
+    <date>2025-03-31T13:12:49Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -31,7 +31,7 @@ CISCO-EIGRP-MIB</description>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#NEIGHBOR_IP},1.3.6.1.4.1.9.9.449.1.4.1.1.3,{#NEIGHBOR_HEX_IP},1.3.6.1.4.1.9.9.449.1.4.1.1.3]</snmp_oid>
                     <key>eigrp.neighbors.discovery</key>
-                    <delay>15m</delay>
+                    <delay>1h</delay>
                     <filter>
                         <evaltype>AND</evaltype>
                         <conditions>
@@ -58,22 +58,29 @@ CISCO-EIGRP-MIB</description>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
-                            <units>ms</units>
+                            <value_type>FLOAT</value_type>
+                            <units>s</units>
                             <description>Retransmission timeout (RTO) — интервал между отправкой unicast-пакетов. Вычисляется на основании SRTT.</description>
                             <applications>
                                 <application>
                                     <name>EIGRP</name>
                                 </application>
                             </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>0.001</params>
+                                </step>
+                            </preprocessing>
                             <trigger_prototypes>
                                 <trigger_prototype>
-                                    <expression>{last()}=5000&#13;
+                                    <expression>{last()}=5&#13;
 and&#13;
-{last(#2)}=5000</expression>
+{last(#2)}=5</expression>
                                     <name>RTO=5000 EIGRP-соседа {#NEIGHBOR_IP}</name>
                                     <opdata>Последнее значение: {ITEM.LASTVALUE1}</opdata>
                                     <priority>INFO</priority>
-                                    <description>Retransmission timeout (время ожидания повторной передачи) EIGRP-соседа = 5000.</description>
+                                    <description>Retransmission timeout (время ожидания повторной передачи) EIGRP-соседа = 5000мс.</description>
                                     <manual_close>YES</manual_close>
                                     <dependencies>
                                         <dependency>
@@ -112,14 +119,15 @@ and&#13;
                                     <name>Большое время SRTT EIGRP-соседа {#NEIGHBOR_IP}</name>
                                     <opdata>Последнее значение: {ITEM.LASTVALUE1}</opdata>
                                     <priority>INFO</priority>
-                                    <description>Smooth round-trip time (время плавного кругового прохождения) EIGRP-соседа превысило допустимое значение.</description>
+                                    <description>Smooth round-trip time (время плавного кругового прохождения) EIGRP-соседа превысило допустимое значение {$EIGRP_SRTT_WARN}с.&#13;
+Последнее значение: {ITEM.LASTVALUE1}.</description>
                                     <manual_close>YES</manual_close>
                                     <dependencies>
                                         <dependency>
                                             <name>RTO=5000 EIGRP-соседа {#NEIGHBOR_IP}</name>
-                                            <expression>{EIGRP:eigrp.neighbor.rto[{#NEIGHBOR_IP}].last()}=5000&#13;
+                                            <expression>{EIGRP:eigrp.neighbor.rto[{#NEIGHBOR_IP}].last()}=5&#13;
 and&#13;
-{EIGRP:eigrp.neighbor.rto[{#NEIGHBOR_IP}].last(#2)}=5000</expression>
+{EIGRP:eigrp.neighbor.rto[{#NEIGHBOR_IP}].last(#2)}=5</expression>
                                         </dependency>
                                         <dependency>
                                             <name>Нет EIGRP-соседа {#NEIGHBOR_IP}</name>
@@ -168,7 +176,7 @@ return JSON.stringify(dict);</params>
                 <macro>
                     <macro>{$EIGRP_SRTT_WARN}</macro>
                     <value>0.05</value>
-                    <description>Предупреждение превышения плавной круговой задержки</description>
+                    <description>Предупреждение превышения плавной круговой задержки.</description>
                 </macro>
                 <macro>
                     <macro>{$NET.EIGRP.NEIGHBOR.IP.MATCHES}</macro>
