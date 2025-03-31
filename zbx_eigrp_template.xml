@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-03-31T05:21:10Z</date>
+    <date>2025-03-31T08:01:15Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -29,19 +29,32 @@ CISCO-EIGRP-MIB</description>
                 <discovery_rule>
                     <name>EIGRP</name>
                     <type>SNMP_AGENT</type>
-                    <snmp_oid>discovery[{#NE_IP},.1.3.6.1.4.1.9.9.449.1.4.1.1.3,{#NE_HEX_IP},.1.3.6.1.4.1.9.9.449.1.4.1.1.3]</snmp_oid>
+                    <snmp_oid>discovery[{#NEIGHBOR_IP},1.3.6.1.4.1.9.9.449.1.4.1.1.3,{#NEIGHBOR_HEX_IP},1.3.6.1.4.1.9.9.449.1.4.1.1.3]</snmp_oid>
                     <key>eigrp.neighbors.discovery</key>
                     <delay>15m</delay>
                     <filter>
                         <evaltype>AND</evaltype>
+                        <conditions>
+                            <condition>
+                                <macro>{#NEIGHBOR_IP}</macro>
+                                <value>{$NET.EIGRP.NEIGHBOR.IP.MATCHES}</value>
+                                <formulaid>A</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#NEIGHBOR_IP}</macro>
+                                <value>{$NET.EIGRP.NEIGHBOR.IP.NOT_MATCHES}</value>
+                                <operator>NOT_MATCHES_REGEX</operator>
+                                <formulaid>B</formulaid>
+                            </condition>
+                        </conditions>
                     </filter>
                     <description>Обнаружение EIGRP соседей.</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>EIGRP neighbor [{#NE_IP}] RTO</name>
+                            <name>EIGRP neighbor [{#NEIGHBOR_IP}] RTO</name>
                             <type>SNMP_AGENT</type>
-                            <snmp_oid>1.3.6.1.4.1.9.9.449.1.4.1.1.8[&quot;index&quot;,&quot;1.3.6.1.4.1.9.9.449.1.4.1.1.3&quot;,&quot;{#NE_HEX_IP}&quot;]</snmp_oid>
-                            <key>eigrp.neighbor.rto[{#NE_IP}]</key>
+                            <snmp_oid>1.3.6.1.4.1.9.9.449.1.4.1.1.8[&quot;index&quot;,&quot;1.3.6.1.4.1.9.9.449.1.4.1.1.3&quot;,&quot;{#NEIGHBOR_HEX_IP}&quot;]</snmp_oid>
+                            <key>eigrp.neighbor.rto[{#NEIGHBOR_IP}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -57,25 +70,25 @@ CISCO-EIGRP-MIB</description>
                                     <expression>{last()}=5000&#13;
 and&#13;
 {last(#2)}=5000</expression>
-                                    <name>RTO=5000 EIGRP-соседа {#NE_IP}</name>
+                                    <name>RTO=5000 EIGRP-соседа {#NEIGHBOR_IP}</name>
                                     <opdata>Последнее значение: {ITEM.LASTVALUE1}</opdata>
                                     <priority>INFO</priority>
                                     <description>Retransmission timeout (время ожидания повторной передачи) EIGRP-соседа = 5000.</description>
                                     <manual_close>YES</manual_close>
                                     <dependencies>
                                         <dependency>
-                                            <name>Нет EIGRP-соседа {#NE_IP}</name>
-                                            <expression>{EIGRP:eigrp.neighbor.srtt[{#NE_IP}].nodata(15m)}=1</expression>
+                                            <name>Нет EIGRP-соседа {#NEIGHBOR_IP}</name>
+                                            <expression>{EIGRP:eigrp.neighbor.srtt[{#NEIGHBOR_IP}].nodata(15m)}=1</expression>
                                         </dependency>
                                     </dependencies>
                                 </trigger_prototype>
                             </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>EIGRP neighbor [{#NE_IP}] SRTT</name>
+                            <name>EIGRP neighbor [{#NEIGHBOR_IP}] SRTT</name>
                             <type>SNMP_AGENT</type>
-                            <snmp_oid>1.3.6.1.4.1.9.9.449.1.4.1.1.7[&quot;index&quot;,&quot;1.3.6.1.4.1.9.9.449.1.4.1.1.3&quot;,&quot;{#NE_HEX_IP}&quot;]</snmp_oid>
-                            <key>eigrp.neighbor.srtt[{#NE_IP}]</key>
+                            <snmp_oid>1.3.6.1.4.1.9.9.449.1.4.1.1.7[&quot;index&quot;,&quot;1.3.6.1.4.1.9.9.449.1.4.1.1.3&quot;,&quot;{#NEIGHBOR_HEX_IP}&quot;]</snmp_oid>
+                            <key>eigrp.neighbor.srtt[{#NEIGHBOR_IP}]</key>
                             <delay>3m</delay>
                             <history>2w</history>
                             <trends>732d</trends>
@@ -96,27 +109,27 @@ and&#13;
                             <trigger_prototypes>
                                 <trigger_prototype>
                                     <expression>{last()}&gt;{$EIGRP_SRTT_WARN}</expression>
-                                    <name>Большое время SRTT EIGRP-соседа {#NE_IP}</name>
+                                    <name>Большое время SRTT EIGRP-соседа {#NEIGHBOR_IP}</name>
                                     <opdata>Последнее значение: {ITEM.LASTVALUE1}</opdata>
                                     <priority>INFO</priority>
                                     <description>Smooth round-trip time (время плавного кругового прохождения) EIGRP-соседа превысило допустимое значение.</description>
                                     <manual_close>YES</manual_close>
                                     <dependencies>
                                         <dependency>
-                                            <name>RTO=5000 EIGRP-соседа {#NE_IP}</name>
-                                            <expression>{EIGRP:eigrp.neighbor.rto[{#NE_IP}].last()}=5000&#13;
+                                            <name>RTO=5000 EIGRP-соседа {#NEIGHBOR_IP}</name>
+                                            <expression>{EIGRP:eigrp.neighbor.rto[{#NEIGHBOR_IP}].last()}=5000&#13;
 and&#13;
-{EIGRP:eigrp.neighbor.rto[{#NE_IP}].last(#2)}=5000</expression>
+{EIGRP:eigrp.neighbor.rto[{#NEIGHBOR_IP}].last(#2)}=5000</expression>
                                         </dependency>
                                         <dependency>
-                                            <name>Нет EIGRP-соседа {#NE_IP}</name>
-                                            <expression>{EIGRP:eigrp.neighbor.srtt[{#NE_IP}].nodata(15m)}=1</expression>
+                                            <name>Нет EIGRP-соседа {#NEIGHBOR_IP}</name>
+                                            <expression>{EIGRP:eigrp.neighbor.srtt[{#NEIGHBOR_IP}].nodata(15m)}=1</expression>
                                         </dependency>
                                     </dependencies>
                                 </trigger_prototype>
                                 <trigger_prototype>
                                     <expression>{nodata(15m)}=1</expression>
-                                    <name>Нет EIGRP-соседа {#NE_IP}</name>
+                                    <name>Нет EIGRP-соседа {#NEIGHBOR_IP}</name>
                                     <priority>INFO</priority>
                                     <description>В течение 15-ти минут не найден EIGRP-сосед.</description>
                                     <manual_close>YES</manual_close>
@@ -126,14 +139,14 @@ and&#13;
                     </item_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>EIGRP neighbor [{#NE_IP}] SRTT</name>
+                            <name>EIGRP neighbor [{#NEIGHBOR_IP}] SRTT</name>
                             <graph_items>
                                 <graph_item>
                                     <sortorder>1</sortorder>
                                     <color>9C27B0</color>
                                     <item>
                                         <host>EIGRP</host>
-                                        <key>eigrp.neighbor.srtt[{#NE_IP}]</key>
+                                        <key>eigrp.neighbor.srtt[{#NEIGHBOR_IP}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -144,7 +157,7 @@ and&#13;
                             <type>JAVASCRIPT</type>
                             <params>var dict = JSON.parse(value);
 for (key in dict) {
-  dict[key][&quot;{#NE_IP}&quot;] = dict[key][&quot;{#NE_IP}&quot;].trim().split(' ').map(function(oktet){return parseInt(oktet,16)}).join('.') ;
+  dict[key][&quot;{#NEIGHBOR_IP}&quot;] = dict[key][&quot;{#NEIGHBOR_IP}&quot;].trim().split(' ').map(function(oktet){return parseInt(oktet,16)}).join('.');
 }
 return JSON.stringify(dict);</params>
                         </step>
@@ -157,6 +170,16 @@ return JSON.stringify(dict);</params>
                     <value>0.05</value>
                     <description>Предупреждение превышения плавной круговой задержки</description>
                 </macro>
+                <macro>
+                    <macro>{$NET.EIGRP.NEIGHBOR.IP.MATCHES}</macro>
+                    <value>.*</value>
+                    <description>Этот макрос-regexp используется для обнаружения EIGRP-соседей по ip-адресам.</description>
+                </macro>
+                <macro>
+                    <macro>{$NET.EIGRP.NEIGHBOR.IP.NOT_MATCHES}</macro>
+                    <value>CHANGE_IF_NEEDED</value>
+                    <description>Этот макрос-regexp используется для исключения обнаружения EIGRP-соседей по ip-адресам.</description>
+                </macro>
             </macros>
             <screens>
                 <screen>
@@ -168,7 +191,7 @@ return JSON.stringify(dict);</params>
                             <resourcetype>20</resourcetype>
                             <style>0</style>
                             <resource>
-                                <name>EIGRP neighbor [{#NE_IP}] SRTT</name>
+                                <name>EIGRP neighbor [{#NEIGHBOR_IP}] SRTT</name>
                                 <host>EIGRP</host>
                             </resource>
                             <width>750</width>
