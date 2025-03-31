@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-03-31T06:38:50Z</date>
+    <date>2025-03-31T11:56:35Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -48,7 +48,7 @@
                     <name>Сеть</name>
                 </application>
                 <application>
-                    <name>Система обнаружения вторжений</name>
+                    <name>Система предотвращения вторжений</name>
                 </application>
                 <application>
                     <name>Состояние</name>
@@ -125,7 +125,7 @@
 0 — выключена)</description>
                     <applications>
                         <application>
-                            <name>Система обнаружения вторжений</name>
+                            <name>Система предотвращения вторжений</name>
                         </application>
                     </applications>
                 </item>
@@ -1135,7 +1135,7 @@ and &#13;
             </items>
             <discovery_rules>
                 <discovery_rule>
-                    <name>AS</name>
+                    <name>AS - обнаружение</name>
                     <type>DEPENDENT</type>
                     <key>aserv.discovery</key>
                     <delay>0</delay>
@@ -1381,7 +1381,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                     </preprocessing>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>FW</name>
+                    <name>FW - обнаружение</name>
                     <type>DEPENDENT</type>
                     <key>fw.discovery</key>
                     <delay>0</delay>
@@ -1507,7 +1507,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.2.1.0</description>
                     </preprocessing>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>IPS</name>
+                    <name>IPS - обнаружение</name>
                     <type>DEPENDENT</type>
                     <key>ips.discovery</key>
                     <delay>0</delay>
@@ -1528,7 +1528,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
 Количество пакетов, отброшенных IPS</description>
                             <applications>
                                 <application>
-                                    <name>Система обнаружения вторжений</name>
+                                    <name>Система предотвращения вторжений</name>
                                 </application>
                             </applications>
                             <preprocessing>
@@ -1552,7 +1552,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
 Количество оповещений о событии 0 уровня</description>
                             <applications>
                                 <application>
-                                    <name>Система обнаружения вторжений</name>
+                                    <name>Система предотвращения вторжений</name>
                                 </application>
                             </applications>
                             <preprocessing>
@@ -1580,7 +1580,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
 Количество оповещений о событии 1 уровня</description>
                             <applications>
                                 <application>
-                                    <name>Система обнаружения вторжений</name>
+                                    <name>Система предотвращения вторжений</name>
                                 </application>
                             </applications>
                             <preprocessing>
@@ -1608,7 +1608,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
 Количество оповещений о событии 2 уровня</description>
                             <applications>
                                 <application>
-                                    <name>Система обнаружения вторжений</name>
+                                    <name>Система предотвращения вторжений</name>
                                 </application>
                             </applications>
                             <preprocessing>
@@ -1635,7 +1635,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
 Количество оповещений о событии 3 уровня</description>
                             <applications>
                                 <application>
-                                    <name>Система обнаружения вторжений</name>
+                                    <name>Система предотвращения вторжений</name>
                                 </application>
                             </applications>
                             <preprocessing>
@@ -1662,7 +1662,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
 Количество пакетов, пропущенных IPS</description>
                             <applications>
                                 <application>
-                                    <name>Система обнаружения вторжений</name>
+                                    <name>Система предотвращения вторжений</name>
                                 </application>
                             </applications>
                             <preprocessing>
@@ -1684,7 +1684,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
 Количество загруженных сигнатур IPS</description>
                             <applications>
                                 <application>
-                                    <name>Система обнаружения вторжений</name>
+                                    <name>Система предотвращения вторжений</name>
                                 </application>
                             </applications>
                         </item_prototype>
@@ -1760,7 +1760,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                     </preprocessing>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>Сеть</name>
+                    <name>Сеть - обнаружение</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#IFOPERSTATUS},1.3.6.1.2.1.2.2.1.8,{#IFADMINSTATUS},1.3.6.1.2.1.2.2.1.7,{#IFDESCR},1.3.6.1.2.1.2.2.1.2,{#IFTYPE},1.3.6.1.2.1.2.2.1.3,{#IFNUMBER},1.3.6.1.2.1.2.2.1.1]</snmp_oid>
                     <key>net.if.discovery</key>
@@ -2262,7 +2262,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                     </graph_prototypes>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>SWAP</name>
+                    <name>SWAP - обнаружение</name>
                     <type>DEPENDENT</type>
                     <key>swap.discovery</key>
                     <delay>0</delay>
@@ -2356,7 +2356,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                     </preprocessing>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>Разделы</name>
+                    <name>Разделы - обнаружение</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#FSNAME},1.3.6.1.4.1.34849.1.1.2.4.1.1.2]</snmp_oid>
                     <key>vfs.fs.discovery</key>
@@ -2531,7 +2531,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                     </graph_prototypes>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>VPN</name>
+                    <name>VPN - обнаружение</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#VPNNAME},1.3.6.1.4.1.34849.1.1.2.5.1.1.2,{#VPNSTATUS},1.3.6.1.4.1.34849.1.1.2.5.1.1.9]</snmp_oid>
                     <key>vpn.links.discovery</key>
@@ -2561,7 +2561,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>VPN (#SNMPINDEX)</name>
+                                    <name>VPN {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <trigger_prototypes>
@@ -2589,7 +2589,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>VPN (#SNMPINDEX)</name>
+                                    <name>VPN {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
                         </item_prototype>
@@ -2609,7 +2609,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>VPN (#SNMPINDEX)</name>
+                                    <name>VPN {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
                         </item_prototype>
@@ -2631,7 +2631,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>VPN (#SNMPINDEX)</name>
+                                    <name>VPN {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -2663,7 +2663,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>VPN (#SNMPINDEX)</name>
+                                    <name>VPN {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
