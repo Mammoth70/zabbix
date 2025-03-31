@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-03-28T06:55:58Z</date>
+    <date>2025-03-31T11:47:17Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -1170,7 +1170,7 @@ if (value.indexOf(' ') == 2) {
             </items>
             <discovery_rules>
                 <discovery_rule>
-                    <name>Пользователи СД</name>
+                    <name>Пользователи СД - обнаружение</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#CLIENT_CERT_SERIAL},1.3.6.1.4.1.34849.10.4.1.1.2, {#CLIENT_CERT_CN},1.3.6.1.4.1.34849.10.4.1.1.3]</snmp_oid>
                     <key>aserv.clients.discovery</key>
@@ -1455,7 +1455,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                     </item_prototypes>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>СД</name>
+                    <name>СД - обнаружение</name>
                     <type>DEPENDENT</type>
                     <key>aserv.discovery</key>
                     <delay>0</delay>
@@ -2080,7 +2080,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                     </preprocessing>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>ЦП</name>
+                    <name>ЦП - обнаружение</name>
                     <type>DEPENDENT</type>
                     <key>cpu.discovery</key>
                     <delay>0</delay>
@@ -2319,7 +2319,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                     </preprocessing>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>VPN</name>
+                    <name>VPN - обнаружение</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#LINKID},1.3.6.1.4.1.34849.10.2.2.1.1.2]</snmp_oid>
                     <key>links.discovery</key>
@@ -5062,7 +5062,7 @@ and&#13;
                     </trigger_prototypes>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>Сеть</name>
+                    <name>Сеть - обнаружение</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#IFOPERSTATUS},1.3.6.1.2.1.2.2.1.8,{#IFADMINSTATUS},1.3.6.1.2.1.2.2.1.7,{#IFDESCR},1.3.6.1.2.1.2.2.1.2,{#IFTYPE},1.3.6.1.2.1.2.2.1.3]</snmp_oid>
                     <key>net.if.discovery</key>
@@ -5570,7 +5570,7 @@ and {Continent 3.9 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                     </graph_prototypes>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>SWAP</name>
+                    <name>SWAP - обнаружение</name>
                     <type>DEPENDENT</type>
                     <key>swap.discovery</key>
                     <delay>0</delay>
@@ -5657,7 +5657,7 @@ and {Continent 3.9 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                     </preprocessing>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>Диски</name>
+                    <name>Диски - обнаружение</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#DEVNAME},1.3.6.1.4.1.2021.13.15.1.1.2]</snmp_oid>
                     <key>vfs.dev.discovery</key>
@@ -5788,7 +5788,7 @@ and {Continent 3.9 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                     </graph_prototypes>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>Разделы</name>
+                    <name>Разделы - обнаружение</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#FSNAME},1.3.6.1.4.1.2021.9.1.2]</snmp_oid>
                     <key>vfs.fs.discovery</key>
