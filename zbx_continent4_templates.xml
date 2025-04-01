@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-03-31T11:56:35Z</date>
+    <date>2025-04-01T05:31:57Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -585,11 +585,9 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                             <type>JAVASCRIPT</type>
                             <params>var dict = JSON.parse(value);
 var i = 0;
-
 for (key in dict) {
-  i += +dict[key][&quot;{#SNMPVALUE}&quot;];
-}
-
+  i += +dict[key]['{#SNMPVALUE}'];
+};
 return (i/dict.length/100);</params>
                         </step>
                     </preprocessing>
@@ -616,11 +614,9 @@ return (i/dict.length/100);</params>
                             <type>JAVASCRIPT</type>
                             <params>var dict = JSON.parse(value);
 var i = 0;
-
 for (key in dict) {
-  i += +dict[key][&quot;{#SNMPVALUE}&quot;];
-}
-
+  i += +dict[key]['{#SNMPVALUE}'];
+};
 return (i/dict.length/100);</params>
                         </step>
                     </preprocessing>
@@ -647,11 +643,9 @@ return (i/dict.length/100);</params>
                             <type>JAVASCRIPT</type>
                             <params>var dict = JSON.parse(value);
 var i = 0;
-
 for (key in dict) {
-  i += +dict[key][&quot;{#SNMPVALUE}&quot;];
-}
-
+  i += +dict[key]['{#SNMPVALUE}'];
+};
 return (i/dict.length/100);</params>
                         </step>
                     </preprocessing>
@@ -725,11 +719,9 @@ return (i/dict.length/100);</params>
                             <type>JAVASCRIPT</type>
                             <params>var dict = JSON.parse(value);
 var i = 0;
-
 for (key in dict) {
-  i += +dict[key][&quot;{#SNMPVALUE}&quot;];
-}
-
+  i += +dict[key]['{#SNMPVALUE}'];
+};
 return (i/dict.length/100);</params>
                         </step>
                     </preprocessing>
@@ -782,11 +774,9 @@ return (i/dict.length/100);</params>
                             <type>JAVASCRIPT</type>
                             <params>var dict = JSON.parse(value);
 var i = 0;
-
 for (key in dict) {
-  i += +dict[key][&quot;{#SNMPVALUE}&quot;];
-}
-
+  i += +dict[key]['{#SNMPVALUE}'];
+};
 return (i/dict.length/100);</params>
                         </step>
                     </preprocessing>
@@ -813,11 +803,9 @@ return (i/dict.length/100);</params>
                             <type>JAVASCRIPT</type>
                             <params>var dict = JSON.parse(value);
 var i = 0;
-
 for (key in dict) {
-  i += +dict[key][&quot;{#SNMPVALUE}&quot;];
-}
-
+  i += +dict[key]['{#SNMPVALUE}'];
+};
 return (i/dict.length/100);</params>
                         </step>
                     </preprocessing>

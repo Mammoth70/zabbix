@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-03-31T13:12:49Z</date>
+    <date>2025-04-01T05:18:58Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -165,7 +165,7 @@ and&#13;
                             <type>JAVASCRIPT</type>
                             <params>var dict = JSON.parse(value);
 for (key in dict) {
-  dict[key][&quot;{#NEIGHBOR_IP}&quot;] = dict[key][&quot;{#NEIGHBOR_IP}&quot;].trim().split(' ').map(function(oktet){return parseInt(oktet,16)}).join('.');
+  dict[key]['{#NEIGHBOR_IP}'] = dict[key]['{#NEIGHBOR_IP}'].trim().split(' ').map(function(oktet){return parseInt(oktet,16)}).join('.');
 }
 return JSON.stringify(dict);</params>
                         </step>
