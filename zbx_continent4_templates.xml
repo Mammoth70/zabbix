@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-04-01T05:31:57Z</date>
+    <date>2025-04-01T07:14:34Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -73,6 +73,12 @@
                             <name>Сервер доступа</name>
                         </application>
                     </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
                 </item>
                 <item>
                     <name>Статус МСЭ</name>
@@ -89,6 +95,12 @@
                             <name>Межсетевой экран</name>
                         </application>
                     </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
                 </item>
                 <item>
                     <name>Версия GeoIP</name>
@@ -108,8 +120,8 @@
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -128,6 +140,12 @@
                             <name>Система предотвращения вторжений</name>
                         </application>
                     </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
                 </item>
                 <item>
                     <name>Версия базы решающих правил</name>
@@ -147,8 +165,8 @@
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -170,8 +188,8 @@
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -193,8 +211,8 @@
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -216,8 +234,8 @@
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -239,8 +257,8 @@
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -263,8 +281,8 @@
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -523,12 +541,6 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                             <name>Состояние</name>
                         </application>
                     </applications>
-                    <preprocessing>
-                        <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
-                        </step>
-                    </preprocessing>
                     <triggers>
                         <trigger>
                             <expression>{last()}&lt;10m</expression>
@@ -558,8 +570,8 @@ return ((date/1000|0)-(date.getTimezoneOffset()*60));</params>
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -748,7 +760,7 @@ return (i/dict.length/100);</params>
                         </step>
                         <step>
                             <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <params>1h</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -865,8 +877,8 @@ return (i/dict.length/100);</params>
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -889,8 +901,8 @@ return (i/dict.length/100);</params>
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -913,7 +925,7 @@ return (i/dict.length/100);</params>
                     <preprocessing>
                         <step>
                             <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <params>1h</params>
                         </step>
                     </preprocessing>
                     <triggers>
@@ -946,8 +958,8 @@ and &#13;
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -971,6 +983,10 @@ and &#13;
                         <step>
                             <type>MULTIPLIER</type>
                             <params>1</params>
+                        </step>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1h</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -1062,6 +1078,12 @@ and &#13;
                             <name>Memory</name>
                         </application>
                     </applications>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1h</params>
+                        </step>
+                    </preprocessing>
                 </item>
                 <item>
                     <name>Объем используемой памяти в %</name>
@@ -1184,6 +1206,12 @@ OID 1.3.6.1.4.1.34849.1.1.1.4.1.0</description>
                                     <name>Сервер доступа</name>
                                 </application>
                             </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1h</params>
+                                </step>
+                            </preprocessing>
                         </item_prototype>
                         <item_prototype>
                             <name>Битов считано</name>
@@ -1917,7 +1945,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <preprocessing>
                                 <step>
                                     <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                                    <params>1d</params>
+                                    <params>1h</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -2116,7 +2144,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             <preprocessing>
                                 <step>
                                     <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                                    <params>1d</params>
+                                    <params>1h</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -2422,7 +2450,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                             <name>{#FSNAME}: Общий объем</name>
                             <type>CALCULATED</type>
                             <key>vfs.fs.dskTotal[{#FSNAME}]</key>
-                            <delay>3m</delay>
+                            <delay>1h</delay>
                             <history>2w</history>
                             <trends>732d</trends>
                             <units>B</units>
@@ -2437,6 +2465,12 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                                     <name>Filesystem {#FSNAME}</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1h</params>
+                                </step>
+                            </preprocessing>
                         </item_prototype>
                         <item_prototype>
                             <name>{#FSNAME}: Объем используемого места</name>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-04-01T05:23:09Z</date>
+    <date>2025-04-01T07:07:52Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -66,7 +66,7 @@
                     <preprocessing>
                         <step>
                             <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <params>1h</params>
                         </step>
                     </preprocessing>
                     <triggers>
@@ -99,8 +99,8 @@ and&#13;
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -122,8 +122,8 @@ and&#13;
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -144,8 +144,8 @@ and&#13;
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -170,7 +170,7 @@ and&#13;
                     <preprocessing>
                         <step>
                             <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <params>1h</params>
                         </step>
                     </preprocessing>
                     <triggers>
@@ -266,8 +266,8 @@ and&#13;
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -289,8 +289,8 @@ and&#13;
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -313,8 +313,8 @@ and&#13;
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -337,7 +337,7 @@ and&#13;
                     <preprocessing>
                         <step>
                             <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <params>1h</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -362,7 +362,7 @@ and&#13;
                     <preprocessing>
                         <step>
                             <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <params>1h</params>
                         </step>
                     </preprocessing>
                     <triggers>
@@ -568,8 +568,8 @@ if (value.indexOf(' ') == 2) {
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -592,8 +592,8 @@ if (value.indexOf(' ') == 2) {
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -616,8 +616,8 @@ if (value.indexOf(' ') == 2) {
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -639,8 +639,8 @@ if (value.indexOf(' ') == 2) {
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <type>DISCARD_UNCHANGED</type>
+                            <params/>
                         </step>
                     </preprocessing>
                 </item>
@@ -749,7 +749,7 @@ if (value.indexOf(' ') == 2) {
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#SNMPVALUE},1.3.6.1.2.1.25.3.3.1.1]</snmp_oid>
                     <key>system.cpu.num[snmp]</key>
-                    <delay>3m</delay>
+                    <delay>1h</delay>
                     <history>2w</history>
                     <trends>732d</trends>
                     <description>MIB: HOST-RESOURCES-MIB&#13;
@@ -766,7 +766,7 @@ if (value.indexOf(' ') == 2) {
                         </step>
                         <step>
                             <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1d</params>
+                            <params>1h</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -964,6 +964,10 @@ if (value.indexOf(' ') == 2) {
                             <type>MULTIPLIER</type>
                             <params>1024</params>
                         </step>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1h</params>
+                        </step>
                     </preprocessing>
                 </item>
                 <item>
@@ -1108,6 +1112,10 @@ if (value.indexOf(' ') == 2) {
                         <step>
                             <type>MULTIPLIER</type>
                             <params>1024</params>
+                        </step>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1h</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -1467,7 +1475,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.3.0</snmp_oid>
                             <key>aserv.CertCN[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -1487,6 +1495,10 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <type>JAVASCRIPT</type>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
+                                </step>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
@@ -1494,7 +1506,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.7.0</snmp_oid>
                             <key>aserv.CertDescr[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -1514,6 +1526,10 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <type>JAVASCRIPT</type>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
+                                </step>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
@@ -1521,7 +1537,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.6.0</snmp_oid>
                             <key>aserv.CertL[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -1541,6 +1557,10 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <type>JAVASCRIPT</type>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
+                                </step>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
@@ -1548,7 +1568,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.4.0</snmp_oid>
                             <key>aserv.CertO[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -1568,6 +1588,10 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <type>JAVASCRIPT</type>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
+                                </step>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
@@ -1575,7 +1599,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.2.0</snmp_oid>
                             <key>aserv.CertSerial[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -1590,13 +1614,19 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <name>Сертификат СД</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
                         </item_prototype>
                         <item_prototype>
                             <name>Дата начала действия сертификата СД</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.8.0</snmp_oid>
                             <key>aserv.CertValidFrom[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -1611,6 +1641,12 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <name>Сертификат СД</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
                         </item_prototype>
                         <item_prototype>
                             <name>Срок действия сертификата СД</name>
@@ -1655,7 +1691,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.9.0</snmp_oid>
                             <key>aserv.CertValidTo[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -1670,6 +1706,12 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <name>Сертификат СД</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
                         </item_prototype>
                         <item_prototype>
                             <name>Количество подключенных АП</name>
@@ -1725,13 +1767,19 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <name>Сервер доступа</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1h</params>
+                                </step>
+                            </preprocessing>
                         </item_prototype>
                         <item_prototype>
                             <name>Имя корневого сертификата</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.3.0</snmp_oid>
                             <key>aserv.RootCertCN[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -1751,6 +1799,10 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <type>JAVASCRIPT</type>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
+                                </step>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
@@ -1758,7 +1810,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.7.0</snmp_oid>
                             <key>aserv.RootCertDescr[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -1778,6 +1830,10 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <type>JAVASCRIPT</type>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
+                                </step>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
@@ -1785,7 +1841,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.6.0</snmp_oid>
                             <key>aserv.RootCertL[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -1805,6 +1861,10 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <type>JAVASCRIPT</type>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
+                                </step>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
@@ -1812,7 +1872,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.5.0</snmp_oid>
                             <key>aserv.RootCertOU[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -1832,6 +1892,10 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <type>JAVASCRIPT</type>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
+                                </step>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
@@ -1839,7 +1903,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.4.0</snmp_oid>
                             <key>aserv.RootCertO[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -1859,6 +1923,10 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <type>JAVASCRIPT</type>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
+                                </step>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
@@ -1866,7 +1934,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.2.0</snmp_oid>
                             <key>aserv.RootCertSerial[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -1881,13 +1949,19 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <name>Сервер доступа</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
                         </item_prototype>
                         <item_prototype>
                             <name>Дата начала действия корневого сертификата</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.8.0</snmp_oid>
                             <key>aserv.RootCertValidFrom[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -1902,6 +1976,12 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <name>Сервер доступа</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
                         </item_prototype>
                         <item_prototype>
                             <name>Срок действия корневого сертификата</name>
@@ -1946,7 +2026,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.3.1.9.0</snmp_oid>
                             <key>aserv.RootCertValidTo[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -1961,6 +2041,12 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <name>Сервер доступа</name>
                                 </application_prototype>
                             </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
                         </item_prototype>
                         <item_prototype>
                             <name>Количество АП, подключенных по TCP</name>
@@ -1999,7 +2085,7 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.34849.10.4.2.1.5.0</snmp_oid>
                             <key>aservCertOU[0{#SINGLETON}]</key>
-                            <delay>1d</delay>
+                            <delay>1h</delay>
                             <history>2d</history>
                             <trends>0</trends>
                             <discover>NO_DISCOVER</discover>
@@ -2018,6 +2104,10 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                 <step>
                                     <type>JAVASCRIPT</type>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
+                                </step>
+                                <step>
+                                    <type>DISCARD_UNCHANGED</type>
+                                    <params/>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -5231,7 +5321,7 @@ and&#13;
                             <preprocessing>
                                 <step>
                                     <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                                    <params>1d</params>
+                                    <params>1h</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -5431,7 +5521,7 @@ and&#13;
                             <preprocessing>
                                 <step>
                                     <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                                    <params>1d</params>
+                                    <params>1h</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -5865,7 +5955,7 @@ and {Continent 3.9 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.2021.9.1.6.{#SNMPINDEX}</snmp_oid>
                             <key>vfs.fs.dskTotal[{#FSNAME}]</key>
-                            <delay>3m</delay>
+                            <delay>1h</delay>
                             <history>2w</history>
                             <trends>732d</trends>
                             <units>B</units>
@@ -5884,6 +5974,10 @@ and {Continent 3.9 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                                 <step>
                                     <type>MULTIPLIER</type>
                                     <params>1000</params>
+                                </step>
+                                <step>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1h</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
