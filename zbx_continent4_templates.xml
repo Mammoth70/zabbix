@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-04-01T10:09:01Z</date>
+    <date>2025-04-01T13:35:11Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -1707,7 +1707,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                     </item_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>Система обнаружения вторжений : Оповещения{#SINGLETON}</name>
+                            <name>Система предотвращения вторжений : Оповещения{#SINGLETON}</name>
                             <graph_items>
                                 <graph_item>
                                     <sortorder>1</sortorder>
@@ -1744,7 +1744,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </graph_items>
                         </graph_prototype>
                         <graph_prototype>
-                            <name>Система обнаружения вторжений : Сетевой график{#SINGLETON}</name>
+                            <name>Система предотвращения вторжений : Сетевой график{#SINGLETON}</name>
                             <graph_items>
                                 <graph_item>
                                     <sortorder>1</sortorder>
