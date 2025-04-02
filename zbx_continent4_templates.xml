@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-04-02T08:12:39Z</date>
+    <date>2025-04-02T11:25:53Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -1778,7 +1778,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                 <discovery_rule>
                     <name>Сеть - обнаружение</name>
                     <type>SNMP_AGENT</type>
-                    <snmp_oid>discovery[{#IFOPERSTATUS},1.3.6.1.2.1.2.2.1.8,{#IFADMINSTATUS},1.3.6.1.2.1.2.2.1.7,{#IFDESCR},1.3.6.1.2.1.2.2.1.2,{#IFTYPE},1.3.6.1.2.1.2.2.1.3,{#IFNUMBER},1.3.6.1.2.1.2.2.1.1]</snmp_oid>
+                    <snmp_oid>discovery[{#IFOPERSTATUS},1.3.6.1.2.1.2.2.1.8,{#IFADMINSTATUS},1.3.6.1.2.1.2.2.1.7,{#IFDESCR},1.3.6.1.2.1.2.2.1.2,{#IFTYPE},1.3.6.1.2.1.2.2.1.3]</snmp_oid>
                     <key>net.if.discovery</key>
                     <delay>1h</delay>
                     <filter>
@@ -1833,7 +1833,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                     <description>Discovering interfaces from IF-MIB.</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Интерфейс {#IFNUMBER}: Входящих пакетов отброшено</name>
+                            <name>Интерфейс {#SNMPINDEX}: Входящих пакетов отброшено</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.2.1.2.2.1.13.{#SNMPINDEX}</snmp_oid>
                             <key>net.if.in.discards[ifInDiscards.{#SNMPINDEX}]</key>
@@ -1853,7 +1853,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {#IFNUMBER}</name>
+                                    <name>Interface {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1864,7 +1864,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
-                            <name>Интерфейс {#IFNUMBER}: Входящих пакетов с ошибками</name>
+                            <name>Интерфейс {#SNMPINDEX}: Входящих пакетов с ошибками</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.2.1.2.2.1.14.{#SNMPINDEX}</snmp_oid>
                             <key>net.if.in.errors[ifInErrors.{#SNMPINDEX}]</key>
@@ -1880,7 +1880,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {#IFNUMBER}</name>
+                                    <name>Interface {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1891,7 +1891,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
-                            <name>Интерфейс {#IFNUMBER}: Битов получено</name>
+                            <name>Интерфейс {#SNMPINDEX}: Битов получено</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.2.1.31.1.1.1.6.{#SNMPINDEX}</snmp_oid>
                             <key>net.if.in[ifHCInOctets.{#SNMPINDEX}]</key>
@@ -1908,7 +1908,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {#IFNUMBER}</name>
+                                    <name>Interface {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1923,7 +1923,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
-                            <name>Интерфейс {#IFNUMBER}: Размер MTU</name>
+                            <name>Интерфейс {#SNMPINDEX}: Размер MTU</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.2.1.2.2.1.4.{#SNMPINDEX}</snmp_oid>
                             <key>net.if.mtu[ifMTU.{#SNMPINDEX}]</key>
@@ -1939,7 +1939,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {#IFNUMBER}</name>
+                                    <name>Interface {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1950,7 +1950,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
-                            <name>Интерфейс {#IFNUMBER}: Исходящих пакетов отброшено</name>
+                            <name>Интерфейс {#SNMPINDEX}: Исходящих пакетов отброшено</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.2.1.2.2.1.19.{#SNMPINDEX}</snmp_oid>
                             <key>net.if.out.discards[ifOutDiscards.{#SNMPINDEX}]</key>
@@ -1970,7 +1970,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {#IFNUMBER}</name>
+                                    <name>Interface {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1981,7 +1981,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
-                            <name>Интерфейс {#IFNUMBER}: Исходящих пакетов с ошибками</name>
+                            <name>Интерфейс {#SNMPINDEX}: Исходящих пакетов с ошибками</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.2.1.2.2.1.20.{#SNMPINDEX}</snmp_oid>
                             <key>net.if.out.errors[ifOutErrors.{#SNMPINDEX}]</key>
@@ -1997,7 +1997,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {#IFNUMBER}</name>
+                                    <name>Interface {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -2008,7 +2008,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
-                            <name>Интерфейс {#IFNUMBER}: Битов отправлено</name>
+                            <name>Интерфейс {#SNMPINDEX}: Битов отправлено</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.2.1.31.1.1.1.10.{#SNMPINDEX}</snmp_oid>
                             <key>net.if.out[ifHCOutOctets.{#SNMPINDEX}]</key>
@@ -2025,7 +2025,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {#IFNUMBER}</name>
+                                    <name>Interface {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -2040,7 +2040,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
-                            <name>Интерфейс {#IFNUMBER}: Скорость</name>
+                            <name>Интерфейс {#SNMPINDEX}: Скорость</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.2.1.2.2.1.5.{#SNMPINDEX}</snmp_oid>
                             <key>net.if.speed[ifHighSpeed.{#SNMPINDEX}]</key>
@@ -2057,7 +2057,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {#IFNUMBER}</name>
+                                    <name>Interface {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -2072,7 +2072,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </preprocessing>
                         </item_prototype>
                         <item_prototype>
-                            <name>Интерфейс {#IFNUMBER}: Операционный статус</name>
+                            <name>Интерфейс {#SNMPINDEX}: Операционный статус</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.2.1.2.2.1.8.{#SNMPINDEX}</snmp_oid>
                             <key>net.if.status[ifOperStatus.{#SNMPINDEX}]</key>
@@ -2094,7 +2094,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {#IFNUMBER}</name>
+                                    <name>Interface {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <valuemap>
@@ -2105,7 +2105,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                                     <expression>{$IFCONTROL:&quot;{#IFNAME}&quot;}=1 and ({last()}=2 and {diff()}=1)</expression>
                                     <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
                                     <recovery_expression>{last()}&lt;&gt;2</recovery_expression>
-                                    <name>Интерфейс {#IFNUMBER}: Упал линк</name>
+                                    <name>Интерфейс {#SNMPINDEX}: Упал линк</name>
                                     <opdata>Текущее состояние: {ITEM.LASTVALUE1}</opdata>
                                     <priority>AVERAGE</priority>
                                     <description>Это триггерное выражение работает следующим образом:&#13;
@@ -2117,7 +2117,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Интерфейс {#IFNUMBER}: Тип интерфейса</name>
+                            <name>Интерфейс {#SNMPINDEX}: Тип интерфейса</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.2.1.2.2.1.3.{#SNMPINDEX}</snmp_oid>
                             <key>net.if.type[ifType.{#SNMPINDEX}]</key>
@@ -2135,7 +2135,7 @@ OID 1.3.6.1.4.1.34849.1.1.1.1.2.0</description>
                             </applications>
                             <application_prototypes>
                                 <application_prototype>
-                                    <name>Interface {#IFNUMBER}</name>
+                                    <name>Interface {#SNMPINDEX}</name>
                                 </application_prototype>
                             </application_prototypes>
                             <valuemap>
@@ -2165,14 +2165,14 @@ and&#13;
                             <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
                             <recovery_expression>({Continent 4.1 SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].change()}&gt;0 and {Continent 4.1 SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].prev()}&gt;0) or&#13;
 ({Continent 4.1 SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2)</recovery_expression>
-                            <name>Интерфейс {#IFNUMBER}: Ethernet снизил скорость</name>
+                            <name>Интерфейс {#SNMPINDEX}: Ethernet снизил скорость</name>
                             <opdata>Текущая заявленная скорость: {ITEM.LASTVALUE1}</opdata>
                             <priority>INFO</priority>
                             <description>Это соединение Ethernet снизило скорость по сравнению с максимальной. Это может быть признаком проблем с автосогласованием. Можно закрыть, если кто надо в курсе.</description>
                             <manual_close>YES</manual_close>
                             <dependencies>
                                 <dependency>
-                                    <name>Интерфейс {#IFNUMBER}: Упал линк</name>
+                                    <name>Интерфейс {#SNMPINDEX}: Упал линк</name>
                                     <expression>{$IFCONTROL:&quot;{#IFNAME}&quot;}=1 and ({Continent 4.1 SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2 and {Continent 4.1 SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].diff()}=1)</expression>
                                     <recovery_expression>{Continent 4.1 SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}&lt;&gt;2</recovery_expression>
                                 </dependency>
@@ -2184,13 +2184,13 @@ or {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].min(5m)}&gt;{
                             <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
                             <recovery_expression>{Continent 4.1 SNMP:net.if.in.errors[ifInErrors.{#SNMPINDEX}].max(5m)}&lt;{$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;}*0.8&#13;
 and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;{$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;}*0.8</recovery_expression>
-                            <name>Интерфейс {#IFNUMBER}: Высокая доля ошибок ( более {$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;} за 5 мин)</name>
+                            <name>Интерфейс {#SNMPINDEX}: Высокая доля ошибок ( более {$IF.ERRORS.WARN:&quot;{#IFNAME}&quot;} за 5 мин)</name>
                             <opdata>ошибок входящих: {ITEM.LASTVALUE1}, ошибок исходящих: {ITEM.LASTVALUE2}</opdata>
                             <priority>WARNING</priority>
                             <description>Восстанавливается, когда значение порога {$ IF.ERRORS.WARN: &quot;{# IFNAME}&quot;} ниже 80%</description>
                             <dependencies>
                                 <dependency>
-                                    <name>Интерфейс {#IFNUMBER}: Упал линк</name>
+                                    <name>Интерфейс {#SNMPINDEX}: Упал линк</name>
                                     <expression>{$IFCONTROL:&quot;{#IFNAME}&quot;}=1 and ({Continent 4.1 SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2 and {Continent 4.1 SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].diff()}=1)</expression>
                                     <recovery_expression>{Continent 4.1 SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}&lt;&gt;2</recovery_expression>
                                 </dependency>
@@ -2203,12 +2203,12 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                             <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
                             <recovery_expression>{Continent 4.1 SNMP:net.if.in[ifHCInOctets.{#SNMPINDEX}].avg(15m)}&lt;(({$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}-3)/100)*{Continent 4.1 SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()} and&#13;
 {Continent 4.1 SNMP:net.if.out[ifHCOutOctets.{#SNMPINDEX}].avg(15m)}&lt;(({$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}-3)/100)*{Continent 4.1 SNMP:net.if.speed[ifHighSpeed.{#SNMPINDEX}].last()}</recovery_expression>
-                            <name>Интерфейс {#IFNUMBER}: Занята большая полоса пропускания ( более {$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}% )</name>
+                            <name>Интерфейс {#SNMPINDEX}: Занята большая полоса пропускания ( более {$IF.UTIL.MAX:&quot;{#IFNAME}&quot;}% )</name>
                             <opdata>входящий: {ITEM.LASTVALUE1}, исходящий: {ITEM.LASTVALUE3}, скорость: {ITEM.LASTVALUE2}</opdata>
                             <priority>WARNING</priority>
                             <dependencies>
                                 <dependency>
-                                    <name>Интерфейс {#IFNUMBER}: Упал линк</name>
+                                    <name>Интерфейс {#SNMPINDEX}: Упал линк</name>
                                     <expression>{$IFCONTROL:&quot;{#IFNAME}&quot;}=1 and ({Continent 4.1 SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}=2 and {Continent 4.1 SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].diff()}=1)</expression>
                                     <recovery_expression>{Continent 4.1 SNMP:net.if.status[ifOperStatus.{#SNMPINDEX}].last()}&lt;&gt;2</recovery_expression>
                                 </dependency>
@@ -2217,7 +2217,7 @@ and {Continent 4.1 SNMP:net.if.out.errors[ifOutErrors.{#SNMPINDEX}].max(5m)}&lt;
                     </trigger_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>Интерфейс {#IFNUMBER}: Сетевой трафик</name>
+                            <name>Интерфейс {#SNMPINDEX}: Сетевой трафик</name>
                             <graph_items>
                                 <graph_item>
                                     <sortorder>1</sortorder>
@@ -2909,7 +2909,7 @@ and&#13;
                             <resourcetype>20</resourcetype>
                             <style>0</style>
                             <resource>
-                                <name>Интерфейс {#IFNUMBER}: Сетевой трафик</name>
+                                <name>Интерфейс {#SNMPINDEX}: Сетевой трафик</name>
                                 <host>Continent 4.1 SNMP</host>
                             </resource>
                             <width>750</width>
