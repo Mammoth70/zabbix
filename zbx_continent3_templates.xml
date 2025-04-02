@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-04-01T10:00:32Z</date>
+    <date>2025-04-02T08:05:51Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -66,7 +66,7 @@
                     <preprocessing>
                         <step>
                             <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1h</params>
+                            <params>1d</params>
                         </step>
                     </preprocessing>
                     <triggers>
@@ -86,7 +86,7 @@ and&#13;
                     <snmp_oid>1.3.6.1.4.1.34849.10.2.1.8.0</snmp_oid>
                     <key>cont.ConfigurationType</key>
                     <delay>1h</delay>
-                    <history>0</history>
+                    <history>2w</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -100,7 +100,7 @@ and&#13;
                     <preprocessing>
                         <step>
                             <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1h</params>
+                            <params>1d</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -122,8 +122,8 @@ and&#13;
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED</type>
-                            <params/>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1h</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -144,8 +144,8 @@ and&#13;
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED</type>
-                            <params/>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -254,7 +254,7 @@ and&#13;
                     <snmp_oid>1.3.6.1.4.1.34849.10.2.1.4.0</snmp_oid>
                     <key>cont.NodeId</key>
                     <delay>1h</delay>
-                    <history>0</history>
+                    <history>2w</history>
                     <trends>0</trends>
                     <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
 Идентификационный номер узла</description>
@@ -266,8 +266,8 @@ and&#13;
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED</type>
-                            <params/>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -289,8 +289,8 @@ and&#13;
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED</type>
-                            <params/>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1h</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -300,7 +300,7 @@ and&#13;
                     <snmp_oid>1.3.6.1.4.1.34849.10.2.1.7.0</snmp_oid>
                     <key>cont.PlatformName</key>
                     <delay>1h</delay>
-                    <history>0</history>
+                    <history>2w</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SECURITYCODE-CONTINENT-MIB&#13;
@@ -313,8 +313,8 @@ and&#13;
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED</type>
-                            <params/>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -337,7 +337,7 @@ and&#13;
                     <preprocessing>
                         <step>
                             <type>DISCARD_UNCHANGED_HEARTBEAT</type>
-                            <params>1h</params>
+                            <params>1d</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -555,7 +555,7 @@ if (value.indexOf(' ') == 2) {
                     <snmp_oid>1.3.6.1.2.1.1.4.0</snmp_oid>
                     <key>sysContact</key>
                     <delay>1h</delay>
-                    <history>0</history>
+                    <history>2w</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SNMPv2-MIB&#13;
@@ -568,8 +568,8 @@ if (value.indexOf(' ') == 2) {
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED</type>
-                            <params/>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -579,7 +579,7 @@ if (value.indexOf(' ') == 2) {
                     <snmp_oid>1.3.6.1.2.1.1.1.0</snmp_oid>
                     <key>sysDescr</key>
                     <delay>1h</delay>
-                    <history>0</history>
+                    <history>2w</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SNMPv2-MIB&#13;
@@ -592,8 +592,8 @@ if (value.indexOf(' ') == 2) {
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED</type>
-                            <params/>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -603,7 +603,7 @@ if (value.indexOf(' ') == 2) {
                     <snmp_oid>1.3.6.1.2.1.1.6.0</snmp_oid>
                     <key>sysLocation</key>
                     <delay>1h</delay>
-                    <history>0</history>
+                    <history>2w</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SNMPv2-MIB&#13;
@@ -616,8 +616,8 @@ if (value.indexOf(' ') == 2) {
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED</type>
-                            <params/>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -627,7 +627,7 @@ if (value.indexOf(' ') == 2) {
                     <snmp_oid>1.3.6.1.2.1.1.2.0</snmp_oid>
                     <key>sysObjectID</key>
                     <delay>1h</delay>
-                    <history>0</history>
+                    <history>2w</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <description>MIB: SNMPv2-MIB&#13;
@@ -639,8 +639,8 @@ if (value.indexOf(' ') == 2) {
                     </applications>
                     <preprocessing>
                         <step>
-                            <type>DISCARD_UNCHANGED</type>
-                            <params/>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>1d</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -1208,8 +1208,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             </application_prototypes>
                             <preprocessing>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1235,8 +1235,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             </application_prototypes>
                             <preprocessing>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1300,8 +1300,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             </application_prototypes>
                             <preprocessing>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1331,8 +1331,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1362,8 +1362,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1393,8 +1393,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1424,8 +1424,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1455,8 +1455,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1496,8 +1496,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1527,8 +1527,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1558,8 +1558,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1589,8 +1589,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1616,8 +1616,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             </application_prototypes>
                             <preprocessing>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1643,8 +1643,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             </application_prototypes>
                             <preprocessing>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1708,8 +1708,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             </application_prototypes>
                             <preprocessing>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1800,8 +1800,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1831,8 +1831,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1862,8 +1862,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1893,8 +1893,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1924,8 +1924,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1951,8 +1951,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             </application_prototypes>
                             <preprocessing>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -1978,8 +1978,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             </application_prototypes>
                             <preprocessing>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -2043,8 +2043,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                             </application_prototypes>
                             <preprocessing>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -2106,8 +2106,8 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                     <params>try { return decodeURIComponent('%' + value.replace(/\s+/g, '').match(/.{1,2}/g).join('%')); } catch (e) { return value; }</params>
                                 </step>
                                 <step>
-                                    <type>DISCARD_UNCHANGED</type>
-                                    <params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <params>1d</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
