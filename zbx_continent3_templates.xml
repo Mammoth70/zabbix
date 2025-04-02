@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-04-02T08:05:51Z</date>
+    <date>2025-04-02T08:26:49Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -1205,6 +1205,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                 <application_prototype>
                                     <name>Сертификат {#CLIENT_CERT_CN}</name>
                                 </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификаты пользователей</name>
+                                </application_prototype>
                             </application_prototypes>
                             <preprocessing>
                                 <step>
@@ -1232,6 +1235,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                 <application_prototype>
                                     <name>Сертификат {#CLIENT_CERT_CN}</name>
                                 </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификаты пользователей</name>
+                                </application_prototype>
                             </application_prototypes>
                             <preprocessing>
                                 <step>
@@ -1257,6 +1263,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                 </application_prototype>
                                 <application_prototype>
                                     <name>Сертификат {#CLIENT_CERT_CN}</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификаты пользователей</name>
                                 </application_prototype>
                             </application_prototypes>
                             <trigger_prototypes>
@@ -1297,6 +1306,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                 <application_prototype>
                                     <name>Сертификат {#CLIENT_CERT_CN}</name>
                                 </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификаты пользователей</name>
+                                </application_prototype>
                             </application_prototypes>
                             <preprocessing>
                                 <step>
@@ -1323,6 +1335,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                 </application_prototype>
                                 <application_prototype>
                                     <name>Сертификат {#CLIENT_CERT_CN}</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификаты пользователей</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1355,6 +1370,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                 <application_prototype>
                                     <name>Сертификат {#CLIENT_CERT_CN}</name>
                                 </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификаты пользователей</name>
+                                </application_prototype>
                             </application_prototypes>
                             <preprocessing>
                                 <step>
@@ -1385,6 +1403,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                 </application_prototype>
                                 <application_prototype>
                                     <name>Сертификат {#CLIENT_CERT_CN}</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификаты пользователей</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
@@ -1417,6 +1438,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                 <application_prototype>
                                     <name>Сертификат {#CLIENT_CERT_CN}</name>
                                 </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификаты пользователей</name>
+                                </application_prototype>
                             </application_prototypes>
                             <preprocessing>
                                 <step>
@@ -1447,6 +1471,9 @@ OID 1.3.6.1.4.1.34849.10.4.1.1.2</description>
                                 </application_prototype>
                                 <application_prototype>
                                     <name>Сертификат {#CLIENT_CERT_CN}</name>
+                                </application_prototype>
+                                <application_prototype>
+                                    <name>Сертификаты пользователей</name>
                                 </application_prototype>
                             </application_prototypes>
                             <preprocessing>
