@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-04-03T05:56:15Z</date>
+    <date>2025-04-03T07:48:03Z</date>
     <groups>
         <group>
             <name>Templates/Network devices</name>
@@ -1140,7 +1140,7 @@ and &#13;
                             <expression>{max({$SNMP.TIMEOUT})}=0</expression>
                             <name>Нет сбора данных SNMP</name>
                             <opdata>Current state: {ITEM.LASTVALUE1}</opdata>
-                            <priority>WARNING</priority>
+                            <priority>HIGH</priority>
                             <description>SNMP не доступен для опроса. Пожалуйста, проверьте подключение устройства и настройки SNMP.</description>
                         </trigger>
                     </triggers>
