@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2025-04-08T11:46:38Z</date>
+    <groups>
+        <group>
+            <name>Templates/Modules</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Cisco SLAmonitor SNMP</template>
+            <name>Cisco SLAmonitor SNMP</name>
+            <description>Template Cisco SLAmonitor SNMP</description>
+            <groups>
+                <group>
+                    <name>Templates/Modules</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>SLA</name>
+                </application>
+            </applications>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>SLA Discovery</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#SLA_MON_TIMEOUT},1.3.6.1.4.1.9.9.42.1.2.9.1.6]</snmp_oid>
+                    <key>slamonitor.discovery</key>
+                    <delay>1h</delay>
+                    <filter>
+                        <evaltype>AND</evaltype>
+                    </filter>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>SLA-монитор-{#SNMPINDEX}:время ответа</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.9.9.42.1.2.10.1.1.{#SNMPINDEX}</snmp_oid>
+                            <key>slamonitor.OperCompletionTime[{#SNMPINDEX}]</key>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <value_type>FLOAT</value_type>
+                            <units>s</units>
+                            <description>Время завершения последней успешно завершенной операции RTT.&#13;
+(милисекунды)</description>
+                            <applications>
+                                <application>
+                                    <name>SLA</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>0.001</params>
+                                </step>
+                            </preprocessing>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{avg(5m)}&gt;{$ICMP_SLA_RESPONSE_TIME_WARN:&quot;{#SNMPINDEX}&quot;}</expression>
+                                    <name>SLA-монитор-{#SNMPINDEX}: Большое время ICMP-ответа</name>
+                                    <priority>WARNING</priority>
+                                    <description>Последнее значение: {ITEM.LASTVALUE1}.</description>
+                                    <dependencies>
+                                        <dependency>
+                                            <name>SLA-монитор-{#SNMPINDEX}: Нет ICMP-ответа</name>
+                                            <expression>{Cisco SLAmonitor SNMP:slamonitor.timeoutoccoted[{#SNMPINDEX}].max(#3)}&lt;2&#13;
+or&#13;
+{Cisco SLAmonitor SNMP:slamonitor.timeoutoccoted[{#SNMPINDEX}].nodata(3m)}=1</expression>
+                                            <recovery_expression>{Cisco SLAmonitor SNMP:slamonitor.timeoutoccoted[{#SNMPINDEX}].min(#3)}=2&#13;
+and&#13;
+{Cisco SLAmonitor SNMP:slamonitor.timeoutoccoted[{#SNMPINDEX}].nodata(3m)}=0</recovery_expression>
+                                        </dependency>
+                                    </dependencies>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>SLA-монитор-{#SNMPINDEX}:таймаут истек</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.9.9.42.1.2.9.1.6.{#SNMPINDEX}</snmp_oid>
+                            <key>slamonitor.timeoutoccoted[{#SNMPINDEX}]</key>
+                            <history>2w</history>
+                            <trends>732d</trends>
+                            <description>Таймаут ответа SLA монитора&#13;
+1 - таймаут истек&#13;
+2 - таймаут не истек</description>
+                            <applications>
+                                <application>
+                                    <name>SLA</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>SLA-monitor-timeoutoccoted</name>
+                            </valuemap>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{max(#3)}&lt;2&#13;
+or&#13;
+{nodata(3m)}=1</expression>
+                                    <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                                    <recovery_expression>{min(#3)}=2&#13;
+and&#13;
+{nodata(3m)}=0</recovery_expression>
+                                    <name>SLA-монитор-{#SNMPINDEX}: Нет ICMP-ответа</name>
+                                    <priority>AVERAGE</priority>
+                                    <description>Последнее значение: {ITEM.LASTVALUE1}.&#13;
+Последние три попытки SLA-монитора вернули тайм-аут. Пожалуйста, проверьте настройки устройства.</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>SLA-монитор-{#SNMPINDEX}:время ICMP-ответа</name>
+                            <ymin_type_1>FIXED</ymin_type_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>1A7C11</color>
+                                    <item>
+                                        <host>Cisco SLAmonitor SNMP</host>
+                                        <key>slamonitor.OperCompletionTime[{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                </discovery_rule>
+            </discovery_rules>
+            <macros>
+                <macro>
+                    <macro>{$ICMP_SLA_RESPONSE_TIME_WARN}</macro>
+                    <value>0.05</value>
+                </macro>
+            </macros>
+            <screens>
+                <screen>
+                    <name>SLA-мониторы:время ICMP-ответа</name>
+                    <hsize>1</hsize>
+                    <vsize>1</vsize>
+                    <screen_items>
+                        <screen_item>
+                            <resourcetype>20</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>SLA-монитор-{#SNMPINDEX}:время ICMP-ответа</name>
+                                <host>Cisco SLAmonitor SNMP</host>
+                            </resource>
+                            <width>750</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>0</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <url/>
+                            <application/>
+                            <max_columns>2</max_columns>
+                        </screen_item>
+                    </screen_items>
+                </screen>
+            </screens>
+        </template>
+    </templates>
+    <value_maps>
+        <value_map>
+            <name>SLA-monitor-timeoutoccoted</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>true - abnormal</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>false - normal</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>
