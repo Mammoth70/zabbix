@@ -1,0 +1,3067 @@
+zabbix_export:
+  version: '7.0'
+  template_groups:
+    - uuid: 36bff6c29af64692839d077febfc7079
+      name: 'Templates/Network devices'
+  templates:
+    - uuid: 9404d8c858af4c42b041c2b8675077cf
+      template: 'Continent 4.1 by SNMP'
+      name: 'Continent 4.1 by SNMP'
+      description: 'Шаблон для мониторинга многофункциональных межсетевых экранов "Континент" 4.1'
+      groups:
+        - name: 'Templates/Network devices'
+      items:
+        - uuid: 7cd75e364593441eb1f5f97336102bbc
+          name: 'Статус СД'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.4.1.0]'
+          key: cont.aservState
+          delay: 1h
+          trends: '0'
+          description: |
+            Статус СД
+            неизвестно -2
+            не настроен -1
+            выключен  0
+            запущен 1
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1h
+          tags:
+            - tag: component
+              value: ngfw
+        - uuid: 532883fbe4c54f63b5e947492a03fb41
+          name: 'Статус МСЭ'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.2.1.0]'
+          key: cont.fwState
+          delay: 1h
+          trends: '0'
+          description: |
+            Статус МСЭ (1 — запущен/
+            0 — выключен)
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1h
+          tags:
+            - tag: component
+              value: ngfw
+        - uuid: 44c065a83e4e4af4a357e8c602df27bf
+          name: 'Версия GeoIP'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.7.0]'
+          key: cont.GeoIPVersion
+          delay: 3m
+          value_type: CHAR
+          trends: '0'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Версия GeoIP
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1d
+          tags:
+            - tag: component
+              value: ngfw
+        - uuid: 3fc4dcdf71c74800bbd38bf53caa7cbf
+          name: 'Статус IPS'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.1.2.0]'
+          key: cont.ipsComponentState
+          delay: 1h
+          trends: '0'
+          description: |
+            Статус IPS (1 — запущена/
+            0 — выключена)
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1h
+          tags:
+            - tag: component
+              value: ngfw
+        - uuid: 30adead04b6a494d92ba4146afd788ed
+          name: 'Версия базы решающих правил'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.3.0]'
+          key: cont.IPSVersion
+          delay: 3m
+          value_type: CHAR
+          trends: '0'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Версия базы решающих правил (только для ЦУС)
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1d
+          tags:
+            - tag: component
+              value: ngfw
+        - uuid: 433513a49dbe413a924f6041d0ccdcf4
+          name: 'Версия фидов Kaspersky'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.4.0]'
+          key: cont.KasperskyFeedsVersion
+          delay: 3m
+          value_type: CHAR
+          trends: '0'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Версия фидов Kaspersky
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1d
+          tags:
+            - tag: component
+              value: ngfw
+        - uuid: 169ed0efc8d748098a7311746e5c84c1
+          name: 'Версия хэшей Kaspersky'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.5.0]'
+          key: cont.KasperskyHashVersion
+          delay: 3m
+          value_type: CHAR
+          trends: '0'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Версия хэшей Kaspersky
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1d
+          tags:
+            - tag: component
+              value: ngfw
+        - uuid: 98f577b865f74077932b84550f3be7f2
+          name: 'Версия SkyDNS'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.8.0]'
+          key: cont.SkyDNSVersion
+          delay: 3m
+          value_type: CHAR
+          trends: '0'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Версия SkyDNS
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1d
+          tags:
+            - tag: component
+              value: ngfw
+        - uuid: f0814ffb3ddd4b25be6774936c541bf2
+          name: 'Версия пользовательских хэшей'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.6.0]'
+          key: cont.UserHashVersion
+          delay: 3m
+          value_type: CHAR
+          trends: '0'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Версия пользовательских хэшей
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1d
+          tags:
+            - tag: component
+              value: ngfw
+        - uuid: a00ffff8f15846e095d66d997b956b3f
+          name: 'Версия ОС'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.1.0]'
+          key: cont.Version
+          delay: 1h
+          value_type: CHAR
+          trends: '0'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Версия ОС
+          inventory_link: SOFTWARE
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1d
+          tags:
+            - tag: component
+              value: system
+        - uuid: b9a9c26725c44159b47a32954adba7a8
+          name: 'CPU: Температура'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.6.1.0]'
+          key: cpu.temp
+          delay: 3m
+          value_type: FLOAT
+          units: °C
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Текущая температура ЦП
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          tags:
+            - tag: component
+              value: cpu
+          triggers:
+            - uuid: 0261379bb31540aa9300fb6d71a10ff3
+              expression: 'avg(/Continent 4.1 by SNMP/cpu.temp,5m)>{$TEMP_CRIT:CPU}'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'avg(/Continent 4.1 by SNMP/cpu.temp,5m)<{$TEMP_CRIT:CPU}-3'
+              name: 'CPU: Температура выше критического порога'
+              event_name: 'CPU: Температура выше критического порога (более {$TEMP_CRIT:CPU})'
+              opdata: 'Текущее значение:{ITEM.LASTVALUE1}'
+              priority: HIGH
+              tags:
+                - tag: scope
+                  value: availability
+                - tag: scope
+                  value: perfomance
+            - uuid: 52acdadb40944b7fbc9892dd23d1916a
+              expression: 'avg(/Continent 4.1 by SNMP/cpu.temp,5m)>{$TEMP_WARN:CPU}'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'avg(/Continent 4.1 by SNMP/cpu.temp,5m)<{$TEMP_WARN:CPU}-3'
+              name: 'CPU: Температура выше порога предупреждения'
+              event_name: 'CPU: Температура выше порога предупреждения (более {$TEMP_WARN:CPU})'
+              opdata: 'Текущее значение:{ITEM.LASTVALUE1}'
+              priority: AVERAGE
+              dependencies:
+                - name: 'CPU: Температура выше критического порога'
+                  expression: 'avg(/Continent 4.1 by SNMP/cpu.temp,5m)>{$TEMP_CRIT:CPU}'
+                  recovery_expression: 'avg(/Continent 4.1 by SNMP/cpu.temp,5m)<{$TEMP_CRIT:CPU}-3'
+              tags:
+                - tag: scope
+                  value: availability
+                - tag: scope
+                  value: perfomance
+            - uuid: 6733e3f24d724f1981a827a32be47a50
+              expression: 'avg(/Continent 4.1 by SNMP/cpu.temp,5m)< {$TEMP_CRIT_LOW}'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'avg(/Continent 4.1 by SNMP/cpu.temp,5m)<{$TEMP_CRIT_LOW}+3'
+              name: 'CPU: Температура слишком низкая'
+              event_name: 'CPU: Температура слишком низкая (менее {$TEMP_CRIT_LOW})'
+              opdata: 'Текущее значение:{ITEM.LASTVALUE1}'
+              priority: AVERAGE
+              dependencies:
+                - name: 'CPU: Температура выше критического порога'
+                  expression: 'avg(/Continent 4.1 by SNMP/cpu.temp,5m)>{$TEMP_CRIT:CPU}'
+                  recovery_expression: 'avg(/Continent 4.1 by SNMP/cpu.temp,5m)<{$TEMP_CRIT:CPU}-3'
+              tags:
+                - tag: scope
+                  value: availability
+                - tag: scope
+                  value: perfomance
+        - uuid: f15223d8cdcd4263ba8f3e1d1bdc5063
+          name: 'HDD: Температура'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.6.5.0]'
+          key: hdd.temp
+          delay: 3m
+          value_type: FLOAT
+          units: °C
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Текущая температура накопителя
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          tags:
+            - tag: component
+              value: storage
+          triggers:
+            - uuid: 634b9f958a1f49c0a5b4d7067cb49eb7
+              expression: 'avg(/Continent 4.1 by SNMP/hdd.temp,5m)>{$TEMP_CRIT:HDD}'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'avg(/Continent 4.1 by SNMP/hdd.temp,5m)<{$TEMP_CRIT:HDD}-3'
+              name: 'HDD: Температура выше критического порога'
+              event_name: 'HDD: Температура выше критического порога (более {$TEMP_CRIT:HDD})'
+              opdata: 'Текущее значение:{ITEM.LASTVALUE1}'
+              priority: HIGH
+              tags:
+                - tag: scope
+                  value: availability
+                - tag: scope
+                  value: perfomance
+            - uuid: 30b51db728bf4b0280a4d87b270ce4d4
+              expression: 'avg(/Continent 4.1 by SNMP/hdd.temp,5m)>{$TEMP_WARN:HDD}'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'avg(/Continent 4.1 by SNMP/hdd.temp,5m)<{$TEMP_WARN:HDD}-3'
+              name: 'HDD: Температура выше порога предупреждения'
+              event_name: 'HDD: Температура выше порога предупреждения (более {$TEMP_WARN:HDD})'
+              opdata: 'Текущее значение:{ITEM.LASTVALUE1}'
+              priority: AVERAGE
+              dependencies:
+                - name: 'HDD: Температура выше критического порога'
+                  expression: 'avg(/Continent 4.1 by SNMP/hdd.temp,5m)>{$TEMP_CRIT:HDD}'
+                  recovery_expression: 'avg(/Continent 4.1 by SNMP/hdd.temp,5m)<{$TEMP_CRIT:HDD}-3'
+              tags:
+                - tag: scope
+                  value: availability
+                - tag: scope
+                  value: perfomance
+            - uuid: 071d80f1ef0b4dbcac3def561e78654e
+              expression: 'avg(/Continent 4.1 by SNMP/hdd.temp,5m)< {$TEMP_CRIT_LOW}'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'avg(/Continent 4.1 by SNMP/hdd.temp,5m)<{$TEMP_CRIT_LOW}+3'
+              name: 'HDD: Температура слишком низкая'
+              event_name: 'HDD: Температура слишком низкая (менее {$TEMP_CRIT_LOW})'
+              opdata: 'Текущее значение:{ITEM.LASTVALUE1}'
+              priority: AVERAGE
+              dependencies:
+                - name: 'CPU: Температура выше критического порога'
+                  expression: 'avg(/Continent 4.1 by SNMP/cpu.temp,5m)>{$TEMP_CRIT:CPU}'
+                  recovery_expression: 'avg(/Continent 4.1 by SNMP/cpu.temp,5m)<{$TEMP_CRIT:CPU}-3'
+              tags:
+                - tag: scope
+                  value: availability
+                - tag: scope
+                  value: perfomance
+        - uuid: 83d34f549e334e32b75a1e7b086ab518
+          name: 'Дата и время на хосте'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.12.0]'
+          key: hrSystemDate
+          delay: 3m
+          units: unixtime
+          description: |
+            MIB: HOST-RESOURSE-MIB
+            Дата и время на хосте
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  const date = new Date(value);
+                  return ((date/1000|0)-(date.getTimezoneOffset()*60));
+          tags:
+            - tag: component
+              value: system
+          triggers:
+            - uuid: aaff9a4e000840d88d0458a069449143
+              expression: 'fuzzytime(/Continent 4.1 by SNMP/hrSystemDate,{$SYSTEM.FUZZYTIME.MAX})=0'
+              name: 'Системное время не синхронизировано'
+              event_name: 'Системное время не синхронизировано (разница с сервером Zabbix более {$SYSTEM.FUZZYTIME.MAX}с)'
+              priority: WARNING
+              tags:
+                - tag: scope
+                  value: availability
+        - uuid: b6cab60bce0f4e989db0f96f21af0cac
+          name: 'Сетевые интерфейсы SNMP walk'
+          type: SNMP_AGENT
+          snmp_oid: 'walk[1.3.6.1.2.1.31.1.1.1.1,1.3.6.1.2.1.2.2.1.3,1.3.6.1.2.1.2.2.1.7,1.3.6.1.2.1.2.2.1.8,1.3.6.1.2.1.2.2.1.4,1.3.6.1.2.1.2.2.1.5,1.3.6.1.2.1.31.1.1.1.6,1.3.6.1.2.1.31.1.1.1.10,1.3.6.1.2.1.2.2.1.13,1.3.6.1.2.1.2.2.1.14,1.3.6.1.2.1.2.2.1.19,1.3.6.1.2.1.2.2.1.20]'
+          key: net.if.walk
+          delay: 3m
+          history: '0'
+          value_type: TEXT
+          trends: '0'
+          tags:
+            - tag: component
+              value: raw
+        - uuid: e99e13febc70478088097c319fa1e595
+          name: 'Время работы узла безопасности'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.2.0]'
+          key: nodeUpTime
+          delay: 3m
+          trends: '0'
+          units: uptime
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Время работы узла безопасности (в секундах)
+          tags:
+            - tag: component
+              value: ngfw
+          triggers:
+            - uuid: 4a5394a261914696aac41843bac22729
+              expression: 'last(/Continent 4.1 by SNMP/nodeUpTime)<10m'
+              name: 'Узел безопасности был перезапущен'
+              event_name: 'Узел безопасности был перезапущен (время работы менее 10 мин.)'
+              priority: INFO
+              description: 'Время работы узла безопасности менее 10 мин.'
+              manual_close: 'YES'
+              tags:
+                - tag: scope
+                  value: notice
+        - uuid: 76cfcd30f40340a997075e75466ebbbc
+          name: 'Контакты ответственного лица'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.2.1.1.4.0]'
+          key: 'system.contact[sysContact]'
+          delay: 1h
+          value_type: CHAR
+          trends: '0'
+          description: |
+            MIB: SNMPv2-MIB
+            Текстовая идентификация контактного лица для этого управляемого узла вместе с информацией о том, как связаться с этим человеком. Если контактная информация неизвестна, значением является строка нулевой длины.
+          inventory_link: CONTACT
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1d
+          tags:
+            - tag: component
+              value: system
+        - uuid: 167fe9a3af9d4a5f82d94dfe555b023c
+          name: 'Простой ЦП'
+          type: SNMP_AGENT
+          snmp_oid: 'discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.5]'
+          key: 'system.cpu.idle[ssCpuRawIdle]'
+          delay: 3m
+          value_type: FLOAT
+          units: '%'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Использование ядра за последнюю минуту, в течение которого процессор ничего не делал.
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  var dict = JSON.parse(value);
+                  var i = 0;
+                  
+                  for (key in dict) {
+                    i += +dict[key]["{#SNMPVALUE}"];
+                  }
+                  
+                  return (i/dict.length/100);
+          tags:
+            - tag: component
+              value: cpu
+        - uuid: b84e203c58ec4ef5a127a5e79b29bd1c
+          name: 'Загрузка ЦП на прерывания'
+          type: SNMP_AGENT
+          snmp_oid: 'discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.20]'
+          key: 'system.cpu.interrupt[ssCpuRawInterrupt]'
+          delay: 3m
+          value_type: FLOAT
+          units: '%'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Использование ядра на обслуживание аппаратных прерываний за последнюю минуту
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  var dict = JSON.parse(value);
+                  var i = 0;
+                  
+                  for (key in dict) {
+                    i += +dict[key]["{#SNMPVALUE}"];
+                  }
+                  
+                  return (i/dict.length/100);
+          tags:
+            - tag: component
+              value: cpu
+        - uuid: 965b58e793f8460db4b6ea294ce211e3
+          name: 'Загрузка ЦП на ожидание ввода/вывода'
+          type: SNMP_AGENT
+          snmp_oid: 'discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.17]'
+          key: 'system.cpu.iowait[ssCpuRawWait]'
+          delay: 3m
+          value_type: FLOAT
+          units: '%'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Использование ядра на ожидание завершения ввода-вывода за последнюю минуту.
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  var dict = JSON.parse(value);
+                  var i = 0;
+                  
+                  for (key in dict) {
+                    i += +dict[key]["{#SNMPVALUE}"];
+                  }
+                  
+                  return (i/dict.length/100);
+          tags:
+            - tag: component
+              value: cpu
+        - uuid: 230509eeb0d443bdaf7caa57154bf933
+          name: 'Средняя загрузка ЦП (за 1 мин)'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.1.1.1.0]'
+          key: 'system.cpu.load.avg1[laLoad.1]'
+          value_type: FLOAT
+          units: '%'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Средняя загрузка ЦП за последнюю минуту
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          tags:
+            - tag: component
+              value: cpu
+        - uuid: 81788e4f44da46439aacbe64a3af1cd1
+          name: 'Средняя загрузка ЦП (за 5 мин)'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.1.1.2.0]'
+          key: 'system.cpu.load.avg5[laLoad.2]'
+          delay: 3m
+          value_type: FLOAT
+          units: '%'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Средняя загрузка ЦП за последние 5 минут
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          tags:
+            - tag: component
+              value: cpu
+        - uuid: 143b31e2c5d64b3493243bdb78fe119d
+          name: 'Средняя загрузка ЦП (за 15 мин)'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.1.1.3.0]'
+          key: 'system.cpu.load.avg5[laLoad.3]'
+          delay: 3m
+          value_type: FLOAT
+          units: '%'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Средняя загрузка ЦП за последние 15 минут
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          tags:
+            - tag: component
+              value: cpu
+        - uuid: 891d61c08a2d483f8f95fa638ff884ad
+          name: 'Загрузка ЦП кодом низкого приоритета'
+          type: SNMP_AGENT
+          snmp_oid: 'discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.8]'
+          key: 'system.cpu.nice[ssCpuRawNice]'
+          delay: 3m
+          value_type: FLOAT
+          units: '%'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Использование ядра на выполнение улучшенных пользовательских процессов за последнюю минуту.
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  var dict = JSON.parse(value);
+                  var i = 0;
+                  
+                  for (key in dict) {
+                    i += +dict[key]["{#SNMPVALUE}"];
+                  }
+                  
+                  return (i/dict.length/100);
+          tags:
+            - tag: component
+              value: cpu
+        - uuid: 9332e938ba514333949dad8ab72df9c7
+          name: 'Количество ЦП'
+          type: SNMP_AGENT
+          snmp_oid: 'discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.1]'
+          key: 'system.cpu.num[snmp]'
+          delay: 1h
+          trends: '0'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Определение количества ядер ЦП, через подсчет количества ядер, обнаруженных в hrProcessorTable, с помощью LLD.
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return JSON.parse(value).length;'
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1h
+          tags:
+            - tag: component
+              value: cpu
+        - uuid: 8bfe8524a8a4457f9485340ba3e04052
+          name: 'Загрузка ЦП кодом системного уровня'
+          type: SNMP_AGENT
+          snmp_oid: 'discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.14]'
+          key: 'system.cpu.system[ssCpuRawSystem]'
+          delay: 3m
+          value_type: FLOAT
+          units: '%'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Использование ядра на работу ядра и его процессов за последнюю минуту.
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  var dict = JSON.parse(value);
+                  var i = 0;
+                  
+                  for (key in dict) {
+                    i += +dict[key]["{#SNMPVALUE}"];
+                  }
+                  
+                  return (i/dict.length/100);
+          tags:
+            - tag: component
+              value: cpu
+        - uuid: 07a9daa49173445cbc8ef0cd39bf2060
+          name: 'Загрузка ЦП кодом уровня пользователя'
+          type: SNMP_AGENT
+          snmp_oid: 'discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.11]'
+          key: 'system.cpu.user[ssCpuRawUser]'
+          delay: 3m
+          value_type: FLOAT
+          units: '%'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Использование ядра на выполнение пользовательских процессов, которые не являются улучшенными за последнюю минуту.
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  var dict = JSON.parse(value);
+                  var i = 0;
+                  
+                  for (key in dict) {
+                    i += +dict[key]["{#SNMPVALUE}"];
+                  }
+                  
+                  return (i/dict.length/100);
+          tags:
+            - tag: component
+              value: cpu
+        - uuid: a020df537d5145368c062dcddaf8e4d0
+          name: 'Загрузка ЦП'
+          type: DEPENDENT
+          key: 'system.cpu.util[snmp]'
+          delay: '0'
+          value_type: FLOAT
+          units: '%'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Загрузка процессора в %.
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return (100 - value)'
+          master_item:
+            key: 'system.cpu.idle[ssCpuRawIdle]'
+          tags:
+            - tag: component
+              value: cpu
+          triggers:
+            - uuid: e6da086714b648e28e7870e6d1d5a911
+              expression: 'min(/Continent 4.1 by SNMP/system.cpu.util[snmp],5m)>{$CPU.UTIL.CRIT}'
+              name: 'Высокая загрузка ЦП'
+              event_name: 'Высокая загрузка ЦП (более {$CPU.UTIL.CRIT}% за 5 мин.)'
+              opdata: 'Текущая загрузка:{ITEM.LASTVALUE2}'
+              priority: WARNING
+              description: |
+                Средняя загрузка ЦП слишком высока. Ваша система может медленно 
+                реагировать.
+              tags:
+                - tag: scope
+                  value: perfomance
+        - uuid: fc518577f46a44049dae34cee78c1dc2
+          name: 'Описание узла'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.2.1.1.1.0]'
+          key: 'system.descr[sysDescr]'
+          delay: 1h
+          value_type: CHAR
+          trends: '0'
+          description: |
+            MIB: SNMPv2-MIB
+            Текстовое описание узла. Это значение должно включать полное имя и идентификацию версии типа аппаратного обеспечения, операционной системы и сетевого программного обеспечения.
+          inventory_link: OS
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1d
+          tags:
+            - tag: component
+              value: system
+        - uuid: f5928cbe656f4a979695eb10b08fc738
+          name: 'Местоположение узла'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.2.1.1.6.0]'
+          key: 'system.location[sysLocation]'
+          delay: 1h
+          value_type: CHAR
+          trends: '0'
+          description: |
+            MIB: SNMPv2-MIB
+            Физическое местоположение этого узла (например, "телефонный шкаф, 3-й этаж"). Если местоположение неизвестно, значением является строка нулевой длины.
+          inventory_link: LOCATION
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1d
+          tags:
+            - tag: component
+              value: system
+        - uuid: 34b0294c0e924cb7a394a81fa597e71e
+          name: 'Имя узла'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.2.1.1.5.0]'
+          key: system.name
+          delay: 1h
+          value_type: CHAR
+          trends: '0'
+          description: |
+            MIB: SNMPv2-MIB
+            Административно назначенное имя для этого узла. По соглашению, это полное доменное имя узла. Если имя неизвестно, значением является строка нулевой длины.
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1h
+          tags:
+            - tag: component
+              value: system
+          triggers:
+            - uuid: 20230d0933c64b02a566645bdaccf24a
+              expression: |
+                (last(/Continent 4.1 by SNMP/system.name,#1)<>last(/Continent 4.1 by SNMP/system.name,#2))=1
+                and 
+                length(last(/Continent 4.1 by SNMP/system.name))>0
+              name: 'Имя узла сменилось'
+              event_name: 'Имя узла сменилось на {ITEM.VALUE}'
+              priority: INFO
+              description: 'Сменилось системное имя. Можно закрыть, если кто надо в курсе.'
+              manual_close: 'YES'
+              tags:
+                - tag: scope
+                  value: notice
+        - uuid: bbc3580a130d4b8f97c2dbe2287c2ae1
+          name: 'Идентификация поставщика'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.2.1.1.2.0]'
+          key: 'system.objectid[sysObjectID]'
+          delay: 1h
+          value_type: CHAR
+          trends: '0'
+          description: |
+            MIB: SNMPv2-MIB
+            Авторитетная идентификация поставщика подсистемы управления сетью, содержащейся в объекте. Это значение распределяется в поддереве предприятий SMI (1.3.6.1.4.1) и предоставляет простое и однозначное средство для определения того, "какой тип устройства" управляется. Например, если вендору "Flintstones, Inc." было присвоено поддерево 1.3.6.1.4.1.4242, то он мог назначить идентификатор 1.3.6.1.4.1.4242.1.1 своему "Fred-router".
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1d
+          tags:
+            - tag: component
+              value: system
+        - uuid: fd475c0c961f4dc8b736596a6b63f9cd
+          name: 'Объем файла подкачки'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.3.1.0]'
+          key: 'system.swap.total[memTotalSwap.0]'
+          delay: 1h
+          units: B
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Общий объем swap в системе (байт).
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '1'
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1h
+          tags:
+            - tag: component
+              value: memory
+            - tag: component
+              value: storage
+        - uuid: 7c3a49a7e7d14b1b8d78cf0456d14b2c
+          name: 'Время работы (hardware)'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.2.1.1.3.0]'
+          key: 'system.uptime[sysUpTime]'
+          delay: 3m
+          trends: '0'
+          units: uptime
+          description: |
+            MIB: SNMPv2-MIB
+            Время (в сотых долях секунды) с момента последней инициализации сетевой подсистемы.
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          tags:
+            - tag: component
+              value: system
+          triggers:
+            - uuid: 81e5042b73c5430aa1e6820e126618c9
+              expression: 'last(/Continent 4.1 by SNMP/system.uptime[sysUpTime])<10m'
+              name: '{HOST.NAME} был перезапущен'
+              event_name: '{HOST.NAME} был перезапущен (время работы менее 10 мин.)'
+              priority: WARNING
+              description: 'Время работы менее 10 мин.'
+              manual_close: 'YES'
+              dependencies:
+                - name: 'Нет сбора данных SNMP'
+                  expression: 'max(/Continent 4.1 by SNMP/zabbix[host,snmp,available],{$SNMP.TIMEOUT})=0'
+              tags:
+                - tag: scope
+                  value: notice
+        - uuid: 589e7aedb54441509d530db4c30b73d7
+          name: 'Разделы SNMP walk'
+          type: SNMP_AGENT
+          snmp_oid: 'walk[1.3.6.1.4.1.34849.1.1.2.4.1.1.2,1.3.6.1.4.1.34849.1.1.2.4.1.1.3,1.3.6.1.4.1.34849.1.1.2.4.1.1.4,1.3.6.1.4.1.34849.1.1.2.4.1.1.5]'
+          key: vfs.fs.walk
+          delay: 3m
+          history: '0'
+          value_type: TEXT
+          trends: '0'
+          tags:
+            - tag: component
+              value: raw
+        - uuid: 163ab75d4da24838b7dfd93cfc62252f
+          name: 'Объем доступной памяти'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.2.4.0]'
+          key: 'vm.memory.available[snmp]'
+          delay: 3m
+          units: B
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Объем свободной оперативной памяти (в байтах).
+          tags:
+            - tag: component
+              value: memory
+        - uuid: 107b28a4e327460988ad763f130ba5c8
+          name: 'Объем свободной памяти'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.2.8.0]'
+          key: 'vm.memory.free[memAvailReal.0]'
+          delay: 3m
+          units: B
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Объем фактически свободной оперативной памяти (в байтах).
+          tags:
+            - tag: component
+              value: memory
+        - uuid: 0a73c6d6ab374d1daaa9f774eaafbc2b
+          name: 'Объем физической памяти'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.2.1.0]'
+          key: 'vm.memory.total[memTotalReal.0]'
+          delay: 1h
+          units: B
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Общий объем оперативной памяти в системе (в байтах).
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1h
+          tags:
+            - tag: component
+              value: memory
+        - uuid: 392af302178443e198d1e2dfd52a84aa
+          name: 'Объем используемой памяти в %'
+          type: SNMP_AGENT
+          snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.2.7.0]'
+          key: 'vm.memory.util[snmp]'
+          delay: 3m
+          value_type: FLOAT
+          units: '%'
+          description: |
+            MIB: CONTINENT-SNMP-MIB
+            Объем фактически используемой оперативной памяти (в процентах).
+          tags:
+            - tag: component
+              value: memory
+          triggers:
+            - uuid: b9fba6ac61214400ba99cb693929f4a0
+              expression: 'min(/Continent 4.1 by SNMP/vm.memory.util[snmp],5m)>{$MEMORY.UTIL.MAX}'
+              name: 'Большой объем используемой памяти'
+              event_name: 'Большой объем используемой памяти (более {$MEMORY.UTIL.MAX}% за 5 мин.)'
+              opdata: 'Текущее значение:{ITEM.LASTVALUE1}'
+              priority: AVERAGE
+              description: 'В системе заканчивается свободная память.'
+              dependencies:
+                - name: 'Недостаточно доступной памяти'
+                  expression: 'max(/Continent 4.1 by SNMP/vm.memory.available[snmp],5m)<{$MEMORY.AVAILABLE.MIN} and last(/Continent 4.1 by SNMP/vm.memory.total[memTotalReal.0])>0'
+              tags:
+                - tag: scope
+                  value: capacity
+                - tag: scope
+                  value: perfomance
+        - uuid: 6d4159b1505f4707841435ecfc70bf3f
+          name: 'Доступность SNMP-агента'
+          type: INTERNAL
+          key: 'zabbix[host,snmp,available]'
+          delay: 3m
+          valuemap:
+            name: zabbix.host.available
+          tags:
+            - tag: component
+              value: health
+          triggers:
+            - uuid: 9391d90569384a0bb9771f52caea7e40
+              expression: 'max(/Continent 4.1 by SNMP/zabbix[host,snmp,available],{$SNMP.TIMEOUT})=0'
+              name: 'Нет сбора данных SNMP'
+              opdata: 'Последнее значение:{ITEM.LASTVALUE1}'
+              priority: HIGH
+              description: 'SNMP не доступен для опроса. Пожалуйста, проверьте подключение устройства и настройки SNMP.'
+              tags:
+                - tag: scope
+                  value: availability
+      discovery_rules:
+        - uuid: c1f0953cdfa04f93a3f60bf1a43b2fca
+          name: 'AS - обнаружение'
+          type: DEPENDENT
+          key: aserv.discovery
+          delay: '0'
+          lifetime: 30d
+          enabled_lifetime_type: DISABLE_NEVER
+          description: |
+            Сервер доступа обнаруживается по значению 1 в поле Статус СД
+            OID 1.3.6.1.4.1.34849.1.1.1.4.1.0
+          item_prototypes:
+            - uuid: 24f64cbcd2ac48589b6527008de7fe4c
+              name: 'Количество подключенных АП'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.4.2.0]'
+              key: 'aserv.ConnCount[0{#SINGLETON}]'
+              delay: 3m
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество клиентских подключений к СД
+              tags:
+                - tag: application
+                  value: access-server
+            - uuid: 00b5ff2262454d728cdcd36bd1f46bdc
+              name: 'Количество свободных лицензий'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.4.23.0]'
+              key: 'aserv.LicensesBalance[0{#SINGLETON}]'
+              delay: 3m
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество текущих свободных соединений (лицензий)
+              tags:
+                - tag: application
+                  value: access-server
+              trigger_prototypes:
+                - uuid: d8d50df21ca54d9291f61ce11b1b9851
+                  expression: 'last(/Continent 4.1 by SNMP/aserv.LicensesBalance[0{#SINGLETON}])<{$AS_LICENSE_WARN}'
+                  name: 'Недостаточно лицензий сервера доступа{#SINGLETON}'
+                  priority: WARNING
+                  tags:
+                    - tag: scope
+                      value: availability
+            - uuid: 9a94bc732b8745309e5617101668960a
+              name: 'Количество лицензий'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.4.22.0]'
+              key: 'aserv.LicensesTotalCount[0{#SINGLETON}]'
+              delay: 1h
+              trends: '0'
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Общее количество возможных соединений (лицензий)
+              preprocessing:
+                - type: DISCARD_UNCHANGED_HEARTBEAT
+                  parameters:
+                    - 1h
+              tags:
+                - tag: application
+                  value: access-server
+            - uuid: 3b7c860abdb0418eb3e2b3b55d0444a4
+              name: 'Битов считано'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.4.6.0]'
+              key: 'aserv.ReadBytesCount[0{#SINGLETON}]'
+              delay: 3m
+              units: bps
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество байтов, считанных СД
+              preprocessing:
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+                - type: MULTIPLIER
+                  parameters:
+                    - '8'
+              tags:
+                - tag: application
+                  value: access-server
+            - uuid: 0ea91a5134824bdc9fce024222c8ca9e
+              name: 'Пакетов считано'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.4.14.0]'
+              key: 'aserv.ReadPacketsCount[0{#SINGLETON}]'
+              delay: 3m
+              units: pps
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество пакетов, считанных СД
+              preprocessing:
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+              tags:
+                - tag: application
+                  value: access-server
+            - uuid: 30541bdce5ed492e8e66b32482cc5832
+              name: 'Битов записано'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.4.10.0]'
+              key: 'aserv.WriteBytesCount[0{#SINGLETON}]'
+              delay: 3m
+              units: bps
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество байтов, записанных СД
+              preprocessing:
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+                - type: MULTIPLIER
+                  parameters:
+                    - '8'
+              tags:
+                - tag: application
+                  value: access-server
+            - uuid: 16d957cf40b2488a96b4923b5a3b51a7
+              name: 'Пакетов записано'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.4.18.0]'
+              key: 'aserv.WritePacketsCount[0{#SINGLETON}]'
+              delay: 3m
+              units: pps
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество пакетов, записанных СД
+              preprocessing:
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+              tags:
+                - tag: application
+                  value: access-server
+          graph_prototypes:
+            - uuid: 81e135b1a61a4e25b0e012ea49d3f164
+              name: 'Сервер доступа: Подключения{#SINGLETON}'
+              ymin_type_1: FIXED
+              ymax_type_1: ITEM
+              ymax_item_1:
+                host: 'Continent 4.1 by SNMP'
+                key: 'aserv.LicensesTotalCount[0{#SINGLETON}]'
+              graph_items:
+                - sortorder: '1'
+                  drawtype: GRADIENT_LINE
+                  color: 6A1B9A
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'aserv.ConnCount[0{#SINGLETON}]'
+                - sortorder: '2'
+                  drawtype: DASHED_LINE
+                  color: FF8000
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'aserv.LicensesTotalCount[0{#SINGLETON}]'
+            - uuid: a7b8f592a57549668ea3b3e3c9bfa57b
+              name: 'Сервер доступа: Сетевой график{#SINGLETON}'
+              graph_items:
+                - sortorder: '1'
+                  drawtype: GRADIENT_LINE
+                  color: 1A7C11
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'aserv.ReadBytesCount[0{#SINGLETON}]'
+                - sortorder: '2'
+                  drawtype: BOLD_LINE
+                  color: 2774A4
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'aserv.WriteBytesCount[0{#SINGLETON}]'
+                - sortorder: '3'
+                  color: '000000'
+                  yaxisside: RIGHT
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'aserv.ReadPacketsCount[0{#SINGLETON}]'
+                - sortorder: '4'
+                  color: 1A237E
+                  yaxisside: RIGHT
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'aserv.WritePacketsCount[0{#SINGLETON}]'
+          master_item:
+            key: cont.aservState
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return JSON.stringify(value.includes(''1'') ? [{''{#SINGLETON}'': ''''}] : []);'
+        - uuid: 1a43af91d91845b1835748fcda809dc8
+          name: 'FW - обнаружение'
+          type: DEPENDENT
+          key: fw.discovery
+          delay: '0'
+          lifetime: 30d
+          enabled_lifetime_type: DISABLE_NEVER
+          description: |
+            Межсетевой экран обнаруживается по значению 1 в поле Статус МСЭ
+            OID 1.3.6.1.4.1.34849.1.1.1.2.1.0
+          item_prototypes:
+            - uuid: 9872efeab3d94a3fa674768774c20a54
+              name: 'Установлено отслеживаемых соединений'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.2.2.0]'
+              key: 'fw.ConnCount[0{#SINGLETON}]'
+              delay: 3m
+              value_type: FLOAT
+              units: /час
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество отслеживаемых соединений
+              preprocessing:
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+                - type: MULTIPLIER
+                  parameters:
+                    - '3600'
+              tags:
+                - tag: application
+                  value: firewall
+                - tag: component
+                  value: network
+            - uuid: 24e439ddeaac4a229c564002a97fd0da
+              name: 'Входящих пакетов отфильтровано'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.2.10.0]'
+              key: 'fw.InputPacketsCount[0{#SINGLETON}]'
+              delay: 3m
+              value_type: FLOAT
+              units: pps
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество входящих пакетов, отфильтрованных МСЭ
+              preprocessing:
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+              tags:
+                - tag: application
+                  value: firewall
+                - tag: component
+                  value: network
+            - uuid: 244266282f18449988b9aa564482af6c
+              name: 'Исходящих пакетов отфильтровано'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.2.14.0]'
+              key: 'fw.OutputPacketsCount[0{#SINGLETON}]'
+              delay: 3m
+              units: pps
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество исходящих пакетов, отфильтрованных МСЭ
+              preprocessing:
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+              tags:
+                - tag: application
+                  value: firewall
+                - tag: component
+                  value: network
+          graph_prototypes:
+            - uuid: 87c5e2c45e4a4f0e947079daa166c113
+              name: 'Межсетевой экран : Сетевой график{#SINGLETON}'
+              graph_items:
+                - sortorder: '1'
+                  color: FF0000
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'fw.OutputPacketsCount[0{#SINGLETON}]'
+                - sortorder: '2'
+                  color: B71C1C
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'fw.InputPacketsCount[0{#SINGLETON}]'
+                - sortorder: '3'
+                  color: '000000'
+                  yaxisside: RIGHT
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'fw.ConnCount[0{#SINGLETON}]'
+          master_item:
+            key: cont.fwState
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return JSON.stringify(value.includes(''1'') ? [{''{#SINGLETON}'': ''''}] : []);'
+        - uuid: 50319ab3c6954250ba8fb5eba98c2a24
+          name: 'IPS - обнаружение'
+          type: DEPENDENT
+          key: ips.discovery
+          delay: '0'
+          lifetime: 30d
+          enabled_lifetime_type: DISABLE_NEVER
+          description: |
+            Сервер доступа обнаруживается по значению 1 в поле Статус IPS
+            OID 1.3.6.1.4.1.34849.1.1.1.1.2.0
+          item_prototypes:
+            - uuid: 36d3379bb2bc4dbb9fd648fe4795aede
+              name: 'Пакетов отброшено'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.1.7.0]'
+              key: 'ips.DropsCount[0{#SINGLETON}]'
+              delay: 3m
+              value_type: FLOAT
+              units: pps
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество пакетов, отброшенных IPS
+              preprocessing:
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+              tags:
+                - tag: application
+                  value: ips
+                - tag: component
+                  value: network
+            - uuid: d70edf2be3a047eeae61462ab445aff2
+              name: 'Оповещений о событии 0 уровня'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.1.11.0]'
+              key: 'ips.EventLvl0Alerts[0{#SINGLETON}]'
+              delay: 3m
+              value_type: FLOAT
+              units: /час
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество оповещений о событии 0 уровня
+              preprocessing:
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+                - type: MULTIPLIER
+                  parameters:
+                    - '3600'
+              tags:
+                - tag: application
+                  value: ips
+                - tag: component
+                  value: network
+            - uuid: b292246b6a9d4a43b29f5778c7be71de
+              name: 'Оповещений о событии 1 уровня'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.1.15.0]'
+              key: 'ips.EventLvl1Alerts[0{#SINGLETON}]'
+              delay: 3m
+              value_type: FLOAT
+              units: /час
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество оповещений о событии 1 уровня
+              preprocessing:
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+                - type: MULTIPLIER
+                  parameters:
+                    - '3600'
+              tags:
+                - tag: application
+                  value: ips
+                - tag: component
+                  value: network
+            - uuid: 5d3db6fc3ffe45c8a95c526139a2f92f
+              name: 'Оповещений о событии 2 уровня'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.1.19.0]'
+              key: 'ips.EventLvl2Alerts[0{#SINGLETON}]'
+              delay: 3m
+              value_type: FLOAT
+              units: /час
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество оповещений о событии 2 уровня
+              preprocessing:
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+                - type: MULTIPLIER
+                  parameters:
+                    - '3600'
+              tags:
+                - tag: application
+                  value: ips
+                - tag: component
+                  value: network
+            - uuid: 15e4a3a425bb4222b30b54e02ed7c062
+              name: 'Оповещений о событии 3 уровня'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.1.23.0]'
+              key: 'ips.EventLvl3Alerts[0{#SINGLETON}]'
+              delay: 3m
+              units: /час
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество оповещений о событии 3 уровня
+              preprocessing:
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+                - type: MULTIPLIER
+                  parameters:
+                    - '3600'
+              tags:
+                - tag: application
+                  value: ips
+                - tag: component
+                  value: network
+            - uuid: 44287ac6752f416d8229d9e39f9877bb
+              name: 'Пакетов пропущено'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.1.3.0]'
+              key: 'ips.PcktsCount[0{#SINGLETON}]'
+              delay: 3m
+              units: pps
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество пакетов, пропущенных IPS
+              preprocessing:
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+              tags:
+                - tag: application
+                  value: ips
+                - tag: component
+                  value: network
+            - uuid: cea4f80bf94a4bedacf5aa7735ab332f
+              name: 'Сигнатур загружено'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.1.27.0]'
+              key: 'ips.SingatureCount[0{#SINGLETON}]'
+              delay: 1h
+              history: '0'
+              trends: 742d
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество загруженных сигнатур IPS
+              tags:
+                - tag: application
+                  value: ips
+                - tag: component
+                  value: network
+          graph_prototypes:
+            - uuid: 26f8476f0b1c47fabac2e6cd32d0a2fe
+              name: 'Система предотвращения вторжений : Оповещения{#SINGLETON}'
+              graph_items:
+                - sortorder: '1'
+                  color: B71C1C
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'ips.EventLvl0Alerts[0{#SINGLETON}]'
+                - sortorder: '2'
+                  color: FF0000
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'ips.EventLvl1Alerts[0{#SINGLETON}]'
+                - sortorder: '3'
+                  color: FF8000
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'ips.EventLvl2Alerts[0{#SINGLETON}]'
+                - sortorder: '4'
+                  color: 2E7D32
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'ips.EventLvl3Alerts[0{#SINGLETON}]'
+            - uuid: 1f0e66cf80214e07b540cd8f34cff306
+              name: 'Система предотвращения вторжений : Сетевой график{#SINGLETON}'
+              graph_items:
+                - sortorder: '1'
+                  color: '000000'
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'ips.PcktsCount[0{#SINGLETON}]'
+                - sortorder: '2'
+                  color: B71C1C
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'ips.DropsCount[0{#SINGLETON}]'
+          master_item:
+            key: cont.ipsComponentState
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return JSON.stringify(value.includes(''1'') ? [{''{#SINGLETON}'': ''''}] : []);'
+        - uuid: 1d33d2cef57745c2b8b29ca86627284b
+          name: 'Сеть - обнаружение'
+          type: DEPENDENT
+          key: net.if.discovery
+          delay: '0'
+          filter:
+            evaltype: AND
+            conditions:
+              - macro: '{#IFADMINSTATUS}'
+                value: '{$NET.IF.IFADMINSTATUS.MATCHES}'
+                formulaid: A
+              - macro: '{#IFADMINSTATUS}'
+                value: '{$NET.IF.IFADMINSTATUS.NOT_MATCHES}'
+                operator: NOT_MATCHES_REGEX
+                formulaid: B
+              - macro: '{#IFNAME}'
+                value: '{$NET.IF.IFNAME.MATCHES}'
+                formulaid: C
+              - macro: '{#IFNAME}'
+                value: '{$NET.IF.IFNAME.NOT_MATCHES}'
+                operator: NOT_MATCHES_REGEX
+                formulaid: D
+              - macro: '{#IFOPERSTATUS}'
+                value: '{$NET.IF.IFOPERSTATUS.MATCHES}'
+                formulaid: E
+              - macro: '{#IFOPERSTATUS}'
+                value: '{$NET.IF.IFOPERSTATUS.NOT_MATCHES}'
+                operator: NOT_MATCHES_REGEX
+                formulaid: F
+              - macro: '{#IFTYPE}'
+                value: '{$NET.IF.IFTYPE.MATCHES}'
+                formulaid: G
+              - macro: '{#IFTYPE}'
+                value: '{$NET.IF.IFTYPE.NOT_MATCHES}'
+                operator: NOT_MATCHES_REGEX
+                formulaid: H
+          lifetime: 30d
+          enabled_lifetime_type: DISABLE_NEVER
+          description: 'Discovering interfaces from IF-MIB.'
+          item_prototypes:
+            - uuid: 9dff177f62de4bc09721ba5bf11f24e5
+              name: 'Интерфейс {#IFNAME}: Входящих пакетов отброшено'
+              type: DEPENDENT
+              key: 'net.if.in.discards[ifInDiscards.{#SNMPINDEX}]'
+              delay: '0'
+              description: |
+                MIB: IF-MIB
+                Количество входящих пакетов, которые были выбраны для отбрасывания
+                даже при том, что не было обнаружено никаких ошибок, чтобы предотвратить их доставку в протокол более высокого уровня.
+                Одной из возможных причин отказа от такого пакета может быть освобождение буферного пространства.
+                Разрыв в значении этого счетчика может возникнуть при повторной инициализации системы управления,
+                и в другое время, как указано значением ifCounterDiscontinuityTime.
+              preprocessing:
+                - type: SNMP_WALK_VALUE
+                  parameters:
+                    - '1.3.6.1.2.1.2.2.1.13.{#SNMPINDEX}'
+                    - '0'
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+              master_item:
+                key: net.if.walk
+              tags:
+                - tag: component
+                  value: network
+                - tag: interface
+                  value: '{#IFNAME}'
+            - uuid: e77f2fcd5b1a48c09f0fea6894c36895
+              name: 'Интерфейс {#IFNAME}: Входящих пакетов с ошибками'
+              type: DEPENDENT
+              key: 'net.if.in.errors[ifInErrors.{#SNMPINDEX}]'
+              delay: '0'
+              description: |
+                MIB: IF-MIB
+                Для пакетно-ориентированных интерфейсов - количество входящих пакетов, содержащих ошибки, препятствующие их доставке в протокол более высокого уровня. Для символьно-ориентированных интерфейсов или интерфейсов фиксированной длины - количество входящих блоков передачи, которые содержали ошибки, препятствующие их доставке в протокол более высокого уровня. Разрывы в значении этого счетчика могут возникать при повторной инициализации системы управления и в другое время, как указано значением ifCounterDiscontinuityTime.
+              preprocessing:
+                - type: SNMP_WALK_VALUE
+                  parameters:
+                    - '1.3.6.1.2.1.2.2.1.14.{#SNMPINDEX}'
+                    - '0'
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+              master_item:
+                key: net.if.walk
+              tags:
+                - tag: component
+                  value: network
+                - tag: interface
+                  value: '{#IFNAME}'
+            - uuid: 560e512fab624db48b8ac62fac60a5ca
+              name: 'Интерфейс {#IFNAME}: Битов получено'
+              type: DEPENDENT
+              key: 'net.if.in[ifHCInOctets.{#SNMPINDEX}]'
+              delay: '0'
+              units: bps
+              description: |
+                MIB: IF-MIB
+                Общее количество октетов, полученных на интерфейсе, включая символы кадрирования. Этот объект является 64-битной версией ifInOctets. Разрывы в значении этого счетчика могут возникать при повторной инициализации системы управления и в другое время, как указано значением ifCounterDiscontinuityTime.
+              preprocessing:
+                - type: SNMP_WALK_VALUE
+                  parameters:
+                    - '1.3.6.1.2.1.31.1.1.1.6.{#SNMPINDEX}'
+                    - '0'
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+                - type: MULTIPLIER
+                  parameters:
+                    - '8'
+              master_item:
+                key: net.if.walk
+              tags:
+                - tag: component
+                  value: network
+                - tag: interface
+                  value: '{#IFNAME}'
+            - uuid: 77bfb03a43214eaa8e0cdccbb2c668d7
+              name: 'Интерфейс {#IFNAME}: Размер MTU'
+              type: DEPENDENT
+              key: 'net.if.mtu[ifMTU.{#SNMPINDEX}]'
+              delay: '0'
+              trends: '0'
+              description: |
+                MIB: IF-MIB
+                Размер MTU интерфейса.
+              preprocessing:
+                - type: SNMP_WALK_VALUE
+                  parameters:
+                    - '1.3.6.1.2.1.2.2.1.4.{#SNMPINDEX}'
+                    - '0'
+                - type: DISCARD_UNCHANGED_HEARTBEAT
+                  parameters:
+                    - 1h
+              master_item:
+                key: net.if.walk
+              tags:
+                - tag: component
+                  value: network
+                - tag: interface
+                  value: '{#IFNAME}'
+            - uuid: e1fbd1dbb1034ba8a97b305ca84d4607
+              name: 'Интерфейс {#IFNAME}: Исходящих пакетов отброшено'
+              type: DEPENDENT
+              key: 'net.if.out.discards[ifOutDiscards.{#SNMPINDEX}]'
+              delay: '0'
+              description: |
+                MIB: IF-MIB
+                Количество исходящих пакетов, которые были выбраны для отбрасывания
+                даже при том, что не было обнаружено никаких ошибок, чтобы предотвратить их доставку в протокол более высокого уровня.
+                Одной из возможных причин отказа от такого пакета может быть освобождение буферного пространства.
+                Разрыв в значении этого счетчика может возникнуть при повторной инициализации системы управления,
+                и в другое время, как указано значением ifCounterDiscontinuityTime.
+              preprocessing:
+                - type: SNMP_WALK_VALUE
+                  parameters:
+                    - '1.3.6.1.2.1.2.2.1.19.{#SNMPINDEX}'
+                    - '0'
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+              master_item:
+                key: net.if.walk
+              tags:
+                - tag: component
+                  value: network
+                - tag: interface
+                  value: '{#IFNAME}'
+            - uuid: 1721daa9993a48bc8609e8f6663cc8f7
+              name: 'Интерфейс {#IFNAME}: Исходящих пакетов с ошибками'
+              type: DEPENDENT
+              key: 'net.if.out.errors[ifOutErrors.{#SNMPINDEX}]'
+              delay: '0'
+              description: |
+                MIB: IF-MIB
+                Для пакетно-ориентированных интерфейсов - количество исходящих пакетов, содержащих ошибки, препятствующие их доставке в протокол более высокого уровня. Для символьно-ориентированных интерфейсов или интерфейсов фиксированной длины - количество блоков исходящей передачи, которые содержали ошибки, препятствующие их доставке в протокол более высокого уровня. Разрывы в значении этого счетчика могут возникать при повторной инициализации системы управления и в другое время, как указано значением ifCounterDiscontinuityTime.
+              preprocessing:
+                - type: SNMP_WALK_VALUE
+                  parameters:
+                    - '1.3.6.1.2.1.2.2.1.20.{#SNMPINDEX}'
+                    - '0'
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+              master_item:
+                key: net.if.walk
+              tags:
+                - tag: component
+                  value: network
+                - tag: interface
+                  value: '{#IFNAME}'
+            - uuid: 45f59b1933ef43bf9b0d121373a48ac0
+              name: 'Интерфейс {#IFNAME}: Битов отправлено'
+              type: DEPENDENT
+              key: 'net.if.out[ifHCOutOctets.{#SNMPINDEX}]'
+              delay: '0'
+              units: bps
+              description: |
+                MIB: IF-MIB
+                Общее количество октетов, переданных из интерфейса, включая символы кадрирования. Этот объект является 64-разрядной версией ifOutOctets. Несоответствия в значении этого счетчика могут возникать при повторной инициализации системы управления, а в другое время, как указано значением ifCounterDiscontinuityTime.
+              preprocessing:
+                - type: SNMP_WALK_VALUE
+                  parameters:
+                    - '1.3.6.1.2.1.31.1.1.1.10.{#SNMPINDEX}'
+                    - '0'
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+                - type: MULTIPLIER
+                  parameters:
+                    - '8'
+              master_item:
+                key: net.if.walk
+              tags:
+                - tag: component
+                  value: network
+                - tag: interface
+                  value: '{#IFNAME}'
+            - uuid: 82b3f9acb7684df2957408624e313e3a
+              name: 'Интерфейс {#IFNAME}: Скорость'
+              type: DEPENDENT
+              key: 'net.if.speed[ifHighSpeed.{#SNMPINDEX}]'
+              delay: '0'
+              trends: '0'
+              units: bps
+              description: |
+                MIB: IF-MIB
+                Оценка текущей пропускной способности интерфейса в единицах 1 000 000 бит в секунду. Если этот объект сообщает значение «n», то скорость интерфейса находится где-то в диапазоне от «n-500 000» до «n + 499 999». Для интерфейсов, которые не различаются по ширине полосы пропускания, или для интерфейсов, в которых невозможно сделать точную оценку, этот объект должен содержать номинальную ширину полосы пропускания. Для подуровня, который не имеет понятия пропускной способности, этот объект должен быть нулевым.
+              preprocessing:
+                - type: SNMP_WALK_VALUE
+                  parameters:
+                    - '1.3.6.1.2.1.2.2.1.5.{#SNMPINDEX}'
+                    - '0'
+                - type: MULTIPLIER
+                  parameters:
+                    - '1000000'
+                - type: DISCARD_UNCHANGED_HEARTBEAT
+                  parameters:
+                    - 1h
+              master_item:
+                key: net.if.walk
+              tags:
+                - tag: component
+                  value: network
+                - tag: interface
+                  value: '{#IFNAME}'
+            - uuid: bfc0dd1a84c44b6c80fa606b6164e6eb
+              name: 'Интерфейс {#IFNAME}: Операционный статус'
+              type: DEPENDENT
+              key: 'net.if.status[ifOperStatus.{#SNMPINDEX}]'
+              delay: '0'
+              trends: '0'
+              description: |
+                MIB: IF-MIB
+                Текущее рабочее состояние интерфейса.
+                - Состояние тестирования (3) указывает на то, что операционное сканирование пакетов не прошло
+                - Если ifAdminStatus выключен (2), тогда ifOperStatus должен быть выключен (2)
+                - Если ifAdminStatus изменено на up (1), то ifOperStatus должно измениться на up (1), если интерфейс готов передавать и принимать сетевой трафик
+                - Он должен изменить todormant (5), если интерфейс ожидает внешних действий (таких как последовательная линия, ожидающая входящее соединение)
+                - Он должен оставаться в состоянии down (2) тогда и только тогда, когда имеется неисправность, которая не позволяет ему перейти в состояние up (1)
+                - Он должен оставаться в состоянии notPresent (6), если в интерфейсе отсутствуют (как правило, аппаратные) компоненты.
+              valuemap:
+                name: 'IF-MIB::ifOperStatus'
+              preprocessing:
+                - type: SNMP_WALK_VALUE
+                  parameters:
+                    - '1.3.6.1.2.1.2.2.1.8.{#SNMPINDEX}'
+                    - '0'
+              master_item:
+                key: net.if.walk
+              tags:
+                - tag: component
+                  value: network
+                - tag: interface
+                  value: '{#IFNAME}'
+              trigger_prototypes:
+                - uuid: 23eb8099514b4f1d8767b015106d34ab
+                  expression: '{$IFCONTROL:"{#IFNAME}"}=1 and last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])=2 and last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#1)<>last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#2)'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: 'last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])<>2 or {$IFCONTROL:"{#IFNAME}"}=0'
+                  name: 'Интерфейс {#IFNAME}: Упал линк'
+                  opdata: 'Текущее состояние:{ITEM.LASTVALUE1}'
+                  priority: AVERAGE
+                  description: |
+                    Текущее состояние:{ITEM.LASTVALUE1}.
+                    Это триггерное выражение работает следующим образом:
+                    1. Может быть запущен, если статус операции не работает.
+                    2. {$ IFCONTROL: "{# IFNAME}"} = 1 - пользователь может переопределить макрос контекста до значения - 0. Это помечает этот интерфейс как не важный. Никакой новый триггер не будет запущен, если этот интерфейс не работает.
+                    3. {TEMPLATE_NAME: METRIC.diff ()} = 1) - срабатывает только в том случае, если рабочее состояние было (1) некоторое время назад. (Таким образом, не запускайте интерфейсы «ethernal off».)
+                    ВНИМАНИЕ: если закрыто вручную - не будет срабатывать при следующем опросе из-за .diff.
+                  tags:
+                    - tag: scope
+                      value: availability
+            - uuid: 9cac6bf79b77418bb41aa5b8035e7444
+              name: 'Интерфейс {#IFNAME}: Тип интерфейса'
+              type: DEPENDENT
+              key: 'net.if.type[ifType.{#SNMPINDEX}]'
+              delay: '0'
+              trends: '0'
+              description: |
+                MIB: IF-MIB
+                Тип интерфейса.
+                Дополнительные значения для ifType назначаются интернет-администратором назначенных номеров (IANA),
+                путем обновления синтаксиса текстового соглашения IANAifType.
+              valuemap:
+                name: 'IF-MIB::ifType'
+              preprocessing:
+                - type: SNMP_WALK_VALUE
+                  parameters:
+                    - '1.3.6.1.2.1.2.2.1.3.{#SNMPINDEX}'
+                    - '0'
+                - type: DISCARD_UNCHANGED_HEARTBEAT
+                  parameters:
+                    - 1h
+              master_item:
+                key: net.if.walk
+              tags:
+                - tag: component
+                  value: network
+                - tag: interface
+                  value: '{#IFNAME}'
+          trigger_prototypes:
+            - uuid: 5bb253daaae04aaf9093af10d9e96a8c
+              expression: |
+                change(/Continent 4.1 by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}])<0 and last(/Continent 4.1 by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}])>0
+                and (
+                last(/Continent 4.1 by SNMP/net.if.type[ifType.{#SNMPINDEX}])=6 or
+                last(/Continent 4.1 by SNMP/net.if.type[ifType.{#SNMPINDEX}])=7 or
+                last(/Continent 4.1 by SNMP/net.if.type[ifType.{#SNMPINDEX}])=11 or
+                last(/Continent 4.1 by SNMP/net.if.type[ifType.{#SNMPINDEX}])=62 or
+                last(/Continent 4.1 by SNMP/net.if.type[ifType.{#SNMPINDEX}])=69 or
+                last(/Continent 4.1 by SNMP/net.if.type[ifType.{#SNMPINDEX}])=117
+                )
+                and
+                (last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])<>2)
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: |
+                (change(/Continent 4.1 by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}])>0 and last(/Continent 4.1 by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}],#2)>0) or
+                (last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])=2)
+              name: 'Интерфейс {#IFNAME}: Ethernet снизил скорость'
+              opdata: 'Текущая скорость:{ITEM.LASTVALUE1}'
+              priority: INFO
+              description: 'Это соединение Ethernet снизило скорость по сравнению с максимальной. Это может быть признаком проблем с автосогласованием. Можно закрыть, если кто надо в курсе.'
+              manual_close: 'YES'
+              dependencies:
+                - name: 'Интерфейс {#IFNAME}: Упал линк'
+                  expression: '{$IFCONTROL:"{#IFNAME}"}=1 and last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])=2 and last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#1)<>last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#2)'
+                  recovery_expression: 'last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])<>2 or {$IFCONTROL:"{#IFNAME}"}=0'
+              tags:
+                - tag: scope
+                  value: perfomance
+            - uuid: de780412f2df4f9da0bf5e5bdabf4409
+              expression: |
+                min(/Continent 4.1 by SNMP/net.if.in.errors[ifInErrors.{#SNMPINDEX}],5m)>{$IF.ERRORS.WARN:"{#IFNAME}"}
+                or min(/Continent 4.1 by SNMP/net.if.out.errors[ifOutErrors.{#SNMPINDEX}],5m)>{$IF.ERRORS.WARN:"{#IFNAME}"}
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: |
+                max(/Continent 4.1 by SNMP/net.if.in.errors[ifInErrors.{#SNMPINDEX}],5m)<{$IF.ERRORS.WARN:"{#IFNAME}"}*0.8
+                and max(/Continent 4.1 by SNMP/net.if.out.errors[ifOutErrors.{#SNMPINDEX}],5m)<{$IF.ERRORS.WARN:"{#IFNAME}"}*0.8
+              name: 'Интерфейс {#IFNAME}: Высокая доля ошибок'
+              event_name: 'Интерфейс {#IFNAME}: Высокая доля ошибок (более {$IF.ERRORS.WARN:"{#IFNAME}"} за 5 мин.)'
+              opdata: 'Ошибок входящих:{ITEM.LASTVALUE1}, ошибок исходящих:{ITEM.LASTVALUE2}'
+              priority: WARNING
+              description: 'Восстанавливается, когда значение порога {$ IF.ERRORS.WARN: "{# IFNAME}"} ниже 80%'
+              dependencies:
+                - name: 'Интерфейс {#IFNAME}: Упал линк'
+                  expression: '{$IFCONTROL:"{#IFNAME}"}=1 and last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])=2 and last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#1)<>last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#2)'
+                  recovery_expression: 'last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])<>2 or {$IFCONTROL:"{#IFNAME}"}=0'
+              tags:
+                - tag: scope
+                  value: availability
+                - tag: scope
+                  value: perfomance
+            - uuid: f7dc6734102e40d1b9bb5e929501c6bb
+              expression: |
+                (avg(/Continent 4.1 by SNMP/net.if.in[ifHCInOctets.{#SNMPINDEX}],15m)>({$IF.UTIL.MAX:"{#IFNAME}"}/100)*last(/Continent 4.1 by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}]) or
+                avg(/Continent 4.1 by SNMP/net.if.out[ifHCOutOctets.{#SNMPINDEX}],15m)>({$IF.UTIL.MAX:"{#IFNAME}"}/100)*last(/Continent 4.1 by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}])) and
+                last(/Continent 4.1 by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}])>0
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: |
+                avg(/Continent 4.1 by SNMP/net.if.in[ifHCInOctets.{#SNMPINDEX}],15m)<(({$IF.UTIL.MAX:"{#IFNAME}"}-3)/100)*last(/Continent 4.1 by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}]) and
+                avg(/Continent 4.1 by SNMP/net.if.out[ifHCOutOctets.{#SNMPINDEX}],15m)<(({$IF.UTIL.MAX:"{#IFNAME}"}-3)/100)*last(/Continent 4.1 by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}])
+              name: 'Интерфейс {#IFNAME}: Занята большая полоса пропускания'
+              event_name: 'Интерфейс {#IFNAME}: Занята большая полоса пропускания (более {$IF.UTIL.MAX:"{#IFNAME}"}%)'
+              opdata: 'Входящий:{ITEM.LASTVALUE1}, исходящий:{ITEM.LASTVALUE3}, скорость:{ITEM.LASTVALUE2}'
+              priority: WARNING
+              description: |
+                Триггер срабатывает, когда входящая или исходящая утилизация полосы пропускания интерфейса превысит {$IF.UTIL.MAX:"{#IFNAME}"}% в течении 15-ти минут.
+                
+                Триггер отключается, когда входящая и исходящая утилизация полос пропускания снижаются в течении 15-ти не менее чем на 3% ниже значения {$IF.UTIL.MAX:"{#IFNAME}"}.
+              dependencies:
+                - name: 'Интерфейс {#IFNAME}: Упал линк'
+                  expression: '{$IFCONTROL:"{#IFNAME}"}=1 and last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])=2 and last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#1)<>last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#2)'
+                  recovery_expression: 'last(/Continent 4.1 by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])<>2 or {$IFCONTROL:"{#IFNAME}"}=0'
+              tags:
+                - tag: scope
+                  value: perfomance
+          graph_prototypes:
+            - uuid: 62dcc70f41e947259327e7b8f257b31c
+              name: 'Интерфейс {#IFNAME}: Сетевой трафик'
+              graph_items:
+                - sortorder: '1'
+                  drawtype: GRADIENT_LINE
+                  color: 1A7C11
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'net.if.in[ifHCInOctets.{#SNMPINDEX}]'
+                - sortorder: '2'
+                  drawtype: BOLD_LINE
+                  color: 2774A4
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'net.if.out[ifHCOutOctets.{#SNMPINDEX}]'
+                - sortorder: '3'
+                  color: F63100
+                  yaxisside: RIGHT
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'net.if.out.errors[ifOutErrors.{#SNMPINDEX}]'
+                - sortorder: '4'
+                  color: A54F10
+                  yaxisside: RIGHT
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'net.if.in.errors[ifInErrors.{#SNMPINDEX}]'
+                - sortorder: '5'
+                  color: FC6EA3
+                  yaxisside: RIGHT
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'net.if.out.discards[ifOutDiscards.{#SNMPINDEX}]'
+                - sortorder: '6'
+                  color: 6C59DC
+                  yaxisside: RIGHT
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'net.if.in.discards[ifInDiscards.{#SNMPINDEX}]'
+          master_item:
+            key: net.if.walk
+          preprocessing:
+            - type: SNMP_WALK_TO_JSON
+              parameters:
+                - '{#IFNAME}'
+                - 1.3.6.1.2.1.31.1.1.1.1
+                - '0'
+                - '{#IFTYPE}'
+                - 1.3.6.1.2.1.2.2.1.3
+                - '0'
+                - '{#IFADMINSTATUS}'
+                - 1.3.6.1.2.1.2.2.1.7
+                - '0'
+                - '{#IFOPERSTATUS}'
+                - 1.3.6.1.2.1.2.2.1.8
+                - '0'
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1h
+        - uuid: 0b50696e8fec4fd9a29b9a468cea9719
+          name: 'SWAP - обнаружение'
+          type: DEPENDENT
+          key: swap.discovery
+          delay: '0'
+          lifetime: 30d
+          enabled_lifetime_type: DISABLE_NEVER
+          description: 'Элементы данных "Доступный объем файла подкачки" и "Доступный объем файла подкачки в %", а также график объема файла подкачки и триггер свободного места файла подкачки становятся доступными только при значении больше нуля поля "Объем файла подкачки".'
+          item_prototypes:
+            - uuid: df9bf627f74949c6bbf5b57cf96dd117
+              name: 'Доступный объем файла подкачки'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.3.4.0]'
+              key: 'system.swap.free[memAvailSwap.0{#SINGLETON}]'
+              delay: 3m
+              units: B
+              description: |
+                MIB: UCD-SNMP-MIB
+                Объем пространства подкачки, которое в настоящее время не используется или доступно.
+              tags:
+                - tag: component
+                  value: memory
+                - tag: component
+                  value: storage
+            - uuid: ffd36945c5b6410a846f9c041fe8d623
+              name: 'Доступный объем файла подкачки в %'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.3.5.0]'
+              key: 'system.swap.pfree[snmp{#SINGLETON}]'
+              delay: 3m
+              value_type: FLOAT
+              units: '%'
+              description: |
+                MIB: UCD-SNMP-MIB
+                Объем пространства подкачки, которое в настоящее время не используется или доступно.
+              preprocessing:
+                - type: MULTIPLIER
+                  parameters:
+                    - '0.01'
+              tags:
+                - tag: component
+                  value: memory
+                - tag: component
+                  value: storage
+          trigger_prototypes:
+            - uuid: d47bcb82aa8e407782b593526c074505
+              expression: 'max(/Continent 4.1 by SNMP/system.swap.pfree[snmp{#SINGLETON}],5m)<{$SWAP.PFREE.MIN.WARN} and last(/Continent 4.1 by SNMP/system.swap.total[memTotalSwap.0])>0'
+              name: 'Большой объем занятого места на файле подкачки{#SINGLETON}'
+              event_name: 'Большой объем занятого места на файле подкачки (свободно менее {$SWAP.PFREE.MIN.WARN}%){#SINGLETON}'
+              opdata: 'Свободно:{ITEM.LASTVALUE1}, всего:{ITEM.LASTVALUE2}'
+              priority: WARNING
+              description: |
+                Триггер срабатывает, если в течении 5-ти мин. процент свободного места на swap-диске ниже заданного значения {$SWAP.PFREE.MIN.WARN}.
+                
+                Этот триггер игнорируется, если swap не настроен.
+              tags:
+                - tag: scope
+                  value: capacity
+                - tag: scope
+                  value: perfomance
+          graph_prototypes:
+            - uuid: 57f1ca84424c45d6b4fc0cd75a194bd4
+              name: 'Объем файла подкачки{#SINGLETON}'
+              graph_items:
+                - sortorder: '1'
+                  color: 1A7C11
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'system.swap.total[memTotalSwap.0]'
+                - sortorder: '2'
+                  color: 2774A4
+                  yaxisside: RIGHT
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'system.swap.pfree[snmp{#SINGLETON}]'
+          master_item:
+            key: 'system.swap.total[memTotalSwap.0]'
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return JSON.stringify(value == 0 ? [] : [{''{#SINGLETON}'': ''''}]);'
+        - uuid: 362c03f6c14e46a98f489d1516d0ab34
+          name: 'Разделы - обнаружение'
+          type: DEPENDENT
+          key: vfs.fs.discovery
+          delay: '0'
+          filter:
+            evaltype: AND
+            conditions:
+              - macro: '{#FSNAME}'
+                value: '{$VFS.FS.FSNAME.MATCHES}'
+                formulaid: A
+              - macro: '{#FSNAME}'
+                value: '{$VFS.FS.FSNAME.NOT_MATCHES}'
+                operator: NOT_MATCHES_REGEX
+                formulaid: B
+          lifetime: 30d
+          enabled_lifetime_type: DISABLE_NEVER
+          description: 'Discovery of file systems of different types.'
+          item_prototypes:
+            - uuid: 7da8473e19b948f6a84d769fe176909b
+              name: '{#FSNAME}: Объем свободного места'
+              type: DEPENDENT
+              key: 'vfs.fs.dskAvailable[{#FSNAME}]'
+              delay: '0'
+              units: B
+              description: |
+                MIB: CONTINENT-SNMP-MIB
+                Количество свободных байтов файловой системы.
+              preprocessing:
+                - type: SNMP_WALK_VALUE
+                  parameters:
+                    - '1.3.6.1.4.1.34849.1.1.2.4.1.1.5.{#SNMPINDEX}'
+                    - '0'
+              master_item:
+                key: vfs.fs.walk
+              tags:
+                - tag: component
+                  value: storage
+                - tag: filesystem
+                  value: '{#FSNAME}'
+            - uuid: 38a8058fe1a046da85dde4fdbdda9d1e
+              name: '{#FSNAME}: Занято места %'
+              type: DEPENDENT
+              key: 'vfs.fs.dskPercent[{#FSNAME}]'
+              delay: '0'
+              value_type: FLOAT
+              units: '%'
+              description: |
+                MIB: CONTINENT-SNMP-MIB
+                Использовано байтов в файловой системе {#FSNAME} (в процентах).
+              preprocessing:
+                - type: SNMP_WALK_VALUE
+                  parameters:
+                    - '1.3.6.1.4.1.34849.1.1.2.4.1.1.4.{#SNMPINDEX}'
+                    - '0'
+                - type: MULTIPLIER
+                  parameters:
+                    - '0.01'
+              master_item:
+                key: vfs.fs.walk
+              tags:
+                - tag: component
+                  value: storage
+                - tag: filesystem
+                  value: '{#FSNAME}'
+              trigger_prototypes:
+                - uuid: 3b405c6acc5344ddbb5bf356531ce50e
+                  expression: 'min(/Continent 4.1 by SNMP/vfs.fs.dskPercent[{#FSNAME}],5m)>{$VFS.FS.PUSED.MAX.CRIT:"{#FSNAME}"}'
+                  name: '{#FSNAME}: На диске критически мало места'
+                  event_name: '{#FSNAME}: На диске критически мало места (занято более {$VFS.FS.PUSED.MAX.CRIT:"{#FSNAME}"}%, всего {{?last(//vfs.fs.dskTotal[{#FSNAME}])/1024/1024/1024}.fmtnum(1)} GB)'
+                  opdata: 'Занято:{{ITEM.LASTVALUE1}.fmtnum(1)}%'
+                  priority: AVERAGE
+                  description: |
+                    Использование пространства тома превышает предел `{$VFS.FS.PUSED.MAX.CRIT:"{#FSNAME}"}%`.
+                    Выражение триггера основано на текущем используемом пространстве.
+                    Имя события представляет общее пространство тома, которое может отличаться от максимального доступного пространства в зависимости от типа файловой системы.
+                  manual_close: 'YES'
+                  tags:
+                    - tag: scope
+                      value: availability
+                    - tag: scope
+                      value: capacity
+                - uuid: 5e225db4bb0e4efbb5c4654d6c43511b
+                  expression: 'min(/Continent 4.1 by SNMP/vfs.fs.dskPercent[{#FSNAME}],5m)>{$VFS.FS.PUSED.MAX.WARN:"{#FSNAME}"}'
+                  name: '{#FSNAME}: На диске мало места'
+                  event_name: '{#FSNAME}: На диске мало места (занято более {$VFS.FS.PUSED.MAX.WARN:"{#FSNAME}"}%, всего {{?last(//vfs.fs.dskTotal[{#FSNAME}])/1024/1024/1024}.fmtnum(1)} GB)'
+                  opdata: 'Занято:{{ITEM.LASTVALUE1}.fmtnum(1)}%'
+                  priority: WARNING
+                  description: |
+                    Использование пространства тома превышает предел `{$VFS.FS.PUSED.MAX.WARN:"{#FSNAME}"}%`.
+                    Выражение триггера основано на текущем используемом пространстве.
+                    Имя события представляет общее пространство тома, которое может отличаться от максимального доступного пространства в зависимости от типа файловой системы.
+                  manual_close: 'YES'
+                  dependencies:
+                    - name: '{#FSNAME}: На диске критически мало места'
+                      expression: 'min(/Continent 4.1 by SNMP/vfs.fs.dskPercent[{#FSNAME}],5m)>{$VFS.FS.PUSED.MAX.CRIT:"{#FSNAME}"}'
+                  tags:
+                    - tag: scope
+                      value: availability
+                    - tag: scope
+                      value: capacity
+            - uuid: b795913aad794b638491bd404f8bb3db
+              name: '{#FSNAME}: Общий объем'
+              type: CALCULATED
+              key: 'vfs.fs.dskTotal[{#FSNAME}]'
+              delay: 1h
+              units: B
+              params: 'last(//vfs.fs.dskUsed[{#FSNAME}]) + last(//vfs.fs.dskAvailable[{#FSNAME}])'
+              preprocessing:
+                - type: DISCARD_UNCHANGED_HEARTBEAT
+                  parameters:
+                    - 1h
+              tags:
+                - tag: component
+                  value: storage
+                - tag: filesystem
+                  value: '{#FSNAME}'
+            - uuid: fc962021ab2c45c2a141c6073750740b
+              name: '{#FSNAME}: Объем используемого места'
+              type: DEPENDENT
+              key: 'vfs.fs.dskUsed[{#FSNAME}]'
+              delay: '0'
+              units: B
+              description: |
+                MIB: CONTINENT-SNMP-MIB
+                Количество использованных байтов файловой системы.
+              preprocessing:
+                - type: SNMP_WALK_VALUE
+                  parameters:
+                    - '1.3.6.1.4.1.34849.1.1.2.4.1.1.3.{#SNMPINDEX}'
+                    - '0'
+              master_item:
+                key: vfs.fs.walk
+              tags:
+                - tag: component
+                  value: storage
+                - tag: filesystem
+                  value: '{#FSNAME}'
+          graph_prototypes:
+            - uuid: ddd40aa8eea246d8a6efd871174ebfb1
+              name: '{#FSNAME}: Использование дискового пространства'
+              ymin_type_1: FIXED
+              ymax_type_1: ITEM
+              ymax_item_1:
+                host: 'Continent 4.1 by SNMP'
+                key: 'vfs.fs.dskTotal[{#FSNAME}]'
+              graph_items:
+                - sortorder: '1'
+                  drawtype: GRADIENT_LINE
+                  color: 607D8B
+                  calc_fnc: ALL
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'vfs.fs.dskUsed[{#FSNAME}]'
+          master_item:
+            key: vfs.fs.walk
+          preprocessing:
+            - type: SNMP_WALK_TO_JSON
+              parameters:
+                - '{#FSNAME}'
+                - 1.3.6.1.4.1.34849.1.1.2.4.1.1.2
+                - '0'
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1h
+        - uuid: 5972b70ad4994536834908299fff5fe8
+          name: 'VPN - обнаружение'
+          type: SNMP_AGENT
+          snmp_oid: 'discovery[{#VPNNAME},1.3.6.1.4.1.34849.1.1.2.5.1.1.2,{#VPNSTATUS},1.3.6.1.4.1.34849.1.1.2.5.1.1.9]'
+          key: vpn.links.discovery
+          delay: 1h
+          lifetime: 30d
+          enabled_lifetime_type: DISABLE_NEVER
+          description: 'Обнаружение VPN-туннелей из SECURITYCODE-CONTINENT-MIB.'
+          item_prototypes:
+            - uuid: adf8b5d9dc8841709d3a7afb4741baa8
+              name: 'VPN {#VPNNAME}: Активность'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.5.1.1.9.{#SNMPINDEX}]'
+              key: 'vpn.Active[{#SNMPINDEX}]'
+              delay: 3m
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Статус активности VPN-
+                туннеля
+                (1 — активен/0 —
+                неактивен)
+              tags:
+                - tag: application
+                  value: vpn
+                - tag: vpn
+                  value: '{#SNMPINDEX}'
+              trigger_prototypes:
+                - uuid: 56c9f1bcaea646c880fbec814bd5a878
+                  expression: 'last(/Continent 4.1 by SNMP/vpn.Active[{#SNMPINDEX}])=0'
+                  name: 'VPN {#VPNNAME}: Канал не активен'
+                  priority: WARNING
+                  description: 'VPN-канал не активен'
+                  tags:
+                    - tag: scope
+                      value: availability
+            - uuid: 567053b357ac49a58471fbe3cecaf7d9
+              name: 'VPN {#VPNNAME}: Время прихода некорректного пакета'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.5.1.1.8.{#SNMPINDEX}]'
+              key: 'vpn.ChannelBadLastIn[{#SNMPINDEX}]'
+              delay: 3m
+              units: s
+              tags:
+                - tag: application
+                  value: vpn
+                - tag: vpn
+                  value: '{#SNMPINDEX}'
+            - uuid: 7ab451a2af28412da69980e14b4a564a
+              name: 'VPN {#VPNNAME}: Время прихода корректного пакета'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.5.1.1.7.{#SNMPINDEX}]'
+              key: 'vpn.ChannelLastIn[{#SNMPINDEX}]'
+              delay: 3m
+              units: s
+              tags:
+                - tag: application
+                  value: vpn
+                - tag: vpn
+                  value: '{#SNMPINDEX}'
+            - uuid: f10b3963243a4472a46a7c535bb82493
+              name: 'VPN {#VPNNAME}: Битов получено'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.5.1.1.3.{#SNMPINDEX}]'
+              key: 'vpn.InBytes[{#SNMPINDEX}]'
+              delay: 3m
+              units: bps
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество входящих байтов из VPN
+              preprocessing:
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+                - type: MULTIPLIER
+                  parameters:
+                    - '8'
+              tags:
+                - tag: application
+                  value: vpn
+                - tag: vpn
+                  value: '{#SNMPINDEX}'
+            - uuid: 4f93fa83a4c24d11b57a6fd837b34a5f
+              name: 'VPN {#VPNNAME}: Битов отправлено'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.5.1.1.5.{#SNMPINDEX}]'
+              key: 'vpn.OutBytes[{#SNMPINDEX}]'
+              delay: 3m
+              units: bps
+              description: |
+                MIB: SECURITYCODE-CONTINENT-MIB
+                Количество исходящих байтов в VPN
+              preprocessing:
+                - type: CHANGE_PER_SECOND
+                  parameters:
+                    - ''
+                - type: MULTIPLIER
+                  parameters:
+                    - '8'
+              tags:
+                - tag: application
+                  value: vpn
+                - tag: vpn
+                  value: '{#SNMPINDEX}'
+          trigger_prototypes:
+            - uuid: 8b6ef1dc9b44410aabdb7ae21905021a
+              expression: |
+                last(/Continent 4.1 by SNMP/vpn.ChannelLastIn[{#SNMPINDEX}])>10
+                and
+                last(/Continent 4.1 by SNMP/vpn.Active[{#SNMPINDEX}])=1
+              name: 'VPN {#VPNNAME}: Канал не работает'
+              priority: WARNING
+              description: |
+                VPN-канал не работает.
+                Триггер проверяет статус активности канала и время прихода последнего корректного пакета по каналу (не менее 10-ти секунд назад).
+              tags:
+                - tag: scope
+                  value: availability
+          graph_prototypes:
+            - uuid: 7453c2b6fc6c409aafcc6028f201a0c4
+              name: 'VPN {#VPNNAME}: Сетевой трафик'
+              graph_items:
+                - sortorder: '1'
+                  drawtype: GRADIENT_LINE
+                  color: 1A7C11
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'vpn.InBytes[{#SNMPINDEX}]'
+                - sortorder: '2'
+                  drawtype: BOLD_LINE
+                  color: 2774A4
+                  item:
+                    host: 'Continent 4.1 by SNMP'
+                    key: 'vpn.OutBytes[{#SNMPINDEX}]'
+      tags:
+        - tag: class
+          value: network
+        - tag: target
+          value: continent
+        - tag: target
+          value: continent-4.1
+      macros:
+        - macro: '{$AS_LICENSE_WARN}'
+          value: '10'
+          description: 'Порог предупреждения о минимуме свободных лицензий.'
+        - macro: '{$CPU.UTIL.CRIT}'
+          value: '90'
+          description: 'Критический порог утилизации процессора в %.'
+        - macro: '{$IF.ERRORS.WARN}'
+          value: '2'
+          description: 'Порог предупреждения об количестве ошибок.'
+        - macro: '{$IF.UTIL.MAX}'
+          value: '90'
+          description: 'Порог предупреждения об % утилизации полосы пропускания.'
+        - macro: '{$IFCONTROL}'
+          value: '1'
+          description: 'Макрос используется для отключения триггера падения интерфейса. См. описание триггера.'
+        - macro: '{$LOAD_AVG_PER_CPU.MAX.WARN}'
+          value: '75'
+          description: 'Порог предупреждения нагрузки на процессор.'
+        - macro: '{$MEMORY.AVAILABLE.MIN}'
+          value: 20M
+          description: 'Порог срабатывания предупреждения о нехватке свободной памяти.'
+        - macro: '{$MEMORY.UTIL.MAX}'
+          value: '90'
+          description: 'Порог срабатывания предупреждения об утилизации памяти в %.'
+        - macro: '{$NET.IF.IFADMINSTATUS.MATCHES}'
+          value: '^.*'
+          description: 'Этот макрос-regexp используется для обнаружения интерфейсов по административным статусам.'
+        - macro: '{$NET.IF.IFADMINSTATUS.NOT_MATCHES}'
+          value: ^2$
+          description: 'Этот макрос-regexp используется для исключения обнаружения интерфейсов по административным статусам.'
+        - macro: '{$NET.IF.IFNAME.MATCHES}'
+          value: '.*'
+          description: 'Этот макрос-regexp используется для обнаружения интерфейсов по названиям.'
+        - macro: '{$NET.IF.IFNAME.NOT_MATCHES}'
+          value: '(^[Ll]o[0-9.]*$|^tun.*$|^pflog.*$|^pfsync.*$|^ng_dpi.*$|^controltun.*$)'
+          description: 'Этот макрос-regexp используется для исключения обнаружения интерфейсов по названиям.'
+        - macro: '{$NET.IF.IFOPERSTATUS.MATCHES}'
+          value: '^.*$'
+          description: 'Этот макрос-regexp используется для обнаружения интерфейсов по операционным статусам.'
+        - macro: '{$NET.IF.IFOPERSTATUS.NOT_MATCHES}'
+          value: ^6$
+          description: 'Этот макрос-regexp используется для исключения обнаружения интерфейсов по операционным статусам.'
+        - macro: '{$NET.IF.IFTYPE.MATCHES}'
+          value: '.*'
+          description: 'Этот макрос-regexp используется для обнаружения интерфейсов по типам.'
+        - macro: '{$NET.IF.IFTYPE.NOT_MATCHES}'
+          value: ^1$
+          description: 'Этот макрос-regexp используется для исключения обнаружения интерфейсов по типам.'
+        - macro: '{$SNMP.TIMEOUT}'
+          value: 5m
+          description: 'Порог таймаута опроса SNMP.'
+        - macro: '{$SWAP.PFREE.MIN.WARN}'
+          value: '50'
+          description: 'Порог срабатывания предупреждения об нехватке места на файле подкачки в %.'
+        - macro: '{$SYSTEM.FUZZYTIME.MAX}'
+          value: 60s
+          description: 'Порог расхождения времени узла с эталонным.'
+        - macro: '{$TEMP_CRIT:"CPU"}'
+          value: '75'
+          description: 'Критический порог верхней температуры CPU.'
+        - macro: '{$TEMP_CRIT:"HDD"}'
+          value: '85'
+          description: 'Критический порог верхней температуры HDD.'
+        - macro: '{$TEMP_CRIT_LOW}'
+          value: '5'
+          description: 'Критический порог нижней температуры CPU.'
+        - macro: '{$TEMP_WARN:"CPU"}'
+          value: '60'
+          description: 'Порог предупреждения верхней температуры CPU.'
+        - macro: '{$TEMP_WARN:"HDD"}'
+          value: '70'
+          description: 'Порог предупреждения верхней температуры HDD.'
+        - macro: '{$VFS.FS.FSNAME.MATCHES}'
+          value: .+
+          description: 'Этот макрос-regexp используется для обнаружения файловых систем по именам.'
+        - macro: '{$VFS.FS.FSNAME.NOT_MATCHES}'
+          value: ^(/dev|/sys|/run|/proc|.+/shm$)
+          description: 'Этот макрос-regexp используется для исключения обнаружения файловых систем по именам.'
+        - macro: '{$VFS.FS.PUSED.MAX.CRIT}'
+          value: '90'
+          description: 'Критический порог % минимума свободного места.'
+        - macro: '{$VFS.FS.PUSED.MAX.WARN}'
+          value: '80'
+          description: 'Порог предупреждения % минимума свободного места.'
+      dashboards:
+        - uuid: ac73ac10a688471ab361a1f1539c8cdc
+          name: 'Сетевые интерфейсы'
+          pages:
+            - widgets:
+                - type: graphprototype
+                  name: 'Сетевые интерфейсы'
+                  width: '72'
+                  height: '12'
+                  fields:
+                    - type: GRAPH_PROTOTYPE
+                      name: graphid.0
+                      value:
+                        host: 'Continent 4.1 by SNMP'
+                        name: 'Интерфейс {#IFNAME}: Сетевой трафик'
+                    - type: STRING
+                      name: reference
+                      value: AAAAA
+                    - type: INTEGER
+                      name: rows
+                      value: '2'
+      valuemaps:
+        - uuid: 9333099c2c7b403fbb9184814ef1c71d
+          name: 'IF-MIB::ifOperStatus'
+          mappings:
+            - value: '1'
+              newvalue: up
+            - value: '2'
+              newvalue: down
+            - value: '4'
+              newvalue: unknown
+            - value: '5'
+              newvalue: dormant
+            - value: '6'
+              newvalue: notPresent
+            - value: '7'
+              newvalue: lowerLayerDown
+        - uuid: 914e0e4f383d4c9faa6e8f46ecf7f23d
+          name: 'IF-MIB::ifType'
+          mappings:
+            - value: '1'
+              newvalue: other
+            - value: '2'
+              newvalue: regular1822
+            - value: '3'
+              newvalue: hdh1822
+            - value: '4'
+              newvalue: ddnX25
+            - value: '5'
+              newvalue: rfc877x25
+            - value: '6'
+              newvalue: ethernetCsmacd
+            - value: '7'
+              newvalue: iso88023Csmacd
+            - value: '8'
+              newvalue: iso88024TokenBus
+            - value: '9'
+              newvalue: iso88025TokenRing
+            - value: '10'
+              newvalue: iso88026Man
+            - value: '11'
+              newvalue: starLan
+            - value: '12'
+              newvalue: proteon10Mbit
+            - value: '13'
+              newvalue: proteon80Mbit
+            - value: '14'
+              newvalue: hyperchannel
+            - value: '15'
+              newvalue: fddi
+            - value: '16'
+              newvalue: lapb
+            - value: '17'
+              newvalue: sdlc
+            - value: '18'
+              newvalue: ds1
+            - value: '19'
+              newvalue: e1
+            - value: '20'
+              newvalue: basicISDN
+            - value: '21'
+              newvalue: primaryISDN
+            - value: '22'
+              newvalue: propPointToPointSerial
+            - value: '23'
+              newvalue: ppp
+            - value: '24'
+              newvalue: softwareLoopback
+            - value: '25'
+              newvalue: eon
+            - value: '26'
+              newvalue: ethernet3Mbit
+            - value: '27'
+              newvalue: nsip
+            - value: '28'
+              newvalue: slip
+            - value: '29'
+              newvalue: ultra
+            - value: '30'
+              newvalue: ds3
+            - value: '31'
+              newvalue: sip
+            - value: '32'
+              newvalue: frameRelay
+            - value: '33'
+              newvalue: rs232
+            - value: '34'
+              newvalue: para
+            - value: '35'
+              newvalue: arcnet
+            - value: '36'
+              newvalue: arcnetPlus
+            - value: '37'
+              newvalue: atm
+            - value: '38'
+              newvalue: miox25
+            - value: '39'
+              newvalue: sonet
+            - value: '40'
+              newvalue: x25ple
+            - value: '41'
+              newvalue: iso88022llc
+            - value: '42'
+              newvalue: localTalk
+            - value: '43'
+              newvalue: smdsDxi
+            - value: '44'
+              newvalue: frameRelayService
+            - value: '45'
+              newvalue: v35
+            - value: '46'
+              newvalue: hssi
+            - value: '47'
+              newvalue: hippi
+            - value: '48'
+              newvalue: modem
+            - value: '49'
+              newvalue: aal5
+            - value: '50'
+              newvalue: sonetPath
+            - value: '51'
+              newvalue: sonetVT
+            - value: '52'
+              newvalue: smdsIcip
+            - value: '53'
+              newvalue: propVirtual
+            - value: '54'
+              newvalue: propMultiplexor
+            - value: '55'
+              newvalue: ieee80212
+            - value: '56'
+              newvalue: fibreChannel
+            - value: '57'
+              newvalue: hippiInterface
+            - value: '58'
+              newvalue: frameRelayInterconnect
+            - value: '59'
+              newvalue: aflane8023
+            - value: '60'
+              newvalue: aflane8025
+            - value: '61'
+              newvalue: cctEmul
+            - value: '62'
+              newvalue: fastEther
+            - value: '63'
+              newvalue: isdn
+            - value: '64'
+              newvalue: v11
+            - value: '65'
+              newvalue: v36
+            - value: '66'
+              newvalue: g703at64k
+            - value: '67'
+              newvalue: g703at2mb
+            - value: '68'
+              newvalue: qllc
+            - value: '69'
+              newvalue: fastEtherFX
+            - value: '70'
+              newvalue: channel
+            - value: '71'
+              newvalue: ieee80211
+            - value: '72'
+              newvalue: ibm370parChan
+            - value: '73'
+              newvalue: escon
+            - value: '74'
+              newvalue: dlsw
+            - value: '75'
+              newvalue: isdns
+            - value: '76'
+              newvalue: isdnu
+            - value: '77'
+              newvalue: lapd
+            - value: '78'
+              newvalue: ipSwitch
+            - value: '79'
+              newvalue: rsrb
+            - value: '80'
+              newvalue: atmLogical
+            - value: '81'
+              newvalue: ds0
+            - value: '82'
+              newvalue: ds0Bundle
+            - value: '83'
+              newvalue: bsc
+            - value: '84'
+              newvalue: async
+            - value: '85'
+              newvalue: cnr
+            - value: '86'
+              newvalue: iso88025Dtr
+            - value: '87'
+              newvalue: eplrs
+            - value: '88'
+              newvalue: arap
+            - value: '89'
+              newvalue: propCnls
+            - value: '90'
+              newvalue: hostPad
+            - value: '91'
+              newvalue: termPad
+            - value: '92'
+              newvalue: frameRelayMPI
+            - value: '93'
+              newvalue: x213
+            - value: '94'
+              newvalue: adsl
+            - value: '95'
+              newvalue: radsl
+            - value: '96'
+              newvalue: sdsl
+            - value: '97'
+              newvalue: vdsl
+            - value: '98'
+              newvalue: iso88025CRFPInt
+            - value: '99'
+              newvalue: myrinet
+            - value: '100'
+              newvalue: voiceEM
+            - value: '101'
+              newvalue: voiceFXO
+            - value: '102'
+              newvalue: voiceFXS
+            - value: '103'
+              newvalue: voiceEncap
+            - value: '104'
+              newvalue: voiceOverIp
+            - value: '105'
+              newvalue: atmDxi
+            - value: '106'
+              newvalue: atmFuni
+            - value: '107'
+              newvalue: atmIma
+            - value: '108'
+              newvalue: pppMultilinkBundle
+            - value: '109'
+              newvalue: ipOverCdlc
+            - value: '110'
+              newvalue: ipOverClaw
+            - value: '111'
+              newvalue: stackToStack
+            - value: '112'
+              newvalue: virtualIpAddress
+            - value: '113'
+              newvalue: mpc
+            - value: '114'
+              newvalue: ipOverAtm
+            - value: '115'
+              newvalue: iso88025Fiber
+            - value: '116'
+              newvalue: tdlc
+            - value: '117'
+              newvalue: gigabitEthernet
+            - value: '118'
+              newvalue: hdlc
+            - value: '119'
+              newvalue: lapf
+            - value: '120'
+              newvalue: v37
+            - value: '121'
+              newvalue: x25mlp
+            - value: '122'
+              newvalue: x25huntGroup
+            - value: '123'
+              newvalue: trasnpHdlc
+            - value: '124'
+              newvalue: interleave
+            - value: '125'
+              newvalue: fast
+            - value: '126'
+              newvalue: ip
+            - value: '127'
+              newvalue: docsCableMaclayer
+            - value: '128'
+              newvalue: docsCableDownstream
+            - value: '129'
+              newvalue: docsCableUpstream
+            - value: '130'
+              newvalue: a12MppSwitch
+            - value: '131'
+              newvalue: tunnel
+            - value: '132'
+              newvalue: coffee
+            - value: '133'
+              newvalue: ces
+            - value: '134'
+              newvalue: atmSubInterface
+            - value: '135'
+              newvalue: l2vlan
+            - value: '136'
+              newvalue: l3ipvlan
+            - value: '137'
+              newvalue: l3ipxvlan
+            - value: '138'
+              newvalue: digitalPowerline
+            - value: '139'
+              newvalue: mediaMailOverIp
+            - value: '140'
+              newvalue: dtm
+            - value: '141'
+              newvalue: dcn
+            - value: '142'
+              newvalue: ipForward
+            - value: '143'
+              newvalue: msdsl
+            - value: '144'
+              newvalue: ieee1394
+            - value: '145'
+              newvalue: if-gsn
+            - value: '146'
+              newvalue: dvbRccMacLayer
+            - value: '147'
+              newvalue: dvbRccDownstream
+            - value: '148'
+              newvalue: dvbRccUpstream
+            - value: '149'
+              newvalue: atmVirtual
+            - value: '150'
+              newvalue: mplsTunnel
+            - value: '151'
+              newvalue: srp
+            - value: '152'
+              newvalue: voiceOverAtm
+            - value: '153'
+              newvalue: voiceOverFrameRelay
+            - value: '154'
+              newvalue: idsl
+            - value: '155'
+              newvalue: compositeLink
+            - value: '156'
+              newvalue: ss7SigLink
+            - value: '157'
+              newvalue: propWirelessP2P
+            - value: '158'
+              newvalue: frForward
+            - value: '159'
+              newvalue: rfc1483
+            - value: '160'
+              newvalue: usb
+            - value: '161'
+              newvalue: ieee8023adLag
+            - value: '162'
+              newvalue: bgppolicyaccounting
+            - value: '163'
+              newvalue: frf16MfrBundle
+            - value: '164'
+              newvalue: h323Gatekeeper
+            - value: '165'
+              newvalue: h323Proxy
+            - value: '166'
+              newvalue: mpls
+            - value: '167'
+              newvalue: mfSigLink
+            - value: '168'
+              newvalue: hdsl2
+            - value: '169'
+              newvalue: shdsl
+            - value: '170'
+              newvalue: ds1FDL
+            - value: '171'
+              newvalue: pos
+            - value: '172'
+              newvalue: dvbAsiIn
+            - value: '173'
+              newvalue: dvbAsiOut
+            - value: '174'
+              newvalue: plc
+            - value: '175'
+              newvalue: nfas
+            - value: '176'
+              newvalue: tr008
+            - value: '177'
+              newvalue: gr303RDT
+            - value: '178'
+              newvalue: gr303IDT
+            - value: '179'
+              newvalue: isup
+            - value: '180'
+              newvalue: propDocsWirelessMaclayer
+            - value: '181'
+              newvalue: propDocsWirelessDownstream
+            - value: '182'
+              newvalue: propDocsWirelessUpstream
+            - value: '183'
+              newvalue: hiperlan2
+            - value: '184'
+              newvalue: propBWAp2Mp
+            - value: '185'
+              newvalue: sonetOverheadChannel
+            - value: '186'
+              newvalue: digitalWrapperOverheadChannel
+            - value: '187'
+              newvalue: aal2
+            - value: '188'
+              newvalue: radioMAC
+            - value: '189'
+              newvalue: atmRadio
+            - value: '190'
+              newvalue: imt
+            - value: '191'
+              newvalue: mvl
+            - value: '192'
+              newvalue: reachDSL
+            - value: '193'
+              newvalue: frDlciEndPt
+            - value: '194'
+              newvalue: atmVciEndPt
+            - value: '195'
+              newvalue: opticalChannel
+            - value: '196'
+              newvalue: opticalTransport
+            - value: '197'
+              newvalue: propAtm
+            - value: '198'
+              newvalue: voiceOverCable
+            - value: '199'
+              newvalue: infiniband
+            - value: '200'
+              newvalue: teLink
+            - value: '201'
+              newvalue: q2931
+            - value: '202'
+              newvalue: virtualTg
+            - value: '203'
+              newvalue: sipTg
+            - value: '204'
+              newvalue: sipSig
+            - value: '205'
+              newvalue: docsCableUpstreamChannel
+            - value: '206'
+              newvalue: econet
+            - value: '207'
+              newvalue: pon155
+            - value: '208'
+              newvalue: pon622
+            - value: '209'
+              newvalue: bridge
+            - value: '210'
+              newvalue: linegroup
+            - value: '211'
+              newvalue: voiceEMFGD
+            - value: '212'
+              newvalue: voiceFGDEANA
+            - value: '213'
+              newvalue: voiceDID
+            - value: '214'
+              newvalue: mpegTransport
+            - value: '215'
+              newvalue: sixToFour
+            - value: '216'
+              newvalue: gtp
+            - value: '217'
+              newvalue: pdnEtherLoop1
+            - value: '218'
+              newvalue: pdnEtherLoop2
+            - value: '219'
+              newvalue: opticalChannelGroup
+            - value: '220'
+              newvalue: homepna
+            - value: '221'
+              newvalue: gfp
+            - value: '222'
+              newvalue: ciscoISLvlan
+            - value: '223'
+              newvalue: actelisMetaLOOP
+            - value: '224'
+              newvalue: fcipLink
+            - value: '225'
+              newvalue: rpr
+            - value: '226'
+              newvalue: qam
+            - value: '227'
+              newvalue: lmp
+            - value: '228'
+              newvalue: cblVectaStar
+            - value: '229'
+              newvalue: docsCableMCmtsDownstream
+            - value: '230'
+              newvalue: adsl2
+            - value: '231'
+              newvalue: macSecControlledIF
+            - value: '232'
+              newvalue: macSecUncontrolledIF
+            - value: '233'
+              newvalue: aviciOpticalEther
+            - value: '234'
+              newvalue: atmbond
+            - value: '235'
+              newvalue: voiceFGDOS
+            - value: '236'
+              newvalue: mocaVersion1
+            - value: '237'
+              newvalue: ieee80216WMAN
+            - value: '238'
+              newvalue: adsl2plus
+            - value: '239'
+              newvalue: dvbRcsMacLayer
+            - value: '240'
+              newvalue: dvbTdm
+            - value: '241'
+              newvalue: dvbRcsTdma
+            - value: '242'
+              newvalue: x86Laps
+            - value: '243'
+              newvalue: wwanPP
+            - value: '244'
+              newvalue: wwanPP2
+            - value: '245'
+              newvalue: voiceEBS
+            - value: '246'
+              newvalue: ifPwType
+            - value: '247'
+              newvalue: ilan
+            - value: '248'
+              newvalue: pip
+            - value: '249'
+              newvalue: aluELP
+            - value: '250'
+              newvalue: gpon
+            - value: '251'
+              newvalue: vdsl2
+            - value: '252'
+              newvalue: capwapDot11Profile
+            - value: '253'
+              newvalue: capwapDot11Bss
+            - value: '254'
+              newvalue: capwapWtpVirtualRadio
+            - value: '255'
+              newvalue: bits
+            - value: '256'
+              newvalue: docsCableUpstreamRfPort
+            - value: '257'
+              newvalue: cableDownstreamRfPort
+            - value: '258'
+              newvalue: vmwareVirtualNic
+            - value: '259'
+              newvalue: ieee802154
+            - value: '260'
+              newvalue: otnOdu
+            - value: '261'
+              newvalue: otnOtu
+            - value: '262'
+              newvalue: ifVfiType
+            - value: '263'
+              newvalue: g9981
+            - value: '264'
+              newvalue: g9982
+            - value: '265'
+              newvalue: g9983
+            - value: '266'
+              newvalue: aluEpon
+            - value: '267'
+              newvalue: aluEponOnu
+            - value: '268'
+              newvalue: aluEponPhysicalUni
+            - value: '269'
+              newvalue: aluEponLogicalLink
+            - value: '270'
+              newvalue: aluGponOnu
+            - value: '271'
+              newvalue: aluGponPhysicalUni
+            - value: '272'
+              newvalue: vmwareNicTeam
+            - value: '277'
+              newvalue: docsOfdmDownstream
+            - value: '278'
+              newvalue: docsOfdmaUpstream
+            - value: '279'
+              newvalue: gfast
+            - value: '280'
+              newvalue: sdci
+            - value: '281'
+              newvalue: xboxWireless
+            - value: '282'
+              newvalue: fastdsl
+            - value: '283'
+              newvalue: docsCableScte55d1FwdOob
+            - value: '284'
+              newvalue: docsCableScte55d1RetOob
+            - value: '285'
+              newvalue: docsCableScte55d2DsOob
+            - value: '286'
+              newvalue: docsCableScte55d2UsOob
+            - value: '287'
+              newvalue: docsCableNdf
+            - value: '288'
+              newvalue: docsCableNdr
+            - value: '289'
+              newvalue: ptm
+            - value: '290'
+              newvalue: ghn
+        - uuid: 611426b7eb264252b89221e3fd758051
+          name: zabbix.host.available
+          mappings:
+            - value: '0'
+              newvalue: 'not available'
+            - value: '1'
+              newvalue: available
+            - value: '2'
+              newvalue: unknown
+  triggers:
+    - uuid: 3cbc85fec5dd4d7ea97e2918b33167a3
+      expression: |
+        min(/Continent 4.1 by SNMP/system.cpu.load.avg1[laLoad.1],5m)/last(/Continent 4.1 by SNMP/system.cpu.num[snmp])>{$LOAD_AVG_PER_CPU.MAX.WARN}
+        and last(/Continent 4.1 by SNMP/system.cpu.load.avg5[laLoad.2])>0
+      name: 'Высокая средняя загрузка ЦП'
+      event_name: 'Высокая средняя загрузка (загрузка каждого ЦП более {$LOAD_AVG_PER_CPU.MAX.WARN} за 5 мин.)'
+      opdata: 'Текущая загрузка (1, 5 мин.): ({ITEM.LASTVALUE1} {ITEM.LASTVALUE3}), на {ITEM.LASTVALUE2} ЦП'
+      priority: AVERAGE
+      description: |
+        Средняя загрузка ЦП слишком высока. Ваша система может медленно 
+        реагировать.
+      tags:
+        - tag: scope
+          value: performance
+    - uuid: e53896aa470c4f62ab2e939515f9cae3
+      expression: 'max(/Continent 4.1 by SNMP/vm.memory.available[snmp],5m)<{$MEMORY.AVAILABLE.MIN} and last(/Continent 4.1 by SNMP/vm.memory.total[memTotalReal.0])>0'
+      name: 'Недостаточно доступной памяти'
+      event_name: 'Недостаточно доступной памяти (менее {$MEMORY.AVAILABLE.MIN} за {ITEM.VALUE2})'
+      opdata: 'Доступно:{ITEM.LASTVALUE1}, всего:{ITEM.LASTVALUE2}'
+      priority: AVERAGE
+      tags:
+        - tag: scope
+          value: capacity
+  graphs:
+    - uuid: eecb439bf74e4ce5a766ad1225de1347
+      name: 'Загрузка ЦП'
+      ymin_type_1: FIXED
+      ymax_type_1: FIXED
+      graph_items:
+        - sortorder: '1'
+          drawtype: GRADIENT_LINE
+          color: 1A7C11
+          item:
+            host: 'Continent 4.1 by SNMP'
+            key: 'system.cpu.util[snmp]'
+    - uuid: 32453c170134497db270c45510a9590c
+      name: 'Загрузка системы'
+      ymin_type_1: FIXED
+      graph_items:
+        - sortorder: '1'
+          color: 1A7C11
+          item:
+            host: 'Continent 4.1 by SNMP'
+            key: 'system.cpu.load.avg1[laLoad.1]'
+        - sortorder: '2'
+          color: 2774A4
+          item:
+            host: 'Continent 4.1 by SNMP'
+            key: 'system.cpu.load.avg5[laLoad.2]'
+        - sortorder: '3'
+          color: A54F10
+          yaxisside: RIGHT
+          item:
+            host: 'Continent 4.1 by SNMP'
+            key: 'system.cpu.num[snmp]'
+    - uuid: 90a29c6588a6442baf60e84e707f6d6b
+      name: 'Использование ЦП'
+      graph_items:
+        - sortorder: '1'
+          color: 1A7C11
+          item:
+            host: 'Continent 4.1 by SNMP'
+            key: 'system.cpu.system[ssCpuRawSystem]'
+        - sortorder: '2'
+          color: 2774A4
+          item:
+            host: 'Continent 4.1 by SNMP'
+            key: 'system.cpu.user[ssCpuRawUser]'
+        - sortorder: '3'
+          color: F63100
+          item:
+            host: 'Continent 4.1 by SNMP'
+            key: 'system.cpu.nice[ssCpuRawNice]'
+        - sortorder: '4'
+          color: A54F10
+          item:
+            host: 'Continent 4.1 by SNMP'
+            key: 'system.cpu.iowait[ssCpuRawWait]'
+        - sortorder: '5'
+          color: 6C59DC
+          item:
+            host: 'Continent 4.1 by SNMP'
+            key: 'system.cpu.interrupt[ssCpuRawInterrupt]'
+    - uuid: c21aff107aaa4b11a6da42e88d7c792c
+      name: 'Использование памяти'
+      ymin_type_1: FIXED
+      ymax_type_1: FIXED
+      graph_items:
+        - sortorder: '1'
+          drawtype: GRADIENT_LINE
+          color: 1A7C11
+          item:
+            host: 'Continent 4.1 by SNMP'
+            key: 'vm.memory.util[snmp]'
+    - uuid: 4a30da8b40eb4037a69d004b45c0996b
+      name: 'Объем памяти'
+      ymin_type_1: FIXED
+      graph_items:
+        - sortorder: '1'
+          drawtype: BOLD_LINE
+          color: 1A7C11
+          item:
+            host: 'Continent 4.1 by SNMP'
+            key: 'vm.memory.total[memTotalReal.0]'
+        - sortorder: '2'
+          drawtype: GRADIENT_LINE
+          color: 2774A4
+          item:
+            host: 'Continent 4.1 by SNMP'
+            key: 'vm.memory.available[snmp]'
