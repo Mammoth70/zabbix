@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2025-04-01T05:18:58Z</date>
+    <date>2025-04-08T11:46:08Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -9,9 +9,9 @@
     </groups>
     <templates>
         <template>
-            <template>EIGRP</template>
-            <name>EIGRP</name>
-            <description>Template EIGRP&#13;
+            <template>Cisco EIGRP SNMP</template>
+            <name>Cisco EIGRP SNMP</name>
+            <description>Template Cisco EIGRP SNMP&#13;
 &#13;
 MIBs used:&#13;
 CISCO-EIGRP-MIB</description>
@@ -85,7 +85,7 @@ and&#13;
                                     <dependencies>
                                         <dependency>
                                             <name>Нет EIGRP-соседа {#NEIGHBOR_IP}</name>
-                                            <expression>{EIGRP:eigrp.neighbor.srtt[{#NEIGHBOR_IP}].nodata(15m)}=1</expression>
+                                            <expression>{Cisco EIGRP SNMP:eigrp.neighbor.srtt[{#NEIGHBOR_IP}].nodata(15m)}=1</expression>
                                         </dependency>
                                     </dependencies>
                                 </trigger_prototype>
@@ -125,13 +125,13 @@ and&#13;
                                     <dependencies>
                                         <dependency>
                                             <name>RTO=5000 EIGRP-соседа {#NEIGHBOR_IP}</name>
-                                            <expression>{EIGRP:eigrp.neighbor.rto[{#NEIGHBOR_IP}].last()}=5&#13;
+                                            <expression>{Cisco EIGRP SNMP:eigrp.neighbor.rto[{#NEIGHBOR_IP}].last()}=5&#13;
 and&#13;
-{EIGRP:eigrp.neighbor.rto[{#NEIGHBOR_IP}].last(#2)}=5</expression>
+{Cisco EIGRP SNMP:eigrp.neighbor.rto[{#NEIGHBOR_IP}].last(#2)}=5</expression>
                                         </dependency>
                                         <dependency>
                                             <name>Нет EIGRP-соседа {#NEIGHBOR_IP}</name>
-                                            <expression>{EIGRP:eigrp.neighbor.srtt[{#NEIGHBOR_IP}].nodata(15m)}=1</expression>
+                                            <expression>{Cisco EIGRP SNMP:eigrp.neighbor.srtt[{#NEIGHBOR_IP}].nodata(15m)}=1</expression>
                                         </dependency>
                                     </dependencies>
                                 </trigger_prototype>
@@ -153,7 +153,7 @@ and&#13;
                                     <sortorder>1</sortorder>
                                     <color>9C27B0</color>
                                     <item>
-                                        <host>EIGRP</host>
+                                        <host>Cisco EIGRP SNMP</host>
                                         <key>eigrp.neighbor.srtt[{#NEIGHBOR_IP}]</key>
                                     </item>
                                 </graph_item>
@@ -200,7 +200,7 @@ return JSON.stringify(dict);</params>
                             <style>0</style>
                             <resource>
                                 <name>EIGRP neighbor [{#NEIGHBOR_IP}] SRTT</name>
-                                <host>EIGRP</host>
+                                <host>Cisco EIGRP SNMP</host>
                             </resource>
                             <width>750</width>
                             <height>100</height>
