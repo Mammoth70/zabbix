@@ -111,4 +111,8 @@
 обнаружение ICMP SLA мониторов;  
 сбор данных по времени ICMP ответа и по истечению таймаута ICMP ответа;  
 триггеры отсутствия ICMP ответа, и большого времени ICMP ответа;  
-график времени ICMP ответа;  
+график времени ICMP ответа;
+
+## License
+This project is licensed under the **Apache License 2.0**
+See the [LICENSE](LICENSE) file for details.
