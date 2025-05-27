@@ -1,4 +1,4 @@
-## Шаблоны Zabbix
+# Шаблоны Zabbix
 
 [![GitHub license][1]][2]
 
@@ -118,6 +118,7 @@
 триггеры отсутствия ICMP ответа, и большого времени ICMP ответа;  
 график времени ICMP ответа;
 
-## License
-This project is licensed under the **Apache License 2.0**
-See the [LICENSE](LICENSE) file for details.
+## Лицензирование
+This project is licensed under the **Apache License 2.0**  
+See the [LICENSE](LICENSE) file for details.  
+Copyright 2025 Andrey Yakovlev <andrey-yakovlev@yandex.ru>
