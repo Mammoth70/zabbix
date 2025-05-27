@@ -1,12 +1,22 @@
 # Шаблоны Zabbix
 
-[![GitHub license][1]][2]
+[![Zabbix][1]][2] [![Continent][3]][4] [![GitHub license][5]][6]
 
-[1]: https://img.shields.io/github/license/Mammoth70/zabbix.svg
-[2]: LICENSE
- 
+[1]: https://img.shields.io/badge/Zabbix-5.0+-blue.svg?logoColor=white&color=red
+[2]: https://www.zabbix.com/
+[3]: https://img.shields.io/badge/%D0%9A%D0%BE%D0%BD%D1%82%D0%B8%D0%BD%D0%B5%D0%BD%D1%82-3.9+-blue.svg?logoColor=white&color=lime
+[4]: https://www.securitycode.ru/
+[5]: https://img.shields.io/github/license/Mammoth70/zabbix.svg
+[6]: LICENSE
+
+## Ссылки
+* Zabbix: [www.zabbix.com](https://www.zabbix.com/)
+* Континент: [www.securitycode.ru](https://www.securitycode.ru/)
+
+## Состав
+
 ### шаблон Zabbix 5 для криптошлюзов Континент 3.9
-**zbx_continent3_templates.xml**
+**[zbx_continent3_templates.xml](zbx_continent3_templates.xml)**
 
 автозаполнение полей инвентаризации;  
 
@@ -27,7 +37,7 @@
 для сервера доступа триггеры истечения срока действия сертификатов.  
 
 ### шаблон Zabbix 7 для криптошлюзов Континент 3.9
-**zbx7_template_Continent3.yaml**
+**[zbx7_template_Continent3.yaml](zbx7_template_Continent3.yaml)**
 
 используется асинхронный метод SNMP обнаружения walk;  
 используется асинхронный метод SNMP сбора данных get;  
@@ -51,7 +61,7 @@
 шаблону, полям элементов данных и триггерам назначены теги.  
 
 ### шаблон Zabbix 5 для криптошлюзов Континент 4.1
-**zbx_continent4_templates.xml** 
+**[zbx_continent4_templates.xml](zbx_continent4_templates.xml)** 
 
 автозаполнение полей инвентаризации;  
 
@@ -75,7 +85,7 @@
 для МСЭ график трафика;  
 
 ### шаблон Zabbix 7 для криптошлюзов Континент 4.1
-**zbx7_template_Continent4.yaml** 
+**[zbx7_template_Continent4.yaml](zbx7_template_Continent4.yaml)** 
 
 используется асинхронный метод SNMP обнаружения walk;  
 используется асинхронный метод SNMP сбора данных get;  
@@ -102,7 +112,7 @@
 шаблону, полям элементов данных и триггерам назначены теги.  
 
 ### шаблон Zabbix 5 EIGRP для устройств Cisco
-**zbx_eigrp_template.xml**
+**[zbx_eigrp_template.xml](zbx_eigrp_template.xml)**
 
 обнаружение EIGRP-соседей;  
 сбор данных по RTO и SRTT;  
@@ -111,7 +121,7 @@
 комплексный экран всех графиков SRTT;  
 
 ### шаблон Zabbix 5 ICMP SLA-monitor
-**zbx_slamonitor_template.xml**
+**[zbx_slamonitor_template.xml](zbx_slamonitor_template.xml)**
 
 обнаружение ICMP SLA мониторов;  
 сбор данных по времени ICMP ответа и по истечению таймаута ICMP ответа;  
