@@ -1,4 +1,10 @@
 ## Шаблоны Zabbix
+
+[![GitHub code size in bytes][1]]() [![GitHub license][2]][3]
+
+[1]: https://img.shields.io/github/languages/code-size/Mammoth70/zabbix.svg
+[2]: https://img.shields.io/github/license/Mammoth70/zabbix.svg
+[3]: LICENSE
  
 ### шаблон Zabbix 5 для криптошлюзов Континент 3.9
 **zbx_continent3_templates.xml**
