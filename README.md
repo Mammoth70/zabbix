@@ -2,7 +2,6 @@
 
 [![GitHub license][1]][2]
 
-[1]: https://img.shields.io/github/languages/code-size/Mammoth70/zabbix.svg
 [1]: https://img.shields.io/github/license/Mammoth70/zabbix.svg
 [2]: LICENSE
  
