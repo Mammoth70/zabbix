@@ -126,7 +126,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.1.12.0]'
           key: cont.KeySecondsToExpireTime
-          delay: 3m
+          delay: 2m
           trends: '0'
           units: uptime
           description: |
@@ -164,7 +164,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.1.11.0]'
           key: cont.LastNccAvail
-          delay: 3m
+          delay: 2m
           trends: '0'
           units: uptime
           description: |
@@ -262,7 +262,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.1.9.0]'
           key: cont.Softmode
-          delay: 3m
+          delay: 2m
           trends: '0'
           description: |
             MIB: SECURITYCODE-CONTINENT-MIB
@@ -291,7 +291,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.2.1.25.1.2.0]'
           key: hrSystemDate
-          delay: 3m
+          delay: 2m
           units: unixtime
           description: |
             MIB: HOST-RESOURSE-MIB
@@ -334,7 +334,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.2.1.25.1.1.0]'
           key: hrSystemUptime
-          delay: 3m
+          delay: 2m
           trends: '0'
           units: uptime
           description: |
@@ -441,7 +441,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.2021.11.62.0]'
           key: 'system.cpu.CpuRawSwapIn[ssCpuRawSwapIn.0]'
-          delay: 3m
+          delay: 2m
           description: |
             MIB: UСD-SNMP-MIB
             Количество загруженных блоков
@@ -453,7 +453,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.2021.11.63.0]'
           key: 'system.cpu.CpuRawSwapOut[ssCpuRawSwapOut.0]'
-          delay: 3m
+          delay: 2m
           description: |
             MIB: UСD-SNMP-MIB
             Количество выгруженных блоков
@@ -465,7 +465,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.2021.11.11.0]'
           key: 'system.cpu.IdleTime[ssCpuIdle.0]'
-          delay: 3m
+          delay: 2m
           value_type: FLOAT
           units: '%'
           description: |
@@ -477,7 +477,7 @@ zabbix_export:
         - uuid: dada2481d98c4cd292619314606dc418
           name: 'Средняя нагрузка ЦП (за 1 мин)'
           type: SNMP_AGENT
-          snmp_oid: '1.3.6.1.4.1.2021.10.1.3["index","1.3.6.1.4.1.2021.10.1.2", "Load-1"]'
+          snmp_oid: 'get[1.3.6.1.4.1.2021.10.1.3.1]'
           key: 'system.cpu.load.avg1[laLoad.1]'
           value_type: FLOAT
           description: |
@@ -489,9 +489,9 @@ zabbix_export:
         - uuid: 5e8a45b0d1cd489e863ec39369ebb9d8
           name: 'Средняя нагрузка ЦП (за 5 мин)'
           type: SNMP_AGENT
-          snmp_oid: '1.3.6.1.4.1.2021.10.1.3["index","1.3.6.1.4.1.2021.10.1.2", "Load-5"]'
+          snmp_oid: 'get[1.3.6.1.4.1.2021.10.1.3.2]'
           key: 'system.cpu.load.avg5[laLoad.2]'
-          delay: 3m
+          delay: 2m
           value_type: FLOAT
           description: |
             MIB: UCD-SNMP-MIB
@@ -502,9 +502,9 @@ zabbix_export:
         - uuid: f4b428e3e5224e13b50504fd13a0e172
           name: 'Средняя нагрузка ЦП (за 15 мин)'
           type: SNMP_AGENT
-          snmp_oid: '1.3.6.1.4.1.2021.10.1.3["index","1.3.6.1.4.1.2021.10.1.2", "Load-15"]'
+          snmp_oid: 'get[1.3.6.1.4.1.2021.10.1.3.3]'
           key: 'system.cpu.load.avg15[laLoad.3]'
-          delay: 3m
+          delay: 2m
           value_type: FLOAT
           description: |
             MIB: UCD-SNMP-MIB
@@ -538,7 +538,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.2021.11.59.0]'
           key: 'system.cpu.RawInterrupts[ssRawInterrupts.0]'
-          delay: 3m
+          delay: 2m
           description: |
             MIB: UСD-SNMP-MIB
             Количество обработанных прерываний
@@ -550,7 +550,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.2021.11.60.0]'
           key: 'system.cpu.RawSwitches[ssRawContexts.0]'
-          delay: 3m
+          delay: 2m
           description: |
             MIB: UСD-SNMP-MIB
             Количество переключений контекста
@@ -594,7 +594,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.2021.11.3.0]'
           key: 'system.cpu.SwapIn[ssSwapIn.0]'
-          delay: 3m
+          delay: 2m
           units: kB
           description: |
             MIB: UСD-SNMP-MIB
@@ -607,7 +607,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.2021.11.4.0]'
           key: 'system.cpu.SwapOut[ssSwapOut.0]'
-          delay: 3m
+          delay: 2m
           units: kB
           description: |
             MIB: UСD-SNMP-MIB
@@ -620,7 +620,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.2021.11.7.0]'
           key: 'system.cpu.SysInterrupts[ssSysInterrupts.0]'
-          delay: 3m
+          delay: 2m
           description: |
             MIB: UСD-SNMP-MIB
             Средняя частота обработанных прерываний, рассчитанная за последнюю минуту
@@ -632,7 +632,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.2021.11.8.0]'
           key: 'system.cpu.SysSwitches[ssSysContext.0]'
-          delay: 3m
+          delay: 2m
           description: |
             MIB: UСD-SNMP-MIB
             Средняя скорость переключения контекста, рассчитанная за последнюю минуту
@@ -644,7 +644,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.2021.11.10.0]'
           key: 'system.cpu.SystemTime[ssCpuSystem.0]'
-          delay: 3m
+          delay: 2m
           value_type: FLOAT
           units: '%'
           description: |
@@ -658,7 +658,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.2021.11.9.0]'
           key: 'system.cpu.UserTime[ssCpuUser.0]'
-          delay: 3m
+          delay: 2m
           value_type: FLOAT
           units: '%'
           description: |
@@ -691,7 +691,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.2.1.1.3.0]'
           key: sysUpTime
-          delay: 3m
+          delay: 2m
           trends: '0'
           units: uptime
           description: |
@@ -722,7 +722,7 @@ zabbix_export:
           name: 'Объем доступной памяти'
           type: CALCULATED
           key: 'vm.memory.available[snmp]'
-          delay: 3m
+          delay: 2m
           units: B
           params: 'last(//vm.memory.free[memAvailReal.0])+last(//vm.memory.buffers[memBuffer.0])+last(//vm.memory.cached[memCached.0])'
           description: 'Обратите внимание, что использование памяти является приблизительной оценкой, поскольку доступная память рассчитывается как свободная+буферы+кешированная, что не на 100% точно, но это лучшее, что мы можем получить, используя SNMP.'
@@ -734,7 +734,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.2021.4.14.0]'
           key: 'vm.memory.buffers[memBuffer.0]'
-          delay: 3m
+          delay: 2m
           units: B
           description: |
             MIB: UCD-SNMP-MIB
@@ -751,7 +751,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.2021.4.15.0]'
           key: 'vm.memory.cached[memCached.0]'
-          delay: 3m
+          delay: 2m
           units: B
           description: |
             MIB: UCD-SNMP-MIB
@@ -768,7 +768,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.2021.4.6.0]'
           key: 'vm.memory.free[memAvailReal.0]'
-          delay: 3m
+          delay: 2m
           units: B
           description: 'MIB: UCD-SNMP-MIB'
           preprocessing:
@@ -802,7 +802,7 @@ zabbix_export:
           name: 'Объем используемой памяти в %'
           type: CALCULATED
           key: 'vm.memory.util[snmp]'
-          delay: 3m
+          delay: 2m
           value_type: FLOAT
           units: '%'
           params: '(last(//vm.memory.total[memTotalReal.0])-(last(//vm.memory.free[memAvailReal.0])+last(//vm.memory.buffers[memBuffer.0])+last(//vm.memory.cached[memCached.0])))/last(//vm.memory.total[memTotalReal.0])*100'
@@ -829,7 +829,6 @@ zabbix_export:
           name: 'Доступность SNMP-агента'
           type: INTERNAL
           key: 'zabbix[host,snmp,available]'
-          delay: 3m
           valuemap:
             name: zabbix.host.available
           tags:
@@ -1337,7 +1336,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.5.1.3.0]'
               key: 'aserv.ClientsCount[0{#SINGLETON}]'
-              delay: 3m
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
                 Общее количество подключенных абонентских пунктов
@@ -1349,7 +1347,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.5.1.5.0]'
               key: 'aserv.LicensesBalance[0{#SINGLETON}]'
-              delay: 3m
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
                 Количество свободных лицензий
@@ -1613,7 +1610,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.5.1.2.0]'
               key: 'aserv.TcpClientCount[0{#SINGLETON}]'
-              delay: 3m
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
                 Количество абонентских пунктов, подключенных по TCP
@@ -1625,7 +1621,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.5.1.1.0]'
               key: 'aserv.UdpClientCount[0{#SINGLETON}]'
-              delay: 3m
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
                 Количество абонентских пунктов, подключенных по UDP
@@ -1686,7 +1681,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.2021.11.53.0]'
               key: 'system.cpu.idle[ssCpuRawIdle.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               value_type: FLOAT
               description: |
                 MIB: UCD-SNMP-MIB
@@ -1703,7 +1698,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.2021.11.56.0]'
               key: 'system.cpu.interrupt[ssCpuRawInterrupt.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               value_type: FLOAT
               description: |
                 MIB: UCD-SNMP-MIB
@@ -1720,7 +1715,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.2021.11.54.0]'
               key: 'system.cpu.iowait[ssCpuRawWait.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               value_type: FLOAT
               description: |
                 MIB: UCD-SNMP-MIB
@@ -1738,7 +1733,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.2021.11.55.0]'
               key: 'system.cpu.kernel[ssCpuRawKernel.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               value_type: FLOAT
               description: |
                 MIB: UCD-SNMP-MIB
@@ -1755,7 +1750,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.2021.11.51.0]'
               key: 'system.cpu.nice[ssCpuRawNice.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               value_type: FLOAT
               description: |
                 MIB: UCD-SNMP-MIB
@@ -1772,7 +1767,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.2021.11.52.0]'
               key: 'system.cpu.system[ssCpuRawSystem.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               value_type: FLOAT
               description: |
                 MIB: UCD-SNMP-MIB
@@ -1789,7 +1784,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.2021.11.50.0]'
               key: 'system.cpu.user[ssCpuRawUser.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               value_type: FLOAT
               description: |
                 MIB: UCD-SNMP-MIB
@@ -1858,7 +1853,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.0]'
               key: 'cryptor.Active[{#SNMPINDEX}.0]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -1874,7 +1868,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.`]'
               key: 'cryptor.Active[{#SNMPINDEX}.1]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -1890,7 +1883,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.1]'
               key: 'cryptor.Active[{#SNMPINDEX}.2]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -1906,7 +1898,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.3]'
               key: 'cryptor.Active[{#SNMPINDEX}.3]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -1922,7 +1913,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.4]'
               key: 'cryptor.Active[{#SNMPINDEX}.4]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -1938,7 +1928,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.5]'
               key: 'cryptor.Active[{#SNMPINDEX}.5]'
-              delay: 3m
+              delay: 2m
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
                 Cтатус активности класса трафика (1 — активен/0 — неактивен)
@@ -1952,7 +1942,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.6]'
               key: 'cryptor.Active[{#SNMPINDEX}.6]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -1968,7 +1957,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.7]'
               key: 'cryptor.Active[{#SNMPINDEX}.7]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -1984,7 +1972,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.8]'
               key: 'cryptor.Active[{#SNMPINDEX}.8]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2000,7 +1987,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.9]'
               key: 'cryptor.Active[{#SNMPINDEX}.9]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2016,7 +2002,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.10]'
               key: 'cryptor.Active[{#SNMPINDEX}.10]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2032,7 +2017,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.11]'
               key: 'cryptor.Active[{#SNMPINDEX}.11]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2048,7 +2032,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.12]'
               key: 'cryptor.Active[{#SNMPINDEX}.12]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2064,7 +2047,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.13]'
               key: 'cryptor.Active[{#SNMPINDEX}.13]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2080,7 +2062,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.14]'
               key: 'cryptor.Active[{#SNMPINDEX}.14]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2096,7 +2077,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.15]'
               key: 'cryptor.Active[{#SNMPINDEX}.15]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2112,7 +2092,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.16]'
               key: 'cryptor.Active[{#SNMPINDEX}.16]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2128,7 +2107,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.17]'
               key: 'cryptor.Active[{#SNMPINDEX}.17]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2144,7 +2122,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.18]'
               key: 'cryptor.Active[{#SNMPINDEX}.18]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2160,7 +2137,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.19]'
               key: 'cryptor.Active[{#SNMPINDEX}.19]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2176,7 +2152,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.20]'
               key: 'cryptor.Active[{#SNMPINDEX}.20]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2192,7 +2167,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.21]'
               key: 'cryptor.Active[{#SNMPINDEX}.21]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2208,7 +2182,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.22]'
               key: 'cryptor.Active[{#SNMPINDEX}.22]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2224,7 +2197,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.23]'
               key: 'cryptor.Active[{#SNMPINDEX}.23]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2240,7 +2212,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.24]'
               key: 'cryptor.Active[{#SNMPINDEX}.24]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2256,7 +2227,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.25]'
               key: 'cryptor.Active[{#SNMPINDEX}.25]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2272,7 +2242,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.26]'
               key: 'cryptor.Active[{#SNMPINDEX}.26]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2288,7 +2257,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.27]'
               key: 'cryptor.Active[{#SNMPINDEX}.27]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2304,7 +2272,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.28]'
               key: 'cryptor.Active[{#SNMPINDEX}.28]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2320,7 +2287,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.29]'
               key: 'cryptor.Active[{#SNMPINDEX}.29]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2336,7 +2302,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.30]'
               key: 'cryptor.Active[{#SNMPINDEX}.30]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2352,7 +2317,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.5.{#SNMPINDEX}.31]'
               key: 'cryptor.Active[{#SNMPINDEX}.31]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               description: |
@@ -2368,7 +2332,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.0]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.0]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2385,7 +2348,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.1]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.1]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2402,7 +2364,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.2]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.2]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2419,7 +2380,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.3]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.3]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2436,7 +2396,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.4]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.4]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2453,7 +2412,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.5]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.5]'
-              delay: 3m
+              delay: 2m
               units: s
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
@@ -2468,7 +2427,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.6]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.6]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2485,7 +2443,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.7]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.7]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2502,7 +2459,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.8]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.8]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2519,7 +2475,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.9]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.9]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2536,7 +2491,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.10]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.10]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2553,7 +2507,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.11]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.11]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2570,7 +2523,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.12]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.12]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2587,7 +2539,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.13]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.13]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2604,7 +2555,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.14]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.14]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2621,7 +2571,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.15]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.15]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2638,7 +2587,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.16]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.16]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2655,7 +2603,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.17]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.17]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2672,7 +2619,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.18]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.18]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2689,7 +2635,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.19]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.19]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2706,7 +2651,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.20]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.20]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2723,7 +2667,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.21]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.21]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2740,7 +2683,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.22]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.22]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2757,7 +2699,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.23]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.23]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2774,7 +2715,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.24]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.24]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2791,7 +2731,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.25]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.25]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2808,7 +2747,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.26]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.26]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2825,7 +2763,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.27]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.27]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2842,7 +2779,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.28]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.28]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2859,7 +2795,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.29]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.29]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2876,7 +2811,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.30]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.30]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2893,7 +2827,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.4.{#SNMPINDEX}.31]'
               key: 'cryptor.ChannelBadLastIn[{#SNMPINDEX}.31]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2910,7 +2843,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.0]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.0]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2927,7 +2859,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.1]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.1]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2944,7 +2875,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.2]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.2]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2961,7 +2891,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.3]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.3]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2978,7 +2907,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.4]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.4]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -2995,7 +2923,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.5]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.5]'
-              delay: 3m
+              delay: 2m
               units: s
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
@@ -3010,7 +2938,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.6]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.6]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3027,7 +2954,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.7]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.7]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3044,7 +2970,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.8]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.8]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3061,7 +2986,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.9]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.9]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3078,7 +3002,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.10]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.10]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3095,7 +3018,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.11]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.11]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3112,7 +3034,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.12]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.12]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3129,7 +3050,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.13]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.13]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3146,7 +3066,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.14]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.14]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3163,7 +3082,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.15]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.15]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3180,7 +3098,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.16]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.16]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3197,7 +3114,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.17]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.17]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3214,7 +3130,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.18]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.18]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3231,7 +3146,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.19]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.19]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3248,7 +3162,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.20]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.20]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3265,7 +3178,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.21]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.21]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3282,7 +3194,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.22]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.22]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3299,7 +3210,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.23]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.23]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3316,7 +3226,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.24]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.24]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3333,7 +3242,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.25]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.25]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3350,7 +3258,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.26]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.26]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3367,7 +3274,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.27]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.27]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3384,7 +3290,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.28]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.28]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3401,7 +3306,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.29]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.29]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3418,7 +3322,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.30]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.30]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3435,7 +3338,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.6.1.3.{#SNMPINDEX}.31]'
               key: 'cryptor.ChannelLastIn[{#SNMPINDEX}.31]'
-              delay: 3m
               status: DISABLED
               discover: NO_DISCOVER
               units: s
@@ -3493,7 +3395,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.2.1.1.7.{#SNMPINDEX}]'
               key: 'link.MACErrors[{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               units: s
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
@@ -3527,7 +3429,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.10.2.2.1.1.6.{#SNMPINDEX}]'
               key: 'link.OOOErrors[{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
                 Количество нарушений порядка пакетов
@@ -4029,7 +3931,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.2.1.2.2.1.13.{#SNMPINDEX}]'
               key: 'net.if.in.discards[ifInDiscards.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               description: |
                 MIB: IF-MIB
                 Количество входящих пакетов, которые были выбраны для отбрасывания
@@ -4051,7 +3953,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.2.1.2.2.1.14.{#SNMPINDEX}]'
               key: 'net.if.in.errors[ifInErrors.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               description: |
                 MIB: IF-MIB
                 Для пакетно-ориентированных интерфейсов - количество входящих пакетов, содержащих ошибки, препятствующие их доставке в протокол более высокого уровня. Для символьно-ориентированных интерфейсов или интерфейсов фиксированной длины - количество входящих блоков передачи, которые содержали ошибки, препятствующие их доставке в протокол более высокого уровня. Разрывы в значении этого счетчика могут возникать при повторной инициализации системы управления и в другое время, как указано значением ifCounterDiscontinuityTime.
@@ -4069,7 +3971,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.2.1.31.1.1.1.6.{#SNMPINDEX}]'
               key: 'net.if.in[ifHCInOctets.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               units: bps
               description: |
                 MIB: IF-MIB
@@ -4110,7 +4012,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.2.1.2.2.1.19.{#SNMPINDEX}]'
               key: 'net.if.out.discards[ifOutDiscards.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               description: |
                 MIB: IF-MIB
                 Количество исходящих пакетов, которые были выбраны для отбрасывания
@@ -4132,7 +4034,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.2.1.2.2.1.20.{#SNMPINDEX}]'
               key: 'net.if.out.errors[ifOutErrors.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               description: |
                 MIB: IF-MIB
                 Для пакетно-ориентированных интерфейсов - количество исходящих пакетов, содержащих ошибки, препятствующие их доставке в протокол более высокого уровня. Для символьно-ориентированных интерфейсов или интерфейсов фиксированной длины - количество блоков исходящей передачи, которые содержали ошибки, препятствующие их доставке в протокол более высокого уровня. Разрывы в значении этого счетчика могут возникать при повторной инициализации системы управления и в другое время, как указано значением ifCounterDiscontinuityTime.
@@ -4150,7 +4052,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.2.1.31.1.1.1.10.{#SNMPINDEX}]'
               key: 'net.if.out[ifHCOutOctets.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               units: bps
               description: |
                 MIB: IF-MIB
@@ -4170,9 +4072,9 @@ zabbix_export:
             - uuid: 44b3cef8f9974fa698959c6edb585707
               name: 'Интерфейс {#IFNAME}: Скорость'
               type: SNMP_AGENT
-              snmp_oid: 'get[1.3.6.1.2.1.2.2.1.5.{#SNMPINDEX}]'
+              snmp_oid: 'get[1.3.6.1.2.1.31.1.1.1.15.{#SNMPINDEX}]'
               key: 'net.if.speed[ifHighSpeed.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               trends: '0'
               units: bps
               description: |
@@ -4195,7 +4097,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.2.1.2.2.1.8.{#SNMPINDEX}]'
               key: 'net.if.status[ifOperStatus.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               trends: '0'
               description: |
                 MIB: IF-MIB
@@ -4402,7 +4304,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.2021.4.4.0]'
               key: 'system.swap.free[memAvailSwap.0{#SINGLETON}]'
-              delay: 3m
+              delay: 2m
               units: B
               description: |
                 MIB: UCD-SNMP-MIB
@@ -4416,7 +4318,7 @@ zabbix_export:
               name: 'Доступный объем файла подкачки в %'
               type: CALCULATED
               key: 'system.swap.pfree[snmp{#SINGLETON}]'
-              delay: 3m
+              delay: 2m
               value_type: FLOAT
               units: '%'
               params: 'last(//system.swap.free[memAvailSwap.0])/last(//system.swap.total[memTotalSwap.0])*100'
@@ -4488,7 +4390,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.2021.13.15.1.1.5.{#SNMPINDEX}]'
               key: 'vfs.dev.read.rate.diskIOReads[0.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               value_type: FLOAT
               units: '!r/s'
               description: |
@@ -4508,7 +4410,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.2021.13.15.1.1.9.{#SNMPINDEX}]'
               key: 'vfs.dev.util[diskIOLA1.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               value_type: FLOAT
               units: '%'
               description: |
@@ -4524,7 +4426,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.2021.13.15.1.1.6.{#SNMPINDEX}]'
               key: 'vfs.dev.write.rate[diskIOWrites.{#SNMPINDEX}]'
-              delay: 3m
+              delay: 2m
               value_type: FLOAT
               units: '!w/s'
               description: |
@@ -4585,7 +4487,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.2021.9.1.7.{#SNMPINDEX}]'
               key: 'vfs.fs.dskAvailable[{#FSNAME}]'
-              delay: 3m
+              delay: 2m
               units: B
               description: 'Общий объем в байтах.'
               preprocessing:
@@ -4602,7 +4504,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.2021.9.1.9.{#SNMPINDEX}]'
               key: 'vfs.fs.dskPercent[{#FSNAME}]'
-              delay: 3m
+              delay: 2m
               value_type: FLOAT
               units: '%'
               description: 'Использование пространства в % для {#FSNAME}'
@@ -4672,7 +4574,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.2021.9.1.8.{#SNMPINDEX}]'
               key: 'vfs.fs.dskUsed[{#FSNAME}]'
-              delay: 3m
+              delay: 2m
               units: B
               description: 'Использованное хранилище в байтах.'
               preprocessing:
@@ -4688,7 +4590,7 @@ zabbix_export:
               name: '{#FSNAME}: Свободных inodes в %'
               type: CALCULATED
               key: 'vfs.fs.inode.dskFreePercentNode[{#FSNAME}]'
-              delay: 3m
+              delay: 2m
               value_type: FLOAT
               units: '%'
               params: '100 - last(//vfs.fs.inode.dskPercentNode[{#FSNAME}])'
@@ -4734,7 +4636,7 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.2021.9.1.10.{#SNMPINDEX}]'
               key: 'vfs.fs.inode.dskPercentNode[{#FSNAME}]'
-              delay: 3m
+              delay: 2m
               value_type: FLOAT
               units: '%'
               tags:

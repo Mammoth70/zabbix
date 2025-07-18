@@ -53,7 +53,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.7.0]'
           key: cont.GeoIPVersion
-          delay: 3m
+          delay: 15m
           value_type: CHAR
           trends: '0'
           description: |
@@ -88,7 +88,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.3.0]'
           key: cont.IPSVersion
-          delay: 3m
+          delay: 15m
           value_type: CHAR
           trends: '0'
           description: |
@@ -106,7 +106,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.4.0]'
           key: cont.KasperskyFeedsVersion
-          delay: 3m
+          delay: 15m
           value_type: CHAR
           trends: '0'
           description: |
@@ -124,7 +124,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.5.0]'
           key: cont.KasperskyHashVersion
-          delay: 3m
+          delay: 15m
           value_type: CHAR
           trends: '0'
           description: |
@@ -142,7 +142,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.8.0]'
           key: cont.SkyDNSVersion
-          delay: 3m
+          delay: 15m
           value_type: CHAR
           trends: '0'
           description: |
@@ -160,7 +160,7 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.6.0]'
           key: cont.UserHashVersion
-          delay: 3m
+          delay: 15m
           value_type: CHAR
           trends: '0'
           description: |
@@ -197,7 +197,6 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.6.1.0]'
           key: cpu.temp
-          delay: 3m
           value_type: FLOAT
           units: °C
           description: |
@@ -263,7 +262,6 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.6.5.0]'
           key: hdd.temp
-          delay: 3m
           value_type: FLOAT
           units: °C
           description: |
@@ -329,7 +327,6 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.12.0]'
           key: hrSystemDate
-          delay: 3m
           units: unixtime
           description: |
             MIB: HOST-RESOURSE-MIB
@@ -352,24 +349,11 @@ zabbix_export:
               tags:
                 - tag: scope
                   value: availability
-        - uuid: b6cab60bce0f4e989db0f96f21af0cac
-          name: 'Сетевые интерфейсы SNMP walk'
-          type: SNMP_AGENT
-          snmp_oid: 'walk[1.3.6.1.2.1.31.1.1.1.1,1.3.6.1.2.1.2.2.1.3,1.3.6.1.2.1.2.2.1.7,1.3.6.1.2.1.2.2.1.8,1.3.6.1.2.1.2.2.1.4,1.3.6.1.2.1.2.2.1.5,1.3.6.1.2.1.31.1.1.1.6,1.3.6.1.2.1.31.1.1.1.10,1.3.6.1.2.1.2.2.1.13,1.3.6.1.2.1.2.2.1.14,1.3.6.1.2.1.2.2.1.19,1.3.6.1.2.1.2.2.1.20]'
-          key: net.if.walk
-          delay: 3m
-          history: '0'
-          value_type: TEXT
-          trends: '0'
-          tags:
-            - tag: component
-              value: raw
         - uuid: e99e13febc70478088097c319fa1e595
           name: 'Время работы узла безопасности'
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.3.2.0]'
           key: nodeUpTime
-          delay: 3m
           trends: '0'
           units: uptime
           description: |
@@ -411,15 +395,19 @@ zabbix_export:
         - uuid: 167fe9a3af9d4a5f82d94dfe555b023c
           name: 'Простой ЦП'
           type: SNMP_AGENT
-          snmp_oid: 'discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.5]'
+          snmp_oid: 'walk[1.3.6.1.4.1.34849.1.1.2.1.3.1.5]'
           key: 'system.cpu.idle[ssCpuRawIdle]'
-          delay: 3m
           value_type: FLOAT
           units: '%'
           description: |
             MIB: CONTINENT-SNMP-MIB
             Использование ядра за последнюю минуту, в течение которого процессор ничего не делал.
           preprocessing:
+            - type: SNMP_WALK_TO_JSON
+              parameters:
+                - '{#SNMPVALUE}'
+                - 1.3.6.1.4.1.34849.1.1.2.1.3.1.5
+                - '0'
             - type: JAVASCRIPT
               parameters:
                 - |
@@ -437,15 +425,19 @@ zabbix_export:
         - uuid: b84e203c58ec4ef5a127a5e79b29bd1c
           name: 'Загрузка ЦП на прерывания'
           type: SNMP_AGENT
-          snmp_oid: 'discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.20]'
+          snmp_oid: 'walk[1.3.6.1.4.1.34849.1.1.2.1.3.1.20]'
           key: 'system.cpu.interrupt[ssCpuRawInterrupt]'
-          delay: 3m
           value_type: FLOAT
           units: '%'
           description: |
             MIB: CONTINENT-SNMP-MIB
             Использование ядра на обслуживание аппаратных прерываний за последнюю минуту
           preprocessing:
+            - type: SNMP_WALK_TO_JSON
+              parameters:
+                - '{#SNMPVALUE}'
+                - 1.3.6.1.4.1.34849.1.1.2.1.3.1.20
+                - '0'
             - type: JAVASCRIPT
               parameters:
                 - |
@@ -463,15 +455,19 @@ zabbix_export:
         - uuid: 965b58e793f8460db4b6ea294ce211e3
           name: 'Загрузка ЦП на ожидание ввода/вывода'
           type: SNMP_AGENT
-          snmp_oid: 'discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.17]'
+          snmp_oid: 'walk[1.3.6.1.4.1.34849.1.1.2.1.3.1.17]'
           key: 'system.cpu.iowait[ssCpuRawWait]'
-          delay: 3m
           value_type: FLOAT
           units: '%'
           description: |
             MIB: CONTINENT-SNMP-MIB
             Использование ядра на ожидание завершения ввода-вывода за последнюю минуту.
           preprocessing:
+            - type: SNMP_WALK_TO_JSON
+              parameters:
+                - '{#SNMPVALUE}'
+                - 1.3.6.1.4.1.34849.1.1.2.1.3.1.17
+                - '0'
             - type: JAVASCRIPT
               parameters:
                 - |
@@ -508,7 +504,6 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.1.1.2.0]'
           key: 'system.cpu.load.avg5[laLoad.2]'
-          delay: 3m
           value_type: FLOAT
           units: '%'
           description: |
@@ -526,7 +521,6 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.1.1.3.0]'
           key: 'system.cpu.load.avg5[laLoad.3]'
-          delay: 3m
           value_type: FLOAT
           units: '%'
           description: |
@@ -542,15 +536,19 @@ zabbix_export:
         - uuid: 891d61c08a2d483f8f95fa638ff884ad
           name: 'Загрузка ЦП кодом низкого приоритета'
           type: SNMP_AGENT
-          snmp_oid: 'discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.8]'
+          snmp_oid: 'walk[1.3.6.1.4.1.34849.1.1.2.1.3.1.8]'
           key: 'system.cpu.nice[ssCpuRawNice]'
-          delay: 3m
           value_type: FLOAT
           units: '%'
           description: |
             MIB: CONTINENT-SNMP-MIB
             Использование ядра на выполнение улучшенных пользовательских процессов за последнюю минуту.
           preprocessing:
+            - type: SNMP_WALK_TO_JSON
+              parameters:
+                - '{#SNMPVALUE}'
+                - 1.3.6.1.4.1.34849.1.1.2.1.3.1.8
+                - '0'
             - type: JAVASCRIPT
               parameters:
                 - |
@@ -568,7 +566,7 @@ zabbix_export:
         - uuid: 9332e938ba514333949dad8ab72df9c7
           name: 'Количество ЦП'
           type: SNMP_AGENT
-          snmp_oid: 'discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.1]'
+          snmp_oid: 'walk[1.3.6.1.4.1.34849.1.1.2.1.3.1.1]'
           key: 'system.cpu.num[snmp]'
           delay: 1h
           trends: '0'
@@ -576,6 +574,11 @@ zabbix_export:
             MIB: CONTINENT-SNMP-MIB
             Определение количества ядер ЦП, через подсчет количества ядер, обнаруженных в hrProcessorTable, с помощью LLD.
           preprocessing:
+            - type: SNMP_WALK_TO_JSON
+              parameters:
+                - '{#SNMPVALUE}'
+                - 1.3.6.1.4.1.34849.1.1.2.1.3.1.1
+                - '0'
             - type: JAVASCRIPT
               parameters:
                 - 'return JSON.parse(value).length;'
@@ -588,15 +591,19 @@ zabbix_export:
         - uuid: 8bfe8524a8a4457f9485340ba3e04052
           name: 'Загрузка ЦП кодом системного уровня'
           type: SNMP_AGENT
-          snmp_oid: 'discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.14]'
+          snmp_oid: 'walk[1.3.6.1.4.1.34849.1.1.2.1.3.1.14]'
           key: 'system.cpu.system[ssCpuRawSystem]'
-          delay: 3m
           value_type: FLOAT
           units: '%'
           description: |
             MIB: CONTINENT-SNMP-MIB
             Использование ядра на работу ядра и его процессов за последнюю минуту.
           preprocessing:
+            - type: SNMP_WALK_TO_JSON
+              parameters:
+                - '{#SNMPVALUE}'
+                - 1.3.6.1.4.1.34849.1.1.2.1.3.1.14
+                - '0'
             - type: JAVASCRIPT
               parameters:
                 - |
@@ -614,15 +621,19 @@ zabbix_export:
         - uuid: 07a9daa49173445cbc8ef0cd39bf2060
           name: 'Загрузка ЦП кодом уровня пользователя'
           type: SNMP_AGENT
-          snmp_oid: 'discovery[{#SNMPVALUE},1.3.6.1.4.1.34849.1.1.2.1.3.1.11]'
+          snmp_oid: 'walk[1.3.6.1.4.1.34849.1.1.2.1.3.1.11]'
           key: 'system.cpu.user[ssCpuRawUser]'
-          delay: 3m
           value_type: FLOAT
           units: '%'
           description: |
             MIB: CONTINENT-SNMP-MIB
             Использование ядра на выполнение пользовательских процессов, которые не являются улучшенными за последнюю минуту.
           preprocessing:
+            - type: SNMP_WALK_TO_JSON
+              parameters:
+                - '{#SNMPVALUE}'
+                - 1.3.6.1.4.1.34849.1.1.2.1.3.1.11
+                - '0'
             - type: JAVASCRIPT
               parameters:
                 - |
@@ -784,7 +795,6 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.2.1.1.3.0]'
           key: 'system.uptime[sysUpTime]'
-          delay: 3m
           trends: '0'
           units: uptime
           description: |
@@ -811,24 +821,11 @@ zabbix_export:
               tags:
                 - tag: scope
                   value: notice
-        - uuid: 589e7aedb54441509d530db4c30b73d7
-          name: 'Разделы SNMP walk'
-          type: SNMP_AGENT
-          snmp_oid: 'walk[1.3.6.1.4.1.34849.1.1.2.4.1.1.2,1.3.6.1.4.1.34849.1.1.2.4.1.1.3,1.3.6.1.4.1.34849.1.1.2.4.1.1.4,1.3.6.1.4.1.34849.1.1.2.4.1.1.5]'
-          key: vfs.fs.walk
-          delay: 3m
-          history: '0'
-          value_type: TEXT
-          trends: '0'
-          tags:
-            - tag: component
-              value: raw
         - uuid: 163ab75d4da24838b7dfd93cfc62252f
           name: 'Объем доступной памяти'
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.2.4.0]'
           key: 'vm.memory.available[snmp]'
-          delay: 3m
           units: B
           description: |
             MIB: CONTINENT-SNMP-MIB
@@ -841,7 +838,6 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.2.8.0]'
           key: 'vm.memory.free[memAvailReal.0]'
-          delay: 3m
           units: B
           description: |
             MIB: CONTINENT-SNMP-MIB
@@ -871,7 +867,6 @@ zabbix_export:
           type: SNMP_AGENT
           snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.2.7.0]'
           key: 'vm.memory.util[snmp]'
-          delay: 3m
           value_type: FLOAT
           units: '%'
           description: |
@@ -900,7 +895,6 @@ zabbix_export:
           name: 'Доступность SNMP-агента'
           type: INTERNAL
           key: 'zabbix[host,snmp,available]'
-          delay: 3m
           valuemap:
             name: zabbix.host.available
           tags:
@@ -933,7 +927,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.4.2.0]'
               key: 'aserv.ConnCount[0{#SINGLETON}]'
-              delay: 3m
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
                 Количество клиентских подключений к СД
@@ -945,7 +938,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.4.23.0]'
               key: 'aserv.LicensesBalance[0{#SINGLETON}]'
-              delay: 3m
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
                 Количество текущих свободных соединений (лицензий)
@@ -982,7 +974,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.4.6.0]'
               key: 'aserv.ReadBytesCount[0{#SINGLETON}]'
-              delay: 3m
               units: bps
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
@@ -1002,7 +993,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.4.14.0]'
               key: 'aserv.ReadPacketsCount[0{#SINGLETON}]'
-              delay: 3m
               units: pps
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
@@ -1019,7 +1009,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.4.10.0]'
               key: 'aserv.WriteBytesCount[0{#SINGLETON}]'
-              delay: 3m
               units: bps
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
@@ -1039,7 +1028,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.4.18.0]'
               key: 'aserv.WritePacketsCount[0{#SINGLETON}]'
-              delay: 3m
               units: pps
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
@@ -1121,7 +1109,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.2.2.0]'
               key: 'fw.ConnCount[0{#SINGLETON}]'
-              delay: 3m
               value_type: FLOAT
               units: /час
               description: |
@@ -1144,7 +1131,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.2.10.0]'
               key: 'fw.InputPacketsCount[0{#SINGLETON}]'
-              delay: 3m
               value_type: FLOAT
               units: pps
               description: |
@@ -1164,7 +1150,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.2.14.0]'
               key: 'fw.OutputPacketsCount[0{#SINGLETON}]'
-              delay: 3m
               units: pps
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
@@ -1220,7 +1205,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.1.7.0]'
               key: 'ips.DropsCount[0{#SINGLETON}]'
-              delay: 3m
               value_type: FLOAT
               units: pps
               description: |
@@ -1240,7 +1224,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.1.11.0]'
               key: 'ips.EventLvl0Alerts[0{#SINGLETON}]'
-              delay: 3m
               value_type: FLOAT
               units: /час
               description: |
@@ -1263,7 +1246,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.1.15.0]'
               key: 'ips.EventLvl1Alerts[0{#SINGLETON}]'
-              delay: 3m
               value_type: FLOAT
               units: /час
               description: |
@@ -1286,7 +1268,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.1.19.0]'
               key: 'ips.EventLvl2Alerts[0{#SINGLETON}]'
-              delay: 3m
               value_type: FLOAT
               units: /час
               description: |
@@ -1309,7 +1290,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.1.23.0]'
               key: 'ips.EventLvl3Alerts[0{#SINGLETON}]'
-              delay: 3m
               units: /час
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
@@ -1331,7 +1311,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.1.1.3.0]'
               key: 'ips.PcktsCount[0{#SINGLETON}]'
-              delay: 3m
               units: pps
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
@@ -1406,9 +1385,10 @@ zabbix_export:
                 - 'return JSON.stringify(value.includes(''1'') ? [{''{#SINGLETON}'': ''''}] : []);'
         - uuid: 1d33d2cef57745c2b8b29ca86627284b
           name: 'Сеть - обнаружение'
-          type: DEPENDENT
+          type: SNMP_AGENT
+          snmp_oid: 'walk[1.3.6.1.2.1.31.1.1.1.1,1.3.6.1.2.1.2.2.1.3,1.3.6.1.2.1.2.2.1.7,1.3.6.1.2.1.2.2.1.8]'
           key: net.if.discovery
-          delay: '0'
+          delay: 1h
           filter:
             evaltype: AND
             conditions:
@@ -1446,9 +1426,9 @@ zabbix_export:
           item_prototypes:
             - uuid: 9dff177f62de4bc09721ba5bf11f24e5
               name: 'Интерфейс {#IFNAME}: Входящих пакетов отброшено'
-              type: DEPENDENT
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.2.1.2.2.1.13.{#SNMPINDEX}]'
               key: 'net.if.in.discards[ifInDiscards.{#SNMPINDEX}]'
-              delay: '0'
               description: |
                 MIB: IF-MIB
                 Количество входящих пакетов, которые были выбраны для отбрасывания
@@ -1457,15 +1437,9 @@ zabbix_export:
                 Разрыв в значении этого счетчика может возникнуть при повторной инициализации системы управления,
                 и в другое время, как указано значением ifCounterDiscontinuityTime.
               preprocessing:
-                - type: SNMP_WALK_VALUE
-                  parameters:
-                    - '1.3.6.1.2.1.2.2.1.13.{#SNMPINDEX}'
-                    - '0'
                 - type: CHANGE_PER_SECOND
                   parameters:
                     - ''
-              master_item:
-                key: net.if.walk
               tags:
                 - tag: component
                   value: network
@@ -1473,22 +1447,16 @@ zabbix_export:
                   value: '{#IFNAME}'
             - uuid: e77f2fcd5b1a48c09f0fea6894c36895
               name: 'Интерфейс {#IFNAME}: Входящих пакетов с ошибками'
-              type: DEPENDENT
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.2.1.2.2.1.14.{#SNMPINDEX}]'
               key: 'net.if.in.errors[ifInErrors.{#SNMPINDEX}]'
-              delay: '0'
               description: |
                 MIB: IF-MIB
                 Для пакетно-ориентированных интерфейсов - количество входящих пакетов, содержащих ошибки, препятствующие их доставке в протокол более высокого уровня. Для символьно-ориентированных интерфейсов или интерфейсов фиксированной длины - количество входящих блоков передачи, которые содержали ошибки, препятствующие их доставке в протокол более высокого уровня. Разрывы в значении этого счетчика могут возникать при повторной инициализации системы управления и в другое время, как указано значением ifCounterDiscontinuityTime.
               preprocessing:
-                - type: SNMP_WALK_VALUE
-                  parameters:
-                    - '1.3.6.1.2.1.2.2.1.14.{#SNMPINDEX}'
-                    - '0'
                 - type: CHANGE_PER_SECOND
                   parameters:
                     - ''
-              master_item:
-                key: net.if.walk
               tags:
                 - tag: component
                   value: network
@@ -1496,26 +1464,20 @@ zabbix_export:
                   value: '{#IFNAME}'
             - uuid: 560e512fab624db48b8ac62fac60a5ca
               name: 'Интерфейс {#IFNAME}: Битов получено'
-              type: DEPENDENT
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.2.1.31.1.1.1.6.{#SNMPINDEX}]'
               key: 'net.if.in[ifHCInOctets.{#SNMPINDEX}]'
-              delay: '0'
               units: bps
               description: |
                 MIB: IF-MIB
                 Общее количество октетов, полученных на интерфейсе, включая символы кадрирования. Этот объект является 64-битной версией ifInOctets. Разрывы в значении этого счетчика могут возникать при повторной инициализации системы управления и в другое время, как указано значением ifCounterDiscontinuityTime.
               preprocessing:
-                - type: SNMP_WALK_VALUE
-                  parameters:
-                    - '1.3.6.1.2.1.31.1.1.1.6.{#SNMPINDEX}'
-                    - '0'
                 - type: CHANGE_PER_SECOND
                   parameters:
                     - ''
                 - type: MULTIPLIER
                   parameters:
                     - '8'
-              master_item:
-                key: net.if.walk
               tags:
                 - tag: component
                   value: network
@@ -1523,23 +1485,17 @@ zabbix_export:
                   value: '{#IFNAME}'
             - uuid: 77bfb03a43214eaa8e0cdccbb2c668d7
               name: 'Интерфейс {#IFNAME}: Размер MTU'
-              type: DEPENDENT
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.2.1.2.2.1.4.{#SNMPINDEX}]'
               key: 'net.if.mtu[ifMTU.{#SNMPINDEX}]'
-              delay: '0'
               trends: '0'
               description: |
                 MIB: IF-MIB
                 Размер MTU интерфейса.
               preprocessing:
-                - type: SNMP_WALK_VALUE
-                  parameters:
-                    - '1.3.6.1.2.1.2.2.1.4.{#SNMPINDEX}'
-                    - '0'
                 - type: DISCARD_UNCHANGED_HEARTBEAT
                   parameters:
                     - 1h
-              master_item:
-                key: net.if.walk
               tags:
                 - tag: component
                   value: network
@@ -1547,9 +1503,9 @@ zabbix_export:
                   value: '{#IFNAME}'
             - uuid: e1fbd1dbb1034ba8a97b305ca84d4607
               name: 'Интерфейс {#IFNAME}: Исходящих пакетов отброшено'
-              type: DEPENDENT
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.2.1.2.2.1.19.{#SNMPINDEX}]'
               key: 'net.if.out.discards[ifOutDiscards.{#SNMPINDEX}]'
-              delay: '0'
               description: |
                 MIB: IF-MIB
                 Количество исходящих пакетов, которые были выбраны для отбрасывания
@@ -1558,15 +1514,9 @@ zabbix_export:
                 Разрыв в значении этого счетчика может возникнуть при повторной инициализации системы управления,
                 и в другое время, как указано значением ifCounterDiscontinuityTime.
               preprocessing:
-                - type: SNMP_WALK_VALUE
-                  parameters:
-                    - '1.3.6.1.2.1.2.2.1.19.{#SNMPINDEX}'
-                    - '0'
                 - type: CHANGE_PER_SECOND
                   parameters:
                     - ''
-              master_item:
-                key: net.if.walk
               tags:
                 - tag: component
                   value: network
@@ -1574,22 +1524,16 @@ zabbix_export:
                   value: '{#IFNAME}'
             - uuid: 1721daa9993a48bc8609e8f6663cc8f7
               name: 'Интерфейс {#IFNAME}: Исходящих пакетов с ошибками'
-              type: DEPENDENT
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.2.1.2.2.1.20.{#SNMPINDEX}]'
               key: 'net.if.out.errors[ifOutErrors.{#SNMPINDEX}]'
-              delay: '0'
               description: |
                 MIB: IF-MIB
                 Для пакетно-ориентированных интерфейсов - количество исходящих пакетов, содержащих ошибки, препятствующие их доставке в протокол более высокого уровня. Для символьно-ориентированных интерфейсов или интерфейсов фиксированной длины - количество блоков исходящей передачи, которые содержали ошибки, препятствующие их доставке в протокол более высокого уровня. Разрывы в значении этого счетчика могут возникать при повторной инициализации системы управления и в другое время, как указано значением ifCounterDiscontinuityTime.
               preprocessing:
-                - type: SNMP_WALK_VALUE
-                  parameters:
-                    - '1.3.6.1.2.1.2.2.1.20.{#SNMPINDEX}'
-                    - '0'
                 - type: CHANGE_PER_SECOND
                   parameters:
                     - ''
-              master_item:
-                key: net.if.walk
               tags:
                 - tag: component
                   value: network
@@ -1597,26 +1541,20 @@ zabbix_export:
                   value: '{#IFNAME}'
             - uuid: 45f59b1933ef43bf9b0d121373a48ac0
               name: 'Интерфейс {#IFNAME}: Битов отправлено'
-              type: DEPENDENT
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.2.1.31.1.1.1.10.{#SNMPINDEX}]'
               key: 'net.if.out[ifHCOutOctets.{#SNMPINDEX}]'
-              delay: '0'
               units: bps
               description: |
                 MIB: IF-MIB
                 Общее количество октетов, переданных из интерфейса, включая символы кадрирования. Этот объект является 64-разрядной версией ifOutOctets. Несоответствия в значении этого счетчика могут возникать при повторной инициализации системы управления, а в другое время, как указано значением ifCounterDiscontinuityTime.
               preprocessing:
-                - type: SNMP_WALK_VALUE
-                  parameters:
-                    - '1.3.6.1.2.1.31.1.1.1.10.{#SNMPINDEX}'
-                    - '0'
                 - type: CHANGE_PER_SECOND
                   parameters:
                     - ''
                 - type: MULTIPLIER
                   parameters:
                     - '8'
-              master_item:
-                key: net.if.walk
               tags:
                 - tag: component
                   value: network
@@ -1624,27 +1562,21 @@ zabbix_export:
                   value: '{#IFNAME}'
             - uuid: 82b3f9acb7684df2957408624e313e3a
               name: 'Интерфейс {#IFNAME}: Скорость'
-              type: DEPENDENT
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.2.1.31.1.1.1.15.{#SNMPINDEX}]'
               key: 'net.if.speed[ifHighSpeed.{#SNMPINDEX}]'
-              delay: '0'
               trends: '0'
               units: bps
               description: |
                 MIB: IF-MIB
                 Оценка текущей пропускной способности интерфейса в единицах 1 000 000 бит в секунду. Если этот объект сообщает значение «n», то скорость интерфейса находится где-то в диапазоне от «n-500 000» до «n + 499 999». Для интерфейсов, которые не различаются по ширине полосы пропускания, или для интерфейсов, в которых невозможно сделать точную оценку, этот объект должен содержать номинальную ширину полосы пропускания. Для подуровня, который не имеет понятия пропускной способности, этот объект должен быть нулевым.
               preprocessing:
-                - type: SNMP_WALK_VALUE
-                  parameters:
-                    - '1.3.6.1.2.1.2.2.1.5.{#SNMPINDEX}'
-                    - '0'
                 - type: MULTIPLIER
                   parameters:
                     - '1000000'
                 - type: DISCARD_UNCHANGED_HEARTBEAT
                   parameters:
                     - 1h
-              master_item:
-                key: net.if.walk
               tags:
                 - tag: component
                   value: network
@@ -1652,9 +1584,9 @@ zabbix_export:
                   value: '{#IFNAME}'
             - uuid: bfc0dd1a84c44b6c80fa606b6164e6eb
               name: 'Интерфейс {#IFNAME}: Операционный статус'
-              type: DEPENDENT
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.2.1.2.2.1.8.{#SNMPINDEX}]'
               key: 'net.if.status[ifOperStatus.{#SNMPINDEX}]'
-              delay: '0'
               trends: '0'
               description: |
                 MIB: IF-MIB
@@ -1667,13 +1599,6 @@ zabbix_export:
                 - Он должен оставаться в состоянии notPresent (6), если в интерфейсе отсутствуют (как правило, аппаратные) компоненты.
               valuemap:
                 name: 'IF-MIB::ifOperStatus'
-              preprocessing:
-                - type: SNMP_WALK_VALUE
-                  parameters:
-                    - '1.3.6.1.2.1.2.2.1.8.{#SNMPINDEX}'
-                    - '0'
-              master_item:
-                key: net.if.walk
               tags:
                 - tag: component
                   value: network
@@ -1699,9 +1624,9 @@ zabbix_export:
                       value: availability
             - uuid: 9cac6bf79b77418bb41aa5b8035e7444
               name: 'Интерфейс {#IFNAME}: Тип интерфейса'
-              type: DEPENDENT
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.2.1.2.2.1.3.{#SNMPINDEX}]'
               key: 'net.if.type[ifType.{#SNMPINDEX}]'
-              delay: '0'
               trends: '0'
               description: |
                 MIB: IF-MIB
@@ -1711,15 +1636,9 @@ zabbix_export:
               valuemap:
                 name: 'IF-MIB::ifType'
               preprocessing:
-                - type: SNMP_WALK_VALUE
-                  parameters:
-                    - '1.3.6.1.2.1.2.2.1.3.{#SNMPINDEX}'
-                    - '0'
                 - type: DISCARD_UNCHANGED_HEARTBEAT
                   parameters:
                     - 1h
-              master_item:
-                key: net.if.walk
               tags:
                 - tag: component
                   value: network
@@ -1841,8 +1760,6 @@ zabbix_export:
                   item:
                     host: 'Continent 4.1 by SNMP'
                     key: 'net.if.in.discards[ifInDiscards.{#SNMPINDEX}]'
-          master_item:
-            key: net.if.walk
           preprocessing:
             - type: SNMP_WALK_TO_JSON
               parameters:
@@ -1858,9 +1775,6 @@ zabbix_export:
                 - '{#IFOPERSTATUS}'
                 - 1.3.6.1.2.1.2.2.1.8
                 - '0'
-            - type: DISCARD_UNCHANGED_HEARTBEAT
-              parameters:
-                - 1h
         - uuid: 0b50696e8fec4fd9a29b9a468cea9719
           name: 'SWAP - обнаружение'
           type: DEPENDENT
@@ -1875,7 +1789,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.3.4.0]'
               key: 'system.swap.free[memAvailSwap.0{#SINGLETON}]'
-              delay: 3m
               units: B
               description: |
                 MIB: UCD-SNMP-MIB
@@ -1890,7 +1803,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.3.5.0]'
               key: 'system.swap.pfree[snmp{#SINGLETON}]'
-              delay: 3m
               value_type: FLOAT
               units: '%'
               description: |
@@ -1944,9 +1856,10 @@ zabbix_export:
                 - 'return JSON.stringify(value == 0 ? [] : [{''{#SINGLETON}'': ''''}]);'
         - uuid: 362c03f6c14e46a98f489d1516d0ab34
           name: 'Разделы - обнаружение'
-          type: DEPENDENT
+          type: SNMP_AGENT
+          snmp_oid: 'walk[1.3.6.1.4.1.34849.1.1.2.4.1.1.2]'
           key: vfs.fs.discovery
-          delay: '0'
+          delay: 1h
           filter:
             evaltype: AND
             conditions:
@@ -1963,20 +1876,13 @@ zabbix_export:
           item_prototypes:
             - uuid: 7da8473e19b948f6a84d769fe176909b
               name: '{#FSNAME}: Объем свободного места'
-              type: DEPENDENT
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.4.1.1.5.{#SNMPINDEX}]'
               key: 'vfs.fs.dskAvailable[{#FSNAME}]'
-              delay: '0'
               units: B
               description: |
                 MIB: CONTINENT-SNMP-MIB
                 Количество свободных байтов файловой системы.
-              preprocessing:
-                - type: SNMP_WALK_VALUE
-                  parameters:
-                    - '1.3.6.1.4.1.34849.1.1.2.4.1.1.5.{#SNMPINDEX}'
-                    - '0'
-              master_item:
-                key: vfs.fs.walk
               tags:
                 - tag: component
                   value: storage
@@ -1984,24 +1890,18 @@ zabbix_export:
                   value: '{#FSNAME}'
             - uuid: 38a8058fe1a046da85dde4fdbdda9d1e
               name: '{#FSNAME}: Занято места %'
-              type: DEPENDENT
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.4.1.1.4.{#SNMPINDEX}]'
               key: 'vfs.fs.dskPercent[{#FSNAME}]'
-              delay: '0'
               value_type: FLOAT
               units: '%'
               description: |
                 MIB: CONTINENT-SNMP-MIB
                 Использовано байтов в файловой системе {#FSNAME} (в процентах).
               preprocessing:
-                - type: SNMP_WALK_VALUE
-                  parameters:
-                    - '1.3.6.1.4.1.34849.1.1.2.4.1.1.4.{#SNMPINDEX}'
-                    - '0'
                 - type: MULTIPLIER
                   parameters:
                     - '0.01'
-              master_item:
-                key: vfs.fs.walk
               tags:
                 - tag: component
                   value: storage
@@ -2061,20 +1961,13 @@ zabbix_export:
                   value: '{#FSNAME}'
             - uuid: fc962021ab2c45c2a141c6073750740b
               name: '{#FSNAME}: Объем используемого места'
-              type: DEPENDENT
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.4.1.1.3.{#SNMPINDEX}]'
               key: 'vfs.fs.dskUsed[{#FSNAME}]'
-              delay: '0'
               units: B
               description: |
                 MIB: CONTINENT-SNMP-MIB
                 Количество использованных байтов файловой системы.
-              preprocessing:
-                - type: SNMP_WALK_VALUE
-                  parameters:
-                    - '1.3.6.1.4.1.34849.1.1.2.4.1.1.3.{#SNMPINDEX}'
-                    - '0'
-              master_item:
-                key: vfs.fs.walk
               tags:
                 - tag: component
                   value: storage
@@ -2096,21 +1989,16 @@ zabbix_export:
                   item:
                     host: 'Continent 4.1 by SNMP'
                     key: 'vfs.fs.dskUsed[{#FSNAME}]'
-          master_item:
-            key: vfs.fs.walk
           preprocessing:
             - type: SNMP_WALK_TO_JSON
               parameters:
                 - '{#FSNAME}'
                 - 1.3.6.1.4.1.34849.1.1.2.4.1.1.2
                 - '0'
-            - type: DISCARD_UNCHANGED_HEARTBEAT
-              parameters:
-                - 1h
         - uuid: 5972b70ad4994536834908299fff5fe8
           name: 'VPN - обнаружение'
           type: SNMP_AGENT
-          snmp_oid: 'discovery[{#VPNNAME},1.3.6.1.4.1.34849.1.1.2.5.1.1.2,{#VPNSTATUS},1.3.6.1.4.1.34849.1.1.2.5.1.1.9]'
+          snmp_oid: 'walk[1.3.6.1.4.1.34849.1.1.2.5.1.1.2,1.3.6.1.4.1.34849.1.1.2.5.1.1.9]'
           key: vpn.links.discovery
           delay: 1h
           lifetime: 30d
@@ -2122,7 +2010,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.5.1.1.9.{#SNMPINDEX}]'
               key: 'vpn.Active[{#SNMPINDEX}]'
-              delay: 3m
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
                 Статус активности VPN-
@@ -2148,7 +2035,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.5.1.1.8.{#SNMPINDEX}]'
               key: 'vpn.ChannelBadLastIn[{#SNMPINDEX}]'
-              delay: 3m
               units: s
               tags:
                 - tag: application
@@ -2160,7 +2046,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.5.1.1.7.{#SNMPINDEX}]'
               key: 'vpn.ChannelLastIn[{#SNMPINDEX}]'
-              delay: 3m
               units: s
               tags:
                 - tag: application
@@ -2172,7 +2057,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.5.1.1.3.{#SNMPINDEX}]'
               key: 'vpn.InBytes[{#SNMPINDEX}]'
-              delay: 3m
               units: bps
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
@@ -2194,7 +2078,6 @@ zabbix_export:
               type: SNMP_AGENT
               snmp_oid: 'get[1.3.6.1.4.1.34849.1.1.2.5.1.1.5.{#SNMPINDEX}]'
               key: 'vpn.OutBytes[{#SNMPINDEX}]'
-              delay: 3m
               units: bps
               description: |
                 MIB: SECURITYCODE-CONTINENT-MIB
@@ -2241,6 +2124,15 @@ zabbix_export:
                   item:
                     host: 'Continent 4.1 by SNMP'
                     key: 'vpn.OutBytes[{#SNMPINDEX}]'
+          preprocessing:
+            - type: SNMP_WALK_TO_JSON
+              parameters:
+                - '{#VPNNAME}'
+                - 1.3.6.1.4.1.34849.1.1.2.5.1.1.2
+                - '0'
+                - '{#VPNSTATUS}'
+                - 1.3.6.1.4.1.34849.1.1.2.5.1.1.9
+                - '0'
       tags:
         - tag: class
           value: network
@@ -2994,16 +2886,20 @@ zabbix_export:
       name: 'Загрузка системы'
       ymin_type_1: FIXED
       graph_items:
-        - sortorder: '1'
-          color: 1A7C11
+        - color: 1A7C11
           item:
             host: 'Continent 4.1 by SNMP'
             key: 'system.cpu.load.avg1[laLoad.1]'
-        - sortorder: '2'
+        - sortorder: '1'
           color: 2774A4
           item:
             host: 'Continent 4.1 by SNMP'
             key: 'system.cpu.load.avg5[laLoad.2]'
+        - sortorder: '2'
+          color: F63100
+          item:
+            host: 'Continent 4.1 by SNMP'
+            key: 'system.cpu.load.avg5[laLoad.3]'
         - sortorder: '3'
           color: A54F10
           yaxisside: RIGHT
