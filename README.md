@@ -4,7 +4,7 @@
 
 [1]: https://img.shields.io/badge/Zabbix-5.0+-blue.svg?logoColor=white&color=red
 [2]: https://www.zabbix.com/
-[3]: https://img.shields.io/badge/%D0%9A%D0%BE%D0%BD%D1%82%D0%B8%D0%BD%D0%B5%D0%BD%D1%82-3.9+-blue.svg?logoColor=white&color=lime
+[3]: https://img.shields.io/badge/%D0%9A%D0%BE%D0%BD%D1%82%D0%B8%D0%BD%D0%B5%D0%BD%D1%82-3.9+-blue.svg?logoColor=white&color=brightgreen
 [4]: https://www.securitycode.ru/
 [5]: https://img.shields.io/github/license/Mammoth70/zabbix.svg
 [6]: LICENSE
