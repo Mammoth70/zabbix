@@ -334,7 +334,7 @@
                         <trigger>
                             <expression>{avg(5m)}&lt; {$TEMP_CRIT_LOW}</expression>
                             <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
-                            <recovery_expression>{avg(5m)}&lt;{$TEMP_CRIT_LOW}+3</recovery_expression>
+                            <recovery_expression>{avg(5m)}&gt;{$TEMP_CRIT_LOW}+3</recovery_expression>
                             <name>CPU: Температура слишком низкая: &lt;{$TEMP_CRIT_LOW}</name>
                             <priority>AVERAGE</priority>
                             <dependencies>
@@ -395,7 +395,7 @@
                         <trigger>
                             <expression>{avg(5m)}&lt; {$TEMP_CRIT_LOW}</expression>
                             <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
-                            <recovery_expression>{avg(5m)}&lt;{$TEMP_CRIT_LOW}+3</recovery_expression>
+                            <recovery_expression>{avg(5m)}&gt;{$TEMP_CRIT_LOW}+3</recovery_expression>
                             <name>HDD: Температура слишком низкая: &lt;{$TEMP_CRIT_LOW}</name>
                             <priority>AVERAGE</priority>
                             <dependencies>

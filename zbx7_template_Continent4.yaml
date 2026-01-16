@@ -243,7 +243,7 @@ zabbix_export:
             - uuid: 6733e3f24d724f1981a827a32be47a50
               expression: 'avg(/Continent 4.1 by SNMP/cpu.temp,5m)< {$TEMP_CRIT_LOW}'
               recovery_mode: RECOVERY_EXPRESSION
-              recovery_expression: 'avg(/Continent 4.1 by SNMP/cpu.temp,5m)<{$TEMP_CRIT_LOW}+3'
+              recovery_expression: 'avg(/Continent 4.1 by SNMP/cpu.temp,5m)>{$TEMP_CRIT_LOW}+3'
               name: 'CPU: Температура слишком низкая'
               event_name: 'CPU: Температура слишком низкая (менее {$TEMP_CRIT_LOW})'
               opdata: 'Текущее значение:{ITEM.LASTVALUE1}'
@@ -308,7 +308,7 @@ zabbix_export:
             - uuid: 071d80f1ef0b4dbcac3def561e78654e
               expression: 'avg(/Continent 4.1 by SNMP/hdd.temp,5m)< {$TEMP_CRIT_LOW}'
               recovery_mode: RECOVERY_EXPRESSION
-              recovery_expression: 'avg(/Continent 4.1 by SNMP/hdd.temp,5m)<{$TEMP_CRIT_LOW}+3'
+              recovery_expression: 'avg(/Continent 4.1 by SNMP/hdd.temp,5m)>{$TEMP_CRIT_LOW}+3'
               name: 'HDD: Температура слишком низкая'
               event_name: 'HDD: Температура слишком низкая (менее {$TEMP_CRIT_LOW})'
               opdata: 'Текущее значение:{ITEM.LASTVALUE1}'
