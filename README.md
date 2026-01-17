@@ -131,6 +131,11 @@
 график времени ICMP ответа;
 
 ## Лицензирование
+Данный проект распространяется по лицензии **Apache License 2.0**  
+Подробности см. в файле [LICENSE](LICENSE).  
+Автор 2025-2006 Андрей Яковлев <andrey-yakovlev@yandex.ru>
+
+## Licensing
 This project is licensed under the **Apache License 2.0**  
 See the [LICENSE](LICENSE) file for details.  
-Copyright 2025 Andrey Yakovlev <andrey-yakovlev@yandex.ru>
+Copyright 2025-2026 Andrey Yakovlev <andrey-yakovlev@yandex.ru>
