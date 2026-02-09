@@ -1,0 +1,167 @@
+zabbix_export:
+  version: '7.0'
+  template_groups:
+    - uuid: 57b7ae836ca64446ba2c296389c009b7
+      name: Templates/Modules
+  templates:
+    - uuid: 816fa8471ba549f2a6bfec39f5ce9299
+      template: 'Cisco SLAmonitor by SNMP'
+      name: 'Cisco SLAmonitor by SNMP'
+      description: 'Шаблон для мониторинга Cisco ICMP SLA-monitor'
+      groups:
+        - name: Templates/Modules
+      discovery_rules:
+        - uuid: 10ac90b719d047658f03f9635302235e
+          name: 'SLA Discovery'
+          type: SNMP_AGENT
+          snmp_oid: 'walk[1.3.6.1.4.1.9.9.42.1.2.9.1.6]'
+          key: slamonitor.discovery
+          delay: 1h
+          filter:
+            evaltype: AND
+            conditions:
+              - macro: '{#SNMPINDEX}'
+                value: '{$NET.SLA.MON.INDEX.MATCHES}'
+                formulaid: A
+              - macro: '{#SNMPINDEX}'
+                value: '{$NET.SLA.MON.INDEX.NOT_MATCHES}'
+                operator: NOT_MATCHES_REGEX
+                formulaid: B
+          lifetime: 30d
+          enabled_lifetime_type: DISABLE_NEVER
+          item_prototypes:
+            - uuid: 562980e83dcb4df2845540b4fb4ad075
+              name: 'SLA-монитор-{#SNMPINDEX}:время ответа'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.9.9.42.1.2.10.1.1.{#SNMPINDEX}]'
+              key: 'slamonitor.OperCompletionTime[{#SNMPINDEX}]'
+              value_type: FLOAT
+              units: s
+              description: |
+                Время завершения последней успешно завершенной операции RTT.
+                (милисекунды)
+              preprocessing:
+                - type: MULTIPLIER
+                  parameters:
+                    - '0.001'
+              tags:
+                - tag: component
+                  value: slamonitor
+                - tag: sla
+                  value: '{#SNMPINDEX}'
+              trigger_prototypes:
+                - uuid: 22b971d9ae9b4c018f2d4396e568b098
+                  expression: 'avg(/Cisco SLAmonitor by SNMP/slamonitor.OperCompletionTime[{#SNMPINDEX}],5m)>{$ICMP_SLA_RESPONSE_TIME_WARN:"{#SNMPINDEX}"}'
+                  name: 'SLA-монитор-{#SNMPINDEX}: Большое время ICMP-ответа'
+                  opdata: 'Текущее значение:{ITEM.LASTVALUE1}'
+                  priority: WARNING
+                  description: 'Слишком большое среднее время ответа ICMP.'
+                  dependencies:
+                    - name: 'SLA-монитор-{#SNMPINDEX}: Нет ICMP-ответа'
+                      expression: |
+                        max(/Cisco SLAmonitor by SNMP/slamonitor.timeoutoccoted[{#SNMPINDEX}],#3)<2
+                        or
+                        nodata(/Cisco SLAmonitor by SNMP/slamonitor.timeoutoccoted[{#SNMPINDEX}],3m)=1
+                      recovery_expression: |
+                        min(/Cisco SLAmonitor by SNMP/slamonitor.timeoutoccoted[{#SNMPINDEX}],#3)=2
+                        and
+                        nodata(/Cisco SLAmonitor by SNMP/slamonitor.timeoutoccoted[{#SNMPINDEX}],3m)=0
+                  tags:
+                    - tag: scope
+                      value: availability
+                    - tag: scope
+                      value: performance
+            - uuid: 5255dc85ce064ec4998aa166ba7c5025
+              name: 'SLA-монитор-{#SNMPINDEX}:таймаут истек'
+              type: SNMP_AGENT
+              snmp_oid: 'get[1.3.6.1.4.1.9.9.42.1.2.9.1.6.{#SNMPINDEX}]'
+              key: 'slamonitor.timeoutoccoted[{#SNMPINDEX}]'
+              description: |
+                Таймаут ответа SLA монитора
+                1 - таймаут истек
+                2 - таймаут не истек
+              valuemap:
+                name: SLA-monitor-timeoutoccoted
+              tags:
+                - tag: component
+                  value: slamonitor
+                - tag: sla
+                  value: '{#SNMPINDEX}'
+              trigger_prototypes:
+                - uuid: 432e95010df74d85814260ec91e43195
+                  expression: |
+                    max(/Cisco SLAmonitor by SNMP/slamonitor.timeoutoccoted[{#SNMPINDEX}],#3)<2
+                    or
+                    nodata(/Cisco SLAmonitor by SNMP/slamonitor.timeoutoccoted[{#SNMPINDEX}],3m)=1
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    min(/Cisco SLAmonitor by SNMP/slamonitor.timeoutoccoted[{#SNMPINDEX}],#3)=2
+                    and
+                    nodata(/Cisco SLAmonitor by SNMP/slamonitor.timeoutoccoted[{#SNMPINDEX}],3m)=0
+                  name: 'SLA-монитор-{#SNMPINDEX}: Нет ICMP-ответа'
+                  opdata: 'Текущее состояние:{ITEM.LASTVALUE1}'
+                  priority: AVERAGE
+                  description: 'Последние три попытки SLA-монитора вернули тайм-аут.'
+                  tags:
+                    - tag: scope
+                      value: availability
+          graph_prototypes:
+            - uuid: bfab24697ddb427bb8ae76014c54cb6c
+              name: 'SLA-монитор-{#SNMPINDEX}:время ICMP-ответа'
+              ymin_type_1: FIXED
+              graph_items:
+                - sortorder: '1'
+                  color: 1A7C11
+                  item:
+                    host: 'Cisco SLAmonitor by SNMP'
+                    key: 'slamonitor.OperCompletionTime[{#SNMPINDEX}]'
+          preprocessing:
+            - type: SNMP_WALK_TO_JSON
+              parameters:
+                - '#SLA_MON_TIMEOUT}'
+                - 1.3.6.1.4.1.9.9.42.1.2.9.1.6
+                - '0'
+      tags:
+        - tag: class
+          value: network
+        - tag: target
+          value: cisco
+      macros:
+        - macro: '{$ICMP_SLA_RESPONSE_TIME_WARN}'
+          value: '0.05'
+          description: 'Порог предупреждения времени ответа ICMP SLA-монитору в секундах.'
+        - macro: '{$NET.SLA.MON.INDEX.MATCHES}'
+          value: '.*'
+          description: 'Этот макрос-regexp используется для обнаружения SLA-мониторов по индексам'
+        - macro: '{$NET.SLA.MON.INDEX.NOT_MATCHES}'
+          value: CHANGE_IF_NEEDED
+          description: 'Этот макрос-regexp используется для исключения обнаружения SLA-мониторов по индексам.'
+      dashboards:
+        - uuid: f723cb379f1a4ef69783d473ff6937a7
+          name: 'SLA-мониторы:время ICMP-ответа'
+          pages:
+            - widgets:
+                - type: graphprototype
+                  name: 'SLA-мониторы:время ICMP-ответа'
+                  width: '72'
+                  height: '12'
+                  fields:
+                    - type: GRAPH_PROTOTYPE
+                      name: graphid.0
+                      value:
+                        host: 'Cisco SLAmonitor by SNMP'
+                        name: 'SLA-монитор-{#SNMPINDEX}:время ICMP-ответа'
+                    - type: STRING
+                      name: reference
+                      value: AAAAA
+                    - type: INTEGER
+                      name: rows
+                      value: '3'
+      valuemaps:
+        - uuid: b50c86884df341eaa1161265a70b1ab2
+          name: SLA-monitor-timeoutoccoted
+          mappings:
+            - value: '1'
+              newvalue: 'true - abnormal'
+            - value: '2'
+              newvalue: 'false - normal'
