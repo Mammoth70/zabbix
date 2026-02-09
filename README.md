@@ -16,7 +16,7 @@
 ## Состав
 
 ### шаблон Zabbix 5 для криптошлюзов Континент 3.9
-**[zbx_continent3_templates.xml](zbx_continent3_templates.xml)**
+**[zbx5_template_continent3.xml](zbx5_template_continent3.xml)**
 
 автозаполнение полей инвентаризации;  
 
@@ -37,7 +37,7 @@
 для сервера доступа триггеры истечения срока действия сертификатов.  
 
 ### шаблон Zabbix 7 для криптошлюзов Континент 3.9
-**[zbx7_template_Continent3.yaml](zbx7_template_Continent3.yaml)**
+**[zbx7_template_continent3.yaml](zbx7_template_continent3.yaml)**
 
 используется асинхронный метод SNMP обнаружения walk;  
 используется асинхронный метод SNMP сбора данных get;
@@ -62,7 +62,7 @@
 шаблону, полям элементов данных и триггерам назначены теги.  
 
 ### шаблон Zabbix 5 для криптошлюзов Континент 4.1
-**[zbx_continent4_templates.xml](zbx_continent4_templates.xml)** 
+**[zbx5_template_continent4.xml](zbx5_template_continent4.xml)** 
 
 автозаполнение полей инвентаризации;  
 
@@ -86,7 +86,7 @@
 для МСЭ график трафика;  
 
 ### шаблон Zabbix 7 для криптошлюзов Континент 4.1
-**[zbx7_template_Continent4.yaml](zbx7_template_Continent4.yaml)** 
+**[zbx7_template_continent4.yaml](zbx7_template_continent4.yaml)** 
 
 используется асинхронный метод SNMP обнаружения walk;  
 используется асинхронный метод SNMP сбора данных get;
@@ -114,7 +114,7 @@
 шаблону, полям элементов данных и триггерам назначены теги.  
 
 ### шаблон Zabbix 5 EIGRP для устройств Cisco
-**[zbx_eigrp_template.xml](zbx_eigrp_template.xml)**
+**[zbx5_template_eigrp.xml](zbx5_template_eigrp.xml)**
 
 обнаружение EIGRP-соседей;  
 сбор данных по RTO и SRTT;  
@@ -123,7 +123,7 @@
 комплексный экран всех графиков SRTT;  
 
 ### шаблон Zabbix 5 ICMP SLA-monitor
-**[zbx_slamonitor_template.xml](zbx_slamonitor_template.xml)**
+**[zbx5_template_slamonitor.xml](zbx5_template_slamonitor.xml)**
 
 обнаружение ICMP SLA мониторов;  
 сбор данных по времени ICMP ответа и по истечению таймаута ICMP ответа;  
