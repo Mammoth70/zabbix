@@ -123,7 +123,7 @@
 комплексный экран всех графиков SRTT.  
 
 ### шаблон Zabbix 7 EIGRP для устройств Cisco
-**[zbx7_template_eigrp.xml](zbx7_template_eigrp.xml)**
+**[zbx7_template_eigrp.yaml](zbx7_template_eigrp.yaml)**
 
 обнаружение EIGRP-соседей;  
 сбор данных по RTO и SRTT;  
@@ -141,7 +141,7 @@
 график времени ICMP ответа.
 
 ### шаблон Zabbix 7 ICMP SLA-monitor
-**[zbx7_template_slamonitor.xml](zbx7_template_slamonitor.xml)**
+**[zbx7_template_slamonitor.yaml](zbx7_template_slamonitor.yaml)**
 
 обнаружение ICMP SLA мониторов;  
 сбор данных по времени ICMP ответа и по истечению таймаута ICMP ответа;  
